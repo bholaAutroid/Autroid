@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/dimen_5dp"
+    android:background="@drawable/rectangle_background_cardblack_corner8dp"
+    >
+
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dimen_5dp"
+        android:paddingBottom="@dimen/dimen_5dp"
+        >
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/service_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/service_price"
+            android:textColor="@color/white_dark"
+            android:textStyle="bold"
+            android:layout_marginRight="@dimen/dimen_5dp"
+            android:layout_alignParentLeft="true"
+            android:textSize="@dimen/size_16sp"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:text=""
+            />
+
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/service_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_16sp"
+            android:textColor="@color/white_dark"
+            android:gravity="end"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dimen_5dp"
+            android:maxLines="1"
+            />
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/service_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_13sp"
+            android:layout_below="@id/service_name"
+            android:paddingLeft="@dimen/dimen_5dp"
+            android:visibility="gone"
+            android:text=""
+            android:textColor="@color/gray_color_button"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            />
+
+
+    </RelativeLayout>
+
+</LinearLayout>

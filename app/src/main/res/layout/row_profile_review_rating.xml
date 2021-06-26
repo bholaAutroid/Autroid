@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dimen_5dp"
+    android:elevation="@dimen/dimen_2dp"
+    android:layout_marginTop="@dimen/dimen_5dp"
+    android:layout_marginBottom="@dimen/dimen_2dp"
+    android:id="@+id/main_layout"
+    android:background="@drawable/rectangle_background_mattblack_corner8dp"
+    android:gravity="center"
+    >
+    <LinearLayout
+        android:id="@+id/profile_ll_review_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+        <autroid.business.view.customviews.CircleImageView
+            android:id="@+id/review_image_one"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+
+            />
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/review_name_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:textColor="@color/white"
+                    style="@style/style_rotobo_normal_black_bold"
+                    />
+
+
+            <RatingBar
+                android:id="@+id/review_rating_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize="1"
+                android:maxWidth="110dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_horizontal"
+                android:maxHeight="100dp"
+                android:minHeight="20dp"
+                android:progressDrawable="@drawable/ratingbar_customized"
+                android:isIndicator="true"/>
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/review_comment_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/size_10sp"
+                android:maxLines="2"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:ellipsize="end"
+                android:textColor="@color/white_dark"
+                />
+    </LinearLayout>
+
+</LinearLayout>

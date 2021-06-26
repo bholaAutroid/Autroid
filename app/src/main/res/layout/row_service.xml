@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:padding="@dimen/dimen_5dp"
+    android:layout_margin="@dimen/dimen_5dp"
+    android:id="@+id/main_layout"
+    android:background="@drawable/rectangle_background_cardblack_corner8dp"
+    >
+
+    <RelativeLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/dimen_5dp"
+        >
+
+    <autroid.business.view.customviews.CustomTextView
+
+        android:id="@+id/service_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:text=""
+        android:visibility="visible"
+        />
+
+
+        <RelativeLayout
+            android:id="@+id/llservice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/service_name"
+            >
+
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/service_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_dark"
+                android:layout_alignParentLeft="true"
+                android:textSize="@dimen/size_16sp"
+
+                />
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/service_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/service_price"
+                android:textColor="@color/white_dark"
+                android:textSize="@dimen/size_12sp"
+                android:paddingLeft="@dimen/dimen_10dp"
+
+                />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/doorstep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_14sp"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:textColor="@color/gray_color_button"
+                android:layout_toRightOf="@id/service_cost"
+                style="@style/style_rotobo_normal_black_bold"
+
+                />
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/llservice_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/llservice"
+
+            >
+
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/labour_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_dark"
+                android:text=""
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:textSize="@dimen/size_12sp"
+
+                />
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/part_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/labour_price"
+                android:textColor="@color/white_dark"
+                android:textSize="@dimen/size_12sp"
+                android:paddingLeft="@dimen/dimen_10dp"
+
+                />
+        </RelativeLayout>
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/service_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_14sp"
+            android:textColor="@color/gray_color_button"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_below="@id/llservice_cost"
+            android:padding="@dimen/dimen_10dp"
+            android:text="More Info"
+            />
+
+
+    </RelativeLayout>
+
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:background="@color/white_dark"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        ></View>
+
+
+
+</RelativeLayout>

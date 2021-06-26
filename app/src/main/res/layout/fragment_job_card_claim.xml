@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/jobcard_toolbar"
+        layout="@layout/layout_toolbar_activity" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rectangle_background_cardblack_corner8dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/jobcard_surveyor_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/et_border"
+            android:fontFamily="@string/roboto_medium"
+            android:hint="Surveyor Contact"
+            android:imeOptions="actionNext"
+            android:inputType="number"
+            android:maxLength="10"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:textColor="@color/white_dark"
+            android:textCursorDrawable="@null"
+            android:textColorHint="@color/gray_color_button"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/other_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/jobcard_surveyor_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/et_border"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                android:fontFamily="@string/roboto_medium"
+                android:hint="Surveyor Name"
+                android:textColorHint="@color/gray_color_button"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@null"
+                android:textColor="@color/white_dark"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/jobcard_surveyor_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/et_border"
+                android:hint="Surveyor Email"
+                android:imeOptions="actionNext"
+                android:fontFamily="@string/roboto_medium"
+                android:textSize="14sp"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textCursorDrawable="@null"
+                android:textColorHint="@color/gray_color_button"
+                android:textColor="@color/white_dark" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:layout_marginBottom="@dimen/dimen_30dp"
+            android:background="@drawable/red_button_selector"
+            android:text="Update"
+            android:textColor="@color/white_color" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

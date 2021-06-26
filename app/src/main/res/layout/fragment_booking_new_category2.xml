@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/matt_black"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/Toolbar_Theme">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:gravity="center">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/car_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/white_color"
+                    android:textSize="@dimen/size_13sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="2"
+                android:gravity="end"
+                android:visibility="gone">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/business_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:text=""
+                    android:drawableRight="@drawable/ic_right_arrow"
+                    android:drawableTint="@color/white"
+                    android:gravity="center"
+                    android:textColor="@color/white_color"
+                    android:textSize="@dimen/size_13sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_bottom"
+        android:layout_below="@id/toolbar"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_package"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_5dp"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/style_rotobo_normal_black_bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Package Applied: "
+                android:textColor="@color/black_color"
+                android:textSize="@dimen/size_14sp"
+                android:textStyle="bold" />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/car_package"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text=""
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:drawableRight="@drawable/ic_arrow_drop_down"
+                android:drawableTint="@color/black_color"
+                android:textColor="@color/black_color"
+                android:textSize="@dimen/size_13sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_complete_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/matt_black"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:weightSum="5">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/booking_category_new"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/card_color"
+                ></androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/default_message"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="100dp"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:text="Select a category"
+                android:textSize="@dimen/size_18sp"
+                android:textStyle="bold" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/ll_services_list"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/matt_black"
+                        android:gravity="center"
+                        android:padding="@dimen/dimen_5dp"
+                        android:textColor="@color/white_dark"
+                        android:textSize="@dimen/size_16sp"
+                        android:textStyle="bold" />
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/services_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"></androidx.recyclerview.widget.RecyclerView>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+
+            <LinearLayout
+                android:id="@+id/ll_nested_services_list"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/nested_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_1dp"
+                    android:background="@color/matt_black"
+                    android:gravity="center"
+                    android:padding="@dimen/dimen_5dp"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_16sp"
+                    android:textStyle="bold" />
+
+
+                <ExpandableListView
+                    android:id="@+id/nested_services_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@color/matt_black"
+                    android:dividerHeight="1dp"
+                    android:visibility="gone"
+                    android:layout_marginLeft="@dimen/dimen_2dp"
+                    android:childDivider="@android:color/transparent"
+                    android:groupIndicator="@null">
+                </ExpandableListView>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/packages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_5dp"
+        android:background="@color/matt_black"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:padding="@dimen/dimen_10dp"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="@color/white_color"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/matt_black"
+        android:visibility="gone">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:background="@color/white"
+
+            >
+
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:gravity="center"
+                android:text="Total Saving = "
+                android:textColor="@color/black_color" />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/savings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@id/price"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black_color"
+
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_proceed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            android:background="@drawable/red_button"
+            android:gravity="center"
+            android:padding="@dimen/dimen_5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:layout_toRightOf="@+id/ic_drawer"
+                android:gravity="center"
+                android:padding="@dimen/dimen_5dp"
+                android:text="Proceed "
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/dimen_5dp"
+                android:layout_marginRight="@dimen/dimen_5dp"
+                android:backgroundTint="@color/white"
+                android:text=""
+                android:textColor="@color/white"
+                android:tint="@color/white" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/ll_transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_opacity60"
+        android:visibility="gone"></View>
+
+</RelativeLayout>

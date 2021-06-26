@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/dimen_5dp"
+    android:background="@color/card_color"
+    >
+
+    <RelativeLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/dimen_5dp"
+        android:paddingBottom="@dimen/dimen_5dp"
+        >
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/check_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:buttonTint="@color/white_dark"
+            />
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/service_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/check_service"
+        android:textColor="@color/white_dark"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:text=""
+        />
+
+
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/service_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size_18sp"
+        android:textColor="@color/white_dark"
+        android:gravity="end"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_below="@id/service_name"
+        android:layout_toRightOf="@id/check_service"
+        android:maxLines="1"
+        />
+
+        <TextView
+            android:id="@+id/surveyor_approval"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_13sp"
+            android:layout_below="@id/service_price"
+            android:paddingLeft="@dimen/dimen_10dp"
+            android:visibility="gone"
+            android:layout_toRightOf="@id/check_service"
+            android:textColor="@color/red_color"
+            android:text="Surveyor approval pending"
+            android:layout_marginTop="@dimen/dimen_3dp"
+            />
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/service_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_13sp"
+            android:layout_below="@id/service_price"
+            android:paddingLeft="@dimen/dimen_5dp"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/dimen_3dp"
+            />
+
+        <ImageView
+            android:id="@+id/ic_dropdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ic_arrow_drop_down"
+            android:backgroundTint="@color/white_dark" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/black"
+        android:padding="@dimen/dimen_10dp"
+        android:visibility="gone"
+        >
+
+        <!-- TODO: Update blank fragment layout -->
+        <LinearLayout
+            android:id="@+id/ll_parts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parts:"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_14sp"
+
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/parts_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                ></androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_labour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            >
+
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Labour:"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_14sp"
+
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/labour_list"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                ></androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_fitting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            >
+
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Opening Fitting:"
+                android:layout_centerInParent="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_14sp"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fitting_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                ></androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/white_color"
+    tools:context="autroid.business.view.fragment.leads.LeadBookingFragment">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/pager_tab_strip"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/matt_black"
+        app:tabIndicatorColor="@color/red_color"
+        app:tabTextAppearance="@style/MineCustomTabText"
+        app:tabSelectedTextColor="@color/white_color"
+        app:tabTextColor="@color/gray_color" />
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_below="@id/pager_tab_strip"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        >
+    </androidx.viewpager.widget.ViewPager>
+
+</RelativeLayout>

@@ -1,0 +1,1686 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black"
+    android:clickable="true">
+
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/black"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/back_navigation"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp"
+            android:padding="5dp"
+            app:srcCompat="@drawable/ic_arrow_back" />
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/car_model"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="left"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/dimen_10dp"
+            android:text=""
+            android:textColor="@color/white_color"
+            android:textSize="@dimen/size_16sp" />
+
+        <TextView
+            android:id="@+id/textViewOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/dimen_12dp"
+            android:paddingLeft="@dimen/dimen_10dp"
+            android:paddingRight="@dimen/dimen_5dp"
+            android:text="&#8942;"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@color/white"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/dimen_50dp"
+        android:clipToPadding="false"
+        android:layout_below="@id/header_layout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/car_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_220dp"
+                android:scaleType="centerCrop" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_220dp"
+                android:background="@drawable/bg_gradient_black_transparent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_10dp">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/car_variant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:text=""
+                    android:textAllCaps="true"
+                    android:textColor="@color/white_color"
+                    android:textSize="@dimen/size_12sp"
+
+                    />
+            </LinearLayout>
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/images_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:drawableLeft="@drawable/ic_photo_camera"
+                android:drawablePadding="@dimen/dimen_5dp"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dimen_10dp"
+                android:text=""
+                android:textColor="@color/white_color"
+                android:textSize="@dimen/size_16sp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/basic_details_cardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_150dp"
+                app:cardCornerRadius="@dimen/dimen_5dp"
+                app:cardElevation="@dimen/button_card_elevation"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/card_color"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <autroid.business.view.customviews.CustomTextView
+                            android:id="@+id/car_id"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:padding="@dimen/dimen_4dp"
+                            android:textColor="@color/white_dark"
+                            android:textSize="12sp" />
+
+
+                        <autroid.business.view.customviews.CustomTextView
+                            android:id="@+id/price"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_5dp"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:gravity="end"
+                            android:maxLines="1"
+                            android:padding="@dimen/dimen_4dp"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size_18sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:orientation="horizontal">
+
+                        <autroid.business.view.customviews.CustomTextView
+                            android:id="@+id/location"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:ellipsize="end"
+                            android:maxLines="4"
+                            android:padding="@dimen/dimen_4dp"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size_14sp" />
+
+                        <autroid.business.view.customviews.CustomTextView
+                            android:id="@+id/business"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:padding="4dp"
+                            android:visibility="gone"
+                            android:textColor="@color/white_dark"
+                            android:textSize="12sp" />
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/basic_details_cardview"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_8dp"
+                    app:cardCornerRadius="@dimen/dimen_5dp"
+                    app:cardElevation="@dimen/button_card_elevation"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/card_color"
+                        android:orientation="vertical"
+                        android:paddingBottom="10dp">
+
+                        <autroid.business.view.customviews.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center"
+                            android:padding="4dp"
+                            android:text="OVERVIEW"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="@dimen/dimen_8dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginRight="@dimen/dimen_8dp"
+                            android:background="@color/gray_color_button" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_20dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    app:srcCompat="@drawable/ic_model_year" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:id="@+id/car_year"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:hint="--"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="16sp" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Model Year"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/white_dark"
+                                    android:textSize="10sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    app:srcCompat="@drawable/ic_fuel_type" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:id="@+id/fuel_type"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:hint="--"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="16sp" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="FUEL TYPE"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/white_dark"
+                                    android:textSize="10sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    app:srcCompat="@drawable/ic_km_driven" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:id="@+id/car_km"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:hint="--"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="16sp" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="KM DRIVEN"
+                                    android:textColor="@color/white_dark"
+                                    android:textSize="10sp"
+
+                                    />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_20dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    app:srcCompat="@drawable/ic_transmission" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:id="@+id/car_transmission"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:hint="--"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="16sp" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="TRANSMISSION"
+                                    android:textColor="@color/white_dark"
+                                    android:textSize="10sp"
+
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    app:srcCompat="@drawable/ic_colour" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:id="@+id/car_color"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:hint="--"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="16sp" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="COLOUR"
+                                    android:textColor="@color/white_dark"
+                                    android:textSize="12sp"
+
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    app:srcCompat="@drawable/ic_ownership" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:id="@+id/car_ownership"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:hint="--"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="16sp" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="OWNERSHIP"
+                                    android:textColor="@color/white_dark"
+                                    android:textSize="10sp"
+
+                                    />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_20dp">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    app:srcCompat="@drawable/ic_body_style" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:id="@+id/body_style"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:hint="--"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="16sp" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Body Style"
+                                    android:textColor="@color/white_dark"
+                                    android:textSize="10sp"
+
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    app:srcCompat="@drawable/ic_accidental" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:id="@+id/car_collision"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:hint="--"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="16sp" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="ACCIDENTAL"
+                                    android:textColor="@color/white_dark"
+                                    android:textSize="10sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    app:srcCompat="@drawable/ic_insurance" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:id="@+id/car_insurance"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:hint="--"
+                                    android:textColor="@color/white"
+                                    android:textColorHint="@color/white"
+                                    android:textSize="16sp" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="INSURANCE"
+                                    android:textColor="@color/white_dark"
+                                    android:textSize="10sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_20dp"
+                            android:visibility="gone"
+                            android:weightSum="3">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:id="@+id/car_registration"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/white_dark" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="REGISTRATION"
+                                    android:textColor="@color/gray_color_button"
+
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:id="@+id/car_mileage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/white_dark" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="MILEAGE"
+                                    android:textColor="@color/gray_color_button"
+
+                                    />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:id="@+id/car_status"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/white_dark" />
+
+                                <autroid.business.view.customviews.CustomTextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="STATUS"
+                                    android:textColor="@color/gray_color_button"
+
+                                    />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/car_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card_view"
+                    android:visibility="gone"
+                    app:cardCornerRadius="@dimen/dimen_5dp"
+                    app:cardElevation="@dimen/button_card_elevation"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/card_color"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_4dp">
+
+                        <autroid.business.view.customviews.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:padding="4dp"
+                            android:text="Car Description"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <autroid.business.view.customviews.CustomTextView
+                            android:id="@+id/description"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:padding="@dimen/dimen_4dp"
+                            android:textColor="@color/white_dark"
+                            android:textSize="@dimen/size_14sp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/package_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/car_description"
+                    android:visibility="gone"
+                    app:cardCornerRadius="@dimen/dimen_5dp"
+                    app:cardElevation="@dimen/button_card_elevation"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/card_color"
+                        android:orientation="vertical"
+                        android:padding="@dimen/dimen_4dp">
+
+                        <autroid.business.view.customviews.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:gravity="center"
+                            android:padding="4dp"
+                            android:text="INCLUSIONS"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="@dimen/dimen_8dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginRight="@dimen/dimen_8dp"
+                            android:background="@color/gray_color_button" />
+
+                        <autroid.business.view.customviews.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:gravity="center"
+                            android:padding="4dp"
+                            android:text="CarEagerClub Premium Membership"
+                            android:textColor="@color/white"
+                            android:textSize="14sp" />
+
+                        <autroid.business.view.customviews.CustomTextView
+                            android:id="@+id/package_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:padding="@dimen/dimen_4dp"
+                            android:textColor="@color/white_dark"
+                            android:textSize="@dimen/size_14sp"
+                            android:visibility="gone" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/package_detail_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_15dp" />
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/layout_sale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_5dp"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:weightSum="3"
+        android:background="@color/black_opacity60"
+        android:layout_alignParentBottom="true"
+        >
+
+        <Button
+            android:id="@+id/btn_seller"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_gray"
+            android:minHeight="@dimen/dimen_40dp"
+            android:text="Seller"
+            android:gravity="center"
+            android:drawablePadding="@dimen/dimen_5dp"
+            android:textColor="@color/white"
+            android:paddingLeft="@dimen/dimen_10dp"
+            android:paddingRight="@dimen/dimen_10dp"
+            android:textSize="@dimen/size_14sp"
+            ></Button>
+
+        <Button
+            android:id="@+id/call"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_gray"
+            android:minHeight="@dimen/dimen_40dp"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:text="Call"
+            android:layout_centerInParent="true"
+            android:drawablePadding="@dimen/dimen_5dp"
+            android:textColor="@color/white"
+            android:paddingLeft="@dimen/dimen_10dp"
+            android:textSize="@dimen/size_14sp"
+            android:paddingRight="@dimen/dimen_10dp"
+            ></Button>
+
+        <Button
+            android:id="@+id/chat"
+            android:layout_alignParentRight="true"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_gray"
+            android:minHeight="@dimen/dimen_40dp"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:text="Chat"
+            android:drawablePadding="@dimen/dimen_5dp"
+            android:drawableTint="@color/white"
+            android:textColor="@color/white"
+            android:paddingLeft="@dimen/dimen_10dp"
+            android:textSize="@dimen/size_14sp"
+            android:paddingRight="@dimen/dimen_10dp"
+            ></Button>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_editable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:background="@color/black_opacity60"
+        android:padding="@dimen/dimen_5dp"
+        >
+
+        <Button
+            android:id="@+id/book_service"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/oval_rect"
+            android:minHeight="@dimen/dimen_40dp"
+            android:padding="8dp"
+            android:text="Book Service"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_11sp" />
+
+        <Button
+            android:id="@+id/sold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_10dp"
+            android:layout_weight="1"
+            android:background="@drawable/oval_rect"
+            android:minHeight="@dimen/dimen_40dp"
+            android:padding="@dimen/dimen_8dp"
+            android:paddingLeft="@dimen/dimen_5dp"
+            android:paddingRight="@dimen/dimen_5dp"
+            android:text="Mark as Sold"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_11sp"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/edit_car"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_10dp"
+            android:layout_weight="1"
+            android:background="@drawable/oval_rect"
+            android:minHeight="@dimen/dimen_40dp"
+            android:padding="@dimen/dimen_8dp"
+            android:text="Edit Car"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_11sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--android:id="@+id/main_layout"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:background="@color/matt_black"-->
+<!--android:clickable="true">-->
+
+<!--<LinearLayout-->
+<!--    android:id="@+id/header_layout"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="48dp"-->
+<!--    android:layout_gravity="center_vertical"-->
+<!--    android:background="@color/black"-->
+<!--    android:gravity="center_vertical"-->
+<!--    android:orientation="horizontal">-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/back_navigation"-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginTop="1dp"-->
+<!--        android:layout_marginBottom="1dp"-->
+<!--        android:padding="5dp"-->
+<!--        app:srcCompat="@drawable/ic_arrow_back" />-->
+
+<!--    <careager.business.view.customviews.CustomTextView-->
+<!--        android:id="@+id/car_model"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_weight="1"-->
+<!--        android:ellipsize="end"-->
+<!--        android:gravity="left"-->
+<!--        android:maxLines="1"-->
+<!--        android:paddingLeft="@dimen/dimen_10dp"-->
+<!--        android:text=""-->
+<!--        android:textColor="@color/white_color"-->
+<!--        android:textSize="@dimen/size_16sp" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textViewOptions"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_marginRight="@dimen/dimen_12dp"-->
+<!--        android:paddingLeft="@dimen/dimen_10dp"-->
+<!--        android:paddingRight="@dimen/dimen_5dp"-->
+<!--        android:text="&#8942;"-->
+<!--        android:textAppearance="?android:textAppearanceLarge"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:visibility="gone" />-->
+
+
+<!--</LinearLayout>-->
+
+<!--<ScrollView-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:layout_below="@id/header_layout">-->
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical">-->
+
+<!--        <ImageView-->
+<!--            android:id="@+id/car_image"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/dimen_220dp"-->
+<!--            android:scaleType="centerCrop" />-->
+
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/dimen_220dp"-->
+<!--            android:background="@drawable/bg_gradient_black_transparent" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical"-->
+<!--            android:padding="@dimen/dimen_10dp">-->
+
+<!--            <careager.business.view.customviews.CustomTextView-->
+<!--                android:id="@+id/car_variant"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="left"-->
+<!--                android:text=""-->
+<!--                android:textAllCaps="true"-->
+<!--                android:textColor="@color/white_color"-->
+<!--                android:textSize="@dimen/size_12sp"-->
+
+<!--                />-->
+<!--        </LinearLayout>-->
+
+<!--        <careager.business.view.customviews.CustomTextView-->
+<!--            android:id="@+id/images_count"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:drawableLeft="@drawable/ic_photo_camera"-->
+<!--            android:drawablePadding="@dimen/dimen_5dp"-->
+<!--            android:gravity="center_vertical"-->
+<!--            android:padding="@dimen/dimen_10dp"-->
+<!--            android:text=""-->
+<!--            android:textColor="@color/white_color"-->
+<!--            android:textSize="@dimen/size_16sp" />-->
+
+<!--        <android.support.v7.widget.CardView-->
+<!--            android:id="@+id/basic_details_cardview"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/dimen_150dp"-->
+<!--            app:cardCornerRadius="@dimen/dimen_5dp"-->
+<!--            app:cardElevation="@dimen/button_card_elevation"-->
+<!--            app:cardUseCompatPadding="true">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@color/card_color"-->
+<!--                android:orientation="vertical"-->
+<!--                android:padding="@dimen/dimen_4dp">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    <careager.business.view.customviews.CustomTextView-->
+<!--                        android:id="@+id/car_id"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:padding="@dimen/dimen_4dp"-->
+<!--                        android:textColor="@color/white_dark"-->
+<!--                        android:textSize="12sp" />-->
+
+<!--                    <careager.business.view.customviews.CustomTextView-->
+<!--                        android:id="@+id/business"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:gravity="end"-->
+<!--                        android:padding="4dp"-->
+<!--                        android:textColor="@color/white_dark"-->
+<!--                        android:textSize="12sp" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    <careager.business.view.customviews.CustomTextView-->
+<!--                        android:id="@+id/location"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/dimen_5dp"-->
+<!--                        android:layout_weight="2"-->
+<!--                        android:ellipsize="end"-->
+<!--                        android:maxLines="4"-->
+<!--                        android:padding="@dimen/dimen_4dp"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="@dimen/size_14sp" />-->
+
+
+<!--                    <careager.business.view.customviews.CustomTextView-->
+<!--                        android:id="@+id/price"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/dimen_5dp"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:ellipsize="end"-->
+<!--                        android:gravity="end"-->
+<!--                        android:maxLines="1"-->
+<!--                        android:padding="@dimen/dimen_4dp"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="@dimen/size_18sp"-->
+<!--                        android:textStyle="bold" />-->
+
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
+
+<!--        </android.support.v7.widget.CardView>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@+id/basic_details_cardview"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <android.support.v7.widget.CardView-->
+<!--                android:id="@+id/card_view"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/dimen_8dp"-->
+<!--                app:cardCornerRadius="@dimen/dimen_5dp"-->
+<!--                app:cardElevation="@dimen/button_card_elevation"-->
+<!--                app:cardUseCompatPadding="true">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@color/card_color"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:paddingBottom="10dp">-->
+
+<!--                    <careager.business.view.customviews.CustomTextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:padding="4dp"-->
+<!--                        android:text="OVERVIEW"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="14sp" />-->
+
+<!--                    <View-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="1dp"-->
+<!--                        android:layout_marginLeft="@dimen/dimen_8dp"-->
+<!--                        android:layout_marginTop="2dp"-->
+<!--                        android:layout_marginRight="@dimen/dimen_8dp"-->
+<!--                        android:background="@color/gray_color_button" />-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/dimen_20dp">-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="25dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                app:srcCompat="@drawable/ic_model_year" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:id="@+id/car_year"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:hint="&#45;&#45;"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textColorHint="@color/white"-->
+<!--                                android:textSize="16sp" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="Model Year"-->
+<!--                                android:textAllCaps="true"-->
+<!--                                android:textColor="@color/white_dark"-->
+<!--                                android:textSize="10sp" />-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="25dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                app:srcCompat="@drawable/ic_fuel_type" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:id="@+id/fuel_type"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:hint="&#45;&#45;"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textColorHint="@color/white"-->
+<!--                                android:textSize="16sp" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="FUEL TYPE"-->
+<!--                                android:textAllCaps="true"-->
+<!--                                android:textColor="@color/white_dark"-->
+<!--                                android:textSize="10sp" />-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="25dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                app:srcCompat="@drawable/ic_km_driven" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:id="@+id/car_km"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:hint="&#45;&#45;"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textColorHint="@color/white"-->
+<!--                                android:textSize="16sp" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="KM DRIVEN"-->
+<!--                                android:textColor="@color/white_dark"-->
+<!--                                android:textSize="10sp"-->
+
+<!--                                />-->
+<!--                        </LinearLayout>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/dimen_20dp">-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="25dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                app:srcCompat="@drawable/ic_transmission" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:id="@+id/car_transmission"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:hint="&#45;&#45;"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textColorHint="@color/white"-->
+<!--                                android:textSize="16sp" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="TRANSMISSION"-->
+<!--                                android:textColor="@color/white_dark"-->
+<!--                                android:textSize="10sp"-->
+
+<!--                                />-->
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="25dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                app:srcCompat="@drawable/ic_colour" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:id="@+id/car_color"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:hint="&#45;&#45;"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textColorHint="@color/white"-->
+<!--                                android:textSize="16sp" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="COLOUR"-->
+<!--                                android:textColor="@color/white_dark"-->
+<!--                                android:textSize="12sp"-->
+
+<!--                                />-->
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="25dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                app:srcCompat="@drawable/ic_ownership" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:id="@+id/car_ownership"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:hint="&#45;&#45;"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textColorHint="@color/white"-->
+<!--                                android:textSize="16sp" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="OWNERSHIP"-->
+<!--                                android:textColor="@color/white_dark"-->
+<!--                                android:textSize="10sp"-->
+
+<!--                                />-->
+<!--                        </LinearLayout>-->
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/dimen_20dp">-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="25dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                app:srcCompat="@drawable/ic_body_style" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:id="@+id/body_style"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:hint="&#45;&#45;"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textColorHint="@color/white"-->
+<!--                                android:textSize="16sp" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="Body Style"-->
+<!--                                android:textColor="@color/white_dark"-->
+<!--                                android:textSize="10sp"-->
+
+<!--                                />-->
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="25dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                app:srcCompat="@drawable/ic_accidental" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:id="@+id/car_collision"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:hint="&#45;&#45;"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textColorHint="@color/white"-->
+<!--                                android:textSize="16sp" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="ACCIDENTAL"-->
+<!--                                android:textColor="@color/white_dark"-->
+<!--                                android:textSize="10sp" />-->
+
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="25dp"-->
+<!--                                android:layout_height="25dp"-->
+<!--                                app:srcCompat="@drawable/ic_insurance" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:id="@+id/car_insurance"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:hint="&#45;&#45;"-->
+<!--                                android:textColor="@color/white"-->
+<!--                                android:textColorHint="@color/white"-->
+<!--                                android:textSize="16sp" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="INSURANCE"-->
+<!--                                android:textColor="@color/white_dark"-->
+<!--                                android:textSize="10sp" />-->
+
+<!--                        </LinearLayout>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/dimen_20dp"-->
+<!--                        android:visibility="gone"-->
+<!--                        android:weightSum="3">-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:id="@+id/car_registration"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text=""-->
+<!--                                android:textColor="@color/white_dark" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="REGISTRATION"-->
+<!--                                android:textColor="@color/gray_color_button"-->
+
+<!--                                />-->
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:id="@+id/car_mileage"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text=""-->
+<!--                                android:textColor="@color/white_dark" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="MILEAGE"-->
+<!--                                android:textColor="@color/gray_color_button"-->
+
+<!--                                />-->
+<!--                        </LinearLayout>-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="0dp"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="center"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="center"-->
+<!--                            android:orientation="vertical">-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:id="@+id/car_status"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text=""-->
+<!--                                android:textColor="@color/white_dark" />-->
+
+<!--                            <careager.business.view.customviews.CustomTextView-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:gravity="center"-->
+<!--                                android:text="STATUS"-->
+<!--                                android:textColor="@color/gray_color_button"-->
+
+<!--                                />-->
+<!--                        </LinearLayout>-->
+<!--                    </LinearLayout>-->
+<!--                </LinearLayout>-->
+
+
+<!--            </android.support.v7.widget.CardView>-->
+
+<!--            <android.support.v7.widget.CardView-->
+<!--                android:id="@+id/car_description"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/card_view"-->
+<!--                android:visibility="gone"-->
+<!--                app:cardCornerRadius="@dimen/dimen_5dp"-->
+<!--                app:cardElevation="@dimen/button_card_elevation"-->
+<!--                app:cardUseCompatPadding="true">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@color/card_color"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:padding="@dimen/dimen_4dp">-->
+
+<!--                    <careager.business.view.customviews.CustomTextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:padding="4dp"-->
+<!--                        android:text="Car Description"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="14sp" />-->
+
+<!--                    <careager.business.view.customviews.CustomTextView-->
+<!--                        android:id="@+id/description"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:padding="@dimen/dimen_4dp"-->
+<!--                        android:textColor="@color/white_dark"-->
+<!--                        android:textSize="@dimen/size_14sp" />-->
+
+<!--                </LinearLayout>-->
+
+<!--            </android.support.v7.widget.CardView>-->
+
+<!--            <android.support.v7.widget.CardView-->
+<!--                android:id="@+id/package_description"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/car_description"-->
+<!--                android:visibility="gone"-->
+<!--                app:cardCornerRadius="@dimen/dimen_5dp"-->
+<!--                app:cardElevation="@dimen/button_card_elevation"-->
+<!--                app:cardUseCompatPadding="true">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@color/card_color"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:padding="@dimen/dimen_4dp">-->
+
+<!--                    <careager.business.view.customviews.CustomTextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:padding="4dp"-->
+<!--                        android:text="INCLUSIONS"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="14sp" />-->
+
+<!--                    <View-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="1dp"-->
+<!--                        android:layout_marginLeft="@dimen/dimen_8dp"-->
+<!--                        android:layout_marginTop="2dp"-->
+<!--                        android:layout_marginRight="@dimen/dimen_8dp"-->
+<!--                        android:background="@color/gray_color_button" />-->
+
+<!--                    <careager.business.view.customviews.CustomTextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="6dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:padding="4dp"-->
+<!--                        android:text="CarEagerClub Premium Membership"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="14sp" />-->
+
+<!--                    <careager.business.view.customviews.CustomTextView-->
+<!--                        android:id="@+id/package_text"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="4dp"-->
+<!--                        android:padding="@dimen/dimen_4dp"-->
+<!--                        android:textColor="@color/white_dark"-->
+<!--                        android:textSize="@dimen/size_14sp"-->
+<!--                        android:visibility="gone" />-->
+
+<!--                    <android.support.v7.widget.RecyclerView-->
+<!--                        android:id="@+id/package_detail_list"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/dimen_15dp" />-->
+
+
+<!--                </LinearLayout>-->
+
+<!--            </android.support.v7.widget.CardView>-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/package_description"-->
+<!--                android:layout_margin="@dimen/dimen_10dp">-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/book_service"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@drawable/oval_rect"-->
+<!--                    android:minHeight="@dimen/dimen_40dp"-->
+<!--                    android:padding="8dp"-->
+<!--                    android:text="Book Service"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/size_11sp" />-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/sold"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="@dimen/dimen_10dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@drawable/oval_rect"-->
+<!--                    android:minHeight="@dimen/dimen_40dp"-->
+<!--                    android:padding="@dimen/dimen_8dp"-->
+<!--                    android:paddingLeft="@dimen/dimen_5dp"-->
+<!--                    android:paddingRight="@dimen/dimen_5dp"-->
+<!--                    android:text="Mark as Sold"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/size_11sp"-->
+<!--                    android:visibility="gone" />-->
+
+<!--                <Button-->
+<!--                    android:id="@+id/edit_car"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginLeft="@dimen/dimen_10dp"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:background="@drawable/oval_rect"-->
+<!--                    android:minHeight="@dimen/dimen_40dp"-->
+<!--                    android:padding="@dimen/dimen_8dp"-->
+<!--                    android:text="Edit Car"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="@dimen/size_11sp" />-->
+
+<!--            </LinearLayout>-->
+
+<!--        </LinearLayout>-->
+
+<!--    </RelativeLayout>-->
+
+<!--</ScrollView>-->
+
+<!--</RelativeLayout>-->
+

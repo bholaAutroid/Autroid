@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dimen_5dp"
+
+    >
+
+    <CheckBox
+        android:id="@+id/is_closed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:buttonTint="@color/white_dark"
+        />
+<autroid.business.view.customviews.CustomTextView
+    android:id="@+id/day_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:paddingLeft="@dimen/dimen_15dp"
+    android:layout_toRightOf="@+id/is_closed"
+    android:textColor="@color/white_dark"
+    />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/open_timing"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_30dp"
+        android:layout_centerInParent="true"
+        android:background="@color/card_color"
+        ></androidx.appcompat.widget.AppCompatSpinner>
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/close_timing"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:background="@color/card_color"
+        >
+
+    </androidx.appcompat.widget.AppCompatSpinner>
+</RelativeLayout>

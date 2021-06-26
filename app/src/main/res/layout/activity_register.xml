@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black"
+    tools:context="autroid.business.view.activity.RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_20dp">
+
+            <TextView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:text="Let's get started!"
+                android:textColor="#FFF"
+                android:textSize="25sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:text="Join 10,000+ other Car Workshops,"
+                android:textAlignment="center"
+                android:textColor="@color/gray_color"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Car Dealers &amp; Parts Distributors"
+                android:textAlignment="center"
+                android:textColor="@color/gray_color"
+                android:textSize="18sp" />
+
+            <autroid.business.view.customviews.CustomEditText
+                android:id="@+id/business_name"
+                style="@style/style_rotobo_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_40dp"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_round_business_24"
+                android:drawableTint="@color/gray_color"
+                android:hint=" Business Name"
+                android:inputType="text"
+                android:textColor="@color/white_color"
+                android:textColorHint="@color/gray_color" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:background="@color/gray_color" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:gravity="bottom"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/business_mobilecode_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white_color"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/dimen_4dp"
+                        android:layout_marginRight="@dimen/dimen_20dp"
+                        android:background="@color/gray_color"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/business_mobile"
+                        style="@style/style_rotobo_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_round_phone_in_talk_24"
+                        android:drawableTint="@color/gray_color"
+                        android:hint=" Mobile Number"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:textColor="@color/white_color"
+                        android:textColorHint="@color/gray_color" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/dimen_8dp"
+                        android:layout_marginTop="@dimen/dimen_4dp"
+                        android:background="@color/gray_color"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <autroid.business.view.customviews.CustomEditText
+                android:id="@+id/business_email"
+                style="@style/style_rotobo_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_customer_email"
+                android:drawableTint="@color/gray_color"
+                android:hint=" Email ID"
+                android:inputType="text"
+                android:textColor="@color/white_color"
+                android:textColorHint="@color/gray_color" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:background="@color/gray_color"/>
+
+            <autroid.business.view.customviews.CustomEditText
+                android:id="@+id/password"
+                style="@style/style_rotobo_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_round_lock_24"
+                android:drawableTint="@color/gray_color"
+                android:hint="Password"
+                android:inputType="text"
+                android:textColor="@color/white_color"
+                android:textColorHint="@color/gray_color" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:background="@color/gray_color"/>
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/business_address"
+                style="@style/style_rotobo_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_baseline_location_on_24"
+                android:drawableTint="@color/gray_color"
+                android:hint="Full Address"
+                android:inputType="text"
+                android:textColor="@color/white_color"
+                android:textColorHint="@color/gray_color" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/dimen_4dp"
+                android:background="@color/gray_color"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <autroid.business.view.customviews.CustomEditText
+
+                        style="@style/style_rotobo_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_baseline_pin_drop_24"
+                        android:drawableTint="@color/gray_color"
+                        android:hint="PIN Code"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textColor="@color/white_color"
+                        android:textColorHint="@color/gray_color" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="@dimen/dimen_4dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="@color/gray_color"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_15dp"
+                    android:orientation="vertical">
+
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/confirm_password"
+                        style="@style/style_rotobo_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_5dp"
+                        android:background="@android:color/transparent"
+                        android:drawableLeft="@drawable/ic_baseline_location_city_24"
+                        android:drawableTint="@color/gray_color"
+                        android:hint="City"
+                        android:inputType="textPassword"
+                        android:textColor="@color/white_color"
+                        android:textColorHint="@color/gray_color" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginTop="@dimen/dimen_4dp"
+                        android:background="@color/gray_color"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/ic_business"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tint="@color/gray_color"
+                        app:srcCompat="@drawable/ic_round_business_24" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/business_category_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@id/ic_business"
+                        android:backgroundTint="@color/white_color"/>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dimen_2dp"
+                    android:background="@color/gray_color"/>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_20dp">
+
+                    <ImageView
+                        android:id="@+id/ic_business1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tint="@color/gray_color"
+                        app:srcCompat="@drawable/ic_round_business_24" />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:layout_toRightOf="@id/ic_business1"
+                        android:id="@+id/business_company_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white_color"/>
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/business_company_divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/dimen_2dp"
+                    android:background="@color/gray_color"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/ic_baseline_check_circle_outline_24"
+                    android:drawableTint="@color/gray_color"
+                    android:text=" I agree Terms of Service &amp; Privacy Policy"
+                    android:textAlignment="center"
+                    android:textColor="@color/gray_color"
+                    android:textSize="@dimen/dimen_15dp" />
+
+            </LinearLayout>
+
+            <autroid.business.view.customviews.CustomCheckbox
+                android:id="@+id/txt_signup"
+                style="@style/style_rotobo_small"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:buttonTint="@color/white_color"
+                android:gravity="center_vertical"
+                android:text="You agree to the CarEager Terms &amp; Privacy Policy"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="@dimen/dimen_150dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:background="@drawable/btn_back_orange"
+                android:maxHeight="0dp"
+                android:text="Create Account"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="11sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <autroid.business.view.customviews.CustomTextView
+                    style="@style/style_rotobo_normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an account? "
+
+                    />
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:textSize="17sp"
+                    android:textColor="@color/white_color"
+                    android:textStyle="bold"
+                    android:onClick="goToLogingPage"
+                    android:id="@+id/loginNow"
+                    style="@style/style_rotobo_normal_white_bold"
+                    android:layout_height="wrap_content"
+                    android:text=" Login Now"
+                    app:textAllCaps="false" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

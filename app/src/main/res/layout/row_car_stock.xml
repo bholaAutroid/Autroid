@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginLeft="@dimen/dimen_5dp"
+    android:layout_marginRight="@dimen/dimen_5dp"
+    android:layout_marginBottom="@dimen/dimen_10dp"
+    android:elevation="@dimen/dimen_8dp"
+    android:id="@+id/main_layout"
+    android:background="@color/card_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <ImageView
+            android:id="@+id/car_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/bg_gradient_black_transparent"
+            ></View>
+
+        <ImageView
+            android:id="@+id/ic_membership"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/dimen_5dp"
+            android:visibility="visible"></ImageView>
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/share_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/dimen_10dp"
+            android:visibility="gone"
+            android:background="@drawable/selector_transparent"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dimen_20dp"
+                android:layout_height="@dimen/dimen_20dp"
+                app:srcCompat="@drawable/ic_share"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:tint="@color/white_color"
+                />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/card_color"
+        android:padding="@dimen/dimen_5dp"
+        android:orientation="vertical">
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/car_name"
+            android:textColor="@color/white_dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/size_17sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/car_year"
+                style="@style/style_rotobo_small_gray"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/size_12sp" />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/car_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:text=""
+                android:paddingRight="@dimen/dimen_5dp"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/size_18sp"
+                android:textColor="@color/white_color"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:gravity="center_vertical"
+            >
+
+            <Button
+                android:id="@+id/btn_seller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_gray"
+                android:minHeight="@dimen/dimen_30dp"
+                android:drawablePadding="@dimen/dimen_5dp"
+                android:text="Seller"
+                android:drawableTint="@color/white"
+                android:textColor="@color/white"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:paddingRight="@dimen/dimen_10dp"
+                android:textSize="@dimen/size_10sp"
+                ></Button>
+
+            <Button
+                android:id="@+id/chat"
+                android:layout_toRightOf="@id/btn_seller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_gray"
+                android:minHeight="@dimen/dimen_30dp"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:text="Chat"
+                android:drawablePadding="@dimen/dimen_5dp"
+                android:textColor="@color/white"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:textSize="@dimen/size_10sp"
+                android:paddingRight="@dimen/dimen_10dp"
+                ></Button>
+
+            <ImageView
+                android:id="@+id/img_partner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="center"
+                android:layout_gravity="end"
+                android:visibility="gone"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/dimen_5dp"
+                ></ImageView>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

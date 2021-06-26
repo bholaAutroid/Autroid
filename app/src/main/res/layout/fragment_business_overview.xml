@@ -1,0 +1,173 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/filter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50dp"
+        android:layout_gravity="center"
+        android:background="@color/matt_black"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <autroid.business.view.customviews.CustomSpinner
+            android:id="@+id/selection_keys"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:layout_marginLeft="8dp"/>
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/period"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:textSize="@dimen/size_13sp"
+            android:textColor="@color/white_dark"
+            android:layout_marginRight="16dp"/>
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="2"-->
+<!--            android:gravity="center">-->
+
+<!--            <android.support.v7.widget.AppCompatSpinner-->
+<!--                android:id="@+id/date_start"-->
+<!--                style="@style/style_rotobo_medium_black"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:drawableTint="@color/white_dark"-->
+<!--                android:textColor="@color/white_dark"-->
+<!--                android:textColorHint="@color/white_dark" />-->
+<!--            -->
+<!--        </LinearLayout>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:gravity="center"-->
+<!--            android:text="-"-->
+<!--            android:textColor="@color/gray_color_button" />-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="2"-->
+<!--            android:gravity="center">-->
+
+<!--            <careager.business.view.customviews.CustomTextView-->
+<!--                android:id="@+id/date_end"-->
+<!--                style="@style/style_rotobo_medium_black"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:drawableTint="@color/white_dark"-->
+<!--                android:hint="End Date"-->
+<!--                android:textColor="@color/white_dark"-->
+<!--                android:textColorHint="@color/white_dark" />-->
+<!--        </LinearLayout>-->
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/overview_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/filter"
+        android:background="@color/matt_black"
+        android:layout_centerInParent="true" />
+
+    <View
+        android:id="@+id/view_transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="@color/black_opacity80"
+        ></View>
+
+    <LinearLayout
+        android:id="@+id/calendar_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rectangle_background_cardblack_corner8dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_from"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/button_bar"
+                android:text="FROM"
+                android:minHeight="@dimen/dimen_50dp"
+                android:textColor="@color/white_dark"/>
+
+            <Button
+                android:id="@+id/button_to"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TO"
+                android:minHeight="@dimen/dimen_50dp"
+
+                android:background="@color/matt_black"
+                android:textColor="@color/white_dark"/>
+
+        </LinearLayout>
+
+        <CalendarView
+            android:id="@+id/calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginTop="4dp"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp">
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/red_button_selector"
+                android:text="Cancel"
+                android:minHeight="@dimen/dimen_40dp"
+                android:textColor="@color/white"
+                android:layout_marginRight="@dimen/dimen_8dp"/>
+
+            <Button
+                android:id="@+id/apply"
+                android:layout_toRightOf="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/red_button_selector"
+                android:text="Apply"
+                android:visibility="gone"
+                android:minHeight="@dimen/dimen_40dp"
+                android:layout_gravity="center"
+                android:textColor="@color/white"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

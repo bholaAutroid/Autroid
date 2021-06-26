@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black"
+    tools:context="autroid.business.view.activity.LoginActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginHorizontal="@dimen/dimen_20dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/dimen_50dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:background="@drawable/atroid_logo1"
+                    android:layout_gravity="center"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"/>
+
+                <TextView
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:text="Autroid Business"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_50dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:tint="#C57602"
+                        android:id="@+id/iv_autroid_workshop"
+                        android:layout_margin="@dimen/dimen_2dp"
+
+                        android:layout_width="@dimen/dimen_21dp"
+                        android:layout_height="@dimen/dimen_21dp"/>
+
+                    <TextView
+                        android:layout_margin="@dimen/dimen_2dp"
+                        android:layout_toRightOf="@id/iv_autroid_workshop"
+                        android:textColor="@color/gray_color"
+                        android:id="@+id/tv_autroid_workshop"
+                        android:text="Autroid Workshop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_margin="@dimen/dimen_8dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:tint="#C57602"
+                        android:layout_margin="@dimen/dimen_2dp"
+                        android:id="@+id/iv_autroid_parts"
+                        android:layout_width="@dimen/dimen_21dp"
+                        android:layout_height="@dimen/dimen_21dp"/>
+
+                    <TextView
+                        android:layout_margin="@dimen/dimen_2dp"
+                        android:layout_toRightOf="@id/iv_autroid_parts"
+                        android:textColor="@color/gray_color"
+                        android:id="@+id/tv_autroid_parts"
+                        android:text="Autroid Parts"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:background="#FF5722"
+                    android:layout_width="@dimen/dimen_5dp"
+                    android:layout_height="@dimen/dimen_21dp">
+                </View>
+
+                <TextView
+                    android:textColor="@color/gray_color"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:text="LOGIN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+            <autroid.business.view.customviews.CustomEditText
+                android:maxLength="15"
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=" Phone Number"
+                android:background="@android:color/transparent"
+                style="@style/style_rotobo_medium"
+                android:inputType="number"
+                android:drawableTint="@color/gray_color"
+                android:drawableLeft="@drawable/ic_round_phone_in_talk_24"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:textColorHint="@color/gray_color"
+                android:textColor="@color/white_color" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_color"
+                android:layout_marginTop="@dimen/dimen_8dp">
+            </View>
+
+            <RelativeLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:hint=" Password"
+                    android:background="@android:color/transparent"
+                    style="@style/style_rotobo_medium"
+                    android:inputType="text"
+                    android:layout_marginTop="@dimen/dimen_30dp"
+                    android:drawableTint="@color/gray_color"
+                    android:drawableLeft="@drawable/ic_round_lock_24"
+                    android:textColorHint="@color/gray_color"
+                    android:textColor="@color/white_color"
+
+                    />
+
+                <TextView
+                    android:id="@+id/txt_forgot_Password"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/gray_color"
+                    android:text="Forget?"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_color"
+                android:layout_marginTop="@dimen/dimen_8dp">
+            </View>
+
+
+            <RelativeLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginRight="@dimen/dimen_2dp"
+                    android:layout_toLeftOf="@id/btn_login"
+                    android:id="@+id/tv_login_login"
+                    android:textColor="@color/gray_color"
+                    android:textSize="19sp"
+                    android:text="LOGIN"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <ImageView
+                    android:id="@+id/btn_login"
+                    android:layout_marginTop="@dimen/dimen_6dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/enter"
+                    android:backgroundTint="#FF5722"
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="@dimen/dimen_16dp"
+                    android:textColor="@color/gray_color"
+                    android:text="Don't have account?"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+                    android:id="@+id/ll_register"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:textSize="@dimen/dimen_16dp"
+                    android:textColor="@color/white"
+                    android:text="Register Now"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dimen_50dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:onClick="goToHelpPage"
+                    android:textSize="@dimen/dimen_16dp"
+                    android:textColor="@color/gray_color"
+                    android:text="Need help? Call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"
+                    android:text="871-000-6161"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_20dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/autroid_logo"
+            android:visibility="visible" />
+
+
+        <EditText
+            style="@style/style_rotobo_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/et_border"
+            android:hint="Mobile Number"
+            android:inputType="number"
+            android:layout_marginTop="@dimen/dimen_99dp"
+            android:maxLength="11"
+            android:padding="@dimen/dimen_10dp"
+            android:text=""
+            android:textColorHint="@color/gray_color_button"
+            android:textColor="@color/white_dark"
+            />
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+
+            <EditText
+                style="@style/style_rotobo_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_40dp"
+                android:background="@drawable/et_border"
+                android:hint="Password"
+                android:padding="@dimen/dimen_10dp"
+                android:inputType="textPassword"
+                android:textColor="@color/white_dark"
+                android:textColorHint="@color/gray_color_button"
+                android:text="" />
+
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="vertical">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/txt_signup"
+                    style="@style/style_rotobo_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Need Help?" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1dp"
+                    android:background="@color/white_color"
+
+                    ></View>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_30dp"
+            android:background="@drawable/red_button"
+            android:text="Login"
+            android:textColor="@color/white" />
+
+        <autroid.business.view.customviews.CustomTextView
+            style="@style/style_rotobo_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_transparent"
+            android:paddingTop="@dimen/dimen_10dp"
+            android:paddingBottom="@dimen/dimen_10dp"
+            android:text="Forgot password?"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dimen_50dp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <autroid.business.view.customviews.CustomTextView
+            style="@style/style_rotobo_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account yet? "
+            />
+
+        <autroid.business.view.customviews.CustomTextView
+            style="@style/style_rotobo_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGISTER NOW >>"
+            android:textAllCaps="true"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</RelativeLayout>

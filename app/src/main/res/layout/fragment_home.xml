@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/window_background"
+    tools:context="autroid.business.view.fragment.HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/pager_tab_strip"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/matt_black"
+        app:tabIndicatorColor="@color/red_color"
+        app:tabTextAppearance="@style/MineCustomTabText"
+        app:tabSelectedTextColor="@color/white_color"
+        android:visibility="gone"
+        app:tabTextColor="@color/gray_color" />
+        <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+            android:visibility="gone"
+        android:layout_below="@+id/pager_tab_strip"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+            >
+        </androidx.viewpager.widget.ViewPager>
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/chart1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       />
+
+
+
+</LinearLayout>

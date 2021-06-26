@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/start_quality_check"
+        android:title="Start QC" />
+
+    <item
+        android:id="@+id/back_to_in_process"
+        android:title="Back To In-Process" />
+
+    <item
+        android:id="@+id/job_update"
+        android:title="Update JobCard" />
+
+
+
+
+    <!--<item-->
+    <!--android:id="@+id/close_work"-->
+    <!--android:title="Close Work" />-->
+
+    <!--<item-->
+    <!--android:id="@+id/add_claim"-->
+    <!--android:title="Add Claim" />-->
+
+    <!--<item-->
+    <!--android:id="@+id/surveyor_details"-->
+    <!--android:title="Add Surveyor" />-->
+
+</menu>

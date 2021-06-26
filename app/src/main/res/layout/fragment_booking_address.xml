@@ -1,0 +1,270 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:clickable="true"
+    android:orientation="vertical"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:id="@+id/main_layout"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_10dp"
+        >
+
+        <autroid.business.view.customviews.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="14dp"
+            android:text="@string/address"
+            android:textColor="@color/black_color"
+            android:textSize="@dimen/size_22sp" />
+
+        <LinearLayout
+            android:id="@+id/ll_cross"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_5dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/selector_transparent"
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_clear_black"
+
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/ll_selectaddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/address_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/select_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/select_address"
+        android:minHeight="@dimen/dimen_50dp"
+        android:textColor="@color/selector_white_button_text_color"
+        android:background="@drawable/white_button_bg"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:elevation="@dimen/dimen_4dp"
+        android:layout_marginLeft="@dimen/dimen_20dp"
+        android:layout_marginRight="@dimen/dimen_20dp"
+        android:layout_gravity="end"
+
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1dp"
+        android:background="@color/black_color"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:visibility="gone"
+        ></View>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_10dp"
+        >
+
+
+
+        <autroid.business.view.customviews.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Add_address"
+            android:textSize="@dimen/size_16sp"
+            android:textColor="@color/black_color"
+            />
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:hintAnimationEnabled="false">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/address1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Address Line 1"
+            android:padding="8dp"
+            android:textSize="@dimen/size_14sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black_color"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/white_dark"
+            ></View>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:hintAnimationEnabled="false">
+
+        <EditText
+            android:id="@+id/address2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Address Line 2(Optional)"
+            android:padding="8dp"
+            android:textSize="@dimen/size_14sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black_color"
+            />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white_dark"
+                ></View>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:hintAnimationEnabled="false">
+
+        <autroid.business.view.customviews.CustomEditText
+            android:id="@+id/address3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Landmark (Optional)"
+            android:padding="8dp"
+            android:textSize="@dimen/size_14sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black_color"
+            />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white_dark"
+                ></View>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:hintAnimationEnabled="false">
+
+        <autroid.business.view.customviews.CustomEditText
+            android:id="@+id/zipcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Zipcode"
+            android:inputType="number"
+            android:maxLength="6"
+            android:padding="8dp"
+            android:textSize="@dimen/size_14sp"
+            android:textColor="@color/black_color"
+            android:background="@android:color/transparent"
+            />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white_dark"
+                ></View>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:hintAnimationEnabled="false">
+
+        <autroid.business.view.customviews.CustomEditText
+            android:id="@+id/address4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Town/City"
+            android:padding="8dp"
+            android:textSize="@dimen/size_14sp"
+            android:textColor="@color/black_color"
+            android:enabled="false"
+            android:background="@android:color/transparent"
+            />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white_dark"
+                ></View>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:hintAnimationEnabled="false">
+
+        <autroid.business.view.customviews.CustomEditText
+            android:id="@+id/address5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="State"
+            android:padding="8dp"
+            android:enabled="false"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black_color"
+            />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white_dark"
+                ></View>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/booking_done"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/Add_address"
+            android:textColor="@color/selector_white_button_text_color"
+            android:background="@drawable/white_button_bg"
+            android:elevation="@dimen/dimen_4dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:layout_gravity="end"
+            android:minHeight="@dimen/dimen_50dp"
+                      />
+    </LinearLayout>
+
+</LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<group android:checkableBehavior="single">-->
+
+        <!--<item-->
+            <!--android:id="@+id/drawer_home"-->
+            <!--android:title="@string/home"-->
+            <!--android:icon="@drawable/ic_drawer_home" />-->
+
+        <!--&lt;!&ndash;<item-->
+            <!--android:id="@+id/drawer_leads"-->
+            <!--android:title="@string/drawer_leads"-->
+            <!--android:icon="@drawable/ic_drawer_leads"-->
+            <!--/>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<item-->
+            <!--android:id="@+id/drawer_share"-->
+            <!--android:title="@string/drawer_share"-->
+            <!--android:icon="@drawable/ic_drawer_share"-->
+            <!--/>&ndash;&gt;-->
+
+        <!--<item-->
+            <!--android:id="@+id/drawer_location"-->
+            <!--android:title="@string/drawer_update_location"-->
+            <!--android:icon="@drawable/ic_drawer_location"-->
+            <!--/>-->
+        <!--<item-->
+            <!--android:id="@+id/drawer_businesses"-->
+            <!--android:title="@string/drawer_businesses"-->
+            <!--android:icon="@drawable/ic_drawer_log"-->
+            <!--/>-->
+
+        <!--<item-->
+            <!--android:id="@+id/offers_list"-->
+            <!--android:title="@string/offers"-->
+            <!--android:icon="@drawable/ic_drawer_log"-->
+            <!--/>-->
+        <!--<item-->
+            <!--android:id="@+id/packages_list"-->
+            <!--android:title="@string/packages"-->
+            <!--android:icon="@drawable/ic_drawer_log"-->
+            <!--/>-->
+
+        <!--<item-->
+            <!--android:id="@+id/inactive"-->
+            <!--android:title="@string/fragment_inactive_booking"-->
+            <!--android:icon="@drawable/ic_drawer_log"-->
+            <!--/>-->
+
+        <!--<item-->
+            <!--android:id="@+id/jobcard"-->
+            <!--android:title="Job Card"-->
+            <!--android:icon="@drawable/ic_drawer_log"/>-->
+
+        <!--<item-->
+            <!--android:id="@+id/orderlist"-->
+            <!--android:title="Orders List"-->
+            <!--android:icon="@drawable/ic_drawer_log"/>-->
+
+        <!--<item-->
+            <!--android:id="@+id/drawer_add_business"-->
+            <!--android:title="@string/drawer_add_business"-->
+            <!--android:icon="@drawable/ic_drawer_add_business"-->
+            <!--/>-->
+
+        <!--<item-->
+            <!--android:id="@+id/drawer_settings"-->
+            <!--android:title="@string/drawer_settings"-->
+            <!--android:icon="@drawable/ic_drawer_settings"-->
+            <!--/>-->
+
+        <!--<item-->
+            <!--android:id="@+id/drawer_aboutus"-->
+            <!--android:title="@string/drawer_about_us"-->
+            <!--android:icon="@drawable/ic_drawer_aboutus"-->
+            <!--/>-->
+
+        <!--<item-->
+            <!--android:id="@+id/drawer_terms"-->
+            <!--android:title="@string/drawer_terms_policy"-->
+            <!--android:icon="@drawable/ic_drawer_terms"-->
+            <!--/>-->
+
+        <!--<item-->
+            <!--android:id="@+id/drawer_logout"-->
+            <!--android:title="@string/drawer_logout"-->
+            <!--android:icon="@drawable/ic_drawer_lanuage"-->
+            <!--/>-->
+        <!--</group>-->
+
+
+    <item android:id="@+id/operations" android:title="Operations" >
+
+        <menu>
+
+            <item android:id="@+id/jobs"
+                android:title="Jobs"
+                android:icon="@drawable/ic_drawer_log"/>
+
+            <item android:id="@+id/bookings"
+                android:title="Bookings"
+                android:icon="@drawable/ic_drawer_log"/>
+
+            <item android:id="@+id/orders"
+                android:title="Orders"
+                android:icon="@drawable/ic_drawer_log"/>
+
+        </menu>
+
+    </item>
+
+    <item android:id="@+id/crm" android:title="CRM" >
+
+        <menu>
+            <item android:id="@+id/leads"
+                android:title="Leads"
+                android:icon="@drawable/ic_drawer_log"/>
+
+            <item android:id="@+id/lead_generation"
+                android:title="Lead Generation"
+                android:icon="@drawable/ic_drawer_log"/>
+
+        </menu>
+    </item>
+
+
+    <item android:id="@+id/car_sales" android:title="Car Sales" >
+
+        <menu>
+
+            <item android:id="@+id/cars"
+                android:title="Cars"
+                android:icon="@drawable/ic_drawer_log"/>
+
+            <item android:id="@+id/sales_bookings"
+                android:title="Bookings"
+                android:icon="@drawable/ic_drawer_log"/>
+
+        </menu>
+
+    </item>
+
+</menu>

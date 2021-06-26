@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/confirm_booking"
+        android:title="@string/confirmed"
+        />
+    <item
+        android:id="@+id/reject_booking"
+        android:title="@string/reject"
+        />
+    <item
+        android:id="@+id/completed_booking"
+        android:title="@string/completed"
+        />
+
+    <item
+        android:id="@+id/reschedule_booking"
+        android:title="@string/reschedule"
+        />
+    <item
+        android:id="@+id/create_lead"
+        android:title="@string/create_lead"
+        />
+
+    <item
+        android:id="@+id/create_jobcard"
+        android:title="@string/create_jobcard"
+        />
+
+
+</menu>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black"
+    android:clickable="true">
+
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/layout_toolbar_activity" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cars_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/matt_black"
+        android:layout_above="@+id/ll_bottom"
+        android:layout_below="@id/common_toolbar"
+        android:layout_margin="@dimen/dimen_5dp" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="end"
+        android:padding="@dimen/dimen_5dp">
+
+        <Button
+            android:id="@+id/add_new_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            android:background="@drawable/rectangle_red_color"
+            android:minHeight="@dimen/dimen_40dp"
+            android:paddingLeft="@dimen/dimen_20dp"
+            android:paddingRight="@dimen/dimen_20dp"
+            android:text="Add new car"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/car_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/rectangle_red_color"
+            android:minHeight="@dimen/dimen_40dp"
+            android:paddingLeft="@dimen/dimen_20dp"
+            android:paddingRight="@dimen/dimen_20dp"
+            android:text="@string/proceed"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

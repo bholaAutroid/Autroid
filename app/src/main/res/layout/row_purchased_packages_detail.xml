@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/main_layout"
+    android:padding="@dimen/dimen_2dp"
+    android:background="@color/card_color"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="@dimen/size_12sp"
+            android:layout_height="@dimen/size_12sp"
+            android:background="@drawable/ic_check_mark_"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            ></ImageView>
+    <autroid.business.view.customviews.CustomTextView
+        style="@style/style_rotobo_small_gray"
+        android:id="@+id/service_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:paddingLeft="@dimen/dimen_5dp"
+        android:layout_toRightOf="@id/img"
+        android:layout_marginRight="@dimen/dimen_20dp"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/size_12sp"
+        android:textColor="@color/white_dark"
+        android:layout_toLeftOf="@+id/ll_specific"
+        />
+
+        <autroid.business.view.customviews.CustomTextView
+            style="@style/style_rotobo_small_gray"
+            android:id="@+id/discount_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:textColor="@color/white_dark"
+            android:textSize="@dimen/size_12sp"
+            android:layout_alignParentRight="true"
+            />
+
+        <ImageView
+            android:id="@+id/img_check"
+            android:layout_width="@dimen/size_12sp"
+            android:layout_height="@dimen/size_12sp"
+            android:background="@drawable/ic_package_check"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            ></ImageView>
+
+        <LinearLayout
+            android:id="@+id/ll_specific"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_alignParentRight="true"
+            >
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/limit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:textColor="@color/white_dark"
+                android:textSize="@dimen/size_12sp"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_1dp"
+        android:background="@color/matt_black"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        >
+
+    </View>
+
+</LinearLayout>

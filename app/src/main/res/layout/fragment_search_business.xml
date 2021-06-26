@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/main_layout"
+    android:background="@color/window_background"
+    android:clickable="true"
+   >
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_arrow_back"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:tint="@color/black_color"
+                android:backgroundTint="@color/black_color"
+                />
+
+            <EditText
+                android:id="@+id/search_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_bg"
+                android:padding="@dimen/dimen_10dp"
+                android:drawableLeft="@drawable/ic_search"
+                android:drawableTint="@color/gray_color"
+                android:drawablePadding="@dimen/dimen_10dp"
+                android:hint="Search User by name or mobile number"
+                android:layout_marginLeft="@dimen/dimen_5dp"
+                android:layout_toRightOf="@id/back"
+                android:textSize="@dimen/size_12sp"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="4"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            >
+
+            <TextView
+                android:id="@+id/tv_users"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Users"
+                android:minHeight="@dimen/dimen_30dp"
+                android:textColor="@color/white_dark"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/dimen_5dp"
+                android:background="@drawable/rectangle_background_cardblack_corner8dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_bookings"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Bookings"
+                android:minHeight="@dimen/dimen_30dp"
+                android:textColor="@color/white_dark"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/dimen_5dp"
+                android:background="@drawable/rectangle_background_cardblack_corner8dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_orders"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Orders"
+                android:minHeight="@dimen/dimen_30dp"
+                android:textColor="@color/white_dark"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/dimen_5dp"
+                android:background="@drawable/rectangle_background_cardblack_corner8dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_leads"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Leads"
+                android:minHeight="@dimen/dimen_30dp"
+                android:textColor="@color/white_dark"
+                android:gravity="center"
+                android:layout_marginLeft="@dimen/dimen_5dp"
+                android:layout_marginRight="@dimen/dimen_5dp"
+                android:background="@drawable/rectangle_background_cardblack_corner8dp"
+                />
+        </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/showroom_list"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:background="@color/white_color"
+        android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
+

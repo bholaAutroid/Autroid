@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/dimen_5dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:id="@+id/main_layout"
+        android:background="@color/card_color"
+        android:padding="@dimen/dimen_5dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/booking_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text=""
+                android:textColor="@color/white_dark"
+                />
+
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/white_dark"
+                android:layout_below="@id/booking_id"
+                />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:background="@drawable/home_ripple_opacity_60"
+                android:textColor="@color/white_dark"
+                android:visibility="gone"
+                android:padding="@dimen/dimen_5dp"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                />
+
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            >
+            <ImageView
+                android:id="@+id/car_image"
+                android:layout_width="@dimen/dimen_75dp"
+                android:layout_height="@dimen/dimen_99dp"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/car_maker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text=""
+                    android:textColor="@color/white_dark"
+                    />
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/car_registration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text=""
+                    android:visibility="gone"
+                    android:textColor="@color/white_dark"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text=""
+                        android:textColor="@color/white_dark"
+                        android:padding="@dimen/dimen_5dp" />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/user_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:visibility="visible"
+                        android:textColor="@color/white_dark"
+                        />
+                </LinearLayout>
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/convenience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text=""
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:textColor="@color/white_dark"
+                    />
+
+
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/car_maker"
+                    android:textColor="@color/white_dark"
+                    android:visibility="gone"
+                    />
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/pricePaid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/car_maker"
+                    android:textColor="@color/white_dark"
+                    android:visibility="gone"
+                    />
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/discount_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/car_maker"
+                    android:textColor="@color/white_dark"
+                    android:visibility="gone"
+                    />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/btn_detail"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Details"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/selector_black"
+                android:textColor="@color/white_dark"
+                android:minHeight="@dimen/dimen_35dp"
+                android:padding="@dimen/dimen_4dp"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:paddingRight="@dimen/dimen_10dp"
+                />
+
+
+            <Button
+                android:id="@+id/open_jobcard"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="JobCard"
+                android:background="@drawable/selector_black"
+                android:textColor="@color/white_dark"
+                android:layout_centerInParent="true"
+                android:minHeight="@dimen/dimen_35dp"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:paddingRight="@dimen/dimen_10dp"
+                android:layout_marginLeft="@dimen/dimen_5dp"
+                android:padding="@dimen/dimen_4dp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

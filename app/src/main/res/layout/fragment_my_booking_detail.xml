@@ -1,0 +1,236 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black">
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/matt_black"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/booking_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_alignParentLeft="true"
+            android:textColor="@color/white_dark"
+            android:textSize="@dimen/size_14sp" />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/car"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/white_dark"
+                android:lines="2"
+                android:paddingLeft="@dimen/dimen_20dp"
+                android:layout_toRightOf="@id/booking_no"
+                android:textSize="@dimen/size_12sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_background_cardblack_corner8dp"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_5dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+
+            >
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:text="Track Job"
+                android:padding="@dimen/dimen_5dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_16sp" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tracking"
+            android:layout_width="match_parent"
+            android:padding="@dimen/dimen_10dp"
+            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_30dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:id="@+id/layout_services"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/dark_button"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/dimen_10dp"
+                android:paddingBottom="@dimen/dimen_10dp"
+                >
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:text="Booking Details"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+                >
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_estimate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dimen_8dp"
+                android:layout_weight="1"
+                android:background="@drawable/dark_button"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_10dp">
+
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:text="Estimates"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_invoice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dimen_8dp"
+                android:layout_weight="1"
+                android:background="@drawable/dark_button"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_10dp">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/invoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:text="Payment"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:id="@+id/layout_jobcard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/dark_button"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_10dp">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/jobcard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:text="Job Card"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_gallery"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dimen_8dp"
+                android:layout_weight="1"
+                android:background="@drawable/dark_button"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_10dp">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/gallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:text="Gallery"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_claim_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dimen_8dp"
+                android:layout_weight="1"
+                android:background="@drawable/dark_button"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_10dp">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/claim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:text="Claim Info"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

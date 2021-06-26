@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/black_opacity60"
+    android:padding="@dimen/dimen_10dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_background_mattblack_corner8dp"
+            android:orientation="vertical"
+            tools:context="autroid.business.view.fragment.jobcard.JobsUserDetails">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_15dp"
+                >
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/claim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Claim"
+                    android:layout_alignParentLeft="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_18sp" />
+
+                <Switch
+                    android:layout_toRightOf="@+id/claim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:thumbTint="@color/white"
+                    android:trackTint="@color/gray_color_button"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:checked="true"
+                    ></Switch>
+
+            </RelativeLayout>
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:padding="10dp"
+                android:text="Accident Details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_18sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColorHint="@color/gray_color_button"
+                app:hintAnimationEnabled="false">
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/driver_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                    android:hint="Driven By"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColorHint="@color/gray_color_button"
+                app:hintAnimationEnabled="false">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/accident_place"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Accident Place"
+                    android:fontFamily="@string/roboto_medium"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColorHint="@color/gray_color_button"
+                app:hintAnimationEnabled="false">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/accident_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Accident Date"
+                    android:textColorHint="@color/gray_color_button"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColorHint="@color/gray_color_button"
+                app:hintAnimationEnabled="false">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/accident_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Accident Time"
+                    android:textColorHint="@color/gray_color_button"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColorHint="@color/gray_color_button"
+                app:hintAnimationEnabled="false">
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/accident_cause"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Accident Cause"
+                    android:singleLine="true"
+                    android:padding="8dp"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:text="Spot Survey ?"
+                    android:textColor="@color/white_dark"
+                    android:textSize="16sp" />
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/spot_yes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/red_color"
+                        android:text="Yes"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/spot_no"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/red_color"
+                        android:text="No"
+                        android:checked="true"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:text="FIR ?"
+                    android:textColor="@color/white_dark"
+                    android:textSize="16sp" />
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/fir_yes"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/red_color"
+                        android:text="Yes"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/fir_no"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/red_color"
+                        android:text="No"
+                        android:checked="true"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:padding="10dp"
+                android:text="Other Details"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/matt_black"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:text="Policy Type ?"
+                    android:textColor="@color/white_dark"
+                    android:textSize="16sp"  />
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/zero"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/red_color"
+                        android:text="Zero Dept"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/policy_package"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/red_color"
+                        android:text="Package"
+                        android:checked="true"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cashless"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:text="Cashless ?"
+                    android:textColor="@color/white_dark"
+                    android:textSize="16sp" />
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/yes_cashless"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/red_color"
+                        android:text="Yes"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <androidx.appcompat.widget.AppCompatRadioButton
+                        android:id="@+id/no_cashless"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/red_color"
+                        android:text="No"
+                        android:checked="true"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColorHint="@color/gray_color_button"
+                app:hintAnimationEnabled="false">
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/branch_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Insurance Branch"
+                    android:fontFamily="@string/roboto_medium"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColorHint="@color/gray_color_button"
+                app:hintAnimationEnabled="false">
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/branch_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Branch Contact Number"
+                    android:fontFamily="@string/roboto_medium"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColorHint="@color/gray_color_button"
+                app:hintAnimationEnabled="false">
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/gstin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Insurance GSTIN"
+                    android:fontFamily="@string/roboto_medium"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColorHint="@color/gray_color_button"
+                app:hintAnimationEnabled="false">
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/claim_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Claim Number"
+                    android:fontFamily="@string/roboto_medium"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/update"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_15dp"
+                android:background="@drawable/red_button_selector"
+                android:minHeight="@dimen/dimen_40dp"
+                android:paddingLeft="@dimen/dimen_20dp"
+                android:paddingRight="@dimen/dimen_20dp"
+                android:text="Update"
+                android:textColor="@color/white_color" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

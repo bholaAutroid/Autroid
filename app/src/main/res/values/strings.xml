@@ -1,0 +1,263 @@
+<resources>
+    <string name="openDrawer">open</string>
+    <string name="closeDrawer">close</string>
+
+    <string name="facebook_app_id">116376189022709</string>
+    <string name="google_maps_key">AIzaSyCZYq-3EhtFamtljBzWAEzRQBcL5ANahQk</string>
+
+    <string name="app_name">Autroid Business</string>
+    <string name="no_internet">Please Check Internet Settings</string>
+
+    <!--login-->
+    <string name="empty_username">Please enter mobile number</string>
+    <string name="empty_password">Please enter password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--home screen-->
+    <string name="fragment_showroom">SHOWROOM</string>
+    <string name="fragment_analytic">ANALYTICS</string>
+
+    <!--home screen-->
+    <string name="fragment_leads">LEADS</string>
+    <string name="fragment_inactive_booking">Inactive Booking</string>
+
+    <!-- showroom-->
+    <string name="navigate">Navigate</string>
+    <string name="save">Save</string>
+    <string name="share">Share</string>
+    <string name="chat">Chat</string>
+
+    <string name="home">Home</string>
+    <string name="cars">Cars</string>
+    <string name="products">Products</string>
+    <string name="services">Services</string>
+
+    <string name="about">About</string>
+
+    <string name="category">Category</string>
+    <string name="location">Location</string>
+    <string name="joined">Joined</string>
+    <string name="timings">Timings</string>
+    <string name="contact">Contact</string>
+    <string name="description">Description</string>
+    <string name="links">Links</string>
+
+    <string name="recently_added_cars">Recent Cars</string>
+    <string name="recently_added_products">Recent Products</string>
+    <string name="recently_added_offers">Recent Offers</string>
+    <string name="reviews_and_ratings">Reviews &amp; Ratings</string>
+
+    <string name="drawer_home">Home</string>
+    <string name="drawer_leads">Requests/Leads</string>
+    <string name="drawer_share">Share Business Profile</string>
+    <string name="drawer_update_location">Update Business Location</string>
+    <string name="drawer_businesses">Saved Businesses</string>
+    <string name="drawer_add_business">Add Local Business</string>
+    <string name="drawer_settings">Settings</string>
+    <string name="drawer_about_us">About us</string>
+    <string name="drawer_terms_policy">Terms &amp; Privacy</string>
+    <string name="drawer_change_language">Change Language</string>
+    <string name="drawer_logout">Logout</string>
+
+
+    <!---->
+    <string name="images_uploaded">Images uploaded successfully</string>
+    <string name="images_uploading">Images start uploading</string>
+
+
+    <string-array name="car_status">
+        <item></item>
+        <item>New</item>
+        <item>Used</item>
+    </string-array>
+
+    <string-array name="car_insurance">
+        <item></item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="car_accidential">
+        <item></item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="insurance_for">
+        <item>Insure New car</item>
+        <item>Renew Existing Policy</item>
+    </string-array>
+
+    <string-array name="insurance_claim">
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="claim_bonus">
+        <item>0%</item>
+        <item>20%</item>
+        <item>25%</item>
+        <item>35%</item>
+        <item>45%</item>
+        <item>50%</item>
+    </string-array>
+
+    <string-array name="service_history">
+        <item></item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="mobile_code">
+        <item>+91</item>
+    </string-array>
+
+    <string-array name="orientation">
+        <item>Select</item>
+        <item>Left</item>
+        <item>Right</item>
+    </string-array>
+
+    <string-array name="category">
+        <item>Select Category</item>
+        <item>Detailing</item>
+        <item>Customization</item>
+        <item>Service</item>
+        <item>Collision Repair</item>
+    </string-array>
+
+    <string name="pending">Pending</string>
+    <string name="confirmed">Confirm Booking</string>
+    <string name="completed">Complete Booking</string>
+    <string name="reject">Reject Booking</string>
+    <string name="cancelled">Cancelled</string>
+    <string name="profile_link">Profile Link</string>
+    <string name="cancel">cancel</string>
+    <string name="done">done</string>
+    <string name="publish">publish</string>
+    <string name="unpublish">Unpublish</string>
+    <string name="select_color">Select Color</string>
+    <string name="select_owner">Select Owner</string>
+    <string name="select_fuel_type">Select Fuel Type</string>
+    <string name="select_transmission">Select Transmission</string>
+    <string name="select_body_style">Body Style</string>
+    <string name="gallery">Gallery</string>
+    <string name="add_car">Add Car</string>
+    <string name="saved">Saved</string>
+    <string name="search">Search</string>
+    <string name="add_offer">Add Offer</string>
+    <string name="edit_offer">Edit Offer</string>
+
+
+    <string name="sending_message">Sending a message</string>
+    <string name="to">To:</string>
+    <string name="send">Send</string>
+    <string name="body">Body:</string>
+    <string name="hint_body">Edit your message.</string>
+    <string name="message_sent">Sent a message \"%1$s\" to %2$s.</string>
+    <string name="text_to_share">Text to share</string>
+    <string name="pictures">Pictures</string>
+    <string name="videos_youtube">Videos/YouTube</string>
+    <string name="youtube_link">http://youtube.com/</string>
+    <string name="twitter_link">http://twitter.com/</string>
+    <string name="linkedin_link">http://linkedin.com/</string>
+    <string name="instagram_link">https://www.instagram.com/</string>
+    <string name="google_link">http://plus.google.com/</string>
+    <string name="facebook_link">http://facebook.com/</string>
+    <string name="web_link"></string>
+    <string name="view_all">View all</string>
+    <string name="default_notification_channel_id">100</string>
+    <string name="recent_chat">Recent Chat</string>
+
+    <string name="status_new">New</string>
+    <string name="status_active">Active</string>
+    <string name="status_complete">Complete</string>
+    <string name="link_not_updated_business">Not updated</string>
+    <string name="body_type">Body Type</string>
+    <string name="leads">Leads</string>
+    <string name="packages">Packages</string>
+    <string name="offers">Offers</string>
+    <string name="select_date">Select Date</string>
+    <string name="select_time_slot">Select Time Slot</string>
+    <string name="reschedule">Reschedule</string>
+    <string name="create_jobcard">Create Jobcard</string>
+    <string name="create_lead">Create Lead</string>
+
+    <string name="proceed">Proceed</string>
+
+    <string name="line1">How may I help you?</string>
+    <string name="line2">Welcome to CarEager Xpress! India\'s Most Advanced Premium Car Ecosystem</string>
+    <string name="line3">We\'re currently in Gurugram only. But we offer services for entire NCR region</string>
+    <string name="line4">Service &amp; Collision repair is applicable to cars with a minimum length of 14 ft. But things like washing, detailing, Product sales, insurance, customisation are open for all the cars</string>
+    <string name="line5">We only use German water-based paint which is being used by brands like Audi and Bentley</string>
+    <string name="line6">Matte Transformation: Gives a premium matte finish to your car, without changing the base color. Basically, the top glossy layer of your car would be changed to matte</string>
+    <string name="line7">CarEager Xpress, 18/1, NH8, Sector 35, Gurugram, Haryana, Behind Grace Toyota (Near Mercedes-Benz) - 1800 843 4300
+    https://goo.gl/maps/m5SuCHXndx62</string>
+    <string name="line8">Please use the navigation button on the top of the home screen of the App</string>
+
+    <string-array name="time_slot">
+        <item>Select Timeslot</item>
+        <item>9AM - 12PM</item>
+        <item>12PM - 3PM</item>
+        <item>3PM - 6PM</item>
+
+    </string-array>
+
+    <string name="roboto_medium">fonts/Roboto-Regular.ttf</string>
+    <string name="rs">\u20B9</string>
+    <string name="address">Address</string>
+    <string name="select_address">Select Address</string>
+    <string name="Add_address">Add Address</string>
+    <string name="delete">Delete</string>
+    <string name="checkout">Checkout</string>
+    <string name="select_details">Date &amp; Time and Convenience</string>
+    <string name="on_sale">On Sale</string>
+    <string name="empty_garage">No car in your garage</string>
+    <string name="current_location">Current Location</string>
+    <string name="empty_offers">No Offers</string>
+    <string name="add_new_car">Add New Car</string>
+    <string name="select_car">Select Car</string>
+    <string name="submit">Submit</string>
+    <string name="view_business">View Business</string>
+    <string name="empty_booking">No service booking found</string>
+    <string name="approve">Approve</string>
+    <string name="booknow">Book Now</string>
+    <string name="review_booking">Review Booking</string>
+    <string name="fragment_myprofile">Profile</string>
+    <string name="fragment_careager_cash">Wallet</string>
+    <string name="my_referrals">My Referrals</string>
+    <string name="empty_transactions">No transaction history available</string>
+    <string name="cancel_booking">Cancel</string>
+    <string name="empty_documents">You haven\'t uploaded any document yet. Upload and keep your car documents safe in your garage.</string>
+
+    <string-array name="status_filter_follow_up">
+        <item>Status</item>
+        <item>Follow-Up</item>
+        <item>PSF</item>
+    </string-array>
+
+    <string-array name="priority_filter">
+        <item>Priority</item>
+        <item>Low</item>
+        <item>Medium</item>
+        <item>High</item>
+    </string-array>
+
+    <string-array name="contacted">
+        <item>Select Contacted</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="insurance">
+        <item></item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <!--{"Pending","Confirmed","Completed","Reject","Cancelled"}-->
+
+
+</resources>

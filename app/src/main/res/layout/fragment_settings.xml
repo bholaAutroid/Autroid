@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_layout"
+    android:background="@color/matt_black"
+    tools:context="autroid.business.view.fragment.SettingsFragment">
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/layout_toolbar_activity"
+        >
+
+    </include>
+    <ImageView
+        android:layout_below="@id/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="@drawable/fragment_header"
+        ></ImageView>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_below="@id/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_189dp">
+            <ImageView
+                android:id="@+id/cover_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_189dp"
+                android:scaleType="centerCrop"
+                />
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/fab_edit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:clickable="true"
+                        app:backgroundTint="@color/white_color"
+                        app:elevation="@dimen/dimen_5dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        app:layout_anchorGravity="bottom|right|end"
+                        app:srcCompat="@drawable/ic_editprofile_floatbtn" />
+                </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/dimen_5dp"
+                android:visibility="gone"
+                app:cardElevation="@dimen/button_card_elevation"
+                app:cardUseCompatPadding="true"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:orientation="vertical"
+                    >
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Choose your services"
+                        android:gravity="center"
+                        app:textAllCaps="true"
+                        android:textColor="@color/white_dark"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_1dp"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:background="@color/gray_color"
+
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/services_types_list"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rectangle_background_cardblack_corner8dp"
+                    android:padding="@dimen/dimen_10dp"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:orientation="vertical"
+                    >
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Timings"
+                        app:textAllCaps="true"
+                        android:gravity="center"
+                        android:textColor="@color/white_dark"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_1dp"
+                        android:background="@color/black"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+
+                        />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        >
+
+                        <autroid.business.view.customviews.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Closed"
+                            android:id="@+id/is_closed"
+                            android:textColor="@color/white_dark"
+                            />
+                        <autroid.business.view.customviews.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:paddingLeft="@dimen/dimen_10dp"
+                            android:layout_toRightOf="@+id/is_closed"
+                            android:textColor="@color/white_dark"
+                            android:text="Day"
+                            />
+
+                        <autroid.business.view.customviews.CustomTextView
+                            android:id="@+id/open_timing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:textColor="@color/white_dark"
+
+                            android:text="Open"
+                            ></autroid.business.view.customviews.CustomTextView>
+
+                        <autroid.business.view.customviews.CustomTextView
+                            android:id="@+id/close_timing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="Close"
+                            android:textColor="@color/white_dark"
+
+                            android:layout_marginRight="@dimen/dimen_20dp"
+                            ></autroid.business.view.customviews.CustomTextView>
+                    </RelativeLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/business_timings_list"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+                    <Button
+                        android:id="@+id/update_timings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Update Timings"
+                        android:minHeight="@dimen/dimen_40dp"
+                        android:paddingLeft="@dimen/dimen_20dp"
+                        android:paddingRight="@dimen/dimen_20dp"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/oval_rect"
+                        />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:padding="@dimen/dimen_10dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/rectangle_background_cardblack_corner8dp"
+                    >
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Profile"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white_dark"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_1dp"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:background="@color/black"
+
+                        />
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Business Name"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:textColor="@color/white_dark"
+                        />
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/business_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:gravity="start"
+                        android:textColor="@color/white_dark"
+                        android:textColorHint="@color/gray_color_button"
+                        />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:textColor="@color/white_dark"
+
+                        />
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/business_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:gravity="start"
+                        android:textColorHint="@color/white_dark"
+                        android:textColor="@color/white_dark"
+
+
+                        />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Primary mobile( Also for login)"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:textColor="@color/white_dark"
+
+                        />
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/business_mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:gravity="start"
+                        android:textColorHint="@color/white_dark"
+                        android:textColor="@color/white_dark"
+
+
+                        />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Secondary email (optional)"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:textColor="@color/white_dark"
+
+                        />
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/business_secondary_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:gravity="start"
+                        android:textColor="@color/white_dark"
+
+                        android:textColorHint="@color/white_dark"
+
+                        />
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Secondary mobile (optional)"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:textColor="@color/white_dark"
+
+                        />
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/business_secondary_mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:gravity="start"
+                        android:textColorHint="@color/white_dark"
+                        android:textColor="@color/white_dark"
+
+
+                        />
+
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Overview"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:textColor="@color/white_dark"
+
+                        />
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/business_overview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:gravity="start"
+                        android:textColorHint="@color/white_dark"
+                        android:textColor="@color/white_dark"
+
+
+                        />
+
+                    <Button
+                        android:id="@+id/update_changes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Update Changes"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:minHeight="@dimen/dimen_40dp"
+                        android:paddingLeft="@dimen/dimen_20dp"
+                        android:paddingRight="@dimen/dimen_20dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/oval_rect"
+                        />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:background="@drawable/rectangle_background_cardblack_corner8dp"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_10dp"
+                    >
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Location"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white_dark"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_1dp"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:background="@color/black"
+
+                        />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Address"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:textColor="@color/white_dark"
+
+                        />
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/business_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:gravity="start"
+                        android:textColorHint="@color/white_dark"
+                        android:textColor="@color/white_dark"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/update_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Update Current Location >>"
+                        android:padding="@dimen/dimen_10dp"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/oval_rect"
+                        android:textColor="@color/white_dark"
+                        android:layout_gravity="center_horizontal"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:background="@drawable/rectangle_background_cardblack_corner8dp"
+                    >
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Social profile"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white_dark"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_1dp"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:background="@color/black"
+
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/dimen_20dp"
+                            android:layout_height="@dimen/dimen_20dp"
+                            app:srcCompat="@drawable/ic_youtube"
+                            />
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray_color"
+                        android:paddingLeft="@dimen/dimen_5dp"
+                        />
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/youtube_link"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:hint="_ _ _ _ _"
+                        android:textColor="@color/white_dark"
+                        android:textColorHint="@color/gray_color"
+                        android:background="@android:color/transparent"
+                        />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/dimen_20dp"
+                            android:layout_height="@dimen/dimen_20dp"
+                            app:srcCompat="@drawable/ic_twitter"
+                            />
+                        <autroid.business.view.customviews.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/gray_color"
+                            android:paddingLeft="@dimen/dimen_5dp"
+                            />
+                        <autroid.business.view.customviews.CustomEditText
+                            android:id="@+id/twitter_link"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:hint="_ _ _ _ _"
+                            android:textColor="@color/white_dark"
+
+                            android:textColorHint="@color/gray_color"
+                            android:background="@android:color/transparent"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/dimen_20dp"
+                            android:layout_height="@dimen/dimen_20dp"
+                            app:srcCompat="@drawable/ic_linkedin"
+                            />
+                        <autroid.business.view.customviews.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/gray_color"
+                            android:paddingLeft="@dimen/dimen_5dp"
+                            />
+                        <autroid.business.view.customviews.CustomEditText
+                            android:id="@+id/linkedin_link"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:hint="_ _ _ _ _"
+                            android:textColor="@color/white_dark"
+
+                            android:textColorHint="@color/gray_color"
+                            android:background="@android:color/transparent"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/dimen_20dp"
+                            android:layout_height="@dimen/dimen_20dp"
+                            app:srcCompat="@drawable/ic_instagram"
+                            />
+                        <autroid.business.view.customviews.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/gray_color"
+                            android:paddingLeft="@dimen/dimen_5dp"
+                            />
+                        <autroid.business.view.customviews.CustomEditText
+                            android:id="@+id/instagram_link"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:hint="_ _ _ _ _"
+                            android:textColorHint="@color/gray_color"
+                            android:textColor="@color/white_dark"
+
+                            android:background="@android:color/transparent"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/dimen_20dp"
+                            android:layout_height="@dimen/dimen_20dp"
+                            app:srcCompat="@drawable/ic_google_plus"
+                            />
+                        <autroid.business.view.customviews.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/gray_color"
+                            android:paddingLeft="@dimen/dimen_5dp"
+                            />
+                        <autroid.business.view.customviews.CustomEditText
+                            android:id="@+id/google_link"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:hint="_ _ _ _ _"
+                            android:textColorHint="@color/gray_color"
+                            android:textColor="@color/white_dark"
+
+                            android:background="@android:color/transparent"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/dimen_20dp"
+                            android:layout_height="@dimen/dimen_20dp"
+                            app:srcCompat="@drawable/ic_facebook"
+                            />
+                        <autroid.business.view.customviews.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/gray_color"
+                            android:paddingLeft="@dimen/dimen_5dp"
+                            />
+                        <autroid.business.view.customviews.CustomEditText
+                            android:id="@+id/facebook_link"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:hint="_ _ _ _ _"
+                            android:textColorHint="@color/gray_color"
+                            android:textColor="@color/white_dark"
+
+                            android:background="@android:color/transparent"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        >
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="@dimen/dimen_20dp"
+                            android:layout_height="@dimen/dimen_20dp"
+                            app:srcCompat="@drawable/ic_www"
+                            />
+                        <autroid.business.view.customviews.CustomTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/web_link"
+                            android:textColor="@color/gray_color"
+                            android:paddingLeft="@dimen/dimen_5dp"
+                            />
+                        <autroid.business.view.customviews.CustomEditText
+                            android:id="@+id/web_link"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:hint="_ _ _ _ _"
+                            android:textColorHint="@color/gray_color"
+                            android:textColor="@color/white_dark"
+
+                            android:background="@android:color/transparent"
+                            />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/save_links"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Save"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:minHeight="@dimen/dimen_40dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/oval_rect"
+                        android:paddingLeft="@dimen/dimen_20dp"
+                        android:paddingRight="@dimen/dimen_20dp"
+                        />
+
+                </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_10dp"
+            android:padding="10dp"
+            android:background="@drawable/rectangle_background_cardblack_corner8dp"
+            android:orientation="vertical"
+            >
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gallery"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textColor="@color/white_dark"
+                android:layout_marginLeft="@dimen/dimen_5dp"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1dp"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:background="@color/black"
+
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/gallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:clipToPadding="false"
+                android:layout_centerInParent="true"
+                android:paddingBottom="@dimen/dimen_5dp"
+                android:paddingTop="@dimen/dimen_5dp" />
+
+
+          </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:padding="10dp"
+                    android:background="@drawable/rectangle_background_cardblack_corner8dp"
+                    android:orientation="vertical"
+                    >
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Change Password"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white_dark"
+                        android:layout_marginLeft="@dimen/dimen_5dp"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_1dp"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:background="@color/black"
+
+                        />
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/old_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:gravity="center"
+                        android:hint="Old Password"
+                        android:inputType="textPassword"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:textColorHint="@color/gray_color"
+                        android:textColor="@color/white_dark"
+
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:weightSum="2"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        >
+                        <autroid.business.view.customviews.CustomEditText
+                            android:id="@+id/new_password"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:gravity="center"
+                            android:hint="New Password"
+                            android:inputType="textPassword"
+                            android:layout_marginLeft="@dimen/dimen_10dp"
+                            android:textColorHint="@color/gray_color"
+                            android:textColor="@color/white_dark"
+                            />
+                        <autroid.business.view.customviews.CustomEditText
+                            android:id="@+id/confirm_password"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:gravity="center"
+                            android:hint="Confirm password"
+                            android:inputType="textPassword"
+                            android:layout_marginLeft="@dimen/dimen_10dp"
+                            android:textColorHint="@color/gray_color"
+                            android:textColor="@color/white_dark"
+                            />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/change_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Change Password"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:minHeight="@dimen/dimen_40dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/oval_rect"
+                        android:paddingLeft="@dimen/dimen_20dp"
+                        android:paddingRight="@dimen/dimen_20dp"
+                        />
+                </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/dimen_5dp"
+                app:cardElevation="@dimen/button_card_elevation"
+                android:visibility="gone"
+                app:cardUseCompatPadding="true"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:orientation="vertical"
+                    >
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Accounts"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white_dark"
+                        android:layout_marginLeft="@dimen/dimen_5dp"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_1dp"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:background="@color/gray_color"
+
+                        />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/accounts_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        ></androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

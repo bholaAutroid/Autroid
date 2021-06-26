@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/main_layout"
+
+    tools:context="autroid.business.view.fragment.ClaimBusinessFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:padding="@dimen/dimen_5dp"
+        android:background="@drawable/login_bg"
+
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+    <autroid.business.view.customviews.CustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center_horizontal"
+        android:textColor="@color/gray_color"
+        android:textStyle="bold"
+        android:textSize="@dimen/size_16sp"
+        android:text="Claim Your Business on CarEager For Free!"
+        />
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/business_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="@color/gray_color"
+            android:text=""
+            />
+
+    <autroid.business.view.customviews.CustomEditText
+        android:id="@+id/business_mobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Contact number"
+        android:inputType="number"
+        android:imeOptions="actionNext"
+        android:maxLength="10"
+        android:singleLine="true"
+        android:background="@drawable/edittext_bg"
+        android:padding="@dimen/dimen_10dp"
+        />
+
+    <autroid.business.view.customviews.CustomEditText
+        android:id="@+id/business_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:imeOptions="actionNext"
+
+        android:singleLine="true"
+        android:background="@drawable/edittext_bg"
+        android:padding="@dimen/dimen_10dp"
+        />
+
+    <autroid.business.view.customviews.CustomEditText
+        android:id="@+id/business_description"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="20dp"
+        android:hint="Description "
+        android:inputType="textEmailAddress"
+        android:gravity="start"
+        android:background="@drawable/edittext_bg"
+        android:padding="@dimen/dimen_10dp"
+        />
+
+        <Button
+            android:id="@+id/business_done"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50dp"
+            android:text="Claim Business"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:textColor="@color/selector_white_button_text_color"
+            android:background="@drawable/white_button_bg"
+            />
+    </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

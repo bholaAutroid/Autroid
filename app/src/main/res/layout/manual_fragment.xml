@@ -1,0 +1,264 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linear"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black"
+    android:clickable="true"
+    android:orientation="vertical"
+    tools:context="autroid.business.view.fragment.jobcard.JobCardCarFragment">
+
+    <include
+        android:id="@+id/jobcard_toolbar"
+        layout="@layout/layout_toolbar_activity" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/rectangle_background_cardblack_corner8dp"
+                android:orientation="vertical"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="16dp">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:padding="4dp"
+                    android:text="Car Name"
+                    android:textColor="@color/gray_color_button"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/et_border"
+                    android:orientation="horizontal">
+
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/car_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:hint="Car Maker"
+                        android:padding="12dp"
+                        android:singleLine="true"
+                        android:background="@android:color/transparent"
+                        android:textColorHint="@color/gray_color_button"
+                        android:textColor="@color/white_dark" />
+
+                    <ImageView
+                        android:id="@+id/edit_car"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="8dp"
+                        android:padding="6dp"
+                        android:tint="@color/white_dark"
+                        app:srcCompat="@drawable/ic_car_pencil" />
+
+                </LinearLayout>
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginRight="8dp"
+                    android:padding="4dp"
+                    android:text="Registration Number"
+                    android:textColor="@color/gray_color_button"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:id="@+id/main_reg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="@dimen/dimen_8dp"
+                    android:layout_marginRight="8dp">
+
+                    <EditText
+                        android:id="@+id/car_registration_no_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/et_border"
+                        android:hint=""
+                        android:imeOptions="actionNext"
+                        android:inputType="textCapCharacters"
+                        android:paddingLeft="@dimen/dimen_15dp"
+                        android:paddingTop="@dimen/dimen_10dp"
+                        android:paddingRight="@dimen/dimen_15dp"
+                        android:paddingBottom="@dimen/dimen_10dp"
+                        android:singleLine="true"
+                        android:textColor="@color/white_dark"
+                        android:textColorHint="@color/gray_color_button"
+
+                        />
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fields_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/eng_vin_holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:background="@drawable/rectangle_background_cardblack_corner8dp"
+                    android:orientation="vertical"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="16dp">
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:padding="4dp"
+                        android:text="VIN Number"
+                        android:textColor="@color/gray_color_button"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/jobcard_car_vin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/et_border"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+                        android:hint="VIN Number (Optional)"
+                        android:inputType="textCapCharacters"
+                        android:padding="12dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_color_button"
+                        android:textColor="@color/white_dark" />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="@dimen/size_12sp"
+                        android:layout_marginRight="8dp"
+                        android:padding="4dp"
+                        android:text="Engine Number"
+                        android:textColor="@color/gray_color_button"
+                        android:textSize="14sp" />
+
+                    <EditText
+                        android:id="@+id/jobcard_engine_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/et_border"
+                        android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+                        android:hint="Engine Number (Optional)"
+                        android:imeOptions="actionDone"
+                        android:inputType="textCapCharacters"
+                        android:padding="12dp"
+                        android:singleLine="true"
+                        android:textColorHint="@color/gray_color_button"
+                        android:textColor="@color/white_dark" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layout_remarks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/rectangle_background_cardblack_corner8dp"
+                    android:orientation="vertical"
+                    android:padding="@dimen/dimen_10dp">
+
+                    <LinearLayout
+                        android:id="@+id/advisor_spinner_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/et_border"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatSpinner
+                            android:id="@+id/advisor_spinner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dimen_20dp"
+                            android:backgroundTint="@color/white_dark" />
+
+                    </LinearLayout>
+
+
+                    <EditText
+                        android:id="@+id/requirement"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:gravity="start"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="8dp"
+                        android:hint="Enter Requirements"
+                        android:background="@drawable/et_border"
+                        android:inputType="textCapSentences"
+                        android:textCursorDrawable="@null"
+                        android:padding="10dp"
+                        android:imeOptions="actionDone"
+                        android:textSize="14sp"
+                        android:textColorHint="@color/gray_color_button"
+                        android:textColor="@color/white_dark" />
+
+                </LinearLayout>
+
+                <include
+                    android:id="@+id/jobcard_button"
+                    layout="@layout/proceed_button" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+
+
+

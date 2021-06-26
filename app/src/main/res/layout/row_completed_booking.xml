@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/main_layout"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/dimen_5dp"
+    android:padding="@dimen/dimen_5dp"
+    android:background="@color/white_color"
+    android:layout_height="wrap_content">
+
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/booking_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text=""
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:textSize="@dimen/size_12sp"
+        />
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/dimen_2dp"
+        android:textSize="@dimen/size_12sp"
+        />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimen_5dp"
+    >
+    <ImageView
+        android:id="@+id/car_image"
+        android:layout_width="@dimen/dimen_75dp"
+        android:layout_height="@dimen/dimen_99dp"
+        android:scaleType="centerCrop"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dimen_5dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/car_maker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text=""
+                android:paddingRight="@dimen/dimen_5dp"
+                android:textSize="@dimen/size_16sp"
+                android:textColor="@color/black_color"
+                />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_16sp"
+                android:textColor="@color/black_color"
+                android:layout_below="@id/car_maker"
+                />
+        </RelativeLayout>
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/services_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text=""
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:textSize="@dimen/size_12sp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:background="@color/lightgrey"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            ></View>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dimen_5dp"
+            >
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/provider_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text=""
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:textSize="@dimen/size_12sp"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_5dp"
+        android:visibility="gone"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_white_button"
+            android:text="Book Again"
+            android:textColor="@color/red_color"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_white_button"
+            android:text="Pay Bill"
+            android:textColor="@color/red_color"
+            android:layout_centerInParent="true"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_white_button"
+            android:text="Get Invoice"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/red_color"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

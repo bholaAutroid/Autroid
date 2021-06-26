@@ -1,0 +1,233 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/window_background"
+    android:clickable="true"
+    android:id="@+id/main_layout"
+    tools:context="autroid.business.view.fragment.AddNewBusinessFragment">
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/layout_toolbar_activity"
+        ></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@id/common_toolbar"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_business_cover"
+                android:layout_width="match_parent"
+                android:layout_height="250dp">
+
+                <ImageView
+                    android:id="@+id/business_cover"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/placeholder_thumbnail"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/black_opacity20"
+                    ></View>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:clickable="true"
+                    app:backgroundTint="@color/white_color"
+                    app:elevation="@dimen/dimen_5dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    app:layout_anchorGravity="bottom|right|end"
+                    app:srcCompat="@drawable/ic_editprofile_floatbtn" />
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/white_color"
+                    android:text="Get Your Business on CarEager For Free!"
+                    />
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:gravity="left"
+                    android:layout_alignParentBottom="true"
+                    android:textColor="@color/white_color"
+                    android:text="Cover image of your business (optional) "
+                    />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="40dp"
+                android:orientation="vertical"
+
+                >
+
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/tv_top_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="5dp"
+                    android:text="“BUSINESS SIGNUP”  "
+                    />
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/business_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:hint="Business name"
+                    android:imeOptions="actionNext"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:padding="@dimen/dimen_15dp"
+                    android:background="@drawable/edittext_bg"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
+                    android:singleLine="true"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="5"
+                    android:layout_marginTop="20dp"
+                    >
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/business_mobilecode_list"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/spinner_bg_black"
+                        ></androidx.appcompat.widget.AppCompatSpinner>
+
+
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/business_mobile"
+                        android:layout_width="0dp"
+                        android:layout_weight="3"
+                        android:layout_height="wrap_content"
+                        android:hint="Contact number"
+                        android:inputType="number"
+                        android:imeOptions="actionNext"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="20dp"
+                        android:maxLength="10"
+                        android:singleLine="true"
+                        android:background="@drawable/edittext_bg"
+                        android:padding="@dimen/dimen_15dp"
+                        />
+                </LinearLayout>
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/business_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="Username "
+                    android:inputType="text"
+                    android:imeOptions="actionDone"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:singleLine="true"
+                    android:background="@drawable/edittext_bg"
+                    android:padding="@dimen/dimen_15dp"
+                    />
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/business_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="Email-id  "
+                    android:inputType="textEmailAddress"
+                    android:imeOptions="actionDone"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:singleLine="true"
+                    android:background="@drawable/edittext_bg"
+                    android:padding="@dimen/dimen_15dp"
+                    />
+
+                <Spinner
+                    android:id="@+id/business_category_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/spinner_bg_black"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    ></Spinner>
+
+                <Spinner
+                    android:id="@+id/business_company_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/spinner_bg_black"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:visibility="gone"
+                    ></Spinner>
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/business_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="Complete Address"
+                    android:imeOptions="actionNext"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/edittext_bg"
+                    android:padding="@dimen/dimen_15dp"
+                    />
+
+
+                <Button
+                    android:id="@+id/business_done"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="Add Local Business"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    android:textColor="@color/selector_white_button_text_color"
+                    android:background="@drawable/white_button_bg"
+                    />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

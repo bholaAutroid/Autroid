@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_layout"
+    android:clickable="true"
+    android:padding="@dimen/dimen_20dp"
+    android:background="@android:color/transparent"
+  >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/lightgrey"
+
+        >
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/layout_toolbar_activity"
+        ></include>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cars_list"
+                    android:layout_width="match_parent"
+                    android:layout_margin="@dimen/dimen_5dp"
+                    android:layout_below="@id/common_toolbar"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/ll_bottom"
+                    ></androidx.recyclerview.widget.RecyclerView>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:padding="@dimen/dimen_5dp"
+        android:id="@+id/ll_bottom"
+        >
+        <Button
+            android:id="@+id/add_new_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="@string/add_new_car"
+            android:textColor="@color/selector_white_button_text_color"
+            android:background="@drawable/white_button_bg"
+            android:paddingLeft="@dimen/dimen_20dp"
+            android:paddingRight="@dimen/dimen_20dp"
+            android:minHeight="@dimen/dimen_40dp"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            />
+        <Button
+            android:id="@+id/car_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="@string/proceed"
+            android:textColor="@color/selector_white_button_text_color"
+            android:background="@drawable/white_button_bg"
+
+            android:paddingLeft="@dimen/dimen_20dp"
+            android:paddingRight="@dimen/dimen_20dp"
+            android:minHeight="@dimen/dimen_40dp"
+            />
+    </LinearLayout>
+
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/default_garage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_30dp"
+        android:text="@string/empty_garage"
+        android:gravity="center"
+        android:textSize="@dimen/size_20sp"
+        android:textColor="@color/black"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:textStyle="bold"
+        />
+
+    </RelativeLayout>
+</RelativeLayout>

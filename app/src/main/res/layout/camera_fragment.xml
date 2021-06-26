@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relative_layout"
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <com.camerakit.CameraKitView
+        android:id="@+id/camera_view"
+        app:camera_zoomFactor="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Capture Stillshot Button -->
+    <ImageButton
+        android:id="@+id/stillshot"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_gravity="center"
+        android:background="@drawable/cam_circle_selector"
+        android:padding="8dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/ic_circle_outline" />
+
+
+    <ImageView
+        android:id="@+id/flash"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="10dp"
+        android:scaleType="fitXY"
+        android:background="@drawable/cam_circle_selector"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/stillshot"
+        android:layout_marginBottom="50dp"
+        app:srcCompat="@drawable/ic_flash_off"/>
+
+    <ImageView
+        android:id="@+id/clicked_holder"
+        android:layout_toLeftOf="@+id/stillshot"
+        android:layout_alignParentBottom="true"
+        android:scaleType="centerCrop"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="48dp"/>
+
+    <ImageView
+        android:id="@+id/send"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/clicked_holder"
+        app:srcCompat="@drawable/ic_right_arrow"/>
+
+    <TextView
+        android:id="@+id/hint"
+        android:layout_above="@+id/stillshot"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="@color/white_color"/>
+
+</RelativeLayout>

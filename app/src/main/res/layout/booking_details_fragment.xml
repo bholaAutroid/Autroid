@@ -1,0 +1,1315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:clipToPadding="true"
+        android:paddingBottom="@dimen/dimen_50dp"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:padding="8dp">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/booking_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/size_16sp" />
+
+                <LinearLayout
+                    android:id="@+id/status_call_chat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true">
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:layout_gravity="center"
+                        android:background="@color/black_color"
+                        android:padding="5dp"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white_dark" />
+
+                    <ImageButton
+                        android:id="@+id/call_btn"
+                        android:layout_width="@dimen/dimen_24dp"
+                        android:layout_height="@dimen/dimen_24dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:visibility="gone"
+                        android:background="@drawable/home_call"
+                        android:textColor="@color/selector_white_button_text_color" />
+
+                    <ImageButton
+                        android:id="@+id/chat_btn"
+                        android:layout_width="@dimen/dimen_24dp"
+                        android:layout_height="@dimen/dimen_24dp"
+                        android:layout_marginTop="4dp"
+                        android:visibility="gone"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="@drawable/home_chat"
+                        android:textColor="@color/selector_white_button_text_color" />
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/textViewOptions"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentTop="true"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:padding="@dimen/dimen_10dp"-->
+                        <!--android:text="&#8942;"-->
+                        <!--android:textAppearance="?android:textAppearanceLarge"-->
+                        <!--android:textColor="@color/white_dark" />-->
+
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/card_color"
+                android:padding="@dimen/dimen_5dp">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:drawableLeft="@drawable/ic_calender"
+                    android:drawablePadding="@dimen/dimen_10dp"
+                    android:drawableTint="@color/white_dark"
+                    android:textColor="@color/white_dark" />
+
+
+                <TextView
+                    android:id="@+id/convinience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/matt_black"
+                    android:textAllCaps="true"
+                    android:padding="@dimen/dimen_5dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/user_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@color/card_color"
+                android:padding="@dimen/dimen_5dp">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_toLeftOf="@+id/name_details"
+                    android:drawableLeft="@drawable/ic_user"
+                    android:drawablePadding="@dimen/dimen_10dp"
+                    android:drawableTint="@color/white_dark"
+                    android:text=""
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <ImageView
+                    android:id="@+id/name_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/ic_right_arrow"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_12sp"
+                    android:tint="@color/white_dark" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/car_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@color/card_color"
+                android:padding="@dimen/dimen_5dp">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/car_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/car_details"
+                    android:drawableLeft="@drawable/ic_car_dealer_name"
+                    android:drawablePadding="@dimen/dimen_10dp"
+                    android:drawableTint="@color/white_dark"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <ImageView
+                    android:id="@+id/car_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/ic_right_arrow"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_12sp"
+                    android:tint="@color/white_dark" />
+
+            </RelativeLayout>
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:id="@+id/address"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@color/matt_black"-->
+                <!--android:ellipsize="end"-->
+                <!--android:maxLines="1"-->
+                <!--android:padding="4dp"-->
+                <!--android:textColor="@color/white_dark" />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/services"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_bar"
+                    android:text="SERVICES"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/payment"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/matt_black"
+                    android:text="PAYMENT"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/remarks"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/matt_black"
+                    android:text="REMARKS"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/requisite"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="1"
+                    android:background="@color/matt_black"
+                    android:text="REQUIREMENT"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_payment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_20dp"
+                android:background="@drawable/rectangle_background_cardblack_corner8dp"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_10dp"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Part"
+                        android:textColor="@color/white_dark" />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/part_cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white_dark" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp">
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Labour"
+                        android:textColor="@color/white_dark" />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/labour_cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white_dark" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp">
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Convenience"
+                        android:textColor="@color/white_dark" />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/convenience"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white_dark" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp">
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/size_18sp" />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/size_18sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp">
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/careagercash_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CarEager Cash"
+                        android:textColor="@color/white_dark" />
+
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/careager_cash"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white_dark" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp">
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/discount_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Discount"
+                        android:textColor="@color/white_dark" />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/coupon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_toRightOf="@id/discount_label"
+                        android:text=""
+                        android:textColor="@color/white_dark" />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/discount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white_dark" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp">
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Paid"
+                        android:textColor="@color/white_dark" />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/paid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white_dark" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp">
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Due"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/size_18sp" />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/due"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/size_18sp" />
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/payment_receive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:background="@drawable/red_button_selector"
+                    android:minHeight="@dimen/dimen_40dp"
+                    android:paddingLeft="@dimen/dimen_20dp"
+                    android:paddingRight="@dimen/dimen_20dp"
+                    android:text="Receive Payment"
+                    android:textColor="@color/white" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_remarks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_10dp"
+                android:background="@drawable/rectangle_background_cardblack_corner8dp"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_10dp"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/remark"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:background="@color/matt_black"
+                    android:gravity="start"
+                    android:hint="Write remark"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    android:imeOptions="actionDone"
+                    android:textCursorDrawable="@null"
+                    android:textColor="@color/white_dark"
+                    android:textColorHint="@color/card_color" />
+
+                <Button
+                    android:id="@+id/save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:background="@drawable/red_button_selector"
+                    android:text="SAVE"
+                    android:textColor="@color/white" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/remark_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"/>
+
+            </LinearLayout>
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/booking_items"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:textColor="@color/white_color"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/booking_details_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/main_layout"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="56dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/booking_requirements"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/main_layout"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="56dp"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/options"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/matt_black"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/confirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/red_button_selector"
+            android:minHeight="40dp"
+            android:text="CONFIRM"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/reschedule"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/red_button_selector"
+            android:minHeight="40dp"
+            android:text="RESCHEDULE"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/red_button_selector"
+            android:minHeight="40dp"
+            android:text="CANCEL"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/reminder"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/red_button_selector"
+            android:minHeight="40dp"
+            android:text="REMINDER"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/jobcard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/red_button_selector"
+            android:minHeight="40dp"
+            android:text="JOBCARD"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/feedback"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/red_button_selector"
+            android:minHeight="40dp"
+            android:text="FEEDBACK"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/schedule"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/red_button_selector"
+            android:minHeight="40dp"
+            android:text="SCHEDULE"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
+<!--<android.support.v4.widget.NestedScrollView-->
+<!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--android:background="@color/matt_black">-->
+
+<!--<LinearLayout-->
+    <!--android:id="@+id/main_layout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@color/matt_black"-->
+    <!--android:clickable="true"-->
+    <!--android:orientation="vertical">-->
+
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/black"-->
+        <!--android:padding="8dp">-->
+
+        <!--<careager.business.view.customviews.CustomTextView-->
+            <!--android:id="@+id/booking_no"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="@dimen/size_16sp" />-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/status_call_chat"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--&gt;-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:id="@+id/status"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginRight="5dp"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:background="@color/black_color"-->
+                <!--android:padding="5dp"-->
+                <!--android:textAllCaps="true"-->
+                <!--android:textColor="@color/white_dark" />-->
+
+            <!--<ImageButton-->
+                <!--android:id="@+id/call_btn"-->
+                <!--android:layout_width="@dimen/dimen_24dp"-->
+                <!--android:layout_height="@dimen/dimen_24dp"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginTop="4dp"-->
+                <!--android:layout_marginRight="@dimen/dimen_10dp"-->
+                <!--android:visibility="gone"-->
+                <!--android:background="@drawable/home_call"-->
+                <!--android:textColor="@color/selector_white_button_text_color" />-->
+
+            <!--<ImageButton-->
+                <!--android:id="@+id/chat_btn"-->
+                <!--android:layout_width="@dimen/dimen_24dp"-->
+                <!--android:layout_height="@dimen/dimen_24dp"-->
+                <!--android:layout_marginTop="4dp"-->
+                <!--android:visibility="gone"-->
+                <!--android:layout_marginRight="@dimen/dimen_10dp"-->
+                <!--android:background="@drawable/home_chat"-->
+                <!--android:textColor="@color/selector_white_button_text_color" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/textViewOptions"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:padding="@dimen/dimen_10dp"-->
+                <!--android:text="&#8942;"-->
+                <!--android:textAppearance="?android:textAppearanceLarge"-->
+                <!--android:textColor="@color/white_dark" />-->
+
+        <!--</LinearLayout>-->
+
+
+
+    <!--</RelativeLayout>-->
+
+
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/insurance_details"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/dimen_10dp"-->
+        <!--android:background="@color/card_color"-->
+        <!--android:padding="@dimen/dimen_5dp">-->
+
+        <!--<careager.business.view.customviews.CustomTextView-->
+            <!--android:id="@+id/insurance_company"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_toLeftOf="@+id/policy_number"-->
+            <!--android:drawableLeft="@drawable/ic_drawer_log"-->
+            <!--android:drawablePadding="@dimen/dimen_10dp"-->
+            <!--android:drawableTint="@color/white_dark"-->
+            <!--android:textColor="@color/white_dark"-->
+            <!--android:textSize="@dimen/size_14sp" />-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/policy_number"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:background="@drawable/ic_right_arrow"-->
+            <!--android:textColor="@color/white_dark"-->
+            <!--android:textSize="@dimen/size_12sp"-->
+            <!--android:tint="@color/white_dark" />-->
+
+    <!--</RelativeLayout>-->
+
+
+    <!--<HorizontalScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/dimen_10dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:padding="@dimen/dimen_5dp">-->
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/advisor_layout"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@drawable/rectangle_background_cardblack_corner8dp"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="@dimen/dimen_10dp">-->
+
+                <!--<careager.business.view.customviews.CustomTextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:text="Advisor"-->
+                    <!--android:textColor="@color/white_dark"-->
+                    <!--android:textSize="@dimen/size_14sp" />-->
+
+                <!--<careager.business.view.customviews.CustomTextView-->
+                    <!--android:id="@+id/advisor"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_marginTop="@dimen/dimen_5dp"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/size_12sp" />-->
+
+                <!--<careager.business.view.customviews.CustomTextView-->
+                    <!--android:id="@+id/advisor_contact"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_marginTop="@dimen/dimen_5dp"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/size_12sp" />-->
+
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/technician_layout"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginLeft="@dimen/dimen_10dp"-->
+                <!--android:visibility="gone"-->
+                <!--android:background="@drawable/rectangle_background_cardblack_corner8dp"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="@dimen/dimen_10dp">-->
+
+                <!--<careager.business.view.customviews.CustomTextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:text="Technician"-->
+                    <!--android:textColor="@color/white_dark"-->
+                    <!--android:textSize="@dimen/size_14sp" />-->
+
+                <!--<careager.business.view.customviews.CustomTextView-->
+                    <!--android:id="@+id/technician"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_marginTop="@dimen/dimen_5dp"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/size_12sp" />-->
+
+                <!--<careager.business.view.customviews.CustomTextView-->
+                    <!--android:id="@+id/technician_contact"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_marginTop="@dimen/dimen_5dp"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/size_12sp" />-->
+
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/driver_layout"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:visibility="gone"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginLeft="@dimen/dimen_10dp"-->
+                <!--android:background="@drawable/rectangle_background_cardblack_corner8dp"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="@dimen/dimen_10dp">-->
+
+                <!--<careager.business.view.customviews.CustomTextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:text="Driver"-->
+                    <!--android:textColor="@color/white_dark"-->
+                    <!--android:textSize="@dimen/size_14sp" />-->
+
+                <!--<careager.business.view.customviews.CustomTextView-->
+                    <!--android:id="@+id/driver"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_marginTop="@dimen/dimen_5dp"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/size_12sp" />-->
+
+                <!--<careager.business.view.customviews.CustomTextView-->
+                    <!--android:id="@+id/driver_contact"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_marginTop="@dimen/dimen_5dp"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/size_12sp" />-->
+
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/surveyor_layout"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:visibility="gone"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginLeft="@dimen/dimen_10dp"-->
+                <!--android:background="@drawable/rectangle_background_cardblack_corner8dp"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="@dimen/dimen_10dp">-->
+
+                <!--<careager.business.view.customviews.CustomTextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="Surveyor"-->
+                    <!--android:textColor="@color/white_dark"-->
+                    <!--android:textSize="@dimen/size_14sp" />-->
+
+                <!--<careager.business.view.customviews.CustomTextView-->
+                    <!--android:id="@+id/surveyor"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_marginTop="@dimen/dimen_5dp"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/size_12sp" />-->
+
+                <!--<careager.business.view.customviews.CustomTextView-->
+                    <!--android:id="@+id/surveyor_contact"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_marginTop="@dimen/dimen_5dp"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/size_12sp" />-->
+
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/qc_layout"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:visibility="gone"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginLeft="@dimen/dimen_10dp"-->
+                <!--android:background="@drawable/rectangle_background_cardblack_corner8dp"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="@dimen/dimen_10dp">-->
+
+                <!--<careager.business.view.customviews.CustomTextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:gravity="center"-->
+                    <!--android:text="Quality Check"-->
+                    <!--android:textColor="@color/white_dark"-->
+                    <!--android:textSize="@dimen/size_14sp" />-->
+
+                <!--<careager.business.view.customviews.CustomTextView-->
+                    <!--android:id="@+id/qc"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_marginTop="@dimen/dimen_5dp"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/size_12sp" />-->
+
+                <!--<careager.business.view.customviews.CustomTextView-->
+                    <!--android:id="@+id/qc_contact"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_marginTop="@dimen/dimen_5dp"-->
+                    <!--android:textColor="@color/white"-->
+                    <!--android:textSize="@dimen/size_12sp" />-->
+
+            <!--</LinearLayout>-->
+
+        <!--</LinearLayout>-->
+
+    <!--</HorizontalScrollView>-->
+
+
+    <!--<careager.business.view.customviews.CustomTextView-->
+        <!--android:id="@+id/address"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/matt_black"-->
+        <!--android:ellipsize="end"-->
+        <!--android:maxLines="1"-->
+        <!--android:padding="4dp"-->
+        <!--android:textColor="@color/white_dark"-->
+        <!--android:visibility="gone" />-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<Button-->
+            <!--android:id="@+id/services"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="4dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@drawable/button_bar"-->
+            <!--android:text="SERVICES"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="12sp" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/payment"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@color/matt_black"-->
+            <!--android:text="PAYMENT"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="12sp" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/remarks"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@color/matt_black"-->
+            <!--android:text="REMARKS"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="12sp" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/requisite"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="4dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@color/matt_black"-->
+            <!--android:text="REQUIREMENT"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="12sp" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/layout_payment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="@dimen/dimen_20dp"-->
+        <!--android:background="@drawable/rectangle_background_cardblack_corner8dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:padding="@dimen/dimen_10dp"-->
+        <!--android:visibility="gone">-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Part"-->
+                <!--android:textColor="@color/white_dark" />-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:id="@+id/part_cost"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:textColor="@color/white_dark" />-->
+
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/dimen_10dp">-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Labour"-->
+                <!--android:textColor="@color/white_dark" />-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:id="@+id/labour_cost"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:textColor="@color/white_dark" />-->
+
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/dimen_10dp">-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Convenience"-->
+                <!--android:textColor="@color/white_dark" />-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:id="@+id/convenience"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:textColor="@color/white_dark" />-->
+
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/dimen_10dp">-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Total"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/size_18sp" />-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:id="@+id/total"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/size_18sp" />-->
+
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/dimen_10dp">-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:id="@+id/discount_label"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Discount"-->
+                <!--android:textColor="@color/white_dark" />-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:id="@+id/coupon"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/dimen_10dp"-->
+                <!--android:layout_toRightOf="@id/discount_label"-->
+                <!--android:textColor="@color/white_dark" />-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:id="@+id/discount"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:textColor="@color/white_dark" />-->
+
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/dimen_10dp">-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Paid"-->
+                <!--android:textColor="@color/white_dark" />-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:id="@+id/paid"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:textColor="@color/white_dark" />-->
+
+        <!--</RelativeLayout>-->
+
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/dimen_10dp">-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="Due"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/size_18sp" />-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:id="@+id/due"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/size_18sp" />-->
+
+        <!--</RelativeLayout>-->
+
+        <!--<Button-->
+            <!--android:id="@+id/payment_receive"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Receive Payment"-->
+            <!--android:paddingLeft="@dimen/dimen_20dp"-->
+            <!--android:paddingRight="@dimen/dimen_20dp"-->
+            <!--android:minHeight="@dimen/dimen_40dp"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_marginTop="@dimen/dimen_20dp"-->
+            <!--android:background="@drawable/red_button_selector" />-->
+
+
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:id="@+id/layout_remarks"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="@dimen/dimen_10dp"-->
+        <!--android:background="@drawable/rectangle_background_cardblack_corner8dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:padding="@dimen/dimen_10dp"-->
+        <!--android:visibility="gone">-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/remark"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:background="@color/matt_black"-->
+            <!--android:gravity="start"-->
+            <!--android:hint="Write remark"-->
+            <!--android:padding="10dp"-->
+            <!--android:textColor="@color/white_dark"-->
+            <!--android:textColorHint="@color/card_color" />-->
+
+        <!--<Button-->
+            <!--android:id="@+id/save"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="@dimen/dimen_35dp"-->
+            <!--android:layout_gravity="center_horizontal"-->
+            <!--android:layout_marginTop="@dimen/dimen_20dp"-->
+            <!--android:background="@drawable/red_button_selector"-->
+            <!--android:text="SAVE"-->
+            <!--android:textColor="@color/white" />-->
+
+        <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/remark_list"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="20dp" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--<careager.business.view.customviews.CustomTextView-->
+        <!--android:id="@+id/booking_items"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="16dp"-->
+        <!--android:gravity="center"-->
+        <!--android:textColor="@color/white_color"-->
+        <!--android:textSize="16sp"-->
+        <!--android:visibility="gone" />-->
+
+    <!--<android.support.v7.widget.RecyclerView-->
+        <!--android:id="@+id/booking_details_recycler"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="10dp" />-->
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/booking_requirements"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="@dimen/dimen_5dp"-->
+        <!--android:background="@drawable/rectangle_background_cardblack_corner8dp"-->
+        <!--android:visibility="gone">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/playback"-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_marginRight="4dp"-->
+            <!--android:layout_marginLeft="64dp"-->
+            <!--android:layout_marginTop="24dp"-->
+            <!--android:visibility="gone"-->
+            <!--android:src="@drawable/ic_qiscus_play_audio"-->
+            <!--android:tint="@color/red_color"/>-->
+
+        <!--<android.support.v7.widget.AppCompatSeekBar-->
+            <!--android:id="@+id/seekbar"-->
+            <!--android:layout_toRightOf="@+id/playback"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:thumbTint="@color/red_color"-->
+            <!--android:layout_marginTop="32dp"-->
+            <!--android:layout_marginRight="64dp"-->
+            <!--android:visibility="gone"/>-->
+
+        <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/booking_requirements_recycler"-->
+            <!--android:layout_below="@+id/playback"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"/>-->
+
+    <!--</RelativeLayout>-->
+
+<!--</LinearLayout>-->
+
+<!--</android.support.v4.widget.NestedScrollView>-->

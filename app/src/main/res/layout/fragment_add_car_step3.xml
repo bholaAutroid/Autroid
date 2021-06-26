@@ -1,0 +1,152 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="autroid.business.view.fragment.addcar.AddCarStep3Fragment">
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/layout_toolbar_activity"
+        ></include>
+
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/common_toolbar"
+        android:background="@drawable/fragment_header"
+        >
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/common_toolbar"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/dimen_5dp"
+            app:cardElevation="@dimen/button_card_elevation"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:id="@+id/main_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_5dp"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp">
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_5dp"
+                        android:text="Description" />
+
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/car_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="99dp"
+                        android:background="@drawable/edittext_bg"
+                        android:gravity="start"
+                        android:padding="@dimen/dimen_5dp" />
+
+                    <!--<fragment
+                android:id="@+id/place_autocomplete_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                />-->
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_5dp"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:text="Address"
+
+                        />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+                        <autroid.business.view.customviews.CustomTextView
+                            android:id="@+id/tv_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
+                            android:hint=""
+                            android:maxLines="2"
+                            android:paddingBottom="@dimen/dimen_10dp"
+                            android:paddingLeft="@dimen/dimen_5dp"
+                            android:paddingRight="@dimen/dimen_5dp"
+                            android:paddingTop="@dimen/dimen_10dp"
+                            android:textColor="@color/black_color"
+                            />
+
+                        <autroid.business.view.customviews.CustomTextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="OR"
+
+                            android:maxLines="2"
+                            android:gravity="center"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:textColor="@color/black_color"
+                            />
+
+                        <autroid.business.view.customviews.CustomTextView
+                            android:id="@+id/tv_current_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_bg"
+                            android:text="Use Current Location"
+                            android:drawableLeft="@drawable/ic_drawer_location"
+                            android:maxLines="2"
+                            android:gravity="center"
+                            android:drawablePadding="@dimen/dimen_10dp"
+                            android:drawableTint="@color/black_color"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:textColor="@color/black_color"
+                            android:paddingBottom="@dimen/dimen_10dp"
+                            android:paddingLeft="@dimen/dimen_5dp"
+                            android:paddingRight="@dimen/dimen_5dp"
+                            android:paddingTop="@dimen/dimen_10dp"
+                            />
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <autroid.business.view.customviews.CustomButtonView
+                    android:id="@+id/car_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:text="Next" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </ScrollView>
+
+</RelativeLayout>

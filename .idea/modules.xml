@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="manishAutroid-autroid-853530b54e22/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/manishAutroid-autroid-853530b54e22.iml" filepath="$PROJECT_DIR$/.idea/modules/manishAutroid-autroid-853530b54e22.iml" group="manishAutroid-autroid-853530b54e22" />
+    </modules>
+  </component>
+</project>

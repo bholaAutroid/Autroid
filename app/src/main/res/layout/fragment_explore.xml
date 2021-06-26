@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:background="@color/matt_black"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager_explore"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        >
+    </androidx.viewpager.widget.ViewPager>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/pager_tab_strip"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/black_opacity80"
+        app:tabIndicatorColor="@color/red_color"
+        app:tabTextAppearance="@style/MineCustomTabText"
+        app:tabSelectedTextColor="@color/white_color"
+        app:tabTextColor="@color/gray_color" />
+
+</RelativeLayout>
+

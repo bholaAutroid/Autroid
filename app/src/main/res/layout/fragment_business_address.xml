@@ -1,0 +1,174 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:background="@drawable/rectangle_background_cardblack_corner8dp"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_10dp">
+
+        <autroid.business.view.customviews.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Add Address"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_16sp" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColorHint="@color/gray_color_button"
+            app:hintAnimationEnabled="false">
+
+            <autroid.business.view.customviews.CustomEditText
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="Address Line"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textColor="@color/white_dark"
+                android:textSize="@dimen/size_14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white_dark" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColorHint="@color/gray_color_button"
+            app:hintAnimationEnabled="false">
+
+            <autroid.business.view.customviews.CustomEditText
+                android:id="@+id/landmark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="Landmark (Optional)"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences"
+                android:padding="8dp"
+                android:singleLine="true"
+                android:textColor="@color/white_dark"
+                android:textSize="@dimen/size_14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white_dark" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColorHint="@color/gray_color_button"
+            app:hintAnimationEnabled="false">
+
+            <autroid.business.view.customviews.CustomEditText
+                android:id="@+id/zipcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="Zipcode"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:maxLength="6"
+                android:padding="8dp"
+                android:textColor="@color/white_dark"
+                android:textSize="@dimen/size_14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white_dark" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColorHint="@color/gray_color_button"
+            app:hintAnimationEnabled="false">
+
+            <autroid.business.view.customviews.CustomEditText
+                android:id="@+id/town"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:enabled="false"
+                android:hint="Town/City"
+                android:padding="8dp"
+                android:textColor="@color/white_dark"
+                android:textSize="@dimen/size_14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white_dark" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColorHint="@color/gray_color_button"
+            app:hintAnimationEnabled="false">
+
+            <autroid.business.view.customviews.CustomEditText
+                android:id="@+id/state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:enabled="false"
+                android:hint="State"
+                android:padding="8dp"
+                android:textColor="@color/white_dark" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/white_dark" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/add_address"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:background="@drawable/red_button_selector"
+            android:elevation="@dimen/dimen_4dp"
+            android:minHeight="@dimen/dimen_40dp"
+            android:text="Add Address"
+            android:textColor="@color/white_color" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

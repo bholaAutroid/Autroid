@@ -1,0 +1,183 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/white_dark</item>
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="listPreferredItemHeightSmall">@dimen/dimen_36dp</item>
+    </style>
+
+    <style name="Toolbar_Theme">
+        <item name="colorControlNormal">@color/white_color</item>
+        <item name="android:textColor">@color/white_color</item>
+        <item name="android:textSize">@dimen/size_20sp</item>
+        <item name="android:color">@color/white_color</item>
+    </style>
+
+    <style name="DialogAnimationDialog">
+        <item name="android:windowEnterAnimation">@anim/dialog_up_anim</item>
+    </style>
+
+    <style name="MineCustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@android:color/white</item>
+    </style>
+
+    <style name="style_rotobo_normal_white_bold">
+        <item name="android:textColor">@color/white_color</item>
+        <item name="android:textColorHint">@color/gray_color</item>
+        <item name="android:textSize">@dimen/size_20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="attr_custom_typeface">ROBOTOBOLD</item>
+
+    </style>
+    <style name="style_rotobo_medium">
+        <item name="android:textColor">@color/white_color</item>
+        <item name="android:textColorHint">@color/white_color</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="style_rotobo_medium_gray">
+        <item name="android:textColor">@color/gray_color</item>
+        <item name="android:textColorHint">@color/gray_color</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="style_rotobo_medium_black">
+        <item name="android:textColor">@color/black_color</item>
+        <item name="android:textColorHint">@color/black_color</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+    </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="android:numStars">5</item>
+        <item name="colorControlNormal">@color/gray_color</item>
+        <item name="colorControlActivated">@color/yellow</item>
+    </style>
+
+    <style name="style_rotobo_normal">
+        <item name="android:textColor">@color/white_color</item>
+        <item name="android:textColorHint">@color/white_color</item>
+        <item name="android:textSize">@dimen/size_14sp</item>
+    </style>
+
+    <style name="style_rotobo_normal_gray">
+        <item name="android:textColor">@color/gray_color</item>
+        <item name="android:textColorHint">@color/gray_color</item>
+        <item name="android:textSize">@dimen/size_14sp</item>
+    </style>
+
+    <style name="style_rotobo_normal_black">
+        <item name="android:textColor">@color/black_color</item>
+        <item name="android:textColorHint">@color/black_color</item>
+        <item name="android:textSize">@dimen/size_14sp</item>
+    </style>
+
+    <style name="style_rotobo_normal_black_bold">
+        <item name="android:textColor">@color/black_color</item>
+        <item name="android:textColorHint">@color/black_color</item>
+        <item name="android:textSize">@dimen/size_14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="attr_custom_typeface">ROBOTOBOLD</item>
+    </style>
+
+    <style name="style_rotobo_small">
+        <item name="android:textColor">@color/white_color</item>
+        <item name="android:textColorHint">@color/white_color</item>
+        <item name="android:textSize">@dimen/size_12sp</item>
+    </style>
+
+    <style name="style_rotobo_small_gray">
+        <item name="android:textColor">@color/gray_color</item>
+        <item name="android:textColorHint">@color/gray_color</item>
+        <item name="android:textSize">@dimen/size_12sp</item>
+    </style>
+
+    <style name="style_rotobo_small_black">
+        <item name="android:textColor">@color/black_color</item>
+        <item name="android:textColorHint">@color/black_color</item>
+        <item name="android:textSize">@dimen/size_12sp</item>
+    </style>
+
+    <style name="DirectShareDialogTheme" parent="android:Theme.Material.Light.Dialog" tools:targetApi="lollipop">
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/fragment_slide_left_enter</item>
+        <item name="android:windowExitAnimation">@anim/fragment_slide_left_exit</item>
+    </style>
+
+    <style name="TextAppearance44">
+        <item name="android:textColor">@color/white_color</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="MySeekBar" parent="Widget.AppCompat.SeekBar">
+
+        <item name="android:colorControlActivated">@color/white</item>
+    </style>
+
+    <style name="hintTheme" parent="Theme.AppCompat.NoActionBar">
+        <!--EditText hint color-->
+        <item name="android:textColorHint">@color/gray_color_button</item>
+        <!-- TextInputLayout text color-->
+        <item name="colorControlActivated">@color/gray_color_button</item>
+        <item name="colorControlHighlight">@color/gray_color_button</item>
+
+        <!-- EditText line color when EditText on-focus-->
+
+    </style>
+
+    <style name="CalenderViewCustom" parent="Theme.AppCompat">
+        <item name="colorAccent">@color/red_color</item>
+        <item name="colorPrimary">@android:color/darker_gray</item>
+        <item name="android:textColorPrimary">@color/black_color</item>
+        <item name="android:textColorPrimaryInverse">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+
+    <style name="CalenderViewDateCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/selector_white_button_text_color</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorPrimaryInverse">@color/white</item>
+        <item name="android:textSize">@dimen/size_16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/black_color</item>
+    </style>
+
+    <style name="BrandedSwitch.control" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/gray_color_button</item>
+        <item name="colorSwitchThumbNormal">@color/light_bg</item>
+        <item name="android:colorForeground">@color/light_bg</item>
+    </style>
+
+    <style name="NavigationView">
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+    </style>
+
+    <style name="DialogOfferAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_in_down</item>
+    </style>
+
+
+
+</resources>

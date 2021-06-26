@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:id="@+id/main_layout"
+    tools:context="autroid.business.view.activity.SearchClaimBusinessActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/splash_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        >
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/dimen_5dp"
+            app:cardElevation="@dimen/button_card_elevation"
+            app:cardUseCompatPadding="true"
+            android:layout_below="@id/common_toolbar"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_10dp"
+                >
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Claim your business"
+                    android:gravity="center"
+                    android:textColor="@color/black_color"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1dp"
+                    android:background="@color/gray_color"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+
+                    />
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your business may already be on CarEager.\nSearch and claim your ownership- "
+                    android:gravity="center"
+                    android:textColor="@color/black_color"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    >
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/search"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dimen_10dp"
+                        android:hint="Type your business name"
+                        android:layout_toLeftOf="@+id/btn_search"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        />
+                    <autroid.business.view.customviews.CustomButtonView
+                        android:id="@+id/btn_search"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="search"
+                        android:visibility="gone"
+                        />
+                </RelativeLayout>
+            </LinearLayout>
+            </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dimen_5dp"
+        app:cardElevation="@dimen/button_card_elevation"
+        app:cardUseCompatPadding="true"
+        android:layout_below="@id/common_toolbar"
+
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_10dp"
+        >
+        <autroid.business.view.customviews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cannot find your business?"
+            android:gravity="center"
+            android:textColor="@color/black_color"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:background="@color/gray_color"
+            android:layout_marginTop="@dimen/dimen_5dp"
+
+            />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:text="register now"
+            android:textColor="@color/selector_white_button_text_color"
+            android:background="@drawable/white_button_bg"
+            />
+        </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+</RelativeLayout>

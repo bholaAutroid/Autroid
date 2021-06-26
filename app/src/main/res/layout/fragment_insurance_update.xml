@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/black_opacity60"
+    android:padding="@dimen/dimen_10dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_background_mattblack_corner8dp"
+            android:orientation="vertical"
+            tools:context="autroid.business.view.fragment.jobcard.JobsUserDetails">
+
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:padding="10dp"
+                android:text="Insurance Update"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_18sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColorHint="@color/gray_color_button"
+                app:hintAnimationEnabled="false">
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/policy_holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                    android:hint="Policy Holder"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColorHint="@color/gray_color_button"
+                app:hintAnimationEnabled="false">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/company_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Company Name"
+                    android:fontFamily="@string/roboto_medium"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColorHint="@color/gray_color_button"
+                app:hintAnimationEnabled="false">
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/policy_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Policy Number"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:maxLength="25"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColorHint="@color/gray_color_button"
+                app:hintAnimationEnabled="false">
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/premium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Premium (₹)"
+                    android:imeOptions="actionDone"
+                    android:inputType="numberDecimal"
+                    android:maxLength="7"
+                    android:padding="8dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textColorHint="@color/gray_color_button"
+                app:hintAnimationEnabled="false">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/expire"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Expiry date"
+                    android:padding="8dp"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/update"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_15dp"
+                android:background="@drawable/red_button_selector"
+                android:minHeight="@dimen/dimen_40dp"
+                android:paddingLeft="@dimen/dimen_20dp"
+                android:paddingRight="@dimen/dimen_20dp"
+                android:text="Update"
+                android:textColor="@color/white_color" />
+
+
+
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:id="@+id/layout_remarks2"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:elevation="8dp"-->
+                <!--android:outlineAmbientShadowColor="@color/black"-->
+                <!--android:outlineSpotShadowColor="@color/black_opacity80"-->
+                <!--app:cardCornerRadius="8dp">-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="@color/card_color"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:padding="10dp">-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="10dp">-->
+
+                        <!--<careager.business.view.customviews.CustomTextView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:text="Policy Holder :"-->
+                            <!--android:textColor="@color/white_dark"-->
+                            <!--android:textSize="12sp" />-->
+
+                        <!--<careager.business.view.customviews.CustomTextView-->
+                            <!--android:id="@+id/policy_holder"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight="2"-->
+                            <!--android:textColor="@color/white_light"-->
+                            <!--android:textSize="12sp" />-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="4dp">-->
+
+                        <!--<careager.business.view.customviews.CustomTextView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:text="Company Name :"-->
+                            <!--android:textColor="@color/white_dark"-->
+                            <!--android:textSize="12sp" />-->
+
+                        <!--<careager.business.view.customviews.CustomTextView-->
+                            <!--android:id="@+id/company_name"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight="2"-->
+                            <!--android:textColor="@color/white_light"-->
+                            <!--android:textSize="12sp" />-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="4dp">-->
+
+                        <!--<careager.business.view.customviews.CustomTextView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:text="Policy Number :"-->
+                            <!--android:textColor="@color/white_dark"-->
+                            <!--android:textSize="12sp" />-->
+
+                        <!--<careager.business.view.customviews.CustomTextView-->
+                            <!--android:id="@+id/policy_no"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight="2"-->
+                            <!--android:textColor="@color/white_light"-->
+                            <!--android:textSize="12sp" />-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="4dp">-->
+
+                        <!--<careager.business.view.customviews.CustomTextView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:text="Premium :"-->
+                            <!--android:textColor="@color/white_dark"-->
+                            <!--android:textSize="12sp" />-->
+
+                        <!--<careager.business.view.customviews.CustomTextView-->
+                            <!--android:id="@+id/premium"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight="2"-->
+                            <!--android:textColor="@color/white_light"-->
+                            <!--android:textSize="12sp" />-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginTop="4dp">-->
+
+                        <!--<careager.business.view.customviews.CustomTextView-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight="1"-->
+                            <!--android:text="Expire :"-->
+                            <!--android:textColor="@color/white_dark"-->
+                            <!--android:textSize="12sp" />-->
+
+                        <!--<careager.business.view.customviews.CustomTextView-->
+                            <!--android:id="@+id/expire"-->
+                            <!--android:layout_width="0dp"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_weight="2"-->
+                            <!--android:textColor="@color/white_light"-->
+                            <!--android:textSize="12sp" />-->
+
+                    <!--</LinearLayout>-->
+
+                <!--</LinearLayout>-->
+
+            <!--</android.support.v7.widget.CardView>-->
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

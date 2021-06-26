@@ -1,0 +1,157 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/main_layout"
+    android:background="@color/window_background"
+    tools:context="autroid.business.view.fragment.UpdateBusinessLocationFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_150dp">
+
+        <ImageView
+            android:id="@+id/showroom_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/placeholder_big"
+            android:scaleType="centerCrop"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black_opacity20"
+            ></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            >
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/business_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                style="@style/style_rotobo_medium"
+                android:textSize="@dimen/size_16sp"
+                />
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:id="@+id/business_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:isIndicator="true"
+                style="@style/Base.Widget.AppCompat.RatingBar.Small"
+
+                />
+        </LinearLayout>
+    </RelativeLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/dimen_5dp"
+        app:cardElevation="@dimen/button_card_elevation"
+        app:cardUseCompatPadding="true"
+        android:layout_marginTop="@dimen/dimen_40dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+        <autroid.business.view.customviews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Update Business Location"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/black_color"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1dp"
+                android:background="@color/gray_color"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Make sure device is inside your business premises."
+                android:gravity="start"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:textColor="@color/black_color"/>
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Tap 'Update Location' to capture its exact location. "
+                android:gravity="start"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:textColor="@color/black_color"/>
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. Finally, tab 'Save Location' "
+                android:gravity="center"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:textColor="@color/black_color"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/map"
+                tools:context=".MapsActivity"
+                android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:padding="@dimen/dimen_5dp"
+                    android:weightSum="2"
+                    >
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/update_location"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Update Location"
+                        android:padding="@dimen/dimen_10dp"
+                        android:textSize="@dimen/size_9sp"
+                        android:gravity="center"
+                        android:textColor="@color/selector_white_button_text_color"
+                        android:background="@drawable/white_button_bg"
+                        />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/save_location"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Save Location"
+                        android:paddingLeft="@dimen/dimen_5dp"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:padding="@dimen/dimen_10dp"
+                        android:textSize="@dimen/size_9sp"
+                        android:gravity="center"
+                        android:textColor="@color/selector_white_button_text_color"
+                        android:background="@drawable/white_button_bg"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

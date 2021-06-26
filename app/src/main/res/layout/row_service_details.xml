@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dimen_5dp"
+    android:layout_marginTop="@dimen/dimen_5dp"
+    android:background="@drawable/rectangle_background_cardblack_corner8dp"
+    >
+
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/price"
+        android:textColor="@color/white_dark"
+        android:paddingRight="@dimen/dimen_5dp"
+        android:text=""
+        />
+
+
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:gravity="end"
+        android:textColor="@color/white_dark"
+        />
+
+    <ImageView
+        android:id="@+id/img_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_name"
+        android:visibility="visible"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:layout_marginRight="@dimen/dimen_5dp"
+        android:background="@mipmap/tick"
+        android:backgroundTint="@color/green"
+        android:tint="@color/white"
+        />
+
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_name"
+        android:layout_toRightOf="@id/img_check"
+        android:textColor="@color/white_dark"
+        android:text=""
+        />
+
+</RelativeLayout>

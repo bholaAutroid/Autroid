@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="@color/matt_black"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/jobcard_toolbar"
+        layout="@layout/layout_toolbar_activity" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:background="@drawable/rectangle_background_cardblack_corner8dp"
+        android:orientation="vertical">
+
+        <autroid.business.view.customviews.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:text="Mobile Number"
+            android:textColor="@color/gray_color_button" />
+        <EditText
+            android:id="@+id/jobcard_mob_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:imeOptions="actionDone"
+            android:background="@drawable/et_border"
+            android:textColor="@color/white_dark"
+            android:hint=""
+            android:textColorHint="@color/gray_color_button"
+            android:inputType="number"
+            android:maxLength="10"
+            android:padding="@dimen/dimen_8dp"
+            android:singleLine="true"
+            android:textAllCaps="true"
+             />
+
+        <LinearLayout
+            android:id="@+id/details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_5dp"
+                android:text="Name"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:textColor="@color/gray_color_button" />
+
+            <EditText
+                android:id="@+id/jobcard_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_5dp"
+                android:background="@drawable/et_border"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                android:textColor="@color/white_dark"
+                android:hint=""
+                android:textColorHint="@color/gray_color_button"
+                android:inputType="textCapWords"
+                android:padding="@dimen/dimen_8dp"
+                android:singleLine="true"
+                />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_5dp"
+                android:text="Email Address (Optional)"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:textColor="@color/gray_color_button" />
+
+            <EditText
+                android:id="@+id/jobcard_user_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_5dp"
+                android:background="@drawable/et_border"
+                android:textColor="@color/white_dark"
+                android:hint=""
+                android:textColorHint="@color/gray_color_button"
+                android:padding="@dimen/dimen_8dp"
+                android:singleLine="true"
+                android:textAllCaps="true"
+                />
+
+        </LinearLayout>
+
+        <include layout="@layout/proceed_button" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

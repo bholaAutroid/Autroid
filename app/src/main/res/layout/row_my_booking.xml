@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/main_layout"
+    android:layout_marginTop="@dimen/dimen_10dp"
+    android:layout_marginLeft="@dimen/dimen_5dp"
+    android:layout_marginRight="@dimen/dimen_5dp"
+    android:padding="@dimen/dimen_5dp"
+    android:background="@color/card_color"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/booking_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_13sp"
+            />
+
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/white"
+            android:layout_below="@id/booking_id"
+            android:textSize="@dimen/size_11sp"
+            />
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:background="@color/black_opacity80"
+            android:textColor="@color/white"
+            android:padding="@dimen/dimen_5dp"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_marginRight="@dimen/dimen_5dp"
+            android:layout_toLeftOf="@id/textViewOptions"
+            />
+
+        <TextView
+            android:id="@+id/textViewOptions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="&#8942;"
+            android:padding="@dimen/dimen_5dp"
+            android:textColor="@color/white_dark"
+            android:textAppearance="?android:textAppearanceLarge" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        >
+    
+    <ImageView
+        android:id="@+id/car_image"
+        android:layout_width="@dimen/dimen_75dp"
+        android:layout_height="@dimen/dimen_75dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="@dimen/dimen_3dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dimen_5dp"
+        >
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/car_maker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text=""
+            android:maxLines="1"
+            android:textSize="@dimen/size_16sp"
+            android:textColor="@color/white_dark"
+            />
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/regis_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text=""
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="@dimen/size_12sp"
+            android:background="@drawable/selector_transparent"
+            android:textColor="@color/white_dark"
+            />
+
+        <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/convenience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text=""
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:textColor="@color/white_dark"
+                />
+
+
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/white_dark"
+                />
+
+        <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/due_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/white_dark"
+                android:visibility="gone"
+                />
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_5dp"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            >
+
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Paid"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/white_dark"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:weightSum="3"
+        >
+
+        <Button
+            android:id="@+id/btn_detail"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Details"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/button_white_10dp"
+            android:textColor="@color/selector_white_button_text_color"
+            android:minHeight="@dimen/dimen_35dp"
+            android:padding="@dimen/dimen_4dp"
+            android:paddingLeft="@dimen/dimen_10dp"
+            android:paddingRight="@dimen/dimen_10dp"
+            />
+
+
+        <Button
+            android:id="@+id/pay_bill"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Pay"
+            android:background="@drawable/button_white_10dp"
+            android:textColor="@color/selector_white_button_text_color"
+            android:layout_centerInParent="true"
+            android:minHeight="@dimen/dimen_35dp"
+            android:paddingLeft="@dimen/dimen_10dp"
+            android:paddingRight="@dimen/dimen_10dp"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:padding="@dimen/dimen_4dp"
+            android:enabled="false"
+            />
+
+        <Button
+            android:id="@+id/get_invoice"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="INVOICE"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button_white_10dp"
+            android:textColor="@color/selector_white_button_text_color"
+            android:minHeight="@dimen/dimen_35dp"
+            android:paddingLeft="@dimen/dimen_10dp"
+            android:paddingRight="@dimen/dimen_10dp"
+            android:enabled="false"
+            />
+
+
+    </LinearLayout>
+</LinearLayout>

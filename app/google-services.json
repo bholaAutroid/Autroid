@@ -1,0 +1,231 @@
+{
+  "project_info": {
+    "project_number": "574238947443",
+    "firebase_url": "https://careager-216218.firebaseio.com",
+    "project_id": "careager-216218",
+    "storage_bucket": "careager-216218.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574238947443:android:d19e5e263ae676d3",
+        "android_client_info": {
+          "package_name": "com.careager.business"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574238947443-vetocd6lc3l09039tlgul5ermfgc60f2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.careager.business",
+            "certificate_hash": "59aa85436d3d8337d29ddef96e5455369f0ac5c4"
+          }
+        },
+        {
+          "client_id": "574238947443-0b0egigtolhe86oltmsc87dcn39lcodu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZc7Uka4CiDtJ8SkU7RtVuKdy__JEmovQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574238947443-nfcr99g11q01oqqn8i9i2kr4mp8ralqj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "574238947443-rr0dv979bb47a2nn9pahfiltolris9oe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.careager.xpress"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574238947443:android:668c0461eed0efac5e9206",
+        "android_client_info": {
+          "package_name": "com.careager.suite"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574238947443-l4ksqj837hdr5pdcs4781ulh0f2if77a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.careager.suite",
+            "certificate_hash": "59aa85436d3d8337d29ddef96e5455369f0ac5c4"
+          }
+        },
+        {
+          "client_id": "574238947443-5jbcq8ci8sd1noca85aov4i4f349lj8a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.careager.suite",
+            "certificate_hash": "c11f27981c09d369df009ed08d8175070f46d215"
+          }
+        },
+        {
+          "client_id": "574238947443-0b0egigtolhe86oltmsc87dcn39lcodu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZc7Uka4CiDtJ8SkU7RtVuKdy__JEmovQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574238947443-nfcr99g11q01oqqn8i9i2kr4mp8ralqj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "574238947443-rr0dv979bb47a2nn9pahfiltolris9oe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.careager.xpress"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574238947443:android:2ca5e0aaba830546",
+        "android_client_info": {
+          "package_name": "com.careager.user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574238947443-0b0egigtolhe86oltmsc87dcn39lcodu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZc7Uka4CiDtJ8SkU7RtVuKdy__JEmovQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574238947443-nfcr99g11q01oqqn8i9i2kr4mp8ralqj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "574238947443-rr0dv979bb47a2nn9pahfiltolris9oe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.careager.xpress"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574238947443:android:df4f67e2ca78e4d1",
+        "android_client_info": {
+          "package_name": "com.careager.xpress"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574238947443-h2ii1q9abfav2iqhmfe1bmb0opcha416.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.careager.xpress",
+            "certificate_hash": "31531165fa742f6036c7e19e75178c9a87cf129e"
+          }
+        },
+        {
+          "client_id": "574238947443-sq6m4ftla0oblc0l3nu6bjkb8ib626j9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.careager.xpress",
+            "certificate_hash": "95a005892dbc2bb3f21cc94ac8fcd7b537012ff6"
+          }
+        },
+        {
+          "client_id": "574238947443-0b0egigtolhe86oltmsc87dcn39lcodu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZc7Uka4CiDtJ8SkU7RtVuKdy__JEmovQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574238947443-nfcr99g11q01oqqn8i9i2kr4mp8ralqj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "574238947443-rr0dv979bb47a2nn9pahfiltolris9oe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.careager.xpress"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574238947443:android:547afb45aedc42605e9206",
+        "android_client_info": {
+          "package_name": "com.vmt.autroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574238947443-0b0egigtolhe86oltmsc87dcn39lcodu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZc7Uka4CiDtJ8SkU7RtVuKdy__JEmovQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574238947443-nfcr99g11q01oqqn8i9i2kr4mp8ralqj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "574238947443-rr0dv979bb47a2nn9pahfiltolris9oe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.careager.xpress"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

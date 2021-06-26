@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginLeft="@dimen/dimen_5dp"
+    android:layout_marginRight="@dimen/dimen_5dp"
+    android:layout_marginTop="@dimen/dimen_20dp"
+    android:elevation="@dimen/dimen_2dp"
+    android:background="@color/white_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/product_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_gradient_black_transparent"
+            ></View>
+
+        <LinearLayout
+            android:id="@+id/ll_img_nxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:paddingTop="@dimen/dimen_5dp"
+            android:paddingBottom="@dimen/dimen_5dp"
+            android:paddingRight="@dimen/dimen_5dp"
+            android:visibility="gone"
+
+            >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_img_next"
+                />
+        </LinearLayout>
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/product_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="Rs 500"
+            android:padding="@dimen/dimen_10dp"
+            android:textSize="@dimen/size_16sp"
+            android:textColor="@color/white_color"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/dimen_10dp"
+
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dimen_20dp"
+                android:layout_height="@dimen/dimen_20dp"
+                app:srcCompat="@drawable/ic_navigation"
+                android:tint="@color/white_color"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dimen_20dp"
+                android:layout_height="@dimen/dimen_20dp"
+                app:srcCompat="@drawable/ic_share"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:tint="@color/white_color"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dimen_20dp"
+                android:layout_height="@dimen/dimen_20dp"
+                android:tint="@color/white_color"
+                app:srcCompat="@drawable/ic_favorite_border"
+                android:layout_marginLeft="@dimen/dimen_10dp"/>
+        </LinearLayout>
+
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/images_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="1/12"
+            android:drawableLeft="@drawable/ic_camera"
+            android:gravity="center_vertical"
+            android:drawablePadding="@dimen/dimen_5dp"
+            android:padding="@dimen/dimen_10dp"
+            android:textSize="@dimen/size_16sp"
+            android:textColor="@color/white_color"
+            />
+
+    </RelativeLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/dimen_5dp"
+                >
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/product_name"
+                    style="@style/style_rotobo_normal_black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="3302"
+                    android:paddingLeft="@dimen/dimen_5dp"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:textSize="@dimen/size_17sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:visibility="gone"
+                    android:background="@color/lightgrey"></View>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <autroid.business.view.customviews.CustomTextView
+                        android:id="@+id/product_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2012"
+                        android:paddingLeft="@dimen/dimen_5dp"
+                        style="@style/style_rotobo_small_gray"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dimen_36dp"
+                android:layout_height="@dimen/dimen_36dp"
+                app:srcCompat="@drawable/ic_car"
+                android:tint="@color/gray_color"
+                />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/dimen_10dp"
+
+            >
+
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/publisher_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                style="@style/style_rotobo_normal_black"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:visibility="gone"
+                android:background="@color/lightgrey"></View>
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/publisher_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="address"
+                android:visibility="gone"
+                android:gravity="left"
+                style="@style/style_rotobo_small_gray"
+                />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/added_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="left"
+                style="@style/style_rotobo_small_gray"
+                />
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:padding="5dp"
+        >
+        <Button
+            android:id="@+id/product_unpublish"
+            android:layout_width="@dimen/dimen_0.5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Unpublish"
+            android:textSize="@dimen/size_10sp"
+            android:minHeight="@dimen/dimen_40dp"
+            android:background="@drawable/selector_white_button"
+            android:textColor="@color/selector_white_button_text_color"
+            />
+
+        <Button
+            android:id="@+id/product_edit"
+            android:layout_width="@dimen/dimen_0.5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Edit"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:minHeight="@dimen/dimen_40dp"
+            android:textSize="@dimen/size_10sp"
+            android:background="@drawable/selector_white_button"
+            android:textColor="@color/selector_white_button_text_color"
+            />
+
+        <Button
+            android:id="@+id/product_share"
+            android:layout_width="@dimen/dimen_0.5dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Share"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:minHeight="@dimen/dimen_40dp"
+            android:textSize="@dimen/size_10sp"
+            android:background="@drawable/selector_white_button"
+            android:textColor="@color/selector_white_button_text_color"
+            />
+    </LinearLayout>
+
+</LinearLayout>

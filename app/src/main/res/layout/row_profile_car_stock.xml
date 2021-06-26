@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="200dp"
+    android:layout_marginBottom="@dimen/dimen_2dp"
+    android:orientation="vertical"
+    android:layout_marginRight="@dimen/dimen_5dp"
+    android:elevation="@dimen/dimen_2dp"
+    android:id="@+id/main_layout"
+    android:background="@color/white_color"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/car_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_gradient_black_transparent"
+            ></View>
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/car_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text=""
+            android:padding="@dimen/dimen_10dp"
+            android:textColor="@color/white_color"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/dimen_10dp"
+            android:visibility="gone"
+            >
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dimen_24dp"
+                android:layout_height="@dimen/dimen_24dp"
+                app:srcCompat="@drawable/ic_navigation"
+                android:tint="@color/white_color"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dimen_24dp"
+                android:layout_height="@dimen/dimen_24dp"
+                app:srcCompat="@drawable/ic_share"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:tint="@color/white_color"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/dimen_24dp"
+                android:layout_height="@dimen/dimen_24dp"
+                app:srcCompat="@drawable/ic_favorite_border"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:tint="@color/white_color"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:padding="@dimen/dimen_10dp"
+            android:background="@color/black_opacity60"
+            >
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/car_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                style="@style/style_rotobo_normal"
+                android:textColor="@color/white_light"
+                android:singleLine="true"
+                android:ellipsize="end"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:visibility="gone"
+                android:background="@color/lightgrey"></View>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                >
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/car_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    style="@style/style_rotobo_small_gray"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:textColor="@color/white_light"
+                    android:textSize="@dimen/size_10sp"
+                    />
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/car_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    style="@style/style_rotobo_small_gray"
+                    android:textColor="@color/white_light"
+                    android:textSize="@dimen/size_10sp"
+                    />
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/car_km"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    style="@style/style_rotobo_small_gray"
+                    android:textColor="@color/white_light"
+                    android:textSize="@dimen/size_10sp"
+
+                    />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,91 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@color/black_opacity60"
+    android:padding="@dimen/dimen_10dp"
+    tools:context="autroid.business.view.fragment.jobcard.JobsUserDetails">
+
+    <LinearLayout
+        android:id="@+id/layout_remarks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_10dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rectangle_background_mattblack_corner8dp"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_10dp">
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/details_type"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:drawablePadding="@dimen/dimen_10dp"
+            android:drawableTint="@color/white"
+            android:text="Customer Information"
+            android:textSize="@dimen/size_18sp"
+            android:textColor="@color/white" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray_color"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            />
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white_dark"
+            android:drawableLeft="@drawable/ic_user"
+            android:drawablePadding="@dimen/dimen_10dp"
+            android:drawableTint="@color/white_dark"
+            android:text=""
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:textColor="@color/white_dark" />
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:backgroundTint="@color/white_dark"
+            android:drawableLeft="@drawable/ic_mobile"
+            android:drawablePadding="@dimen/dimen_10dp"
+            android:drawableTint="@color/white_dark"
+            android:text="9899873343"
+            android:drawableRight="@drawable/home_call"
+            android:textColor="@color/white_dark" />
+
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:backgroundTint="@color/white_dark"
+            android:drawableLeft="@drawable/ic_customer_email"
+            android:drawablePadding="@dimen/dimen_10dp"
+            android:drawableTint="@color/white_dark"
+            android:textColor="@color/white_dark" />
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:backgroundTint="@color/white_dark"
+            android:drawableLeft="@drawable/ic_address"
+            android:drawablePadding="@dimen/dimen_10dp"
+            android:drawableTint="@color/white_dark"
+            android:text=""
+            android:textColor="@color/white_dark" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

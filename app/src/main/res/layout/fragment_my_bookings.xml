@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/matt_black"
+    android:id="@+id/main_layout"
+    android:orientation="vertical"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:padding="8dp"
+        android:text="My Bookings"
+        android:textSize="@dimen/size_18sp"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/default_booking"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_30dp"
+        android:text="@string/empty_booking"
+        android:gravity="center"
+        android:textSize="@dimen/size_20sp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:textColor="@color/white_dark" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/title"
+        android:layout_height="match_parent">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pending_booking_list"
+        android:layout_width="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/dimen_50dp"
+        android:layout_height="match_parent"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/dimen_60dp"
+        android:layout_marginEnd="11dp"
+        android:clickable="true"
+        android:visibility="gone"
+        android:src="@drawable/icon_add"
+        app:backgroundTint="@color/gray_color"
+        />
+
+</RelativeLayout>

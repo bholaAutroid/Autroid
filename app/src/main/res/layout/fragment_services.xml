@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_layout"
+    android:background="@color/window_background"
+    android:clipToPadding="false"
+    tools:context="autroid.business.view.fragment.ServicesCategoryFragment">
+
+    <LinearLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_5dp"
+        android:weightSum="2"
+        android:elevation="@dimen/dimen_10dp"
+        android:background="@color/white_color"
+        >
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3302"
+                android:gravity="center"
+                style="@style/style_rotobo_normal_black"
+                />
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Categories selected"
+                android:gravity="center"
+                style="@style/style_rotobo_small_gray"
+
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3302"
+                android:gravity="center"
+                style="@style/style_rotobo_normal_black"
+                />
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Services offered"
+                android:gravity="center"
+                style="@style/style_rotobo_small_gray"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ExpandableListView
+        android:id="@+id/expandable_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:groupIndicator="@null"
+        android:footerDividersEnabled="false"
+        android:layout_below="@id/layout_header"
+        android:divider="@color/white_color"
+        android:visibility="gone"
+        >
+
+
+    </ExpandableListView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/services_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_header"
+        />
+
+</RelativeLayout>

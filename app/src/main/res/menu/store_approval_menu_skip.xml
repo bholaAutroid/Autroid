@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/ready"
+        android:title="Approve" />
+
+    <item
+        android:id="@+id/back_to_qc"
+        android:title="Back To QC" />
+
+    <item
+        android:id="@+id/job_update"
+        android:title="Update JobCard" />
+
+    <item
+        android:id="@+id/skip_store_approval"
+        android:title="Skip Store Approval" />
+    <!--<item-->
+    <!--android:id="@+id/add_claim"-->
+    <!--android:title="Add Claim" />-->
+
+    <!--<item-->
+    <!--android:id="@+id/surveyor_details"-->
+    <!--android:title="Add Surveyor" />-->
+
+</menu>

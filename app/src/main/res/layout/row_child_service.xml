@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/dimen_5dp"
+    app:cardElevation="2dp"
+    app:cardUseCompatPadding="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:id="@+id/main_layout"
+        android:background="@color/card_color"
+        >
+
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/part_image"
+            android:layout_width="@dimen/dimen_75dp"
+            android:layout_height="@dimen/dimen_75dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="@dimen/dimen_10dp"
+            android:visibility="gone"
+            />
+
+        <RelativeLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/part_image"
+            android:padding="@dimen/dimen_5dp"
+            >
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/service_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_black"
+                android:textStyle="bold"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:text=""
+                android:visibility="gone"
+                />
+
+
+            <RelativeLayout
+                android:id="@+id/llservice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/service_name"
+                >
+
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/service_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white_dark"
+                    android:text="22"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/size_16sp"
+                    android:textStyle="bold"
+
+                    />
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/service_cost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@id/service_price"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_10sp"
+                    android:paddingLeft="@dimen/dimen_5dp"
+
+                    />
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(GST INCLUDED)"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@id/service_cost"
+                    android:textColor="@color/white_dark"
+                    android:textSize="@dimen/size_10sp"
+                    android:paddingLeft="@dimen/dimen_5dp"
+
+                    />
+
+                <View
+                    android:layout_width="@dimen/dimen_50dp"
+                    android:layout_height="1dp"
+                    android:layout_toRightOf="@id/service_price"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:visibility="gone"
+                    android:background="@color/gray_color_button"
+                    ></View>
+            </RelativeLayout>
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/check_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:buttonTint="@color/red_color"
+                android:visibility="visible"
+                android:textColor="@color/white_dark"
+                android:textSize="@dimen/size_14sp"
+                android:text=""
+                android:layout_marginRight="0dp"
+                android:layout_below="@id/llservice"
+
+
+                />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/doorstep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/size_14sp"
+                android:padding="@dimen/dimen_10dp"
+                android:text=""
+                android:visibility="gone"
+                android:textColor="@color/white_dark"
+                android:layout_below="@id/llservice"
+                style="@style/style_rotobo_normal_black_bold"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll"
+
+            >
+
+
+            <TextView
+                android:id="@+id/service_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Details"
+                android:layout_below="@id/ll"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:paddingTop="@dimen/dimen_5dp"
+                android:paddingBottom="@dimen/dimen_5dp"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:paddingRight="@dimen/dimen_10dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/dimen_5dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:background="@drawable/white_button_bg"
+                android:textColor="@color/selector_white_button_text_color"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                />
+
+            <TextView
+                android:id="@+id/service_gallery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gallery"
+                android:layout_below="@id/ll"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:paddingRight="@dimen/dimen_10dp"
+                android:layout_toRightOf="@id/service_detail"
+                android:background="@drawable/white_button_bg"
+                android:textColor="@color/selector_white_button_text_color"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:textAllCaps="true"
+                android:paddingTop="@dimen/dimen_5dp"
+                android:paddingBottom="@dimen/dimen_5dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                />
+
+            <TextView
+                android:id="@+id/coupon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Offers"
+                android:layout_below="@id/ll"
+                android:gravity="center"
+                android:visibility="gone"
+                android:textAllCaps="true"
+                android:paddingTop="@dimen/dimen_5dp"
+                android:paddingBottom="@dimen/dimen_5dp"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:layout_marginLeft="@dimen/dimen_10dp"
+                android:paddingRight="@dimen/dimen_10dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dimen_5dp"
+                android:layout_marginBottom="@dimen/dimen_5dp"
+                android:background="@drawable/red_button_bg"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/dimen_5dp"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:background="@color/white_dark"
+            android:layout_marginLeft="@dimen/dimen_10dp"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            ></View>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/services_selected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/white_dark"
+            android:layout_alignParentRight="true"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_5dp"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+
+            android:clickable="true"
+            >
+
+            <ImageButton
+                android:id="@+id/minus"
+                android:layout_width="@dimen/dimen_24dp"
+                android:layout_height="@dimen/dimen_24dp"
+                android:background="@drawable/ic_expand_minus"
+                />
+
+
+            <TextView
+                android:id="@+id/unit"
+                android:layout_width="@dimen/dimen_24dp"
+                android:layout_height="@dimen/dimen_24dp"
+                android:textSize="@dimen/size_14sp"
+
+                android:text="1"
+                android:gravity="center"
+                android:textColor="@color/white_dark"
+                android:layout_below="@id/llservice"
+                />
+
+
+            <ImageButton
+                android:id="@+id/add"
+                android:layout_width="@dimen/dimen_24dp"
+                android:layout_height="@dimen/dimen_24dp"
+                android:background="@drawable/ic_expandable_plus"
+                />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

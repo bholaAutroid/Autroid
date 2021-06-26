@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/dimen_10dp"
+    android:background="@color/matt_black"
+
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Buyer Details"
+        android:textColor="@color/white_dark"
+        android:textSize="@dimen/size_18sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_margin="@dimen/dimen_10dp"
+        ></TextView>
+
+   <View
+       android:layout_width="match_parent"
+       android:layout_height="1dp"
+       android:background="@color/gray_color_button"
+       ></View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:orientation="vertical">
+
+
+
+        <EditText
+            android:id="@+id/sold_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/et_border"
+            android:hint="Sold Price"
+            android:inputType="number"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColorHint="@color/gray_color_button"
+            android:textColor="@color/white_dark" />
+
+        <EditText
+            android:id="@+id/jobcard_mob_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="8dp"
+            android:imeOptions="actionDone"
+            android:background="@drawable/et_border"
+            android:hint="Buyer Mobile Number"
+            android:inputType="number"
+            android:maxLength="10"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textAllCaps="true"
+            android:textColorHint="@color/gray_color_button"
+            android:textColor="@color/white_dark"  />
+
+        <LinearLayout
+            android:id="@+id/details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/jobcard_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/et_border"
+                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz"
+                android:hint="Buyer Name"
+                android:inputType="textCapWords"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColorHint="@color/gray_color_button"
+                android:textColor="@color/white_dark"  />
+
+            <EditText
+                android:id="@+id/jobcard_user_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/et_border"
+                android:hint="Buyer Email Address (Optional)"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textAllCaps="true"
+                android:textColorHint="@color/gray_color_button"
+                android:textColor="@color/white_dark"  />
+
+        </LinearLayout>
+
+
+
+        <include layout="@layout/proceed_button" />
+
+    </LinearLayout>
+
+</LinearLayout>

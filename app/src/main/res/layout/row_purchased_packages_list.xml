@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginLeft="@dimen/dimen_5dp"
+    android:layout_marginRight="@dimen/dimen_5dp"
+    android:layout_marginTop="@dimen/dimen_10dp"
+    android:padding="@dimen/dimen_10dp"
+    android:elevation="@dimen/dimen_2dp"
+    android:background="@color/lightgrey"
+    android:id="@+id/main_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <autroid.business.view.customviews.CustomTextView
+        style="@style/style_rotobo_small_gray"
+        android:id="@+id/package_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size_16sp"
+        android:layout_marginTop="@dimen/dimen_2dp"
+        android:textColor="@color/black_color"
+        />
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        >
+
+        <autroid.business.view.customviews.CustomTextView
+            style="@style/style_rotobo_small_gray"
+            android:id="@+id/package_purchase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+
+            />
+        <autroid.business.view.customviews.CustomTextView
+            style="@style/style_rotobo_small_gray"
+            android:id="@+id/package_expire"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/package_purchase"
+            />
+
+        <ImageButton
+            android:id="@+id/update_status"
+            android:layout_width="@dimen/dimen_30dp"
+            android:layout_height="@dimen/dimen_30dp"
+
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dimen_20dp"
+            android:textColor="@color/selector_white_button_text_color"
+            android:background="@drawable/ic_edit"
+            android:backgroundTint="@color/gray_color"
+            android:tint="@color/gray_color"
+            />
+
+
+    </RelativeLayout>
+
+
+    <autroid.business.view.customviews.CustomTextView
+        style="@style/style_rotobo_small_gray"
+        android:id="@+id/car_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:textSize="@dimen/size_14sp"
+        />
+    <autroid.business.view.customviews.CustomTextView
+        style="@style/style_rotobo_small_gray"
+        android:id="@+id/car_registration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        />
+
+
+<RelativeLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+
+    <autroid.business.view.customviews.CustomTextView
+        style="@style/style_rotobo_small_gray"
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:textSize="@dimen/size_14sp"
+        />
+    <autroid.business.view.customviews.CustomTextView
+        style="@style/style_rotobo_small_gray"
+        android:id="@+id/user_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/user_name"
+
+        />
+
+
+    <ImageButton
+        android:id="@+id/chat_btn"
+        android:layout_width="30dp"
+        android:layout_height="@dimen/dimen_30dp"
+        android:text=""
+        android:layout_alignParentRight="true"
+        android:textColor="@color/selector_white_button_text_color"
+        android:background="@drawable/home_chat"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        />
+
+    <ImageButton
+        android:id="@+id/call_btn"
+        android:layout_width="@dimen/dimen_30dp"
+        android:layout_height="@dimen/dimen_30dp"
+        android:text=""
+        android:layout_toLeftOf="@+id/chat_btn"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:textColor="@color/selector_white_button_text_color"
+        android:background="@drawable/home_call"
+        />
+
+</RelativeLayout>
+
+    <autroid.business.view.customviews.CustomTextView
+        style="@style/style_rotobo_small_gray"
+        android:id="@+id/price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="@dimen/dimen_5dp"
+
+        />
+    <autroid.business.view.customviews.CustomTextView
+        style="@style/style_rotobo_small_gray"
+        android:id="@+id/paid_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        />
+
+
+
+
+</LinearLayout>

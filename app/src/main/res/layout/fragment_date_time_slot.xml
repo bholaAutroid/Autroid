@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/main_layout"
+    android:orientation="vertical"
+    android:background="@color/lightgrey"
+    android:clickable="true"
+   >
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/layout_toolbar_activity"
+        ></include>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/common_toolbar"
+        android:background="@color/lightgrey"
+        android:layout_above="@id/booking_done"
+
+        >
+        <LinearLayout
+            android:id="@+id/layout_provider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/common_toolbar"
+            >
+
+
+            <CalendarView
+                android:id="@+id/calendarView"
+                android:layout_width="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_height="wrap_content"
+                android:theme="@style/CalenderViewCustom"
+                android:defaultFocusHighlightEnabled="false"
+                android:focusedByDefault="false"
+                android:elevation="@dimen/dimen_4dp"
+                android:background="@drawable/rectangle_background_white_corner8dp"
+                android:dateTextAppearance="@style/CalenderViewDateCustomText"
+                android:weekDayTextAppearance="@style/CalenderViewWeekCustomText"
+                android:layout_margin="@dimen/dimen_5dp"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:padding="@dimen/dimen_10dp"
+                android:elevation="@dimen/dimen_2dp"
+                >
+    <autroid.business.view.customviews.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_time_slot"
+        android:textSize="@dimen/size_18sp"
+        android:visibility="gone"
+        android:textColor="@color/black_color"
+        />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/booking_timesslot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    ></androidx.recyclerview.widget.RecyclerView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/booking_convenience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:layout_gravity="center"
+                    ></androidx.recyclerview.widget.RecyclerView>
+
+                <LinearLayout
+                    android:id="@+id/ll_convenience"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/dimen_5dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/convenience_self_drop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Self Drop"
+                        android:paddingTop="@dimen/dimen_5dp"
+                        android:paddingBottom="@dimen/dimen_5dp"
+                        android:paddingLeft="@dimen/dimen_10dp"
+                        android:textColor="@color/white"
+                        android:paddingRight="@dimen/dimen_10dp"                android:textSize="@dimen/size_14sp"
+                        android:background="@drawable/rectangle_red_color"
+                        />
+                    <TextView
+                        android:id="@+id/convenience_pickup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="Pickup"
+                        android:paddingTop="@dimen/dimen_5dp"
+                        android:paddingBottom="@dimen/dimen_5dp"
+                        android:paddingLeft="@dimen/dimen_10dp"
+                        android:paddingRight="@dimen/dimen_10dp"                android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:textSize="@dimen/size_14sp"
+                        android:textColor="@color/selector_white_button_text_color"
+                        android:background="@drawable/rectangle_white_color"
+                        />
+                    <TextView
+                        android:id="@+id/convenience_doorstep"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Doorstep"
+                        android:paddingTop="@dimen/dimen_5dp"
+                        android:paddingBottom="@dimen/dimen_5dp"
+                        android:paddingLeft="@dimen/dimen_10dp"
+                        android:paddingRight="@dimen/dimen_10dp"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:textSize="@dimen/size_14sp"
+                        android:textColor="@color/selector_white_button_text_color"
+                        android:background="@drawable/rectangle_white_color"
+                        />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/charges_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_black"
+                    android:text="There are no Pickup/Doorstep charges for orders above ₹5000, else charges of ₹299 apply."
+                    android:textSize="@dimen/size_12sp"
+                    android:textStyle="italic"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:paddingLeft="@dimen/dimen_5dp"
+                    />
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:padding="@dimen/dimen_10dp"
+            android:elevation="@dimen/dimen_2dp"
+            android:visibility="gone"
+            >
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/text_convenience"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Convenience"
+        android:textSize="@dimen/size_18sp"
+        android:textColor="@color/black_color"
+        />
+
+
+
+        </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:padding="@dimen/dimen_10dp"
+                android:elevation="@dimen/dimen_2dp"
+                >
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="Additional Requirements"
+                    android:textSize="@dimen/size_18sp"
+                    android:textColor="@color/black_color"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    >
+
+                    <EditText
+                        android:id="@+id/requirements"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/gray_border"
+                        android:gravity="left"
+                        android:padding="@dimen/dimen_5dp"
+                        android:textSize="@dimen/size_14sp"
+                        android:textColor="@color/text_black"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+</LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/booking_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/submit"
+        android:textColor="@color/white"
+        android:background="@color/red_color"
+        android:layout_gravity="end"
+        android:paddingLeft="@dimen/dimen_20dp"
+        android:paddingRight="@dimen/dimen_20dp"
+        android:minHeight="@dimen/dimen_40dp"
+        />
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_layout"
+    android:background="@android:color/transparent"
+    android:clickable="true"
+    android:padding="@dimen/dimen_10dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/services_gallery"
+        android:layout_width="match_parent"
+        android:clipToPadding="false"
+        android:background="@color/matt_black"
+        android:layout_height="match_parent"/>
+
+    <TextView
+        android:id="@+id/default_offers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_30dp"
+        android:text="@string/empty_offers"
+        android:gravity="center"
+        android:textSize="@dimen/size_20sp"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:textColor="@color/white_dark"
+        />
+</RelativeLayout>

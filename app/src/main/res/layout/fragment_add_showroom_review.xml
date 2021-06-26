@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white_color"
+    android:id="@+id/main_layout"
+    android:clipToPadding="true">
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/layout_toolbar_activity"
+        ></include>
+
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/common_toolbar"
+        android:background="@drawable/fragment_header"
+        >
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/dimen_5dp"
+        android:layout_below="@id/common_toolbar"
+        app:cardElevation="@dimen/button_card_elevation"
+        app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_20dp"
+        android:layout_margin="@dimen/dimen_5dp"
+        android:elevation="@dimen/dimen_8dp"
+        >
+
+    <!-- TODO: Update blank fragment layout -->
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/model_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/style_rotobo_normal_black_bold"
+        android:textSize="@dimen/size_22sp"
+        android:gravity="center"
+        android:text="Add Review"
+        android:padding="@dimen/dimen_10dp"
+         />
+
+    <androidx.appcompat.widget.AppCompatRatingBar
+        android:id="@+id/model_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_30dp"
+        android:numStars="5"
+        android:max="5"
+        android:layout_gravity="center_horizontal"
+        android:stepSize="1"
+        android:theme="@style/RatingBar"
+        />
+
+    <autroid.business.view.customviews.CustomEditText
+        android:id="@+id/model_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_20dp"
+        android:paddingLeft="@dimen/dimen_5dp"
+        android:hint="Write your review"
+        android:textSize="@dimen/size_18sp"
+        />
+
+    <Button
+        android:id="@+id/btn_done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_30dp"
+        android:background="@drawable/selector_white_button"
+        android:textColor="@color/selector_white_button_text_color"
+        android:text="Submit"
+        />
+
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

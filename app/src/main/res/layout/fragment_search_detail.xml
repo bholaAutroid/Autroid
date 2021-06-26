@@ -1,0 +1,241 @@
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:id="@+id/main_layout"
+        android:clickable="true"
+        android:layout_height="match_parent"
+        android:background="@color/matt_black"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/source"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/dimen_5dp"
+                android:textAllCaps="true"
+                android:text="Customer Details"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/status_call_chat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true">
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:background="@color/black_color"
+                    android:padding="5dp"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white_dark" />
+
+                <ImageButton
+                    android:id="@+id/call_btn"
+                    android:layout_width="@dimen/dimen_24dp"
+                    android:layout_height="@dimen/dimen_24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:background="@drawable/home_call"
+                    android:textColor="@color/selector_white_button_text_color" />
+
+                <ImageButton
+                    android:id="@+id/chat_btn"
+                    android:layout_width="@dimen/dimen_24dp"
+                    android:layout_height="@dimen/dimen_24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:background="@drawable/ic_whatsapp"
+                    android:textColor="@color/selector_white_button_text_color" />
+
+
+                <!--<ImageButton-->
+                <!--android:id="@+id/chat_btn"-->
+                <!--android:layout_width="@dimen/dimen_24dp"-->
+                <!--android:layout_height="@dimen/dimen_24dp"-->
+                <!--android:layout_marginTop="4dp"-->
+                <!--android:visibility="gone"-->
+                <!--android:layout_marginRight="@dimen/dimen_10dp"-->
+                <!--android:background="@drawable/home_chat"-->
+                <!--android:textColor="@color/selector_white_button_text_color" />-->
+
+                <TextView
+                    android:id="@+id/textViewOptions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:padding="@dimen/dimen_5dp"
+                    android:text="&#8942;"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:textColor="@color/white_dark"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/dimen_5dp"
+            android:background="@drawable/rectangle_background_cardblack_corner8dp"
+            android:padding="@dimen/dimen_10dp">
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_dark" />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white_dark" />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/contact_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:visibility="gone"
+                android:textColor="@color/white_dark" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cars"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_bar"
+                android:text="Cars"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/bookings"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/matt_black"
+                android:text="Bookings"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/leads"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/matt_black"
+                android:text="Leads"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_cars"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_5dp">
+
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/car_dummy_info"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@color/card_color"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="No Cars Found"
+                android:textColor="@color/white_dark"
+                android:textSize="@dimen/size_18sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cars_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_bookings"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="@dimen/dimen_5dp">
+
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/booking_dummy_info"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_margin="8dp"
+                android:background="@color/card_color"
+                android:gravity="center"
+                android:visibility="gone"
+                android:text="No Bookings Found"
+                android:textColor="@color/white_dark"
+                android:textSize="@dimen/size_18sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/booking_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_leads"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_5dp"
+            android:visibility="gone">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/leads_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>

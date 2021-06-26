@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/quality_check"
+        android:title="Quality Check" />
+
+  <!--  <item
+        android:id="@+id/surveyor_details"
+        android:title="Update Surveyor" />
+-->
+    <item
+        android:id="@+id/job_update"
+        android:title="Update JobCard" />
+
+
+</menu>

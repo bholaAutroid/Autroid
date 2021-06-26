@@ -1,0 +1,279 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dimen_40dp">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:background="@drawable/rectangle_background_cardblack_corner8dp"
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="@dimen/dimen_0.5dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/dimen_5dp">
+
+                            <autroid.business.view.customviews.CircleImageView
+                                android:id="@+id/user_image"
+                                android:layout_width="@dimen/dimen_50dp"
+                                android:layout_height="@dimen/dimen_50dp"
+                                android:src="@drawable/placeholder_thumbnail"
+                                android:visibility="gone" />
+
+                            <LinearLayout
+                                android:id="@+id/share_refer_code"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:background="@drawable/selector_transparent"
+                                android:orientation="vertical">
+
+                            <autroid.business.view.customviews.CustomTextView
+                                android:id="@+id/referral_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:textColor="@color/white_dark" />
+
+                            <autroid.business.view.customviews.CustomTextView
+                                style="@style/style_rotobo_small_gray"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Referral Code"
+                                android:textColor="@color/gray_color_button" />
+
+                            </LinearLayout>
+
+                            <Button
+                                android:id="@+id/ll_total_referrals"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/selector_gray"
+                                android:textColor="@color/white"
+                                android:text="My Referrals"
+                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:textSize="@dimen/size_12sp"
+                                android:paddingLeft="@dimen/dimen_10dp"
+                                android:paddingRight="@dimen/dimen_10dp"
+                                android:minHeight="@dimen/dimen_35dp"
+                                ></Button>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="@dimen/dimen_0.5dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="@dimen/dimen_5dp">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:background="@drawable/selector_transparent"
+                                android:orientation="vertical">
+
+                            <autroid.business.view.customviews.CustomTextView
+                                android:id="@+id/total_earned"
+                                style="@style/style_rotobo_normal_black"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text=""
+                                android:textColor="@color/white_dark" />
+
+                            <autroid.business.view.customviews.CustomTextView
+                                style="@style/style_rotobo_small_gray"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Total Earned"
+                                android:textColor="@color/gray_color_button" />
+
+                            </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:background="@drawable/selector_transparent"
+                        android:orientation="vertical">
+
+
+                                    <autroid.business.view.customviews.CustomTextView
+                                        android:id="@+id/available_coins"
+                                        style="@style/style_rotobo_normal_black"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:layout_marginTop="@dimen/dimen_10dp"
+
+                                        android:textColor="@color/white_dark" />
+
+                                    <autroid.business.view.customviews.CustomTextView
+                                        style="@style/style_rotobo_small_gray"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/available_coins"
+                                        android:layout_alignParentRight="true"
+                                        android:gravity="center"
+                                        android:text="Balance"
+                                        android:textColor="@color/gray_color_button"
+
+                                        />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                        </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_share"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="@dimen/dimen_5dp"
+                        android:background="@drawable/selector_transparent"
+                        android:visibility="visible">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_margin="@dimen/dimen_5dp"
+                            android:background="@drawable/ic_share"
+                            />
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/card_color"
+                android:elevation="@dimen/dimen_5dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:layout_marginTop="@dimen/dimen_5dp"
+                    android:layout_marginRight="@dimen/dimen_20dp"
+                    android:weightSum="2">
+
+
+                    <RelativeLayout
+                        android:id="@+id/ll_transactions"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:orientation="vertical"
+
+                        >
+
+                        <autroid.business.view.customviews.CustomTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:text="Transactions"
+                            android:textColor="@color/white_dark"
+
+                            />
+
+
+                        <View
+                            android:id="@+id/line_transactions"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_1dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginTop="@dimen/dimen_5dp"
+                            android:background="@color/red_color"
+                            android:visibility="gone"></View>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/layout_transaction"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:visibility="visible">
+
+                        <ExpandableListView
+                            android:id="@+id/transaction_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:childDivider="@color/matt_black"
+                            android:divider="@color/gray_color_button"
+                            android:dividerHeight="@dimen/dimen_1dp"
+                            android:groupIndicator="@null"
+                            android:isScrollContainer="false"></ExpandableListView>
+
+
+                        <TextView
+                            android:id="@+id/default_wallet"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:padding="@dimen/dimen_30dp"
+                            android:text="@string/empty_transactions"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/size_20sp"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</RelativeLayout>

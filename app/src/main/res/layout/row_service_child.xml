@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="5dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/service_sub_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:text=""
+            android:maxLines="2"
+            android:layout_toLeftOf="@+id/ll_right"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            >
+            <autroid.business.view.customviews.CustomEditText
+                android:id="@+id/service_price"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:inputType="numberDecimal"
+                android:background="@drawable/edittext_bg"
+                />
+
+            <ImageButton
+                android:id="@+id/btn_add_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/ic_add_service"
+                android:visibility="visible"
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

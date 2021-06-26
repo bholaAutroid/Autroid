@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black"
+    android:id="@+id/main_layout"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/autroid_logo"
+        android:layout_marginTop="@dimen/dimen_99dp"
+        android:visibility="visible" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/dimen_20dp"
+        android:layout_centerInParent="true"
+        >
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/otp_msg"
+            style="@style/style_rotobo_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OTP sent to: "
+            android:textSize="@dimen/size_20sp"
+
+            />
+        <autroid.business.view.customviews.CustomTextView
+            style="@style/style_rotobo_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/size_12sp"
+            android:visibility="gone"
+            android:text="(Enter the OTP below in case if we fail to detect SMS automatically)"
+            />
+
+        <EditText
+            android:id="@+id/et_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter OTP"
+            android:background="@drawable/et_border"
+            android:inputType="number"
+            android:layout_marginTop="@dimen/dimen_30dp"
+            android:text=""
+            android:padding="@dimen/dimen_10dp"
+            android:textColor="@color/white_dark"
+            android:textColorHint="@color/gray_color_button"
+            />
+
+
+
+        <Button
+            android:id="@+id/btn_verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Verify"
+            android:layout_marginTop="@dimen/dimen_30dp"
+            android:background="@drawable/red_button"
+            android:textColor="@color/white"
+            />
+
+        <LinearLayout
+            android:id="@+id/ll_resend_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dimen_30dp"
+            >
+            <autroid.business.view.customviews.CustomTextView
+                style="@style/style_rotobo_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Didn't receive the OTP? "
+
+                />
+
+            <TextView
+                style="@style/style_rotobo_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RESEND ››"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

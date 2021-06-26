@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/dimen_5dp"
+    android:background="@color/card_color"
+    >
+    <TextView
+        android:id="@+id/month_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/size_18sp"
+        android:textStyle="bold"
+        android:paddingLeft="@dimen/dimen_10dp"
+        android:textAllCaps="true"
+        style="@style/style_rotobo_normal_black_bold"
+        android:textColor="@color/white"
+        />
+
+    <ImageView
+        android:id="@+id/arrow_down_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_arrow_drop_down"
+        android:backgroundTint="@color/white"
+        android:layout_centerInParent="true"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/lightgrey"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:visibility="gone"
+        >
+
+    </View>
+
+</RelativeLayout>

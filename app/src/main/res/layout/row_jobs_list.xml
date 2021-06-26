@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginBottom="8dp"
+    android:background="@color/card_color"
+    android:padding="@dimen/dimen_8dp">
+
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/job_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#1234567890"
+        android:textColor="@color/white_dark"
+        android:textSize="@dimen/size_14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/days_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/black_opacity60"
+        android:padding="@dimen/dimen_2dp"
+        android:text="2 Days Left"
+        android:textColor="@color/white_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/car_registration_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/job_number"
+        android:layout_marginTop="@dimen/dimen_30dp"
+        android:maxLines="1"
+        android:text="he 33 hh 3333"
+        android:textColor="@color/white_dark"
+        android:textSize="@dimen/size_14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/job_number" />
+
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/user_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_30dp"
+        android:text="Pranav Mittal"
+        android:textColor="@color/white_dark"
+        android:textSize="@dimen/size_14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/car_registration_no" />
+
+
+    <ImageView
+        android:id="@+id/btn_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dimen_16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_chat"
+        app:srcCompat="@drawable/ic_photo_camera" />
+
+    <ImageView
+        android:id="@+id/btn_chat"
+        android:layout_width="@dimen/dimen_24dp"
+        android:layout_height="@dimen/dimen_24dp"
+        android:layout_marginRight="@dimen/dimen_16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_call"
+        app:srcCompat="@drawable/ic_whatsapp" />
+
+    <ImageView
+        android:id="@+id/btn_call"
+        android:layout_width="@dimen/dimen_24dp"
+        android:layout_height="@dimen/dimen_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/home_call" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="8dp"-->
+    <!--android:layout_marginRight="8dp"-->
+    <!--android:layout_marginBottom="8dp"-->
+    <!--app:cardCornerRadius="@dimen/dimen_5dp"-->
+    <!--app:cardElevation="@dimen/button_card_elevation">-->
+
+    <!--<RelativeLayout-->
+    <!--    android:id="@+id/main_layout"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:background="@color/card_color"-->
+    <!--    android:padding="@dimen/dimen_8dp">-->
+
+    <!--    <careager.business.view.customviews.CustomTextView-->
+    <!--        android:id="@+id/job_number"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentLeft="true"-->
+    <!--        android:text="#1234567890"-->
+    <!--        android:textColor="@color/white_dark" />-->
+
+    <!--    <careager.business.view.customviews.CustomTextView-->
+    <!--        android:id="@+id/days_left"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentRight="true"-->
+    <!--        android:background="@color/black_opacity60"-->
+    <!--        android:padding="@dimen/dimen_2dp"-->
+    <!--        android:text="2 Days Left"-->
+    <!--        android:textColor="@color/white_dark" />-->
+
+    <!--    <careager.business.view.customviews.CustomTextView-->
+    <!--        android:id="@+id/car_registration_no"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/job_number"-->
+    <!--        android:layout_alignParentLeft="true"-->
+    <!--        android:layout_marginTop="@dimen/dimen_10dp"-->
+    <!--        android:maxLines="1"-->
+    <!--        android:text="he 33 hh 3333"-->
+    <!--        android:textColor="@color/white_dark"-->
+    <!--        android:textSize="@dimen/size_12sp" />-->
+
+    <!--    <careager.business.view.customviews.CustomTextView-->
+    <!--        android:id="@+id/user_info"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/car_registration_no"-->
+    <!--        android:layout_alignParentLeft="true"-->
+    <!--        android:layout_marginTop="@dimen/dimen_10dp"-->
+    <!--        android:text="Pranav Mittal"-->
+    <!--        android:textColor="@color/white_dark"-->
+    <!--        android:textSize="@dimen/size_12sp" />-->
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_below="@id/car_registration_no"-->
+    <!--        android:layout_marginTop="@dimen/dimen_10dp"-->
+    <!--        android:layout_toRightOf="@id/user_info"-->
+    <!--        android:gravity="end">-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/btn_camera"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginRight="@dimen/dimen_16dp"-->
+    <!--            app:srcCompat="@drawable/ic_photo_camera" />-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/btn_chat"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginRight="@dimen/dimen_16dp"-->
+    <!--            app:srcCompat="@drawable/home_chat" />-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/btn_call"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            app:srcCompat="@drawable/home_call" />-->
+    <!--    </LinearLayout>-->
+
+    <!--</RelativeLayout>-->
+
+    <!--</android.support.v7.widget.CardView>-->

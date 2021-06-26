@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/tutorial_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_20dp">
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/tutorial_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/dimen_34sp"
+            android:textColor="@color/gray_color"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            />
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/tutorial_line_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/size_20sp"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:textColor="@color/gray_color"
+            />
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/tutorial_line_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/size_16sp"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:textColor="@color/gray_color"
+            />
+
+        <autroid.business.view.customviews.CustomButtonView
+            android:id="@+id/tutorial_get_started"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_50dp"
+            android:layout_marginLeft="@dimen/dimen_30dp"
+            android:layout_marginRight="@dimen/dimen_30dp"
+            android:text="Get Started"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dimen_30dp"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tutorial_swipe_to_know"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/size_18sp"
+            android:layout_marginTop="@dimen/dimen_70dp"
+            android:textColor="@color/white_color"
+            android:visibility="gone"
+            android:text="Swipe to know more >>"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:gravity="center"
+    android:layout_margin="@dimen/dimen_8dp"
+    android:layout_gravity="center"
+    android:background="@drawable/rectangle_background_cardblack_corner8dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/white_dark"
+        android:textSize="@dimen/size_18sp"/>
+
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:textColor="@color/gray_color_button"
+        android:textSize="14sp"/>
+
+</LinearLayout>

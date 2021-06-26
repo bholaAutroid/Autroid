@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_layout"
+    tools:context="autroid.business.view.activity.EditProductActivity">
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/layout_toolbar_activity"
+        ></include>
+    <ImageView
+        android:layout_below="@id/common_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fragment_header"
+        />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dimen_5dp"
+        app:cardElevation="@dimen/button_card_elevation"
+        app:cardUseCompatPadding="true"
+        android:layout_below="@id/common_toolbar"
+        >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/dimen_20dp"
+                >
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Category"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    />
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/product_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_5dp"
+                    android:enabled="false"
+                    android:background="@drawable/edittext_bg"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ll_show"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    >
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Brand"
+                        android:layout_marginLeft="@dimen/dimen_5dp"
+                        />
+
+                    <androidx.appcompat.widget.AppCompatSpinner
+                        android:id="@+id/spn_brand"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dimen_5dp"
+                        android:background="@drawable/spinner_bg_black"
+                        />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Product Specification"
+                        android:layout_marginLeft="@dimen/dimen_5dp"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        style="@style/style_rotobo_normal_black_bold"
+                        />
+
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/product_specification"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dimen_10dp"
+                        android:background="@drawable/edittext_bg"
+                        android:imeOptions="actionNext"
+                        />
+
+                    <autroid.business.view.customviews.CustomTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Model Number"
+                        android:layout_marginLeft="@dimen/dimen_5dp"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        style="@style/style_rotobo_normal_black_bold"
+                        />
+
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/product_model"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dimen_10dp"
+                        android:background="@drawable/edittext_bg"
+                        android:imeOptions="actionNext"
+                        />
+
+                </LinearLayout>
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Title"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    />
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/product_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_5dp"
+                    android:background="@drawable/edittext_bg"
+                    android:imeOptions="actionNext"
+                    />
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Description"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    />
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/product_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_99dp"
+                    android:padding="@dimen/dimen_5dp"
+                    android:gravity="start"
+                    android:background="@drawable/edittext_bg"
+                    android:imeOptions="actionNext"
+                    />
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Product Price (₹)"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    />
+
+                <autroid.business.view.customviews.CustomEditText
+                    android:id="@+id/product_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_5dp"
+                    android:background="@drawable/edittext_bg"
+                    android:inputType="numberDecimal"
+                    android:imeOptions="actionDone"
+                    />
+
+                <autroid.business.view.customviews.CustomButtonView
+                    android:id="@+id/product_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:text="Update Product"
+                    />
+
+
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Product Gallery"
+                    android:gravity="center"
+                    android:textSize="@dimen/size_20sp"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    style="@style/style_rotobo_normal_black_bold"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_1dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginLeft="@dimen/dimen_50dp"
+                    android:layout_marginRight="@dimen/dimen_50dp"
+                    android:background="@color/lightgrey"
+                    />
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/gallery"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:clipToPadding="false"
+                    android:layout_centerInParent="true"
+                    android:paddingBottom="@dimen/dimen_5dp"
+                    android:paddingTop="@dimen/dimen_5dp" />
+
+                <Button
+                    android:id="@+id/add_product_photos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add more images"
+                    android:layout_margin="@dimen/dimen_10dp"
+                    android:visibility="gone"
+                    android:textColor="@color/selector_white_button_text_color"
+                    android:background="@drawable/white_button_bg"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_logo_blurred"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="@dimen/dimen_10dp"
+                    />
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_logo_blurred"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        />
+
+</RelativeLayout>

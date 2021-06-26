@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_2dp"
+    android:orientation="vertical"
+    android:background="@drawable/matt_black_selector"
+    android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:orientation="horizontal">
+
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Transaction #: "
+                android:textColor="@color/white_dark"
+                android:textSize="12sp" />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/transaction_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textColor="@color/white_light"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Amount: "
+                android:textColor="@color/white_dark"
+                android:textSize="12sp" />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/paid_total"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textColor="@color/white_light"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Payment Mode : "
+                android:textColor="@color/white_dark"
+                android:textSize="12sp" />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/payment_mode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textColor="@color/white_light"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Paid On : "
+                android:textColor="@color/white_dark"
+                android:textSize="12sp" />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/paid_on"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textColor="@color/white_light"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="4dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:orientation="horizontal">-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="Policy Holder : "-->
+                <!--android:textColor="@color/white_dark"-->
+                <!--android:textSize="12sp" />-->
+
+            <!--<careager.business.view.customviews.CustomTextView-->
+                <!--android:id="@+id/policy_holder_name"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="2"-->
+                <!--android:textColor="@color/white_light"-->
+                <!--android:textSize="12sp" />-->
+
+        <!--</LinearLayout>-->
+
+
+</LinearLayout>
+

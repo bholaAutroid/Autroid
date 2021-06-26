@@ -1,0 +1,909 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:background="@color/matt_black"
+    android:clickable="true"
+   >
+
+    <RelativeLayout
+        android:id="@+id/ll_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50dp"
+        android:padding="@dimen/dimen_10dp"
+        android:background="@color/black"
+        >
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="@dimen/dimen_24dp"
+            android:layout_height="@dimen/dimen_24dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/ic_arrow_back"
+            android:layout_centerInParent="true"
+            />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cb_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer"
+            android:buttonTint="@color/white_dark"
+            android:layout_toRightOf="@id/back"
+            android:textColor="@color/white_dark"
+            android:checked="true"
+            ></androidx.appcompat.widget.AppCompatCheckBox>
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cb_business"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:layout_toRightOf="@id/cb_user"
+            android:buttonTint="@color/white_dark"
+            android:checked="true"
+            android:text="Dealer"
+            android:textColor="@color/white_dark"></androidx.appcompat.widget.AppCompatCheckBox>
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/car_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white_dark"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_toRightOf="@id/back"
+            android:text="Used Cars"
+            android:layout_marginLeft="10dp"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/size_18sp"
+            android:visibility="gone"
+            android:layout_marginRight="@dimen/dimen_10dp"
+            />
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:text="Gurgaon"
+            android:drawableTint="@color/white_dark"
+            android:drawableRight="@drawable/ic_arrow_drop_down"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/size_16sp"
+            android:visibility="visible"
+            />
+
+
+    </RelativeLayout>
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_header"
+
+        >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/car_stock_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:nestedScrollingEnabled="false"
+        />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontal_scroll"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="@color/black_opacity80"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_40dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            >
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/brands_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Model"
+                android:padding="@dimen/dimen_10dp"
+                android:background="@drawable/selector_transparent"
+                android:textColor="@color/white" />
+
+            <View
+                android:layout_width="@dimen/dimen_1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                android:background="@color/matt_black"
+                ></View>
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/price_txt_range"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:gravity="center_horizontal"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen_10dp"
+                android:background="@drawable/selector_transparent"
+                />
+
+            <View
+                android:layout_width="@dimen/dimen_1dp"
+                android:layout_height="match_parent"
+                android:background="@color/matt_black"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                ></View>
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/transmission_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Transmission"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen_10dp"
+                android:background="@drawable/selector_transparent"
+                />
+
+            <View
+                android:layout_width="@dimen/dimen_1dp"
+                android:layout_height="match_parent"
+                android:background="@color/matt_black"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                ></View>
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/color_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Color"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen_10dp"
+                android:background="@drawable/selector_transparent"
+                />
+
+            <View
+                android:layout_width="@dimen/dimen_1dp"
+                android:layout_height="match_parent"
+                android:background="@color/matt_black"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                ></View>
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/fuel_type__txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fuel Type"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen_10dp"
+                android:background="@drawable/selector_transparent"
+                />
+
+            <View
+                android:layout_width="@dimen/dimen_1dp"
+                android:layout_height="match_parent"
+                android:background="@color/matt_black"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:layout_marginBottom="@dimen/dimen_10dp"
+                ></View>
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/body_style__txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Body Type"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen_10dp"
+                android:background="@drawable/selector_transparent"
+                />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="City"
+                android:visibility="gone"
+                android:gravity="start"
+                android:textColor="@color/gray_color_button"
+                android:padding="@dimen/dimen_10dp"
+                android:background="@drawable/selector_transparent"
+                />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/def_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size_16sp"
+        android:padding="@dimen/dimen_10dp"
+        android:text="Sorry, no results found - try a different filters selection"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:textColor="@color/white_dark"
+        ></TextView>
+
+
+
+    <View
+        android:id="@+id/bg_transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_opacity80"
+        android:clickable="true"
+        android:visibility="gone"
+        ></View>
+
+ <!--   <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        android:src="@drawable/ic_filter"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        app:backgroundTint="@color/red_color"
+        />-->
+
+    <!--Price Layout-->
+    <LinearLayout
+        android:id="@+id/_layout_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_10dp"
+        android:background="@drawable/rectangle_background_cardblack_corner8dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:clickable="true"
+        android:layout_margin="@dimen/dimen_10dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <autroid.business.view.customviews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Price Range"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/size_18sp"
+            android:visibility="visible"
+            android:textStyle="bold"
+
+            />
+
+            <ImageButton
+                android:id="@+id/clear_price_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_clear_black"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/dimen_5dp"
+                android:backgroundTint="@color/white_dark"
+                ></ImageButton>
+
+        </RelativeLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_below="@id/fuel_title"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            ></View>
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/price_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            android:textColor="@color/white_dark"
+            />
+        <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+            android:id="@+id/price_rangeSeekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:corner_radius="10"
+            app:min_value="0"
+            app:max_value="40"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            app:steps="2"
+            android:visibility="visible"
+            app:bar_color="@color/lightgrey"
+            app:bar_highlight_color="@color/gray_color_button"
+            app:left_thumb_color="@color/red_color"
+            app:right_thumb_color="@color/red_color"
+            app:left_thumb_color_pressed="@color/text_black"
+            app:right_thumb_color_pressed="@color/text_black"
+            app:data_type="_integer"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dimen_30dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                android:background="@drawable/red_button"
+                android:padding="@dimen/dimen_10dp"
+                android:layout_marginRight="@dimen/dimen_20dp"
+                android:layout_toLeftOf="@id/apply_price_filter"
+                />
+            <TextView
+                android:id="@+id/apply_price_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apply"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/white"
+                android:background="@drawable/selector_gray"
+                android:padding="@dimen/dimen_10dp"
+
+                />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/_layout_brand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_10dp"
+        android:background="@color/white_color"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <autroid.business.view.customviews.CustomTextView
+                style="@style/style_rotobo_normal_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:gravity="start"
+                android:text="Brands"
+                android:textColor="@color/black_color"
+                android:textSize="@dimen/size_16sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/clear_brand_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/selector_transparent"
+                    android:padding="@dimen/dimen_10dp"
+                    android:text="Clear"
+                    android:visibility="gone"
+                    android:textColor="@color/red_color" />
+
+                <TextView
+                    android:id="@+id/apply_brand_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_20dp"
+                    android:background="@drawable/selector_transparent"
+                    android:padding="@dimen/dimen_10dp"
+                    android:text="Apply"
+                    android:textColor="@color/green" />
+            </LinearLayout>
+
+        </RelativeLayout>
+        <autroid.business.adapter.purchase.SearchModelAdapter
+            android:id="@+id/searchView_brands"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightgrey"
+            android:focusableInTouchMode="true"
+            android:hint="Search Brand"
+            android:imeOptions="actionDone"
+            android:padding="@dimen/dimen_10dp"
+            android:inputType="text|textNoSuggestions|textMultiLine"
+            android:nextFocusDown="@+id/editText"
+            android:layout_marginTop="10dp"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <!--MODEL LAYOUT -->
+    <RelativeLayout
+        android:id="@+id/layout_model"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dimen_20dp"
+        android:background="@drawable/rectangle_background_cardblack_corner8dp"
+        android:elevation="@dimen/dimen_5dp"
+        android:padding="@dimen/dimen_5dp"
+        android:visibility="gone"
+        android:clickable="true"
+        >
+        <autroid.business.view.customviews.CustomEditText
+            android:id="@+id/search_model"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dimen_5dp"
+            android:drawableLeft="@drawable/places_ic_search"
+            android:textColorHint="@color/white_dark"
+            android:hint="Search Model"
+            android:textColor="@color/white"
+            android:drawablePadding="@dimen/dimen_5dp"
+            android:maxLines="1"
+            android:imeOptions="actionDone"
+            android:layout_toLeftOf="@id/model_clear"
+            />
+
+        <ImageButton
+            android:id="@+id/model_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_clear_black"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/dimen_10dp"
+            android:backgroundTint="@color/white_dark"
+            ></ImageButton>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_models"
+            android:layout_width="match_parent"
+            android:layout_below="@id/search_model"
+            android:layout_above="@+id/model_bottom"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <RelativeLayout
+            android:id="@+id/model_bottom"
+            android:layout_width="match_parent"
+            android:padding="@dimen/dimen_5dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textSize="@dimen/size_14sp"
+                android:layout_marginRight="@dimen/dimen_20dp"
+                android:visibility="gone"
+                android:layout_toLeftOf="@id/model_ok"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen_10dp"
+                android:background="@drawable/red_button"
+                />
+            <TextView
+                android:id="@+id/model_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apply"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/size_14sp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:background="@drawable/selector_gray"
+                android:padding="@dimen/dimen_10dp"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <!--TRANSMISSION LAYOUT -->
+    <RelativeLayout
+        android:id="@+id/layout_transmission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_20dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rectangle_background_cardblack_corner8dp"
+        android:elevation="@dimen/dimen_5dp"
+        android:padding="@dimen/dimen_5dp"
+        android:visibility="gone"
+        android:clickable="true"
+        >
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/transmission_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Transmission"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/dimen_10dp"
+            android:textSize="@dimen/size_18sp"
+            android:visibility="visible"
+            android:textStyle="bold"
+            />
+
+        <ImageButton
+            android:id="@+id/transmission_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_clear_black"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/dimen_10dp"
+            android:backgroundTint="@color/white_dark"
+            ></ImageButton>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_below="@id/transmission_title"
+            ></View>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_transmission"
+            android:layout_width="match_parent"
+            android:layout_below="@id/transmission_title"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_5dp"
+            android:layout_below="@id/list_transmission"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textSize="@dimen/size_14sp"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen_10dp"
+                android:textAllCaps="true"
+                android:layout_marginRight="@dimen/dimen_20dp"
+                android:layout_toLeftOf="@id/transmission_ok"
+                android:background="@drawable/red_button"
+                />
+
+            <TextView
+                android:id="@+id/transmission_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apply"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/size_14sp"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen_10dp"
+                android:textAllCaps="true"
+                android:background="@drawable/selector_gray"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--Fuel Layout-->
+    <RelativeLayout
+        android:id="@+id/layout_fuel_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_20dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rectangle_background_cardblack_corner8dp"
+        android:elevation="@dimen/dimen_5dp"
+        android:padding="@dimen/dimen_5dp"
+        android:visibility="gone"
+        android:clickable="true"
+        >
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/fuel_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Fuel Type"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/dimen_10dp"
+            android:textSize="@dimen/size_18sp"
+            android:visibility="visible"
+            android:textStyle="bold"
+            />
+
+        <ImageButton
+            android:id="@+id/fuel_type_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_clear_black"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/dimen_10dp"
+            android:backgroundTint="@color/white_dark"
+            ></ImageButton>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_below="@id/fuel_title"
+            ></View>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_fuel_type"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/fuel_title"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/list_fuel_type"
+            android:padding="@dimen/dimen_5dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textSize="@dimen/size_14sp"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen_10dp"
+                android:visibility="gone"
+                android:textAllCaps="true"
+                android:layout_toLeftOf="@id/fuel_type_ok"
+                android:background="@drawable/red_button"
+                android:layout_marginRight="@dimen/dimen_20dp"
+                />
+
+            <TextView
+                android:id="@+id/fuel_type_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apply"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/size_14sp"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen_10dp"
+                android:textAllCaps="true"
+                android:background="@drawable/selector_gray"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--Body type layout-->
+
+    <RelativeLayout
+        android:id="@+id/layout_body_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_20dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rectangle_background_cardblack_corner8dp"
+        android:elevation="@dimen/dimen_5dp"
+        android:padding="@dimen/dimen_5dp"
+        android:visibility="gone"
+        android:clickable="true"
+        >
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/body_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Body Type"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/dimen_10dp"
+            android:textSize="@dimen/size_18sp"
+            android:visibility="visible"
+            ></autroid.business.view.customviews.CustomTextView>
+
+        <ImageButton
+            android:id="@+id/body_type_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_clear_black"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/dimen_10dp"
+            android:backgroundTint="@color/white_dark"
+            ></ImageButton>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_below="@id/body_title"
+            ></View>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_body_type"
+            android:layout_width="match_parent"
+            android:layout_below="@id/body_title"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/list_body_type"
+            android:padding="@dimen/dimen_5dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:visibility="gone"
+                android:textSize="@dimen/size_14sp"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen_10dp"
+                android:layout_marginRight="@dimen/dimen_20dp"
+                android:textAllCaps="true"
+                android:layout_toLeftOf="@id/body_type_ok"
+                android:background="@drawable/red_button"
+                />
+
+            <TextView
+                android:id="@+id/body_type_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apply"
+                android:textSize="@dimen/size_14sp"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen_10dp"
+                android:textAllCaps="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/selector_gray"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!--Color layout-->
+
+    <RelativeLayout
+        android:id="@+id/layout_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_20dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rectangle_background_cardblack_corner8dp"
+        android:elevation="@dimen/dimen_5dp"
+        android:padding="@dimen/dimen_5dp"
+        android:visibility="gone"
+        android:clickable="true"
+        >
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/color_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Color"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/dimen_10dp"
+            android:textSize="@dimen/size_18sp"
+            android:visibility="visible"
+            ></autroid.business.view.customviews.CustomTextView>
+
+        <ImageButton
+            android:id="@+id/color_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_clear_black"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/dimen_10dp"
+            android:backgroundTint="@color/white_dark"
+            ></ImageButton>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            android:layout_below="@id/color_title"
+            ></View>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_color"
+            android:layout_width="match_parent"
+            android:layout_below="@id/color_title"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+
+        <RelativeLayout
+            android:id="@+id/color_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+         android:padding="@dimen/dimen_5dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:visibility="gone"
+                android:textSize="@dimen/size_14sp"
+                android:textColor="@color/white"
+                android:layout_marginRight="@dimen/dimen_20dp"
+                android:padding="@dimen/dimen_10dp"
+                android:textAllCaps="true"
+                android:layout_toLeftOf="@id/color_ok"
+                android:background="@drawable/red_button"
+                />
+
+            <TextView
+                android:id="@+id/color_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Apply"
+                android:textSize="@dimen/size_14sp"
+                android:textColor="@color/white"
+                android:padding="@dimen/dimen_10dp"
+                android:textAllCaps="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/selector_gray"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+       android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+
+
+
+</RelativeLayout>

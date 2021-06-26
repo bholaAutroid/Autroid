@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="@dimen/dimen_5dp"
+    android:id="@+id/main_layout"
+    android:layout_marginLeft="@dimen/dimen_5dp"
+    android:layout_marginRight="@dimen/dimen_5dp"
+    android:background="@color/white_color"
+    android:padding="@dimen/dimen_2dp"
+    >
+    <ImageView
+        android:id="@+id/showroom_cover"
+        android:layout_width="@dimen/dimen_75dp"
+        android:layout_height="@dimen/dimen_99dp"
+        android:scaleType="centerCrop"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dimen_5dp"
+        >
+
+                <autroid.business.view.customviews.CustomTextView
+                    android:id="@+id/showroom_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:textSize="@dimen/size_16sp"
+                    style="@style/style_rotobo_normal_black_bold"
+                    />
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/showroom_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/size_12sp"
+            style="@style/style_rotobo_normal_black"
+            />
+
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/showroom_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="@dimen/size_12sp"
+
+        />
+
+    </LinearLayout>
+
+</LinearLayout>

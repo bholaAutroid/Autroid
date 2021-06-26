@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black"
+    android:clickable="true"
+    android:orientation="vertical"
+    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/jobcard_toolbar"
+        layout="@layout/layout_toolbar_activity" />
+
+    <AutoCompleteTextView
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Search particular"
+        android:textColorHint="@color/white_dark"
+        android:textColor="@color/white_light"
+        android:gravity="center_vertical"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:drawablePadding="@dimen/dimen_5dp"
+        android:padding="@dimen/dimen_5dp"
+        android:textSize="@dimen/size_12sp"
+        android:visibility="visible"
+        android:layout_below="@id/jobcard_toolbar"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:imeOptions="actionSearch"
+        android:maxLines="1"
+        android:inputType = "text"
+        android:background="@drawable/rectangle_background_cardblack_corner8dp"
+        android:drawableLeft="@drawable/places_ic_search"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/jobcard_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search"
+        android:fadeScrollbars="false"
+        android:scrollbars="vertical" />
+
+
+        <autroid.business.view.customviews.CustomEditText
+            android:id="@+id/other_comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_below="@id/jobcard_recyclerview"
+            android:background="@drawable/edittext_bg"
+            android:hint="Enter Items"
+            android:imeOptions="actionDone"
+            android:padding="12dp"
+            android:layout_margin="@dimen/dimen_10dp"
+            android:textSize="14sp"
+            android:inputType="textCapSentences"
+            android:singleLine="true"
+            android:textColor="@color/black_color"
+            android:visibility="gone" />
+
+    <Button
+        android:id="@+id/jobcard_proceed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/other_comments"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:layout_marginBottom="@dimen/dimen_5dp"
+        android:layout_marginLeft="@dimen/dimen_50dp"
+        android:layout_marginRight="@dimen/dimen_50dp"
+        android:minHeight="@dimen/dimen_40dp"
+        android:background="@drawable/red_button_selector"
+        android:text="Proceed"
+        android:textColor="@color/white_color"
+        android:textSize="16sp" />
+
+</RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

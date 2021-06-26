@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/main_layout"
+    android:layout_marginTop="@dimen/dimen_5dp"
+    android:layout_marginBottom="@dimen/dimen_5dp"
+    android:elevation="@dimen/dimen_4dp"
+    android:paddingTop="@dimen/dimen_5dp"
+    android:background="@color/white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+    <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/rb_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/red_color"
+
+            />
+
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:text=""
+            android:paddingLeft="@dimen/dimen_10dp"
+            android:textColor="@color/white_dark"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_14sp"
+            />
+    </LinearLayout>
+
+    <autroid.business.view.customviews.CustomTextView
+        android:id="@+id/delete_address"
+        android:layout_width="wrap_content"
+        android:text="@string/delete"
+        android:gravity="end"
+        android:visibility="gone"
+        android:layout_gravity="end"
+        android:background="@drawable/selector_transparent"
+        android:padding="@dimen/dimen_10dp"
+        android:textColor="@color/red_color"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size_13sp"
+        />
+
+    </LinearLayout>
+

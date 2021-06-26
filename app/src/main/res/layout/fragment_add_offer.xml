@@ -1,0 +1,137 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/window_background"
+    android:id="@+id/main_layout"
+    tools:context="autroid.business.view.fragment.AddOfferFragment">
+
+    <include
+        android:id="@+id/common_toolbar"
+        layout="@layout/layout_toolbar_activity"
+        ></include>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/common_toolbar"
+        android:background="@drawable/fragment_header"
+        ></ImageView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        android:layout_below="@id/common_toolbar"
+
+        >
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/dimen_5dp"
+        app:cardElevation="@dimen/button_card_elevation"
+        app:cardUseCompatPadding="true"
+        >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/dimen_10dp"
+        >
+      <RelativeLayout
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/dimen_189dp"
+          >
+
+          <androidx.appcompat.widget.AppCompatImageView
+              android:id="@+id/img_add"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerHorizontal="true"
+              android:layout_centerInParent="true"
+              android:tint="@color/black_color"
+              app:srcCompat="@drawable/ic_add" />
+
+          <autroid.business.view.customviews.CustomTextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/img_add"
+              android:text="Add Image"
+              android:gravity="center"
+              android:textSize="@dimen/dimen_32sp"
+               />
+          <ImageView
+              android:id="@+id/offer_image"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:scaleType="centerCrop"
+              />
+      </RelativeLayout>
+
+     <autroid.business.view.customviews.CustomTextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Title"
+         android:layout_marginTop="@dimen/dimen_20dp"
+         />
+    <autroid.business.view.customviews.CustomEditText
+        android:id="@+id/offer_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="start"
+        android:textColorHint="@color/black_color"
+        android:background="@drawable/edittext_bg"
+
+        />
+
+        <autroid.business.view.customviews.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            />
+        <autroid.business.view.customviews.CustomEditText
+        android:id="@+id/offer_description"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="10dp"
+        android:gravity="start"
+        android:textColorHint="@color/black_color"
+        android:background="@drawable/edittext_bg"
+            />
+        <autroid.business.view.customviews.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Validity till"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            />
+        <autroid.business.view.customviews.CustomTextView
+            android:id="@+id/offer_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_bg"
+            android:padding="@dimen/dimen_10dp"
+            android:textColor="@color/black_color"
+            />
+
+    <Button
+        android:id="@+id/add_offer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_20dp"
+        android:text="Save"
+        android:textColor="@color/selector_white_button_text_color"
+        android:background="@drawable/white_button_bg"
+        />
+    </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    </ScrollView>
+
+</RelativeLayout>
