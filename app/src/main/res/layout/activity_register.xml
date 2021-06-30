@@ -1,25 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/matt_black"
+    android:id="@+id/main_layout"
     tools:context="autroid.business.view.activity.RegisterActivity">
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="@dimen/dimen_20dp">
+            android:padding="@dimen/dimen_20dp"
+            >
+            <ImageView
+                android:layout_marginTop="@dimen/dimen_2dp"
+                android:layout_marginLeft="@dimen/dimen_2dp"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/splash_logo"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/imageView" />
 
             <TextView
-                android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -46,24 +55,23 @@
                 android:textSize="18sp" />
 
             <autroid.business.view.customviews.CustomEditText
-                android:id="@+id/business_name"
-                style="@style/style_rotobo_medium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_40dp"
-                android:background="@android:color/transparent"
                 android:drawableLeft="@drawable/ic_round_business_24"
                 android:drawableTint="@color/gray_color"
-                android:hint=" Business Name"
+                android:id="@+id/business_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Business Name"
+                android:background="@android:color/transparent"
+                style="@style/style_rotobo_medium"
                 android:inputType="text"
-                android:textColor="@color/white_color"
-                android:textColorHint="@color/gray_color" />
-
+                android:layout_marginTop="@dimen/dimen_40dp"
+                android:textColorHint="@color/gray_color"
+                android:textColor="@color/white_color" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="@dimen/dimen_4dp"
-                android:background="@color/gray_color" />
+                android:background="@color/gray_color"
+                android:layout_marginTop="@dimen/dimen_5dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -72,25 +80,48 @@
                 android:gravity="bottom"
                 android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="160dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
 
-                    <androidx.appcompat.widget.AppCompatSpinner
-                        android:id="@+id/business_mobilecode_list"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="@color/white_color"/>
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="@dimen/dimen_4dp"
-                        android:layout_marginRight="@dimen/dimen_20dp"
-                        android:background="@color/gray_color"/>
-                </LinearLayout>
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="160dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_marginTop="@dimen/dimen_4dp"
+                                android:id="@+id/iv_county"
+                                android:tint="@color/gray_color"
+                                app:srcCompat="@drawable/ic_baseline_county_24"
+                                android:layout_width="@dimen/dimen_24dp"
+                                android:layout_height="@dimen/dimen_24dp"/>
+
+                            <androidx.appcompat.widget.AppCompatSpinner
+                                android:layout_toRightOf="@id/iv_county"
+                                android:id="@+id/business_mobilecode_list"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/white_color"/>
+                            <View
+                                android:layout_below="@id/business_mobilecode_list"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="@dimen/dimen_4dp"
+                                android:layout_marginRight="@dimen/dimen_20dp"
+                                android:background="@color/gray_color"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+
 
                 <LinearLayout
                     android:layout_width="160dp"
@@ -100,6 +131,7 @@
                     android:orientation="vertical">
 
                     <autroid.business.view.customviews.CustomEditText
+                        android:layout_marginLeft="@dimen/dimen_2dp"
                         android:id="@+id/business_mobile"
                         style="@style/style_rotobo_medium"
                         android:layout_width="match_parent"
@@ -109,7 +141,6 @@
                         android:drawableTint="@color/gray_color"
                         android:hint=" Mobile Number"
                         android:inputType="number"
-                        android:maxLength="10"
                         android:textColor="@color/white_color"
                         android:textColorHint="@color/gray_color" />
 
@@ -120,70 +151,130 @@
                         android:layout_marginTop="@dimen/dimen_4dp"
                         android:background="@color/gray_color"/>
                 </LinearLayout>
+            </LinearLayout>
 
+            <autroid.business.view.customviews.CustomEditText
+                android:paddingLeft="@dimen/dimen_2dp"
+                android:drawableTint="@color/gray_color"
+                android:drawableLeft="@drawable/ic_customer_email"
+                android:id="@+id/business_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint=" Email"
+                android:background="@android:color/transparent"
+                style="@style/style_rotobo_medium"
+                android:inputType="text"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:textColorHint="@color/gray_color"
+                android:textColor="@color/white_color"
+
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_color"
+                android:layout_marginTop="@dimen/dimen_5dp"/>
+
+            <autroid.business.view.customviews.CustomEditText
+                android:visibility="gone"
+                android:id="@+id/business_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:background="@android:color/transparent"
+                style="@style/style_rotobo_medium"
+                android:inputType="text"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:paddingLeft="@dimen/dimen_10dp"
+                android:textColorHint="@color/gray_color"
+                android:textColor="@color/white_color" />
+            <View
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_color"
+                android:layout_marginTop="@dimen/dimen_8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <autroid.business.view.customviews.CustomEditText
+                        android:drawableTint="@color/gray_color"
+                        android:drawableLeft="@drawable/ic_round_lock_24"
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Password"
+                        android:background="@android:color/transparent"
+                        style="@style/style_rotobo_medium"
+                        android:inputType="textPassword"
+                        android:textColorHint="@color/gray_color"
+                        android:textColor="@color/white_color" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/gray_color"
+                        android:layout_marginTop="@dimen/dimen_5dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="@dimen/dimen_5dp"
+                    android:orientation="vertical"
+                    >
+                    <autroid.business.view.customviews.CustomEditText
+                        android:id="@+id/confirm_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:hint="Confirm Password"
+                        android:background="@android:color/transparent"
+                        style="@style/style_rotobo_medium"
+                        android:inputType="textPassword"
+                        android:paddingLeft="@dimen/dimen_10dp"
+                        android:textColorHint="@color/gray_color"
+                        android:textColor="@color/white_color" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="5"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/dimen_30dp"
+                android:gravity="bottom">
 
             </LinearLayout>
 
-
-            <autroid.business.view.customviews.CustomEditText
-                android:id="@+id/business_email"
-                style="@style/style_rotobo_medium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_30dp"
-                android:background="@android:color/transparent"
-                android:drawableLeft="@drawable/ic_customer_email"
+            <EditText
                 android:drawableTint="@color/gray_color"
-                android:hint=" Email ID"
-                android:inputType="text"
-                android:textColor="@color/white_color"
-                android:textColorHint="@color/gray_color" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="@dimen/dimen_4dp"
-                android:background="@color/gray_color"/>
-
-            <autroid.business.view.customviews.CustomEditText
-                android:id="@+id/password"
-                style="@style/style_rotobo_medium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_30dp"
-                android:background="@android:color/transparent"
-                android:drawableLeft="@drawable/ic_round_lock_24"
-                android:drawableTint="@color/gray_color"
-                android:hint="Password"
-                android:inputType="text"
-                android:textColor="@color/white_color"
-                android:textColorHint="@color/gray_color" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="@dimen/dimen_4dp"
-                android:background="@color/gray_color"/>
-
-            <autroid.business.view.customviews.CustomTextView
-                android:id="@+id/business_address"
-                style="@style/style_rotobo_medium"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_30dp"
-                android:background="@android:color/transparent"
                 android:drawableLeft="@drawable/ic_baseline_location_on_24"
-                android:drawableTint="@color/gray_color"
+                android:id="@+id/business_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="Full Address"
+                android:background="@android:color/transparent"
+                style="@style/style_rotobo_medium"
                 android:inputType="text"
-                android:textColor="@color/white_color"
-                android:textColorHint="@color/gray_color" />
-
+                android:layout_marginTop="@dimen/dimen_2dp"
+                android:textColorHint="@color/gray_color"
+                android:textColor="@color/white_color" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="@dimen/dimen_4dp"
-                android:background="@color/gray_color"/>
+                android:background="@color/gray_color"
+                android:layout_marginTop="@dimen/dimen_5dp"/>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -196,8 +287,8 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <autroid.business.view.customviews.CustomEditText
-
+                    <EditText
+                        android:id="@+id/pinCode"
                         style="@style/style_rotobo_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -224,12 +315,12 @@
                     android:layout_marginLeft="@dimen/dimen_15dp"
                     android:orientation="vertical">
 
-                    <autroid.business.view.customviews.CustomEditText
-                        android:id="@+id/confirm_password"
+                    <EditText
+                        android:id="@+id/regCity"
                         style="@style/style_rotobo_medium"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/dimen_5dp"
+                        android:layout_marginLeft="@dimen/dimen_7dp"
                         android:background="@android:color/transparent"
                         android:drawableLeft="@drawable/ic_baseline_location_city_24"
                         android:drawableTint="@color/gray_color"
@@ -247,88 +338,69 @@
                 </LinearLayout>
             </LinearLayout>
 
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:weightSum="2"
                 android:layout_marginTop="@dimen/dimen_20dp"
-                android:orientation="vertical"
-                android:weightSum="2">
+                android:orientation="vertical">
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:id="@+id/ic_business"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_2dp"
                         android:tint="@color/gray_color"
-                        app:srcCompat="@drawable/ic_round_business_24" />
+                        app:srcCompat="@drawable/ic_round_business_24"
+                        android:id="@+id/iv_categries"
+                        android:layout_width="22dp"
+                        android:layout_height="@dimen/dimen_20dp"/>
 
                     <androidx.appcompat.widget.AppCompatSpinner
+                        android:layout_toRightOf="@id/iv_categries"
                         android:id="@+id/business_category_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toRightOf="@id/ic_business"
-                        android:backgroundTint="@color/white_color"/>
-
+                        android:backgroundTint="@color/white_color" />
                 </RelativeLayout>
-
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="@dimen/dimen_2dp"
-                    android:background="@color/gray_color"/>
-
+                    android:background="@color/gray_color"
+                    android:layout_marginTop="@dimen/dimen_2dp"/>
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_20dp">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
                     <ImageView
-                        android:id="@+id/ic_business1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_2dp"
+                        android:layout_marginTop="22dp"
                         android:tint="@color/gray_color"
-                        app:srcCompat="@drawable/ic_round_business_24" />
+                        app:srcCompat="@drawable/ic_round_business_24"
+                        android:id="@+id/iv_categries1"
+                        android:layout_width="@dimen/dimen_20dp"
+                        android:layout_height="@dimen/dimen_20dp"/>
 
                     <androidx.appcompat.widget.AppCompatSpinner
-                        android:layout_toRightOf="@id/ic_business1"
                         android:id="@+id/business_company_list"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/white_color"/>
-                </RelativeLayout>
+                        android:layout_toRightOf="@id/iv_categries1"
+                        android:backgroundTint="@color/white_color"
+                        android:layout_marginTop="@dimen/dimen_20dp" />
 
+                </RelativeLayout>
                 <View
                     android:id="@+id/business_company_divider"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="@dimen/dimen_2dp"
-                    android:background="@color/gray_color"/>
+                    android:background="@color/gray_color"
+                    android:layout_marginTop="@dimen/dimen_2dp" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dimen_10dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:drawableLeft="@drawable/ic_baseline_check_circle_outline_24"
-                    android:drawableTint="@color/gray_color"
-                    android:text=" I agree Terms of Service &amp; Privacy Policy"
-                    android:textAlignment="center"
-                    android:textColor="@color/gray_color"
-                    android:textSize="@dimen/dimen_15dp" />
-
-            </LinearLayout>
 
             <autroid.business.view.customviews.CustomCheckbox
                 android:id="@+id/txt_signup"
@@ -336,31 +408,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dimen_20dp"
-                android:buttonTint="@color/white_color"
                 android:gravity="center_vertical"
-                android:text="You agree to the CarEager Terms &amp; Privacy Policy"
-                android:visibility="gone" />
+                android:buttonTint="@color/white_color"
+                android:text="You agree to the CarEager Terms &amp; Privacy Policy" />
 
             <Button
+                android:layout_gravity="center_horizontal"
                 android:id="@+id/btn_register"
-                android:layout_width="@dimen/dimen_150dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/dimen_15dp"
-                android:background="@drawable/btn_back_orange"
-                android:maxHeight="0dp"
+                android:layout_width="170dp"
+                android:layout_height="@dimen/dimen_35dp"
                 android:text="Create Account"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="11sp" />
-
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:textColor="#FFF"
+                android:background="@drawable/btn_back_orange" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginTop="@dimen/dimen_30dp"
+                android:layout_marginTop="@dimen/dimen_28dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -368,10 +434,7 @@
                     style="@style/style_rotobo_normal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Already have an account? "
-
-                    />
-
+                    android:text="Already have an account? " />
                 <autroid.business.view.customviews.CustomTextView
                     android:layout_width="wrap_content"
                     android:textSize="17sp"
@@ -383,8 +446,8 @@
                     android:layout_height="wrap_content"
                     android:text=" Login Now"
                     app:textAllCaps="false" />
-
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

@@ -74,6 +74,8 @@ public class ProfilePagerFragment extends Fragment {
                 case 0:
                     return new ShowroomFragment();
                 case 1:
+                    return new SubscriptionFragment();
+                case 2:
                     return new MyWalletFragment();
             }
             return null;
@@ -82,7 +84,7 @@ public class ProfilePagerFragment extends Fragment {
 
         @Override
         public int getCount() {
-            return 2;
+            return 3;
         }
 
         @Override
@@ -92,6 +94,8 @@ public class ProfilePagerFragment extends Fragment {
                 case 0:
                     return getString(R.string.fragment_myprofile);
                 case 1:
+                   return getString( R.string.fragment_careager_subscription );
+                case 2:
                     return getString(R.string.fragment_careager_cash);
 
             }

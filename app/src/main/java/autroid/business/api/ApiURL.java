@@ -1,5 +1,7 @@
 package autroid.business.api;
 
+import autroid.business.adapter.leads.LeadsAdapter;
+
 /**
  * Created by careager on 04-10-2017.
  * <p>
@@ -14,7 +16,19 @@ public class ApiURL {
 
    //private static String URL="http://13.233.36.16:4000"; //Development
     //private String URL="http://13.127.210.146:4000"; //Staging
-    public static String URL = "http://13.234.81.188:4000";//Production
+//    public static String URL = "http://13.234.81.188:4000";//Production
+    public static String URL = "http://3.6.93.32:4000";//testing..
+
+// Hii Sir, i need some images and urls:-
+// 1. Autroid icon image
+// 2. Play video image which is used in autroid login page
+//
+// Youtube url is required for help page
+// 1. Sales url
+// 2. Purches url
+// 3. Leads url
+
+
 
     public static final String BASE_URL = URL + "/api/";
 

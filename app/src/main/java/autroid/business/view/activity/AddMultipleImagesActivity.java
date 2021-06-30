@@ -154,21 +154,21 @@ public class AddMultipleImagesActivity  extends AppCompatActivity implements Vie
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_PICKER && resultCode == RESULT_OK && data != null) {
             this.images.addAll((ArrayList<Image>) ImagePicker.getImages(data));
             //ArrayList<Image> images = (ArrayList<Image>) ImagePicker.getImages(data);
-            if(images.size()>0)
+            if (images.size() > 0)
                 tvMSG.setVisibility(View.GONE);
-            this.images=images;
-            Log.e("size",images.size()+"");
+            this.images = images;
+            Log.e("size", images.size() + "");
 
             GridLayoutManager llm;
-            llm = new GridLayoutManager(getApplicationContext(),2);
+            llm = new GridLayoutManager(getApplicationContext(), 2);
             recList.setLayoutManager(llm);
 
-            mSelectMultiImageAdapter=new SelectMultiImageAdapter(getApplicationContext(),images,this);
+            mSelectMultiImageAdapter = new SelectMultiImageAdapter(getApplicationContext(), images, this);
             recList.setAdapter(mSelectMultiImageAdapter);
-
 
 
         }

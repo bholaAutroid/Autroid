@@ -111,11 +111,13 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:onClick="openWhatsApp"
                     app:srcCompat="@drawable/ic_whatsapp"
                     android:layout_width="25dp"
                     android:layout_height="25dp"/>
 
                 <TextView
+                    android:onClick="OpenWhatsApp"
                     style="@style/style_rotobo_normal_white_bold"
                     android:textColor="@color/white"
                     android:textSize="17sp"
@@ -145,12 +147,14 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:onClick="openEmail"
                     android:tint="@color/gray_color"
                     app:srcCompat="@drawable/ic_customer_email"
                     android:layout_width="25dp"
                     android:layout_height="25dp"/>
 
                 <TextView
+                    android:onClick="openEmailChat"
                     style="@style/style_rotobo_normal_white_bold"
                     android:textColor="@color/white"
                     android:textSize="17sp"
@@ -180,12 +184,14 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:onClick="opnePhone"
                     android:tint="@color/gray_color"
                     app:srcCompat="@drawable/ic_call"
                     android:layout_width="25dp"
                     android:layout_height="25dp"/>
 
                 <TextView
+                    android:onClick="opnePhoneCall"
                     style="@style/style_rotobo_normal_white_bold"
                     android:textColor="@color/white"
                     android:textSize="17sp"

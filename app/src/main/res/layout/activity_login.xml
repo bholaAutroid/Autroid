@@ -27,7 +27,7 @@
 
 
                 <ImageView
-                    android:background="@drawable/atroid_logo1"
+                    android:src="@drawable/autroid_icon_orng"
                     android:layout_gravity="center"
                     android:layout_width="100dp"
                     android:layout_height="100dp"/>
@@ -58,10 +58,9 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:tint="#C57602"
                         android:id="@+id/iv_autroid_workshop"
                         android:layout_margin="@dimen/dimen_2dp"
-
+                        android:src="@drawable/play_icon"
                         android:layout_width="@dimen/dimen_21dp"
                         android:layout_height="@dimen/dimen_21dp"/>
 
@@ -81,7 +80,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:tint="#C57602"
+                        android:src="@drawable/play_icon"
                         android:layout_margin="@dimen/dimen_2dp"
                         android:id="@+id/iv_autroid_parts"
                         android:layout_width="@dimen/dimen_21dp"
@@ -194,10 +193,9 @@
 
                 <ImageView
                     android:id="@+id/btn_login"
-                    android:layout_marginTop="@dimen/dimen_6dp"
+                    android:layout_marginTop="@dimen/dimen_2dp"
                     android:layout_alignParentEnd="true"
-                    android:background="@drawable/enter"
-                    android:backgroundTint="#FF5722"
+                    android:src="@drawable/login_icon"
                     android:layout_width="19dp"
                     android:layout_height="19dp"/>
             </RelativeLayout>

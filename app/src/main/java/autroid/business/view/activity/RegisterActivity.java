@@ -1,9 +1,13 @@
 package autroid.business.view.activity;
 
 import android.content.Intent;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
+
 import androidx.appcompat.widget.AppCompatSpinner;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -35,12 +39,12 @@ import io.realm.Realm;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    AppCompatSpinner mCategory,mCompany,mMobileCode;
+    AppCompatSpinner mCategory, mCompany, mMobileCode;
     RegisterPresenter mPresenter;
     RelativeLayout mMainLayout;
-    private String spinnerSelectText[]={ "Select Category", "Select Company","Select State"};
-    EditText mName,mEmail,mPassword,mConfirmPassword,mMobile,mUsername;
-    TextView mAddress;
+    private String spinnerSelectText[] = {"Select Category", "Select Company", "Select State"};
+    EditText mName, mEmail, mPassword, mConfirmPassword, mMobile, mUsername;
+    EditText mAddress;
     RegistrationDataResponse mRegistrationDataResponse;
     Button mRegister;
     View mDivider;
@@ -50,66 +54,69 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     RealmController mRealmController;
     Realm mRealm;
 
-    String  strName,strEmail,strPassword,strConfirmPassword,strMobile,strAddress,strCategory,strCompany,strTelephoneCode,strCountryCode,strUsername;
+    String strName, strEmail, strPassword, strConfirmPassword, strMobile, strAddress, strCategory, strCompany, strTelephoneCode, strCountryCode, strUsername;
     CheckBox cbTermPolicy;
+    EditText et_pinCode, et_city;
+    String pinCode, city;
 
-    private boolean isCompany=false;
+    private boolean isCompany = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        super.onCreate( savedInstanceState );
+        setContentView( R.layout.activity_register );
         init();
     }
 
 
-    private void init(){
-        mCategory= (AppCompatSpinner) findViewById(R.id.business_category_list);
-        mCompany= (AppCompatSpinner) findViewById(R.id.business_company_list);
-        mMobileCode= (AppCompatSpinner) findViewById(R.id.business_mobilecode_list);
-        mDivider=findViewById(R.id.business_company_divider);
+    private void init() {
+        mCategory = (AppCompatSpinner) findViewById( R.id.business_category_list );
+        mCompany = (AppCompatSpinner) findViewById( R.id.business_company_list );
+        mMobileCode = (AppCompatSpinner) findViewById( R.id.business_mobilecode_list );
+        mDivider = findViewById( R.id.business_company_divider );
 
-        mRegister= (Button) findViewById(R.id.btn_register);
-        mRegister.setOnClickListener(this);
+        mRegister = (Button) findViewById( R.id.btn_register );
+        mRegister.setOnClickListener( this );
 
-        mName= (EditText) findViewById(R.id.business_name);
-        mEmail= (EditText) findViewById(R.id.business_email);
-        mPassword= (EditText) findViewById(R.id.password);
-        mConfirmPassword= (EditText) findViewById(R.id.confirm_password);
-        mMobile= (EditText) findViewById(R.id.business_mobile);
-        mAddress= (TextView) findViewById(R.id.business_address);
-        mUsername=findViewById(R.id.business_username);
-        mAddress.setOnClickListener(this);
+        mName = (EditText) findViewById( R.id.business_name );
+        mEmail = (EditText) findViewById( R.id.business_email );
+        mPassword = (EditText) findViewById( R.id.password );
+        mConfirmPassword = (EditText) findViewById( R.id.confirm_password );
+        mMobile = (EditText) findViewById( R.id.business_mobile );
+        mAddress = (EditText) findViewById( R.id.business_address );
+        mUsername = findViewById( R.id.business_username );
+        et_pinCode = findViewById( R.id.pinCode );
+        et_city = findViewById( R.id.regCity );
+//        mAddress.setOnClickListener(this);
 
-        cbTermPolicy= (CheckBox) findViewById(R.id.txt_signup);
+        cbTermPolicy = (CheckBox) findViewById( R.id.txt_signup );
 
-        this.mRealm = RealmController.with(this).getRealm();
-        mRealmController=RealmController.getInstance();
+        this.mRealm = RealmController.with( this ).getRealm();
+        mRealmController = RealmController.getInstance();
 
 
-    mMainLayout= (RelativeLayout) findViewById(R.id.main_layout);
-    mPresenter=new RegisterPresenter(this,mMainLayout);
+        mMainLayout = (RelativeLayout) findViewById( R.id.main_layout );
+        mPresenter = new RegisterPresenter( this, mMainLayout );
 
-        mCategory.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        mCategory.setOnItemSelectedListener( new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                TextView txt = view.findViewById(R.id.spinnerTextView);
+                TextView txt = view.findViewById( R.id.spinnerTextView );
 
-                if(i > 0){
-                    txt.setTextColor(getResources().getColor(R.color.white_color));
-                    isCompany=mRegistrationDataResponse.getGetRegistrationData().getCategory().get(i).isIs_company();
-                    if(mRegistrationDataResponse.getGetRegistrationData().getCategory().get(i).isIs_company()){
-                        mCompany.setVisibility(View.VISIBLE);
-                        mDivider.setVisibility(View.VISIBLE);
+                if (i > 0) {
+                    txt.setTextColor( getResources().getColor( R.color.white_color ) );
+                    isCompany = mRegistrationDataResponse.getGetRegistrationData().getCategory().get( i ).isIs_company();
+                    if (mRegistrationDataResponse.getGetRegistrationData().getCategory().get( i ).isIs_company()) {
+                        mCompany.setVisibility( View.VISIBLE );
+                        mDivider.setVisibility( View.VISIBLE );
 
+                    } else {
+                        mCompany.setVisibility( View.GONE );
+                        mDivider.setVisibility( View.GONE );
                     }
-                    else {
-                        mCompany.setVisibility(View.GONE);
-                        mDivider.setVisibility(View.GONE);
-                    }
                 }
-                if(i == 0){
-                    txt.setTextColor(getResources().getColor(R.color.gray_color));
+                if (i == 0) {
+                    txt.setTextColor( getResources().getColor( R.color.gray_color ) );
                 }
             }
 
@@ -117,18 +124,18 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        });
+        } );
 
-        mMobileCode.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        mMobileCode.setOnItemSelectedListener( new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                TextView txt = view.findViewById(R.id.spinnerTextView);
+                TextView txt = view.findViewById( R.id.spinnerTextView );
 
-                if(i > 0){
-                    txt.setTextColor(getResources().getColor(R.color.white_color));
+                if (i > 0) {
+                    txt.setTextColor( getResources().getColor( R.color.white_color ) );
                 }
-                if(i == 0){
-                    txt.setTextColor(getResources().getColor(R.color.gray_color));
+                if (i == 0) {
+                    txt.setTextColor( getResources().getColor( R.color.gray_color ) );
                 }
             }
 
@@ -136,18 +143,18 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        });
+        } );
 
-        mCompany.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        mCompany.setOnItemSelectedListener( new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                TextView txt = view.findViewById(R.id.spinnerTextView);
+                TextView txt = view.findViewById( R.id.spinnerTextView );
 
-                if(i > 0){
-                    txt.setTextColor(getResources().getColor(R.color.white_color));
+                if (i > 0) {
+                    txt.setTextColor( getResources().getColor( R.color.white_color ) );
                 }
-                if(i == 0){
-                    txt.setTextColor(getResources().getColor(R.color.gray_color));
+                if (i == 0) {
+                    txt.setTextColor( getResources().getColor( R.color.gray_color ) );
                 }
             }
 
@@ -155,34 +162,33 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
-        });
+        } );
 
-    getRegisData();
+        getRegisData();
 
 
-}
+    }
 
-    private void getRegisData(){
+    private void getRegisData() {
         mPresenter.getRegistrationsItems();
     }
 
 
+    public void onItemSuccess(RegistrationDataResponse registrationDataResponse) {
+        this.mRegistrationDataResponse = registrationDataResponse;
 
-    public void onItemSuccess(RegistrationDataResponse registrationDataResponse){
-        this.mRegistrationDataResponse=registrationDataResponse;
+        CategorySpinnerAdapter adapterCategory = new CategorySpinnerAdapter( this, R.layout.row_spinner_layout_white, registrationDataResponse.getGetRegistrationData().getCategory(), spinnerSelectText[0] );
+        mCategory.setAdapter( adapterCategory );
 
-        CategorySpinnerAdapter adapterCategory = new CategorySpinnerAdapter(this, R.layout.row_spinner_layout_white,registrationDataResponse.getGetRegistrationData().getCategory(),spinnerSelectText[0]);
-        mCategory.setAdapter(adapterCategory);
+        CompanySpinnerAdapter adapterCompany = new CompanySpinnerAdapter( this, R.layout.row_spinner_layout_white, registrationDataResponse.getGetRegistrationData().getAutomaker(), spinnerSelectText[1] );
+        mCompany.setAdapter( adapterCompany );
 
-        CompanySpinnerAdapter adapterCompany = new CompanySpinnerAdapter(this, R.layout.row_spinner_layout_white,registrationDataResponse.getGetRegistrationData().getAutomaker(),spinnerSelectText[1]);
-        mCompany.setAdapter(adapterCompany);
+        CountryCodeSpinnerAdapter adapterCountryCode = new CountryCodeSpinnerAdapter( this, R.layout.row_spinner_layout_white, registrationDataResponse.getGetRegistrationData().getCountry() );
+        mMobileCode.setAdapter( adapterCountryCode );
 
-        CountryCodeSpinnerAdapter adapterCountryCode = new CountryCodeSpinnerAdapter(this, R.layout.row_spinner_layout_white,registrationDataResponse.getGetRegistrationData().getCountry());
-        mMobileCode.setAdapter(adapterCountryCode);
-
-        for(int i=0;i<registrationDataResponse.getGetRegistrationData().getCountry().size();i++){
-            if(registrationDataResponse.getGetRegistrationData().getCountry().get(i).getTelephoneCode().equals("+91")){
-                mMobileCode.setSelection(i);
+        for (int i = 0; i < registrationDataResponse.getGetRegistrationData().getCountry().size(); i++) {
+            if (registrationDataResponse.getGetRegistrationData().getCountry().get( i ).getTelephoneCode().equals( "+91" )) {
+                mMobileCode.setSelection( i );
             }
         }
 
@@ -196,112 +202,112 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btn_register:
-                if(validate()){
-                    if(cbTermPolicy.isChecked())
+                if (validate()) {
+                    if (cbTermPolicy.isChecked())
                         sendRegister();
                 }
                 break;
-            case R.id.business_address:
-                try {
-                    Intent intent =
-                            new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_OVERLAY)
-                                    .build(this);
-
-                    startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
-                } catch (GooglePlayServicesRepairableException e) {
-                    // TODO: Handle the error.
-                } catch (GooglePlayServicesNotAvailableException e) {
-                    // TODO: Handle the error.
-                }
-                break;
+//            case R.id.business_address:
+////                try {
+////                    Intent intent =
+////                            new PlaceAutocomplete.IntentBuilder(PlaceAutocomplete.MODE_OVERLAY)
+////                                    .build(this);
+////
+////                    startActivityForResult(intent, PLACE_AUTOCOMPLETE_REQUEST_CODE);
+////                } catch (GooglePlayServicesRepairableException e) {
+////                    // TODO: Handle the error.
+////                } catch (GooglePlayServicesNotAvailableException e) {
+////                    // TODO: Handle the error.
+////                }
+//                break;
         }
     }
 
 
-    private boolean validate(){
-        Boolean flag=true;
+    private boolean validate() {
+        Boolean flag = true;
 
-        strName=mName.getText().toString();
-        strMobile=mMobile.getText().toString();
-        strEmail=mEmail.getText().toString();
-        strAddress=mAddress.getText().toString();
-        strPassword=mPassword.getText().toString();
-        strUsername=mUsername.getText().toString();
-        strConfirmPassword=mConfirmPassword.getText().toString();
-      //  strCountryCode=mMobileCode.getSelectedItem().toString();
-
-
-        strCategory=mRegistrationDataResponse.getGetRegistrationData().getCategory().get(mCategory.getSelectedItemPosition()).getCategory();
-        strCompany=mRegistrationDataResponse.getGetRegistrationData().getAutomaker().get(mCompany.getSelectedItemPosition()).getMaker();
-        strCountryCode=mRegistrationDataResponse.getGetRegistrationData().getCountry().get(mMobileCode.getSelectedItemPosition()).get_id();
-        strTelephoneCode=mRegistrationDataResponse.getGetRegistrationData().getCountry().get(mMobileCode.getSelectedItemPosition()).getTelephoneCode();
+        strName = mName.getText().toString();
+        strMobile = mMobile.getText().toString();
+        strEmail = mEmail.getText().toString();
+        strAddress = mAddress.getText().toString()+""+city+""+pinCode;
+        strPassword = mPassword.getText().toString();
+        strUsername = mMobile.getText().toString();
+        strConfirmPassword = mPassword.getText().toString();
+        pinCode = et_pinCode.getText().toString();
+        city = et_city.getText().toString();
+        //  strCountryCode=mMobileCode.getSelectedItem().toString();
 
 
-        if(strName.trim().length()==0){
-            flag=false;
-            Utility.showResponseMessage(mMainLayout,"Please enter business name");
-        }
-        else if(strCategory.trim().equalsIgnoreCase(spinnerSelectText[0])){
-            flag=false;
-            Utility.showResponseMessage(mMainLayout,"Please select business category");
+        strCategory = mRegistrationDataResponse.getGetRegistrationData().getCategory().get( mCategory.getSelectedItemPosition() ).getCategory();
+        strCompany = mRegistrationDataResponse.getGetRegistrationData().getAutomaker().get( mCompany.getSelectedItemPosition() ).getMaker();
+        strCountryCode = mRegistrationDataResponse.getGetRegistrationData().getCountry().get( mMobileCode.getSelectedItemPosition() ).get_id();
+        strTelephoneCode = mRegistrationDataResponse.getGetRegistrationData().getCountry().get( mMobileCode.getSelectedItemPosition() ).getTelephoneCode();
+
+
+        if (strName.trim().length() == 0) {
+            flag = false;
+            Utility.showResponseMessage( mMainLayout, "Please enter business name" );
+        } else if (strCategory.trim().equalsIgnoreCase( spinnerSelectText[0] )) {
+            flag = false;
+            Utility.showResponseMessage( mMainLayout, "Please select business category" );
+        } else if (isCompany) {
+            if (strCategory.trim().equalsIgnoreCase( spinnerSelectText[1] )) {
+                flag = false;
+                Utility.showResponseMessage( mMainLayout, "Please select company" );
             }
-        else if(isCompany){
-            if(strCategory.trim().equalsIgnoreCase(spinnerSelectText[1])){
-                flag=false;
-                Utility.showResponseMessage(mMainLayout,"Please select company");
-                }
-        }
-        else if(strMobile.trim().length()==0){
-            flag=false;
-            Utility.showResponseMessage(mMainLayout,"Please enter mobile no.");
-        }
-        else if(strUsername.trim().length()==0){
-            flag=false;
-            Utility.showResponseMessage(mMainLayout,"Please enter username");
-        }
-        else if(strAddress.trim().length()==0){
-            flag=false;
-            Utility.showResponseMessage(mMainLayout,"Please enter business location");
-        }
-        else if(strPassword.trim().length()==0){
-            flag=false;
-            Utility.showResponseMessage(mMainLayout,"Please enter password");
-        }
-        else if(strConfirmPassword.trim().length()==0){
-            flag=false;
-            Utility.showResponseMessage(mMainLayout,"Please enter confirm password");
-        }
-        else if(!strConfirmPassword.equals(strPassword)){
-            flag=false;
-            Utility.showResponseMessage(mMainLayout,"Confirm password mismatch");
+        } else if (strMobile.trim().length() == 0) {
+            flag = false;
+            Utility.showResponseMessage( mMainLayout, "Please enter mobile no." );
+        } else if (strUsername.trim().length() == 0) {
+            flag = false;
+            Utility.showResponseMessage( mMainLayout, "Please enter username" );
+        } else if (strAddress.trim().length() == 0) {
+            flag = false;
+            Utility.showResponseMessage( mMainLayout, "Please enter business location" );
+        } else if (strPassword.trim().length() == 0) {
+            flag = false;
+            Utility.showResponseMessage( mMainLayout, "Please enter password" );
+        } else if (strConfirmPassword.trim().length() == 0) {
+            flag = false;
+            Utility.showResponseMessage( mMainLayout, "Please enter confirm password" );
+        } else if (!strConfirmPassword.equals( strPassword )) {
+            flag = false;
+            Utility.showResponseMessage( mMainLayout, "Confirm password mismatch" );
+        } else if (city.trim().length() == 0) {
+            flag = false;
+            Utility.showResponseMessage( mMainLayout, "Please enter city" );
+        } else if (pinCode.trim().length() == 0) {
+            flag = false;
+            Utility.showResponseMessage( mMainLayout, "Please enter pin code" );
         }
         return flag;
     }
 
-    private void sendRegister(){
-        AddBusinessRequest addBusinessRequest=new AddBusinessRequest();
-        addBusinessRequest.setLocation(strAddress);
-        addBusinessRequest.setCategory(strCategory);
-        addBusinessRequest.setCompany(strCompany);
-        addBusinessRequest.setContact_no(strMobile);
-        addBusinessRequest.setEmail(strEmail);
-        addBusinessRequest.setLatitude(loc.latitude);
-        addBusinessRequest.setLongitude(loc.longitude);
-        addBusinessRequest.setName(strName);
-        addBusinessRequest.setCountry_code(strCountryCode);
-        addBusinessRequest.setPassword(strPassword);
-        addBusinessRequest.setUsername(strUsername);
-        mPresenter.addLocalBussiness(addBusinessRequest);
+    private void sendRegister() {
+        AddBusinessRequest addBusinessRequest = new AddBusinessRequest();
+        addBusinessRequest.setLocation( strAddress );
+        addBusinessRequest.setCategory( strCategory );
+        addBusinessRequest.setCompany( strCompany );
+        addBusinessRequest.setContact_no( strMobile );
+        addBusinessRequest.setEmail( strEmail );
+        addBusinessRequest.setLatitude( 5.0d );
+        addBusinessRequest.setLongitude( 6.2d );
+        addBusinessRequest.setName( strName );
+        addBusinessRequest.setCountry_code( strCountryCode );
+        addBusinessRequest.setPassword( strPassword );
+        addBusinessRequest.setUsername( strUsername );
+        mPresenter.addLocalBussiness( addBusinessRequest );
 
     }
 
 
-    public void addBussSuccess(LoginResponse loginResponse){
-        Utility.showResponseMessage(mMainLayout,loginResponse.getResponseMessage());
+    public void addBussSuccess(LoginResponse loginResponse) {
+        Utility.showResponseMessage( mMainLayout, loginResponse.getResponseMessage() );
 
-        startActivity(new Intent(this, OTPActivity.class).putExtra(Constant.Key_Mobile,strTelephoneCode+"-"+strMobile).putExtra(Constant.KEY_ID,loginResponse.getGetLoginData().getUser().getId()));
+        startActivity( new Intent( this, OTPActivity.class ).putExtra( Constant.Key_Mobile, strTelephoneCode + "-" + strMobile ).putExtra( Constant.KEY_ID, loginResponse.getGetLoginData().getUser().getId() ) );
         finish();
        /* startActivity(new Intent(this, HomeScreen.class));
         finish();*/
@@ -310,18 +316,18 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult( requestCode, resultCode, data );
         if (requestCode == PLACE_AUTOCOMPLETE_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
-                Place place = PlaceAutocomplete.getPlace(this, data);
-                mAddress.setText(place.getAddress().toString());
+                Place place = PlaceAutocomplete.getPlace( this, data );
+                mAddress.setText( "gurgaon" + place.getAddress().toString() );
                 loc = place.getLatLng();
-                Log.i("", "Place: " + place.getName());
+                Log.i( "", "Place: " + place.getName() );
             } else if (resultCode == PlaceAutocomplete.RESULT_ERROR) {
-                Status status = PlaceAutocomplete.getStatus(this, data);
+                Status status = PlaceAutocomplete.getStatus( this, data );
                 // TODO: Handle the error.
-                Log.i("", status.getStatusMessage());
+                Log.i( "", status.getStatusMessage() );
 
             } else if (resultCode == RESULT_CANCELED) {
                 // The user canceled the operation.
@@ -330,7 +336,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void goToLogingPage(View view) {
-        startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-        finish();
+        startActivity( new Intent( getApplicationContext(), LoginActivity.class ) );
     }
 }

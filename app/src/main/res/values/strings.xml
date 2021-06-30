@@ -227,6 +227,7 @@
     <string name="review_booking">Review Booking</string>
     <string name="fragment_myprofile">Profile</string>
     <string name="fragment_careager_cash">Wallet</string>
+    <string name="fragment_careager_subscription">Subscription</string>
     <string name="my_referrals">My Referrals</string>
     <string name="empty_transactions">No transaction history available</string>
     <string name="cancel_booking">Cancel</string>
