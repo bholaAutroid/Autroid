@@ -1,16 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#E91E63"
     android:layout_height="match_parent"
-    tools:context=".view.fragment.profile.SubscriptionFragment">
+    android:background="@color/matt_black"
+    android:orientation="vertical"
+    tools:context=".view.fragment.profile.subscription.SubscriptionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_50dp"
+                android:layout_marginRight="@dimen/dimen_20dp"
+                android:background="@color/card_color"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_15dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/style_rotobo_medium"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:text="Current Plan"
+                        android:textColor="@color/white_color"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        style="@style/style_rotobo_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="APS"
+                        android:textColor="@color/red_color"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_15dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/style_rotobo_medium"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:text="Category"
+                        android:textColor="@color/white_color"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        style="@style/style_rotobo_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Parts Supplier"
+                        android:textColor="@color/gray_color"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_15dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/style_rotobo_medium"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:text="Next Payment"
+                        android:textColor="@color/white_color"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        style="@style/style_rotobo_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Mar 12, 2021"
+                        android:textColor="@color/gray_color"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_15dp"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        style="@style/style_rotobo_medium"
+                        android:layout_width="170dp"
+                        android:layout_height="wrap_content"
+                        android:text="Recurring Payment"
+                        android:textColor="@color/white_color"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        style="@style/style_rotobo_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="25,000 /year"
+                        android:textColor="@color/gray_color"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_15dp"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:layout_marginBottom="@dimen/dimen_20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/style_rotobo_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/payment_history"
+                        android:textColor="@color/white_color"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/style_rotobo_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimen_20dp"
+                        android:layout_weight="1"
+                        android:text="@string/plan_details"
+                        android:textColor="@color/white_color"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:layout_marginHorizontal="@dimen/dimen_5dp"
+                    android:id="@+id/tab_buttom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/matt_black"
+                    android:elevation="@dimen/dimen_5dp"
+                    app:tabSelectedTextColor="@color/white_color"
+                    app:tabTextAppearance="@style/MineCustomTabText"
+                    app:tabTextColor="@color/gray_color">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tab1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Free" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tab2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Standard" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tab3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pro" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tab4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ultimate" />
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/buttomTabViewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="600dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragment.profile.buttom_tab.OfferFragment2">
+    tools:context=".view.fragment.profile.profile_tab.OfferFragment2">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

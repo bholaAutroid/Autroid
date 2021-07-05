@@ -12,7 +12,6 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import androidx.viewpager.widget.ViewPager;
 
 import android.view.Gravity;
@@ -38,11 +37,9 @@ import java.util.ArrayList;
 
 import autroid.business.R;
 import autroid.business.adapter.ProfileCarStockAdapter;
-import autroid.business.adapter.ProfileGalleryAdapter;
 import autroid.business.adapter.ProfileOfferAdapter;
 import autroid.business.adapter.ProfileProductStockAdapter;
 import autroid.business.adapter.ProfileReviewRatingAdapter;
-import autroid.business.adapter.ShowroomGalleryAdapter;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.interfaces.GalleryImageClickCallback;
@@ -74,7 +71,7 @@ import autroid.business.view.fragment.EditPicFragment;
 import autroid.business.view.fragment.SettingsFragment;
 import autroid.business.view.fragment.WebViewFragment;
 import autroid.business.view.fragment.carsales.UsedCarDetailFragment;
-import autroid.business.view.fragment.profile.buttom_tab.ButtomTabAdapter;
+import autroid.business.view.fragment.profile.profile_tab.ButtomTabAdapter;
 import io.realm.Realm;
 import io.realm.RealmList;
 import jp.wasabeef.picasso.transformations.BlurTransformation;
@@ -88,24 +85,25 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
     TextView mMon, mTue, mWed, mThr, mFri, mSat, mSun;
     ImageView mCover;
     RatingBar mRatings;
-    LinearLayout mLayoutVerified;
+//    LinearLayout mLayoutVerified;
     ShowroomProfilePresenter mPresenter;
     LinearLayout mMainLayout;
     TextView mRate;
 
     String userId;
     PreferenceManager preferenceManager;
+//    RecyclerView recListGallery;
 
     RecyclerView recListCars;
     RecyclerView recListProduct;
     RecyclerView recListOffers;
     RecyclerView recListReviewRating;
-    RecyclerView recListGallery;
+
 
     ProfileCarStockAdapter mProfileCarStockAdapter;
     ProfileProductStockAdapter mProfileProductStockAdapter;
     ProfileReviewRatingAdapter mProfileReviewRatingAdapter;
-    ShowroomGalleryAdapter mProfileGalleryAdapter;
+//    ShowroomGalleryAdapter mProfileGalleryAdapter;
     ProfileOfferAdapter mProfileOfferAdapter;
 
     TextView mAllCars, mAllProducts, mAllOffers, mAllReviews;
@@ -115,8 +113,8 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
 
     String showroomName, showroomId;
     LinearLayout mNavigate, mShare, mChat, mSave;
-    LinearLayout mLayoutGallery, mLayoutCars, mLayoutProducts, mLayoutOffers, mLayoutReviews;
-
+    LinearLayout mLayoutCars, mLayoutProducts, mLayoutOffers, mLayoutReviews;
+//    LinearLayout mLayoutGallery;
 
     LinearLayout llEdit;
     AppCompatImageView mImgSave;
@@ -165,7 +163,7 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
         llEdit = (LinearLayout) view.findViewById( R.id.ll_edit );
         llEdit.setOnClickListener( this );
 
-        mLayoutGallery = view.findViewById( R.id.layout_gallery );
+//        mLayoutGallery = view.findViewById( R.id.layout_gallery );
         mLayoutCars = view.findViewById( R.id.layout_cars );
         mLayoutProducts = view.findViewById( R.id.layout_products );
         mLayoutOffers = view.findViewById( R.id.layout_offers );
@@ -326,9 +324,9 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
         helperRating.attachToRecyclerView( recListReviewRating );
 
 
-        recListGallery = (RecyclerView) view.findViewById( R.id.showroom_gallery_list );
-        recListGallery.setNestedScrollingEnabled( false );
-        setGridLayout();
+//        recListGallery = (RecyclerView) view.findViewById( R.id.showroom_gallery_list );
+//        recListGallery.setNestedScrollingEnabled( false );
+//        setGridLayout();
 
         userId = preferenceManager.getStringPreference( getActivity(), Constant.SP_USERID );
 
@@ -349,18 +347,18 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
 
     }
 
-    private void setGridLayout() {
-        StaggeredGridLayoutManager llm;
-        int spanCount = 2; // 2 columns
-        llm = new StaggeredGridLayoutManager( spanCount, StaggeredGridLayoutManager.VERTICAL );
-        recListGallery.setLayoutManager( llm );
-
-        float spacing = Utility.convertPixelsToDp( 10, getActivity() ); // 50px
-
-        boolean includeEdge = false;
-
-        recListGallery.addItemDecoration( new GridSpacingItemDecoration( spanCount, Math.round( spacing ), includeEdge ) );
-    }
+//    private void setGridLayout() {
+//        StaggeredGridLayoutManager llm;
+//        int spanCount = 2; // 2 columns
+//        llm = new StaggeredGridLayoutManager( spanCount, StaggeredGridLayoutManager.VERTICAL );
+//        recListGallery.setLayoutManager( llm );
+//
+//        float spacing = Utility.convertPixelsToDp( 10, getActivity() ); // 50px
+//
+//        boolean includeEdge = false;
+//
+//        recListGallery.addItemDecoration( new GridSpacingItemDecoration( spanCount, Math.round( spacing ), includeEdge ) );
+//    }
 
 
     private void getShowroom(String id) {
@@ -411,18 +409,19 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
             }
             mRealmController.addDataToShowroom( showroomRealm );
 
-            mProfileGalleryAdapter = new ShowroomGalleryAdapter( mRealmController.getShowroomData().getMedia(), true, userId, this );
-            recListGallery.setAdapter( mProfileGalleryAdapter );
+//            mProfileGalleryAdapter = new ShowroomGalleryAdapter( mRealmController.getShowroomData().getMedia(), true, userId, this );
+//            recListGallery.setAdapter( mProfileGalleryAdapter );
 
             Intent intent = new Intent();
             intent.putExtra( Constant.KEY_EVENT_ID, Constant.EVENT_COVER_IMAGE );
             intent.putExtra( Constant.KEY_IMAGES, showroomProfileResponse.getResponseData().getAvatar_address() );
-            Events.SendEvent sendEvent =
-                    new Events.SendEvent( intent );
+            Events.SendEvent sendEvent = new Events.SendEvent( intent );
             GlobalBus.getBus().post( sendEvent );
         } else {
             llEdit.setVisibility( View.GONE );
-            recListGallery.setAdapter( new ProfileGalleryAdapter( getActivity(), showroomProfileResponse.getResponseData().getBusiness_gallery(), this ) );
+//            recListGallery.setAdapter( new ProfileGalleryAdapter( getActivity(), showroomProfileResponse.getResponseData().getBusiness_gallery(), this ) );
+
+
            /* RealmList<MediaRealm> mediaRealms = new RealmList<>();
             for (int j = 0; j < showroomProfileResponse.getResponseData().getVendor_gallery().size(); j++) {
                 MediaRealm mediaRealm = new MediaRealm();
@@ -435,11 +434,11 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
             recListGallery.setAdapter(mProfileGalleryAdapter);*/
         }
 
-        if (showroomProfileResponse.getResponseData().getBusiness_gallery().size() == 0) {
-            mLayoutGallery.setVisibility( View.GONE );
-        } else {
-            mLayoutGallery.setVisibility( View.VISIBLE );
-        }
+//        if (showroomProfileResponse.getResponseData().getBusiness_gallery().size() == 0) {
+//            mLayoutGallery.setVisibility( View.GONE );
+//        } else {
+//            mLayoutGallery.setVisibility( View.VISIBLE );
+//        }
 
         showroomName = showroomProfileResponse.getResponseData().getName();
         showroomId = showroomProfileResponse.getResponseData().getId();
@@ -688,7 +687,7 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
             ArrayList<TimingsBE> timingsBES = (ArrayList<TimingsBE>) intent.getSerializableExtra( Constant.KEY_TYPE );
             setTimings( timingsBES );
         } else if (intent.getIntExtra( Constant.KEY_EVENT_ID, -1 ) == Constant.EVENT_UPDATE_GALLERY) {
-            mProfileGalleryAdapter.notifyDataSetChanged();
+//            mProfileGalleryAdapter.notifyDataSetChanged();
         } else if (intent.getIntExtra( Constant.KEY_EVENT_ID, -1 ) == Constant.EVENT_UPDATE_ADDRESS) {
             mShowroomLocation.setText( intent.getStringExtra( Constant.Key_Business_address ) );
         } else if (intent.getIntExtra( Constant.KEY_EVENT_ID, -1 ) == Constant.EVENT_CHANGE_ACCOUNT) {

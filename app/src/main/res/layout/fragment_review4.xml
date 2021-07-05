@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragment.profile.buttom_tab.ReviewFragment4">
+    tools:context=".view.fragment.profile.profile_tab.ReviewFragment4">
 
     <TextView
         android:textSize="@dimen/dimen_30dp"

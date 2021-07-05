@@ -233,6 +233,9 @@
     <string name="cancel_booking">Cancel</string>
     <string name="empty_documents">You haven\'t uploaded any document yet. Upload and keep your car documents safe in your garage.</string>
 
+    <string name="payment_history"> <u> Payment History </u>.</string>
+    <string name="plan_details"><u>Plan Details </u>.</string>
+
     <string-array name="status_filter_follow_up">
         <item>Status</item>
         <item>Follow-Up</item>

@@ -1,19 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    android:background="#FF5722"
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragment.profile.buttom_tab.ImageFragment1">
+    android:background="@color/matt_black"
+    android:orientation="vertical"
+    tools:context=".view.fragment.profile.profile_tab.ImageFragment1">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:textSize="@dimen/dimen_30dp"
-        android:gravity="center"
-        android:layout_gravity="center"
+
+    <LinearLayout
+        android:visibility="visible"
+        android:id="@+id/layout_gallery_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Gallery" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:background="@drawable/rectangle_background_cardblack_corner8dp"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <autroid.business.view.customviews.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/dimen_10dp"
+            android:text="@string/gallery"
+            android:textColor="@color/gray_color"
+            android:textSize="@dimen/size_20sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_1dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginRight="75dp"
+            android:background="@color/gray_color" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/showroom_gallery_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_10dp" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
