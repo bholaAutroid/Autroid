@@ -1,9 +1,11 @@
 package autroid.business.view.fragment.profile.subscription;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +14,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import autroid.business.R;
+import autroid.business.utils.Constant;
+import autroid.business.view.activity.HomeScreen;
+import autroid.business.view.fragment.payment.PaytmPaymentFragment;
+import autroid.business.view.fragment.profile.ShowroomReviewsFragment;
 
-public class ProFragment extends Fragment {
+public class ProFragment extends Fragment implements View.OnClickListener {
 
     TextView tvAmount;
     Button btnUpgrade;
@@ -34,8 +40,23 @@ public class ProFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated( view, savedInstanceState );
 
-        tvAmount=view.findViewById( R.id.tv_amount_pro );
-        btnUpgrade=view.findViewById( R.id.btnUpgradeProSubs );
+        tvAmount = view.findViewById( R.id.tv_amount_pro );
+        btnUpgrade = view.findViewById( R.id.btnUpgradeProSubs );
 
+        btnUpgrade.setOnClickListener( this );
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnUpgradeProSubs:
+
+                ((HomeScreen) getActivity()).makeDrawerVisible();
+                Bundle bundle1 = new Bundle();
+                bundle1.putString( Constant.KEY_ID, "87387");
+                ((HomeScreen) getActivity()).addFragment( new PaytmPaymentFragment(), "ShowroomReviewsFragment", true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId );
+                break;
+
+        }
     }
 }

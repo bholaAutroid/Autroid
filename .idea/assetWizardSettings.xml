@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/check_circle_outline/baseline_check_circle_outline_24.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material/icons/materialicons/mode_comment/baseline_mode_comment_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,7 +28,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_baseline_check_circle_outline_24" />
+                            <entry key="outputName" value="ic_baseline_mode_comment_24" />
                             <entry key="sourceFile" value="C:\Users\USer\Desktop\manishAutroid-autroid-853530b54e22\manishAutroid-autroid-853530b54e22" />
                           </map>
                         </option>

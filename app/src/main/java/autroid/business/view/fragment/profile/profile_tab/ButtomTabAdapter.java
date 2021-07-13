@@ -7,6 +7,12 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import org.jetbrains.annotations.NotNull;
 
+import autroid.business.view.fragment.profile.ShowroomCarsFragment;
+import autroid.business.view.fragment.profile.ShowroomOffersFragment;
+import autroid.business.view.fragment.profile.ShowroomProductsFragment;
+import autroid.business.view.fragment.profile.ShowroomReviewsFragment;
+import autroid.business.view.fragment.profile.profile_tab.profileutilities.GallaryFragment;
+
 public class ButtomTabAdapter extends FragmentPagerAdapter {
     int tabcount;
 
@@ -22,13 +28,13 @@ public class ButtomTabAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new ImageFragment1();
+                return new GallaryFragment();
             case 1:
-                return new OfferFragment2();
+                return new ShowroomOffersFragment();
             case 2:
-                return new ServiceFragment3();
+                return new ShowroomProductsFragment();
             case 3:
-                return new ReviewFragment4();
+                return new ShowroomReviewsFragment();
             default:
                 return null;
         }

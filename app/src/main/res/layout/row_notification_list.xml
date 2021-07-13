@@ -17,8 +17,7 @@
             android:id="@+id/user_img"
             android:layout_width="@dimen/dimen_45dp"
             android:layout_height="@dimen/dimen_45dp"
-            android:background="@drawable/placeholder_thumbnail"
-            android:visibility="gone" />
+            android:background="@drawable/openleads" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -58,6 +57,6 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginTop="@dimen/dimen_10dp"
-        android:background="@color/black"></View>
+        android:background="@color/black"/>
 
 </LinearLayout>

@@ -235,6 +235,8 @@
 
     <string name="payment_history"> <u> Payment History </u>.</string>
     <string name="plan_details"><u>Plan Details </u>.</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 
     <string-array name="status_filter_follow_up">
         <item>Status</item>

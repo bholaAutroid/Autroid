@@ -18,7 +18,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:name=".MyApplication"
@@ -30,7 +30,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:name,android:allowBackup">
-        <activity android:name=".view.activity.HelpPageActivity"></activity>
+        <activity android:name=".aws.AwsHomeActivity"></activity>
+        <activity android:name=".view.fragment.profile.profile_tab.ShowImageActivity" />
+        <activity android:name=".view.activity.HelpPageActivity" />
         <activity android:name=".view.activity.map_activity.MapsActivity" />
 
         <service

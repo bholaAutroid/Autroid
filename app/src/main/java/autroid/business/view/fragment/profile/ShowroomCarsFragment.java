@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import autroid.business.view.fragment.profile.profile_tab.profileutilities.ConstantsProfile;
+import autroid.business.view.fragment.profile.profile_tab.profileutilities.PrefrenceMangerProfile;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import autroid.business.R;
@@ -34,6 +36,7 @@ public class ShowroomCarsFragment extends Fragment implements OnClickCallBack {
     ShowroomCarPresenter mPresenter;
     @BindView(R.id.car_stock_list)
     RecyclerView recListCars;
+
     @BindView(R.id.main_layout)
     RelativeLayout mMainLayout;
 
@@ -43,6 +46,7 @@ public class ShowroomCarsFragment extends Fragment implements OnClickCallBack {
     String showroomID,showroomName;
 
     EndlessScrollListener mScrollListener = null;
+    private PrefrenceMangerProfile mangerProfile;
 
     int pageNo=0;
     private ProfileCarStockAdapter mProfileCarStockAdapter;
@@ -65,10 +69,19 @@ public class ShowroomCarsFragment extends Fragment implements OnClickCallBack {
 
         mPresenter=new ShowroomCarPresenter(this,mMainLayout);
 
-        showroomID=getArguments().getString(Constant.KEY_ID);
-        showroomName=getArguments().getString(Constant.Key_Business_Name);
+//        showroomID=getArguments().getString(Constant.KEY_ID);
+//        showroomName=getArguments().getString(Constant.Key_Business_Name);
 
-        mTitle.setText(showroomName);
+        mangerProfile=new PrefrenceMangerProfile( getActivity() );
+        String id=mangerProfile.getString( ConstantsProfile.KEY_ID_ );
+        String name=mangerProfile.getString( ConstantsProfile.KEY_BUSINESS_NAME_ );
+
+        if (id!=null){
+            showroomID=id;
+            showroomName=name;
+        }
+
+        mTitle.setText(""+showroomName);
 
         LinearLayoutManager llmCars;
         llmCars = new LinearLayoutManager(getActivity());
@@ -90,6 +103,36 @@ public class ShowroomCarsFragment extends Fragment implements OnClickCallBack {
         recListCars.addOnScrollListener(mScrollListener);
 
         mPresenter.getAllCars(showroomID,pageNo);
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        String id=mangerProfile.getString( ConstantsProfile.KEY_ID_ );
+        String name=mangerProfile.getString( ConstantsProfile.KEY_BUSINESS_NAME_ );
+
+        if (id!=null){
+            showroomID=id;
+            showroomName=name;
+        }
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+
+        String id=mangerProfile.getString( ConstantsProfile.KEY_ID_ );
+        String name=mangerProfile.getString( ConstantsProfile.KEY_BUSINESS_NAME_ );
+
+        if (id!=null){
+            showroomID=id;
+            showroomName=name;
+        }
+
     }
 
     public void onSuccess(ShowroomCarsResponse showroomCarsResponse, int page) {

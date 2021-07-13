@@ -5,8 +5,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dimen_50dp"
         android:layout_margin="@dimen/dimen_10dp"
-    android:background="@drawable/background_transparent"
-        >
+        android:background="@drawable/background_transparent">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -16,8 +15,7 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen_20dp"
             android:orientation="vertical"
-            android:background="@drawable/rectangle_background_white_corner8dp"
-            >
+            android:background="@drawable/rectangle_background_white_corner8dp">
 
             <ImageView
                 android:id="@+id/img_payment_status"
@@ -26,8 +24,7 @@
                 android:layout_alignParentTop="true"
                 android:background="@mipmap/ic_payment_success"
                 android:layout_gravity="center_horizontal"
-                android:layout_centerInParent="true"
-                />
+                android:layout_centerInParent="true" />
 
             <autroid.business.view.customviews.CustomTextView
                 android:id="@+id/booking_heading"
@@ -39,8 +36,7 @@
                 android:padding="@dimen/dimen_10dp"
                 android:textColor="@color/text_black"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/size_20sp"
-                />
+                android:textSize="@dimen/size_20sp" />
 
             <autroid.business.view.customviews.CustomTextView
                 android:id="@+id/booking_text"
@@ -52,8 +48,7 @@
                 android:padding="@dimen/dimen_10dp"
                 android:textColor="@color/black_color"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/size_14sp"
-                />
+                android:textSize="@dimen/size_14sp" />
 
             <autroid.business.view.customviews.CustomTextView
                 android:id="@+id/transaction_id"

@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import autroid.business.view.fragment.profile.profile_tab.profileutilities.ConstantsProfile;
+import autroid.business.view.fragment.profile.profile_tab.profileutilities.PrefrenceMangerProfile;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import autroid.business.R;
@@ -41,6 +43,7 @@ public class ShowroomReviewsFragment extends Fragment {
     private ProfileReviewRatingAdapter mProfileReviewRatingAdapter;
 
     EndlessScrollListener mScrollListener = null;
+    private   PrefrenceMangerProfile mangerProfile;
 
     int pageNo=0;
 
@@ -64,8 +67,14 @@ public class ShowroomReviewsFragment extends Fragment {
 
         mPresenter=new ShowroomReviewsPresenter(this,mMainLayout);
 
-        showroomID=getArguments().getString(Constant.KEY_ID);
-        showroomName=getArguments().getString(Constant.Key_Business_Name);
+        mangerProfile=new PrefrenceMangerProfile( getActivity() );
+        String id=mangerProfile.getString( ConstantsProfile.KEY_ID_ );
+        String name=mangerProfile.getString( ConstantsProfile.KEY_BUSINESS_NAME_ );
+
+        if (id!=null){
+            showroomID=id;
+            showroomName=name;
+        }
 
         mTitle.setText(showroomName);
 
@@ -91,7 +100,36 @@ public class ShowroomReviewsFragment extends Fragment {
         mPresenter.getAllReviews(showroomID,pageNo);
     }
 
-    public void onSuccess(ShowroomReviewResponse showroomReviewResponse,int page) {
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        String id=mangerProfile.getString( ConstantsProfile.KEY_ID_ );
+        String name=mangerProfile.getString( ConstantsProfile.KEY_BUSINESS_NAME_ );
+
+        if (id!=null){
+            showroomID=id;
+            showroomName=name;
+        }
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+
+        String id=mangerProfile.getString( ConstantsProfile.KEY_ID_ );
+        String name=mangerProfile.getString( ConstantsProfile.KEY_BUSINESS_NAME_ );
+
+        if (id!=null){
+            showroomID=id;
+            showroomName=name;
+        }
+
+    }
+
+    public void onSuccess(ShowroomReviewResponse showroomReviewResponse, int page) {
 
         if(page==0) {
             mProfileReviewRatingAdapter = new ProfileReviewRatingAdapter(getActivity(), showroomReviewResponse.getRatingReviewBES(), true);

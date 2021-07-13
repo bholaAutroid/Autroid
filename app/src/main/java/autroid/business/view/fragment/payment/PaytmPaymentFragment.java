@@ -70,11 +70,14 @@ public class PaytmPaymentFragment extends Fragment {
         ButterKnife.bind(this,view);
 
         id=getArguments().getString(Constant.KEY_ID);
+
         String pay = getArguments().getString(Constant.KEY_TYPE);
 
         mPresenter=new PaytmPaymentPresenter(this,mMainLayout);
 
-        mPresenter.getChecksum(id);
+        if (id!=null){
+            mPresenter.getChecksum(id);
+        }
 
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override

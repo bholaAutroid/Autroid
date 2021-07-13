@@ -104,8 +104,7 @@ public class NotificationListFragment extends Fragment {
         PreferenceManager.getInstance().putIntegerPreference(getActivity(), Constant.SP_NOTIFICATION_COUNT, 0);
         Intent data = new Intent();
         data.putExtra(Constant.KEY_EVENT_ID, Constant.EVENT_NOTIFICATION_COUNT);
-        Events.SendEvent sendEvent =
-                new Events.SendEvent(data);
+        Events.SendEvent sendEvent = new Events.SendEvent(data);
         GlobalBus.getBus().post(sendEvent);
 
     }

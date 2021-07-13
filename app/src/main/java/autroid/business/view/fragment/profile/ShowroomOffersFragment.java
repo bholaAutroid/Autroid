@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,6 +14,9 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import autroid.business.storage.PreferenceManager;
+import autroid.business.view.fragment.profile.profile_tab.profileutilities.ConstantsProfile;
+import autroid.business.view.fragment.profile.profile_tab.profileutilities.PrefrenceMangerProfile;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import autroid.business.R;
@@ -37,11 +41,13 @@ public class ShowroomOffersFragment extends Fragment {
     TextView mTitle;
 
     ShowroomOfferPresenter mPresenter;
+    PreferenceManager preferenceManager;
 
     String showroomID,showroomName;
     private ProfileOfferAdapter mProfileOfferAdapter;
 
     EndlessScrollListener mScrollListener = null;
+    private PrefrenceMangerProfile mangerProfile;
 
     int pageNo=0;
 
@@ -64,17 +70,29 @@ public class ShowroomOffersFragment extends Fragment {
         ButterKnife.bind(this,view);
 
         mPresenter=new ShowroomOfferPresenter(this,mMainLayout);
+        preferenceManager=PreferenceManager.getInstance();
 
-        showroomID=getArguments().getString(Constant.KEY_ID);
-        showroomName=getArguments().getString(Constant.Key_Business_Name);
+//        showroomID=getArguments().getString(Constant.KEY_ID);
+//        showroomName=getArguments().getString(Constant.Key_Business_Name);
 
-        mTitle.setText(showroomName);
+
+        mangerProfile=new PrefrenceMangerProfile( getActivity() );
+        String id=mangerProfile.getString( ConstantsProfile.KEY_ID_ );
+        String name=mangerProfile.getString( ConstantsProfile.KEY_BUSINESS_NAME_ );
+
+        if (id!=null){
+            showroomID=id;
+            showroomName=name;
+        }
+
+        mTitle.setText(""+showroomName);
 
         LinearLayoutManager llmOffers;
         llmOffers = new LinearLayoutManager(getActivity());
         llmOffers.setOrientation(LinearLayoutManager.VERTICAL);
         recListOffers.setLayoutManager(llmOffers);
         recListOffers.setHasFixedSize(true);
+        recListOffers.setLayoutManager(new GridLayoutManager(getActivity(), 3));
 
         mScrollListener = new EndlessScrollListener(llmOffers) {
             @Override
@@ -90,6 +108,35 @@ public class ShowroomOffersFragment extends Fragment {
         recListOffers.addOnScrollListener(mScrollListener);
 
         mPresenter.getAllOffers(showroomID,pageNo);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        String id=mangerProfile.getString( ConstantsProfile.KEY_ID_ );
+        String name=mangerProfile.getString( ConstantsProfile.KEY_BUSINESS_NAME_ );
+
+        if (id!=null){
+            showroomID=id;
+            showroomName=name;
+        }
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+
+        String id=mangerProfile.getString( ConstantsProfile.KEY_ID_ );
+        String name=mangerProfile.getString( ConstantsProfile.KEY_BUSINESS_NAME_ );
+
+        if (id!=null){
+            showroomID=id;
+            showroomName=name;
+        }
+
     }
 
     public void onSuccess(ShowroomOfferResponse showroomOfferResponse,int page) {

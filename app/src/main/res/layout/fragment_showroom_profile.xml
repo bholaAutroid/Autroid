@@ -3,22 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white_color"
+    android:background="@color/matt_black"
     android:clickable="true"
     android:id="@+id/main_layout"
     tools:context=".view.fragment.profile.ShowroomProductsFragment">
 
     <include
+        android:visibility="gone"
         android:id="@+id/common_toolbar"
-        layout="@layout/layout_toolbar_activity"
-        ></include>
+        layout="@layout/layout_toolbar_activity" />
 
-    <!-- TODO: Update blank fragment layout -->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/products_list"
         android:layout_width="match_parent"
         android:layout_below="@id/common_toolbar"
-        android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="wrap_content"/>
 
 
 </RelativeLayout>

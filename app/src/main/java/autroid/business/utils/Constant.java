@@ -51,6 +51,8 @@ public class Constant {
 
 
     public static String KEY_ID="id";
+    public static String KEY_ID_TAB="id_tab";
+    public static String KEY_NAME_TAB="id_tab";
     public static String KEY_CHARGES="charges";
     public static String KEY_FORGOT="forgot";
     public static String KEY_TYPE="type";

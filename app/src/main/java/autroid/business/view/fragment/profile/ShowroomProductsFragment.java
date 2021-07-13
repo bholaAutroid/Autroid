@@ -1,4 +1,4 @@
-package autroid.business.view.fragment.profile;
+ package autroid.business.view.fragment.profile;
 
 
 import android.os.Bundle;
@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import autroid.business.view.fragment.profile.profile_tab.profileutilities.ConstantsProfile;
+import autroid.business.view.fragment.profile.profile_tab.profileutilities.PrefrenceMangerProfile;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import autroid.business.R;
@@ -42,6 +44,8 @@ public class ShowroomProductsFragment extends Fragment {
 
     EndlessScrollListener mScrollListener = null;
 
+    private PrefrenceMangerProfile mangerProfile;
+
     int pageNo=0;
 
     public ShowroomProductsFragment() {
@@ -64,10 +68,20 @@ public class ShowroomProductsFragment extends Fragment {
 
         mPresenter=new ShowroomProductPresenter(this,mMainLayout);
 
-        showroomID=getArguments().getString(Constant.KEY_ID);
-        showroomName=getArguments().getString(Constant.Key_Business_Name);
+//        showroomID=getArguments().getString(Constant.KEY_ID);
+//        showroomName=getArguments().getString(Constant.Key_Business_Name);
 
-        mTitle.setText(showroomName);
+        mangerProfile=new PrefrenceMangerProfile( getActivity() );
+        String id=mangerProfile.getString( ConstantsProfile.KEY_ID_ ).trim();
+        String name=mangerProfile.getString( ConstantsProfile.KEY_BUSINESS_NAME_).trim();
+
+        if (id!=null){
+            showroomID=id;
+            showroomName=name;
+        }
+
+
+//        mTitle.setText(showroomName);
 
         LinearLayoutManager llmCars;
         llmCars = new LinearLayoutManager(getActivity());
@@ -90,6 +104,37 @@ public class ShowroomProductsFragment extends Fragment {
 
         mPresenter.getAllProducts(showroomID,pageNo);
     }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        String id=mangerProfile.getString( ConstantsProfile.KEY_ID_ );
+        String name=mangerProfile.getString( ConstantsProfile.KEY_BUSINESS_NAME_ );
+
+        if (id!=null){
+            showroomID=id;
+            showroomName=name;
+        }
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+
+        String id=mangerProfile.getString( ConstantsProfile.KEY_ID_ );
+        String name=mangerProfile.getString( ConstantsProfile.KEY_BUSINESS_NAME_ );
+
+        if (id!=null){
+            showroomID=id;
+            showroomName=name;
+        }
+
+    }
+
 
     public void onSuccess(ShowroomProductResponse showroomProductResponse,int page) {
 

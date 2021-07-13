@@ -85,7 +85,9 @@ import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import autroid.business.NotificationCounter;
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.bean.BusinessPlanResponse;
@@ -184,6 +186,10 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
 
     boolean isTechnician=false;
 
+
+    TextView tv_notificationCount;
+    NotificationCounter notificationCounter;
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -210,6 +216,10 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
 //        mResend.setOnClickListener(v->otpReceiver());
 
         mProgressBar = new ProgressDialog(HomeScreen.this);
+
+        tv_notificationCount=findViewById( R.id.tv_countNotification );
+
+        notificationCounter=new NotificationCounter(findViewById( R.id.bell ) );
 
         PreferenceManager preferenceManager = PreferenceManager.getInstance();
         fcmToken = preferenceManager.getStringPreference(this, Constant.SP_FCM_TOKEN);
@@ -395,6 +405,8 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
         } else {
             mNotificationCount.setVisibility(View.VISIBLE);
             mNotificationCount.setText(count + "");
+
+            notificationCounter.increaseNumber();
         }
     }
 
@@ -946,6 +958,10 @@ public class HomeScreen extends AppCompatActivity implements View.OnClickListene
 
 
 
+    }
+
+    public void goawsHome(View view) {
+        startActivity( new Intent(getApplicationContext(), AwsHomeActivity.class ) );
     }
 
     @SuppressLint("RestrictedApi")

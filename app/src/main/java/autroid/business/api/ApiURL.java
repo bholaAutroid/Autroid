@@ -18,18 +18,7 @@ public class ApiURL {
     //private String URL="http://13.127.210.146:4000"; //Staging
 //    public static String URL = "http://13.234.81.188:4000";//Production
     public static String URL = "http://3.6.93.32:4000";//testing..
-
-// Hii Sir, i need some images and urls:-
-// 1. Autroid icon image
-// 2. Play video image which is used in autroid login page
-//
-// Youtube url is required for help page
-// 1. Sales url
-// 2. Purches url
-// 3. Leads url
-
-
-
+ 
     public static final String BASE_URL = URL + "/api/";
 
     public static final String ABOUT_US_URL = "http://nexcloudinfotech.com/careager/public/careager/about-us";
@@ -140,6 +129,7 @@ public class ApiURL {
     public static final String SET_REVIEW_POINTS = "v2.0/business/job/review/add";
     public static final String ADD_BUSINESS_TYPE = "add-business-type";
     public static final String NOTIFICATIONS = "v2.0/notifications/get";
+//    public static final String NOTIFICATIONS = "v2.1/business/web/notifications/get";
     public static final String TYPE_SPECIFICATION = "v2.0/business/tyreSize/get";
 
     public static final String BOOKING_SEARCH = "v2.0/business/booking/search/get";

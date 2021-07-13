@@ -13,11 +13,12 @@ import java.util.ArrayList;
 
 import autroid.business.adapter.GalleryAdapter;
 import autroid.business.R;
+import autroid.business.interfaces.GalleryImageClickCallback;
 import autroid.business.interfaces.OnRealmImageClickCallback;
 import autroid.business.model.bean.ThumbnailBE;
 import autroid.business.utils.Constant;
 
-public class GalleryActivity extends AppCompatActivity implements OnRealmImageClickCallback {
+public class GalleryActivity extends AppCompatActivity implements OnRealmImageClickCallback, GalleryImageClickCallback {
 
     RecyclerView mGallery;
     ArrayList<ThumbnailBE> mImages;
@@ -27,15 +28,15 @@ public class GalleryActivity extends AppCompatActivity implements OnRealmImageCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
 
-        mGallery = (RecyclerView) findViewById(R.id.post_images);
-        final LinearLayoutManager llmGallery;
-        llmGallery = new LinearLayoutManager(getApplicationContext());
-        llmGallery.setOrientation(LinearLayoutManager.VERTICAL);
+//        mGallery = (RecyclerView) findViewById(R.id.post_images);
+//        final LinearLayoutManager llmGallery;
+//        llmGallery = new LinearLayoutManager(getApplicationContext());
+//        llmGallery.setOrientation(LinearLayoutManager.VERTICAL);
+//
+//        mGallery.setLayoutManager(llmGallery);
+//
+////        mImages= (ArrayList<ThumbnailBE>) getIntent().getSerializableExtra(Constant.KEY_IMAGES);
 
-        mGallery.setLayoutManager(llmGallery);
-
-        mImages= (ArrayList<ThumbnailBE>) getIntent().getSerializableExtra(Constant.KEY_IMAGES);
-        mGallery.setAdapter(new GalleryAdapter(getApplicationContext(),mImages,this));
 
 
         TextView tvTitle= (TextView) findViewById(R.id.common_toolbar).findViewById(R.id.toolbar_title);
@@ -82,5 +83,12 @@ public class GalleryActivity extends AppCompatActivity implements OnRealmImageCl
     @Override
     public void onTraveloguePagerClick(int pos, String id) {
 
+    }
+
+    @Override
+    public void onGalleryClick(ArrayList<ThumbnailBE> mImages) {
+//        mGallery.setAdapter(new GalleryAdapter(getApplicationContext(),mImages,this));
+
+//        this.mImages=mImages;
     }
 }

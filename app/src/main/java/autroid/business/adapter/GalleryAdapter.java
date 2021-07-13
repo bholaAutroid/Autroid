@@ -56,6 +56,8 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.GalleryH
 
         holder.mCount.setText(position+1+"/"+mImages.size());
 
+      //  onRealmImageClickCallback.onImageClick(0,mImages.get( position ).getFile_address());
+
     }
 
     @Override
@@ -81,7 +83,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.GalleryH
 
         @Override
         public void onClick(View view) {
-            onRealmImageClickCallback.onImageClick(0,mImages.get(getLayoutPosition()).getFile_address());
+
         }
     }
 
