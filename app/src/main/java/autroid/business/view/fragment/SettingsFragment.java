@@ -69,7 +69,7 @@ import autroid.business.storage.PreferenceManager;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
 import autroid.business.view.activity.AddMultipleImagesActivity;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
@@ -352,7 +352,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener,O
                 mCropImageView.getCroppedImageAsync();
                 break;
             case R.id.update_location:
-                ((HomeScreen) getActivity()).addFragment(new UpdateBusinessLocationFragment(), "UpdateBusinessLocationFragment",true,false,null,((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new UpdateBusinessLocationFragment(), "UpdateBusinessLocationFragment",true,false,null,((AwsHomeActivity) getActivity()).currentFrameId);
 
                 break;
         }
@@ -676,13 +676,13 @@ public class SettingsFragment extends Fragment implements View.OnClickListener,O
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         if(isLoggedin){
-                            //((HomeScreen)getActivity()).callLogOut("Account removed");
+                            //((AwsHomeActivity)getActivity()).callLogOut("Account removed");
                             mRealmController.deleteLoggedInUsers();
-                            ((HomeScreen)getActivity()).callLogOut("Account removed");
+                            ((AwsHomeActivity)getActivity()).callLogOut("Account removed");
                         }
                         else {
                             mRealmController.deleteUsersById(userId);
-                            ((HomeScreen)getActivity()).setHeaderSpinner();
+                            ((AwsHomeActivity)getActivity()).setHeaderSpinner();
 
                         }
 

@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.model.realm.UserRealm;
 import autroid.business.model.request.ForgotPasswordRequest;
 import autroid.business.model.request.LoginRequest;
@@ -69,6 +70,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         mRegister = findViewById(R.id.ll_register);
         mRegister.setOnClickListener(this);
+
+
+        isLogin=true;
 
         tv_loginText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -218,7 +222,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 preferenceManager.putStringPreference(getApplicationContext(), Constant.SP_BUSINESS, loginResponse.getGetLoginData().getManagement().get(0).getBusiness());
                 preferenceManager.putStringPreference(getApplicationContext(), Constant.SP_ROLE, loginResponse.getGetLoginData().getManagement().get(0).getRole());
 
-                Intent intent = new Intent(this, HomeScreen.class);
+                Intent intent = new Intent(this, AwsHomeActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
                 finish();
@@ -242,5 +246,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     public void goToHelpPage(View view) {
         startActivity(new Intent(getApplicationContext(),HelpPageActivity.class));
+    }
+
+    public void goToHelp1(View view) {
+        startActivity( new Intent(getApplicationContext(),HelpPageActivity.class) );
+    }
+
+    public void goToHelp2(View view) {
+        startActivity( new Intent(getApplicationContext(),HelpPageActivity.class) );
     }
 }

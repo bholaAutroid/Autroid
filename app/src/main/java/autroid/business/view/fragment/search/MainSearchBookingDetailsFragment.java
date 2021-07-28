@@ -29,6 +29,7 @@ import autroid.business.R;
 import autroid.business.adapter.BookingDetailsAdapter;
 import autroid.business.adapter.booking.BookingRemarksAdapter;
 import autroid.business.adapter.booking.BookingRequirementAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.interfaces.BookingDetailCallback;
@@ -43,7 +44,7 @@ import autroid.business.presenter.BookingDetailsPresenter;
 import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.booking.BookingCarDetails;
 import autroid.business.view.fragment.booking.BookingRescheduleFragment;
 import autroid.business.view.fragment.booking.BookingScheduleFragment;
@@ -339,7 +340,7 @@ public class  MainSearchBookingDetailsFragment extends Fragment implements View.
 
             case R.id.save:
                 if(mEditRemark.getText().toString().length()>0){
-                    ((HomeScreen) getActivity()).disableButton(mSaveRemark);
+                    ((AwsHomeActivity) getActivity()).disableButton(mSaveRemark);
                     BookingUpdateRequest bookingUpdateRequest=new BookingUpdateRequest();
                     bookingUpdateRequest.setBooking(bookingId);
                     bookingUpdateRequest.setRemark(mEditRemark.getText().toString());
@@ -359,7 +360,7 @@ public class  MainSearchBookingDetailsFragment extends Fragment implements View.
                 break;
 
             case R.id.confirm:
-                ((HomeScreen) getActivity()).disableButton(confirm);
+                ((AwsHomeActivity) getActivity()).disableButton(confirm);
                 BookingStatusRequest bookingStatusRequest = new BookingStatusRequest();
                 bookingStatusRequest.setId(bookingId);
                 bookingStatusRequest.setStatus(Constant.CONFIRMED);
@@ -367,7 +368,7 @@ public class  MainSearchBookingDetailsFragment extends Fragment implements View.
                 break;
 
             case R.id.reschedule:
-                ((HomeScreen) getActivity()).disableButton(reschedule);
+                ((AwsHomeActivity) getActivity()).disableButton(reschedule);
                 BookingRescheduleFragment bookingRescheduleFragment = new BookingRescheduleFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString(Constant.KEY_ID, bookingId);
@@ -377,12 +378,12 @@ public class  MainSearchBookingDetailsFragment extends Fragment implements View.
                 break;
 
             case R.id.cancel:
-                ((HomeScreen) getActivity()).disableButton(cancel);
+                ((AwsHomeActivity) getActivity()).disableButton(cancel);
                 rejectBooking(bookingId);
                 break;
 
             case R.id.schedule:
-                ((HomeScreen) getActivity()).disableButton(schedule);
+                ((AwsHomeActivity) getActivity()).disableButton(schedule);
                 Bundle bookingBundle = new Bundle();
                 AddBookingRequest addBookingRequest=new AddBookingRequest();
                 addBookingRequest.setServices(bookingDetailsResponse.getBookingData().get(0).getService());
@@ -390,18 +391,18 @@ public class  MainSearchBookingDetailsFragment extends Fragment implements View.
                 bookingBundle.putString(Constant.KEY_ID, bookingId);
                 bookingBundle.putString(Constant.USER_ID, userId);
                 bookingBundle.putBoolean(Constant.Is_Category, false);
-                ((HomeScreen) getActivity()).makeDrawerVisible();
-                ((HomeScreen) getActivity()).addFragment(new BookingScheduleFragment(), "BookingScheduleFragment", true, false, bookingBundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).addFragment(new BookingScheduleFragment(), "BookingScheduleFragment", true, false, bookingBundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
 
             case R.id.jobcard:
-                ((HomeScreen) getActivity()).disableButton(jobOpen);
+                ((AwsHomeActivity) getActivity()).disableButton(jobOpen);
                 Bundle bun = new Bundle();
                 bun.putBoolean(Constant.IS_BOOKING, true);
                 bun.putString(Constant.USER_ID, userId);
                 bun.putString(Constant.BOOKING_ID, bookingId);
-                ((HomeScreen) getActivity()).makeDrawerVisible();
-                ((HomeScreen) getActivity()).addFragment(new JobCardCarFragment(), "CarFragment", true, false, bun, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).addFragment(new JobCardCarFragment(), "CarFragment", true, false, bun, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
 
             case R.id.user_detail:
@@ -437,10 +438,10 @@ public class  MainSearchBookingDetailsFragment extends Fragment implements View.
                 break;
 
             case R.id.feedback:
-                ((HomeScreen) getActivity()).disableButton(feedback);
+                ((AwsHomeActivity) getActivity()).disableButton(feedback);
                 Bundle reviewBundle=new Bundle();
                 reviewBundle.putString(Constant.BOOKING_ID,bookingId);
-                ((HomeScreen) getActivity()).addFragment(new BookingReviewFragment(), "BookingReviewFragment", true, false, reviewBundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new BookingReviewFragment(), "BookingReviewFragment", true, false, reviewBundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
             case R.id.payment_receive:
                 JobCardPaymentReceiveFragment jobCardPaymentReceiveFragment = new JobCardPaymentReceiveFragment();

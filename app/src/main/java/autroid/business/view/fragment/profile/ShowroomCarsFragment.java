@@ -24,7 +24,7 @@ import autroid.business.presenter.ShowroomCarPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.EndlessScrollListener;
 import autroid.business.utils.FragmentTags;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.carsales.UsedCarDetailFragment;
 
 /**
@@ -152,9 +152,9 @@ public class ShowroomCarsFragment extends Fragment implements OnClickCallBack {
     public void onImageClick(String id) {
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,id);
-        ((HomeScreen)getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity)getActivity()).makeDrawerVisible();
         bundle.putBoolean(Constant.KEY_IS_VIEW,true);
-        ((HomeScreen)getActivity()).addFragment(new UsedCarDetailFragment(), FragmentTags.FRAGMENT_CAR_STOCK_Detail,true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).addFragment(new UsedCarDetailFragment(), FragmentTags.FRAGMENT_CAR_STOCK_Detail,true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override

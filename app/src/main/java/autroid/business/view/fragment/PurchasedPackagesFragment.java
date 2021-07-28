@@ -24,7 +24,7 @@ import autroid.business.interfaces.LeadsCallback;
 import autroid.business.model.response.PurchasedPackagesResponse;
 import autroid.business.presenter.PurchasedPackagesPresenter;
 import autroid.business.utils.Constant;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.leads.LeadCreateFragment;
 
 /**
@@ -152,6 +152,6 @@ public class PurchasedPackagesFragment extends Fragment implements LeadsCallback
         bundle.putString(Constant.Key_Mobile,contact);
         bundle.putString(Constant.Key_Email,email);
         bundle.putString(Constant.Key_Source,source);
-        ((HomeScreen)getActivity()).addFragment(new LeadCreateFragment(),"LeadCreateFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).addFragment(new LeadCreateFragment(),"LeadCreateFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 }

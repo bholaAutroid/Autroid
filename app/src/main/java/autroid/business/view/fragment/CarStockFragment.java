@@ -20,6 +20,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import autroid.business.MyApplication;
 import autroid.business.R;
 import autroid.business.adapter.CarStockAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.interfaces.OnClickCallBack;
 import autroid.business.model.realm.CarRealm;
 import autroid.business.model.realm.MediaRealm;
@@ -32,7 +33,7 @@ import autroid.business.utils.Constant;
 import autroid.business.utils.EndlessScrollListener;
 import autroid.business.utils.FragmentTags;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.activity.editCar.EditCarActivity;
 import autroid.business.view.activity.editCar.EditNewCarActivity;
 import autroid.business.view.fragment.addcar.AddCarStep1Fragment;
@@ -217,8 +218,8 @@ public class CarStockFragment extends Fragment implements View.OnClickListener,O
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.fab_add:
-                ((HomeScreen)getActivity()).makeDrawerVisible();
-                ((HomeScreen)getActivity()).addFragment(new AddCarStep1Fragment(), FragmentTags.FRAGMENT_ADD_CAR,true,false,null,((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity)getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity)getActivity()).addFragment(new AddCarStep1Fragment(), FragmentTags.FRAGMENT_ADD_CAR,true,false,null,((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
         }
     }
@@ -227,8 +228,8 @@ public class CarStockFragment extends Fragment implements View.OnClickListener,O
     public void onImageClick(String id) {
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,id);
-        ((HomeScreen)getActivity()).makeDrawerVisible();
-        ((HomeScreen)getActivity()).addFragment(new UsedCarDetailFragment(), FragmentTags.FRAGMENT_CAR_STOCK_Detail,true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity)getActivity()).addFragment(new UsedCarDetailFragment(), FragmentTags.FRAGMENT_CAR_STOCK_Detail,true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override
@@ -259,15 +260,15 @@ public class CarStockFragment extends Fragment implements View.OnClickListener,O
         if(status.equalsIgnoreCase("Used")) {
             Bundle bundle=new Bundle();
             bundle.putString(Constant.KEY_ID,id);
-            ((HomeScreen) getActivity()).makeDrawerVisible();
-            ((HomeScreen) getActivity()).addFragment(new EditCarActivity(), "EditCarActivity", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+            ((AwsHomeActivity) getActivity()).addFragment(new EditCarActivity(), "EditCarActivity", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
         else
         {
             Bundle bundle=new Bundle();
             bundle.putString(Constant.KEY_ID,id);
-            ((HomeScreen) getActivity()).makeDrawerVisible();
-            ((HomeScreen) getActivity()).addFragment(new EditNewCarActivity(), "EditNewCarActivity", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+            ((AwsHomeActivity) getActivity()).addFragment(new EditNewCarActivity(), "EditNewCarActivity", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
     }
 
@@ -280,8 +281,8 @@ public class CarStockFragment extends Fragment implements View.OnClickListener,O
     public void onTitleClick(String id) {
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,id);
-        ((HomeScreen)getActivity()).makeDrawerVisible();
-        ((HomeScreen)getActivity()).addFragment(new UsedCarDetailFragment(), FragmentTags.FRAGMENT_CAR_STOCK_Detail,true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity)getActivity()).addFragment(new UsedCarDetailFragment(), FragmentTags.FRAGMENT_CAR_STOCK_Detail,true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
 }

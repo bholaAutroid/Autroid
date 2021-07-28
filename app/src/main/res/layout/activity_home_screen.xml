@@ -10,304 +10,304 @@
     android:orientation="vertical"
     tools:context="autroid.business.view.activity.HomeScreen">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
 
-        <include
-            android:id="@+id/common_toolbar"
-            layout="@layout/layout_toolbar_home" />
+<!--        <include-->
+<!--            android:id="@+id/common_toolbar"-->
+<!--            layout="@layout/layout_toolbar_home" />-->
 
-        <RelativeLayout
-            android:id="@+id/bell"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/bell"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content">-->
 
-        <TextView
-            android:elevation="@dimen/dimen_5dp"
-            style="@style/style_rotobo_normal"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:text="0"
-            android:id="@+id/tv_countNotification"
-            android:layout_marginTop="@dimen/dimen_2dp"
-            android:layout_marginRight="36dp"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/back_notification_red"
-            android:layout_width="@dimen/dimen_20dp"
-            android:layout_height="@dimen/dimen_20dp"/>
+<!--        <TextView-->
+<!--            android:elevation="@dimen/dimen_5dp"-->
+<!--            style="@style/style_rotobo_normal"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:gravity="center"-->
+<!--            android:text="0"-->
+<!--            android:id="@+id/tv_countNotification"-->
+<!--            android:layout_marginTop="@dimen/dimen_2dp"-->
+<!--            android:layout_marginRight="36dp"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:background="@drawable/back_notification_red"-->
+<!--            android:layout_width="@dimen/dimen_20dp"-->
+<!--            android:layout_height="@dimen/dimen_20dp"/>-->
 
-            <TextView
-                android:visibility="gone"
-                android:layout_centerHorizontal="true"
-                style="@style/style_rotobo_normal_white_bold"
-                android:onClick="goawsHome"
-                android:text="awsHome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+<!--            <TextView-->
+<!--                android:visibility="gone"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                style="@style/style_rotobo_normal_white_bold"-->
+<!--                android:onClick="goawsHome"-->
+<!--                android:text="leadSource"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"/>-->
 
-        </RelativeLayout>
+<!--        </RelativeLayout>-->
 
-        <FrameLayout
-            android:id="@+id/layout_home"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/tabbar_bottom"
-            android:layout_below="@id/common_toolbar" />
-
-
+<!--        <FrameLayout-->
+<!--            android:id="@+id/layout_home"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_above="@+id/tabbar_bottom"-->
+<!--            android:layout_below="@id/common_toolbar" />-->
 
 
 
 
-        <LinearLayout
-            android:id="@+id/tabbar_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dimen_50dp"
-            android:layout_alignParentBottom="true"
-            android:background="@color/black"
-            android:visibility="gone"
-            android:weightSum="3">
-
-            <RelativeLayout
-                android:id="@+id/tab_home"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/selector_transparent"
-                android:visibility="gone">
-
-                <LinearLayout
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:orientation="vertical"
-
-                    >
-
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/dimen_16dp"
-                        android:layout_height="@dimen/dimen_16dp"
-                        android:tint="@color/white_color"
-                        app:srcCompat="@drawable/ic_home" />
-
-                    <autroid.business.view.customviews.CustomTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimen_3dp"
-                        android:text="Home"
-                        android:textColor="@color/white_color"
-                        android:textSize="@dimen/size_10sp"
-                        android:visibility="visible" />
 
 
-                </LinearLayout>
+<!--        <LinearLayout-->
+<!--            android:id="@+id/tabbar_bottom"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/dimen_50dp"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:background="@color/black"-->
+<!--            android:visibility="gone"-->
+<!--            android:weightSum="3">-->
 
-                <View
-                    android:id="@+id/selected_home"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_2dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/red_color"></View>
-            </RelativeLayout>
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/tab_home"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/selector_transparent"-->
+<!--                android:visibility="gone">-->
 
-            <RelativeLayout
-                android:id="@+id/tab_jobs"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/selector_transparent"
-                android:visibility="visible">
+<!--                <LinearLayout-->
 
-                <LinearLayout
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="vertical"-->
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:orientation="vertical"
+<!--                    >-->
 
-                    >
+<!--                    <androidx.appcompat.widget.AppCompatImageView-->
+<!--                        android:layout_width="@dimen/dimen_16dp"-->
+<!--                        android:layout_height="@dimen/dimen_16dp"-->
+<!--                        android:tint="@color/white_color"-->
+<!--                        app:srcCompat="@drawable/ic_home" />-->
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/dimen_20dp"
-                        android:layout_height="@dimen/dimen_20dp"
-                        android:tint="@color/white_color"
-                        app:srcCompat="@drawable/ic_car"
+<!--                    <autroid.business.view.customviews.CustomTextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/dimen_3dp"-->
+<!--                        android:text="Home"-->
+<!--                        android:textColor="@color/white_color"-->
+<!--                        android:textSize="@dimen/size_10sp"-->
+<!--                        android:visibility="visible" />-->
 
-                        />
 
-                    <autroid.business.view.customviews.CustomTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimen_3dp"
-                        android:text="Jobs"
-                        android:textColor="@color/white_color"
-                        android:textSize="@dimen/size_10sp"
-                        android:visibility="visible" />
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
-                <View
-                    android:id="@+id/selected_car"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_2dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/red_color"
-                    android:visibility="gone"></View>
-            </RelativeLayout>
+<!--                <View-->
+<!--                    android:id="@+id/selected_home"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/dimen_2dp"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:background="@color/red_color"/>-->
+<!--            </RelativeLayout>-->
 
-            <RelativeLayout
-                android:id="@+id/tab_product_stock"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/selector_transparent"
-                android:visibility="gone">
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/tab_jobs"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/selector_transparent"-->
+<!--                android:visibility="visible">-->
 
-                <LinearLayout
+<!--                <LinearLayout-->
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:orientation="vertical"
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="vertical"-->
 
-                    >
+<!--                    >-->
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/dimen_16dp"
-                        android:layout_height="@dimen/dimen_16dp"
-                        android:tint="@color/white_color"
-                        app:srcCompat="@drawable/ic_product"
+<!--                    <androidx.appcompat.widget.AppCompatImageView-->
+<!--                        android:layout_width="@dimen/dimen_20dp"-->
+<!--                        android:layout_height="@dimen/dimen_20dp"-->
+<!--                        android:tint="@color/white_color"-->
+<!--                        app:srcCompat="@drawable/ic_car"-->
 
-                        />
+<!--                        />-->
 
-                    <autroid.business.view.customviews.CustomTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimen_3dp"
-                        android:text="Products"
-                        android:textColor="@color/white_color"
-                        android:textSize="@dimen/size_10sp"
-                        android:visibility="visible" />
-                </LinearLayout>
+<!--                    <autroid.business.view.customviews.CustomTextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/dimen_3dp"-->
+<!--                        android:text="Jobs"-->
+<!--                        android:textColor="@color/white_color"-->
+<!--                        android:textSize="@dimen/size_10sp"-->
+<!--                        android:visibility="visible" />-->
+<!--                </LinearLayout>-->
 
-                <View
-                    android:id="@+id/selected_product"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_2dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/red_color"
-                    android:visibility="gone"></View>
-            </RelativeLayout>
+<!--                <View-->
+<!--                    android:id="@+id/selected_car"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/dimen_2dp"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:background="@color/red_color"-->
+<!--                    android:visibility="gone"/>-->
+<!--            </RelativeLayout>-->
 
-            <RelativeLayout
-                android:id="@+id/tab_services"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/selector_transparent">
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/tab_product_stock"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/selector_transparent"-->
+<!--                android:visibility="gone">-->
 
-                <LinearLayout
+<!--                <LinearLayout-->
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:orientation="vertical"
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="vertical"-->
 
-                    >
+<!--                    >-->
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/dimen_16dp"
-                        android:layout_height="@dimen/dimen_16dp"
-                        android:tint="@color/white_color"
-                        app:srcCompat="@drawable/ic_bookings"
+<!--                    <androidx.appcompat.widget.AppCompatImageView-->
+<!--                        android:layout_width="@dimen/dimen_16dp"-->
+<!--                        android:layout_height="@dimen/dimen_16dp"-->
+<!--                        android:tint="@color/white_color"-->
+<!--                        app:srcCompat="@drawable/ic_product"-->
 
-                        />
+<!--                        />-->
 
-                    <autroid.business.view.customviews.CustomTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimen_3dp"
-                        android:text="Bookings"
-                        android:textColor="@color/white_color"
-                        android:textSize="@dimen/size_10sp"
-                        android:visibility="visible" />
-                </LinearLayout>
+<!--                    <autroid.business.view.customviews.CustomTextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/dimen_3dp"-->
+<!--                        android:text="Products"-->
+<!--                        android:textColor="@color/white_color"-->
+<!--                        android:textSize="@dimen/size_10sp"-->
+<!--                        android:visibility="visible" />-->
+<!--                </LinearLayout>-->
 
-                <View
-                    android:id="@+id/selected_service"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_2dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/red_color"
-                    android:visibility="gone"/>
-            </RelativeLayout>
+<!--                <View-->
+<!--                    android:id="@+id/selected_product"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/dimen_2dp"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:background="@color/red_color"-->
+<!--                    android:visibility="gone"/>-->
+<!--            </RelativeLayout>-->
 
-            <RelativeLayout
-                android:id="@+id/tab_offer"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@drawable/selector_transparent">
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/tab_services"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/selector_transparent">-->
 
-                <LinearLayout
+<!--                <LinearLayout-->
 
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:orientation="vertical"
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="vertical"-->
 
-                    >
+<!--                    >-->
 
-                    <androidx.appcompat.widget.AppCompatImageView
-                        android:layout_width="@dimen/dimen_16dp"
-                        android:layout_height="@dimen/dimen_16dp"
-                        android:tint="@color/white_color"
-                        app:srcCompat="@drawable/ic_offfers" />
+<!--                    <androidx.appcompat.widget.AppCompatImageView-->
+<!--                        android:layout_width="@dimen/dimen_16dp"-->
+<!--                        android:layout_height="@dimen/dimen_16dp"-->
+<!--                        android:tint="@color/white_color"-->
+<!--                        app:srcCompat="@drawable/ic_bookings"-->
 
-                    <autroid.business.view.customviews.CustomTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimen_3dp"
-                        android:text="Leads"
-                        android:textColor="@color/white_color"
-                        android:textSize="@dimen/size_10sp"
-                        android:visibility="visible" />
-                </LinearLayout>
+<!--                        />-->
 
-                <View
-                    android:id="@+id/selected_offer"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dimen_2dp"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/red_color"
-                    android:visibility="gone"/>
-            </RelativeLayout>
-        </LinearLayout>
+<!--                    <autroid.business.view.customviews.CustomTextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/dimen_3dp"-->
+<!--                        android:text="Bookings"-->
+<!--                        android:textColor="@color/white_color"-->
+<!--                        android:textSize="@dimen/size_10sp"-->
+<!--                        android:visibility="visible" />-->
+<!--                </LinearLayout>-->
 
-        <FrameLayout
-            android:id="@+id/layout_drawer"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="visible" />
+<!--                <View-->
+<!--                    android:id="@+id/selected_service"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/dimen_2dp"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:background="@color/red_color"-->
+<!--                    android:visibility="gone"/>-->
+<!--            </RelativeLayout>-->
 
-    </RelativeLayout>
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/tab_offer"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@drawable/selector_transparent">-->
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:background="@color/black_opacity60"
-        app:itemIconTint="@color/white_dark"
-        app:itemTextColor="@color/white_dark"
-        android:theme="@style/NavigationView"
+<!--                <LinearLayout-->
 
-        />
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:gravity="center"-->
+<!--                    android:orientation="vertical"-->
+
+<!--                    >-->
+
+<!--                    <androidx.appcompat.widget.AppCompatImageView-->
+<!--                        android:layout_width="@dimen/dimen_16dp"-->
+<!--                        android:layout_height="@dimen/dimen_16dp"-->
+<!--                        android:tint="@color/white_color"-->
+<!--                        app:srcCompat="@drawable/ic_offfers" />-->
+
+<!--                    <autroid.business.view.customviews.CustomTextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="@dimen/dimen_3dp"-->
+<!--                        android:text="Leads"-->
+<!--                        android:textColor="@color/white_color"-->
+<!--                        android:textSize="@dimen/size_10sp"-->
+<!--                        android:visibility="visible" />-->
+<!--                </LinearLayout>-->
+
+<!--                <View-->
+<!--                    android:id="@+id/selected_offer"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/dimen_2dp"-->
+<!--                    android:layout_alignParentBottom="true"-->
+<!--                    android:background="@color/red_color"-->
+<!--                    android:visibility="gone"/>-->
+<!--            </RelativeLayout>-->
+<!--        </LinearLayout>-->
+
+<!--        <FrameLayout-->
+<!--            android:id="@+id/layout_drawer"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:visibility="visible" />-->
+
+<!--    </RelativeLayout>-->
+
+<!--    <com.google.android.material.navigation.NavigationView-->
+<!--        android:id="@+id/navigation_view"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_gravity="start"-->
+<!--        android:background="@color/black_opacity60"-->
+<!--        app:itemIconTint="@color/white_dark"-->
+<!--        app:itemTextColor="@color/white_dark"-->
+<!--        android:theme="@style/NavigationView"-->
+
+<!--        />-->
 
 </androidx.drawerlayout.widget.DrawerLayout>

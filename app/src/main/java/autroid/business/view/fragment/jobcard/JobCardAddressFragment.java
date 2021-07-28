@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import autroid.business.aws.AwsHomeActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import autroid.business.R;
@@ -39,7 +40,7 @@ import autroid.business.model.response.PinResponse;
 import autroid.business.presenter.jobcard.JobCardAddressPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 public class JobCardAddressFragment extends DialogFragment implements View.OnClickListener, BookingSlotCallback {
 
@@ -166,7 +167,7 @@ public class JobCardAddressFragment extends DialogFragment implements View.OnCli
                 bundle.putString(Constant.ADDRESS_ID, addressAdapter.addressId);
                 bundle.putString(Constant.KEY_TYPE, strConvenience);
                 bundle.putString(Constant.KEY_CHARGES, strCharges);
-                ((HomeScreen) getActivity()).addFragment(new JobCardParticularsFragment(), "ParticularsFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new JobCardParticularsFragment(), "ParticularsFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                 getDialog().dismiss();
             } else if (addressAdapter.addressId != null) {
                 UpdateMemberRequest request = new UpdateMemberRequest();
@@ -203,7 +204,7 @@ public class JobCardAddressFragment extends DialogFragment implements View.OnCli
             bundle.putString(Constant.ADDRESS_ID, addressId);
             bundle.putString(Constant.KEY_TYPE, strConvenience);
             bundle.putString(Constant.KEY_CHARGES, strCharges);
-            ((HomeScreen) getActivity()).addFragment(new JobCardParticularsFragment(), "ParticularsFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).addFragment(new JobCardParticularsFragment(), "ParticularsFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
             getDialog().dismiss();
         } else {
             UpdateMemberRequest request=new UpdateMemberRequest();

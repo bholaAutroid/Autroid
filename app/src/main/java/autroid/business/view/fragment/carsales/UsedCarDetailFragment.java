@@ -33,6 +33,7 @@ import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 
+import autroid.business.aws.AwsHomeActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import autroid.business.R;
@@ -56,7 +57,7 @@ import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
 import autroid.business.view.activity.GalleryActivity;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.carpurchase.UserProfileFragment;
 import autroid.business.view.fragment.payment.PaytmPaymentFragment;
 import autroid.business.view.fragment.profile.ShowroomFragment;
@@ -228,7 +229,7 @@ public class UsedCarDetailFragment extends Fragment implements View.OnClickListe
                     dataBundle.putFloat(Constant.REFURBISHMENT_PRICE, refurbishmentCost);
                     dataBundle.putFloat(Constant.PURCHASE_PRICE, purchasedCost);
                     dataBundle.putString(Constant.VALUE,mRegistration.getText().toString().trim());
-                    ((HomeScreen) getActivity()).addFragment(new AdditionalCarDetailFragment(), "AdditionalCardDetailFragment", true, false, dataBundle, ((HomeScreen) getActivity()).currentFrameId);
+                    ((AwsHomeActivity) getActivity()).addFragment(new AdditionalCarDetailFragment(), "AdditionalCardDetailFragment", true, false, dataBundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                     break;
             }
 
@@ -253,11 +254,11 @@ public class UsedCarDetailFragment extends Fragment implements View.OnClickListe
                 break;
 
             case R.id.book_service:
-                ((HomeScreen)getActivity()).disableButton(mBookService);
+                ((AwsHomeActivity)getActivity()).disableButton(mBookService);
                 Bundle bundle=new Bundle();
                 bundle.putString(Constant.KEY_CAR_ID, carId);
                 bundle.putString(Constant.KEY_MODEL_NAME, modelName);
-                ((HomeScreen) getActivity()).addFragment(new BookingCategoryFragment(), "BookingCategoryFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new BookingCategoryFragment(), "BookingCategoryFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
 
             case R.id.edit_car:
@@ -265,7 +266,7 @@ public class UsedCarDetailFragment extends Fragment implements View.OnClickListe
                 dataBundle.putString(Constant.KEY_CAR_ID, carId);
                 dataBundle.putString(Constant.KEY_TYPE, Constant.EDIT_CAR);
                 dataBundle.putBoolean(Constant.IS_GARAGE_CAR,false);
-                ((HomeScreen) getActivity()).addFragment(new EditCarFragment(), "BookingCategoryFragment", true, false, dataBundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new EditCarFragment(), "BookingCategoryFragment", true, false, dataBundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
 
             case R.id.textViewOptions:
@@ -413,7 +414,7 @@ public class UsedCarDetailFragment extends Fragment implements View.OnClickListe
         soldPrice = dialogSold.findViewById(R.id.sold_price);
 
         proceed_btn.setOnClickListener(v -> {
-            ((HomeScreen) getActivity()).disableButton(proceed_btn);
+            ((AwsHomeActivity) getActivity()).disableButton(proceed_btn);
             if (validateSelling(soldPrice.getText().toString())) {
                 if (validateNumber(mobile_no.getText().toString().trim()) && details.getVisibility() == View.GONE) {
                     mPresenter.getUser(mobile_no.getText().toString().trim());
@@ -628,13 +629,13 @@ public class UsedCarDetailFragment extends Fragment implements View.OnClickListe
         mBuyNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((HomeScreen) getActivity()).clearStackLocal();
+                ((AwsHomeActivity) getActivity()).clearStackLocal();
 
                 if (dialogMembership.isShowing())
                     dialogMembership.dismiss();
                 Bundle bundle = new Bundle();
                 bundle.putString(Constant.KEY_ID, id);
-                ((HomeScreen) getActivity()).addFragment(new PaytmPaymentFragment(), "PaytmPaymentFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new PaytmPaymentFragment(), "PaytmPaymentFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
 
             }
         });
@@ -645,8 +646,8 @@ public class UsedCarDetailFragment extends Fragment implements View.OnClickListe
                 if (dialogMembership.isShowing())
                     dialogMembership.dismiss();
 
-                ((HomeScreen) getActivity()).clearStackLocal();
-                ((HomeScreen) getActivity()).addFragment(new MyGarageFragment(), "MyGarageFragment", true, false, null, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).clearStackLocal();
+                ((AwsHomeActivity) getActivity()).addFragment(new MyGarageFragment(), "MyGarageFragment", true, false, null, ((AwsHomeActivity) getActivity()).currentFrameId);
 
             }
         });
@@ -676,8 +677,8 @@ public class UsedCarDetailFragment extends Fragment implements View.OnClickListe
             @Override
             public void onClick(View v) {
                 dialogMessage.dismiss();
-                ((HomeScreen) getActivity()).clearStackLocal();
-                ((HomeScreen) getActivity()).addFragment(new MyGarageFragment(), "MyGarageFragment", true, false, null, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).clearStackLocal();
+                ((AwsHomeActivity) getActivity()).addFragment(new MyGarageFragment(), "MyGarageFragment", true, false, null, ((AwsHomeActivity) getActivity()).currentFrameId);
 
             }
         });
@@ -707,12 +708,11 @@ public class UsedCarDetailFragment extends Fragment implements View.OnClickListe
             if(action.equalsIgnoreCase("Seller")) {
                 Bundle bundle = new Bundle();
                 bundle.putString(Constant.KEY_ID, userId);
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 if (type.equalsIgnoreCase("Business"))
-                    ((HomeScreen) getActivity()).addFragment(new ShowroomFragment(), "ShowroomFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                    ((AwsHomeActivity) getActivity()).addFragment(new ShowroomFragment(), "ShowroomFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                 else
-                    ((HomeScreen) getActivity()).addFragment(new UserProfileFragment(), "UserProfileFragment", true, false, bundle, ((HomeScreen
-                            ) getActivity()).currentFrameId);
+                    ((AwsHomeActivity) getActivity()).addFragment(new UserProfileFragment(), "UserProfileFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
             }
             else {
                 try {

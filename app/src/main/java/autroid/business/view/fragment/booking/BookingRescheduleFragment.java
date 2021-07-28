@@ -29,6 +29,7 @@ import java.util.Date;
 import autroid.business.MyApplication;
 import autroid.business.R;
 import autroid.business.adapter.booking.BookingRescheduleSlotAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.model.request.BookingRescheduleRequest;
 import autroid.business.model.request.GetTimeSlotRequest;
 import autroid.business.model.response.BookingRescheduleResponse;
@@ -38,7 +39,7 @@ import autroid.business.realm.RealmController;
 import autroid.business.storage.PreferenceManager;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import io.realm.Realm;
 
 /**
@@ -146,7 +147,7 @@ public class BookingRescheduleFragment extends BottomSheetDialogFragment impleme
             case R.id.booking_done:
                 if(validate()){
 
-                    ((HomeScreen) getActivity()).disableButton(btnDone);
+                    ((AwsHomeActivity) getActivity()).disableButton(btnDone);
 
                     BookingRescheduleRequest bookingRescheduleRequest=new BookingRescheduleRequest();
                     bookingRescheduleRequest.setTime_slot(strTime);

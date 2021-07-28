@@ -13,9 +13,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerFullScreenListener;
+
 import autroid.business.R;
 
 public class HelpPageActivity extends AppCompatActivity {
+
+    YouTubePlayer tubePlayer1,tubePlayer2,tubePlayer3;
 
     private static final int REQUEST_CALL=1;
 
@@ -24,6 +29,13 @@ public class HelpPageActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_page);
+
+
+//        tubePlayer1=findViewById( R.id.youtube_leads );
+//        tubePlayer2=findViewById( R.id.youtube_sales );
+//        tubePlayer3=findViewById( R.id.youtubePlay );
+
+
     }
 
     public void OpenWhatsApp(View view) {

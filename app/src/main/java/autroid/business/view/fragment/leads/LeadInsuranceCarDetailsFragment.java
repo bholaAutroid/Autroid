@@ -24,12 +24,13 @@ import java.util.Calendar;
 import java.util.Date;
 
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.model.request.CarInsuranceRequest;
 import autroid.business.model.response.CarStockResponse;
 import autroid.business.presenter.CustomerCarDetailsPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.customviews.CustomSpinner;
 import autroid.business.view.fragment.MonthYearPickerDialog;
 
@@ -156,8 +157,8 @@ public class LeadInsuranceCarDetailsFragment extends Fragment implements DatePic
             if(validate()){
                 Bundle bundle=new Bundle();
                 bundle.putSerializable(Constant.VALUE,createRequest());
-                ((HomeScreen)getActivity()).makeDrawerVisible();
-                ((HomeScreen)getActivity()).addFragment(new LeadInsuranceCustomerFragment(),"CustomerDetailsFragment",true,false,bundle,((HomeScreen)getActivity()).currentFrameId);
+                ((AwsHomeActivity)getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity)getActivity()).addFragment(new LeadInsuranceCustomerFragment(),"CustomerDetailsFragment",true,false,bundle,((AwsHomeActivity)getActivity()).currentFrameId);
             }
         });
 

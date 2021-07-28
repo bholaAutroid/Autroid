@@ -29,6 +29,7 @@ import org.greenrobot.eventbus.Subscribe;
 
 import autroid.business.MyApplication;
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.realm.CarRealm;
@@ -39,7 +40,7 @@ import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
 import autroid.business.view.activity.AddMultipleImagesActivity;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import io.realm.Realm;
 
 import static android.app.Activity.RESULT_CANCELED;
@@ -48,7 +49,7 @@ import static android.app.Activity.RESULT_OK;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AddCarStep3Fragment extends Fragment implements View.OnClickListener,HomeScreen.AddressCallback {
+public class AddCarStep3Fragment extends Fragment implements View.OnClickListener, AwsHomeActivity.AddressCallback {
     LinearLayout mMainLayout;
     TextView mAddress,mCurrentLocation;
     EditText mDescription;
@@ -147,7 +148,7 @@ public class AddCarStep3Fragment extends Fragment implements View.OnClickListene
                 }
                 break;
             case R.id.tv_current_address:
-                ((HomeScreen)getActivity()).getCurrentLocation(this);
+                ((AwsHomeActivity)getActivity()).getCurrentLocation(this);
                 break;
         }
     }

@@ -23,7 +23,7 @@ import autroid.business.presenter.ServicesPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.FragmentTags;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -104,6 +104,6 @@ public class ServicesCategoryFragment extends Fragment implements AddServicePric
     public void categoryPos(int pos) {
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,categoryId[pos]);
-        ((HomeScreen) getActivity()).addFragment(ServicesLIstFragment.newInstance(), FragmentTags.FRAGMENT_SERVICES_LIST,true,false,bundle,R.id.layout_services);
+        ((AwsHomeActivity) getActivity()).addFragment(ServicesLIstFragment.newInstance(), FragmentTags.FRAGMENT_SERVICES_LIST,true,false,bundle,R.id.layout_services);
     }
 }

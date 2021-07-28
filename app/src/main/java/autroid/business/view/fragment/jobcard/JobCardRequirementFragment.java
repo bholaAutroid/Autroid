@@ -36,6 +36,7 @@ import java.util.Iterator;
 import autroid.business.R;
 import autroid.business.adapter.jobcard.RequirementsAdapter;
 import autroid.business.adapter.jobcard.ServicesAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.bean.RequirementBE;
@@ -48,7 +49,6 @@ import autroid.business.model.response.GetTechniciansResponse;
 import autroid.business.presenter.jobcard.JobCardRequirementsPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
 
 public class JobCardRequirementFragment extends Fragment implements TextWatcher, DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
@@ -185,7 +185,7 @@ public class JobCardRequirementFragment extends Fragment implements TextWatcher,
         });
 
         commitment_date.setOnClickListener(v -> {
-            ((HomeScreen) getActivity()).disableTextview(commitment_date);
+            ((AwsHomeActivity) getActivity()).disableTextview(commitment_date);
             calendar = Calendar.getInstance();
             currentDay = calendar.get(Calendar.DAY_OF_MONTH);
             currentMonth = calendar.get(Calendar.MONTH);
@@ -196,7 +196,7 @@ public class JobCardRequirementFragment extends Fragment implements TextWatcher,
         });
 
         commitment_time.setOnClickListener(v -> {
-            ((HomeScreen) getActivity()).disableTextview(commitment_time);
+            ((AwsHomeActivity) getActivity()).disableTextview(commitment_time);
             calendar = Calendar.getInstance();
             currentHour = calendar.get(Calendar.HOUR_OF_DAY);
             currentMin = calendar.get(Calendar.MINUTE);
@@ -205,7 +205,7 @@ public class JobCardRequirementFragment extends Fragment implements TextWatcher,
         });
 
         proceed.setOnClickListener(v -> {
-            ((HomeScreen) getActivity()).disableButton(proceed);
+            ((AwsHomeActivity) getActivity()).disableButton(proceed);
             if (validateData()) requirementsPresenter.putRequirements(createReqRequest());
         });
     }
@@ -252,9 +252,9 @@ public class JobCardRequirementFragment extends Fragment implements TextWatcher,
     }
 
     public void onSuccess() {
-        ((HomeScreen) getActivity()).clearStackLocal();
-        ((HomeScreen) getActivity()).makeDrawerVisible();
-        ((HomeScreen) getActivity()).addFragment(new JobsPagerFragment(), "JobsPagerFragment", true, false, null, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).clearStackLocal();
+        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).addFragment(new JobsPagerFragment(), "JobsPagerFragment", true, false, null, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override

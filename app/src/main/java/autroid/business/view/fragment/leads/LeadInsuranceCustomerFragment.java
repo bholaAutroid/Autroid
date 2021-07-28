@@ -279,8 +279,8 @@ public class LeadInsuranceCustomerFragment extends Fragment implements NetworkTa
         Bundle bundle = new Bundle();
         String url = "http://uagency.policies365.com/dcpa/#/iquoteNavigation?messageId=" + messageId + "&lob=3&P365Token=" + token + "&source=CarEager&UniqueId=12000&url=http://13.233.36.16:4000/api/v3.4/loggedIn/details";
         bundle.putString(Constant.keyUrl, url);
-        //((HomeScreen) getActivity()).makeDrawerVisible();
-        //((HomeScreen) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        //((AwsHomeActivity) getActivity()).makeDrawerVisible();
+        //((AwsHomeActivity) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
 //
         Log.d("URL", url);
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));

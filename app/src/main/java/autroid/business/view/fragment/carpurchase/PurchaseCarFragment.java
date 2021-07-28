@@ -64,7 +64,7 @@ import autroid.business.utils.Constant;
 import autroid.business.utils.EndlessScrollListener;
 import autroid.business.utils.HidingScrollListener;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 import autroid.business.view.fragment.carsales.UsedCarDetailFragment;
 import autroid.business.view.fragment.profile.ShowroomFragment;
@@ -907,7 +907,7 @@ public class PurchaseCarFragment extends Fragment implements  View.OnClickListen
         bundle.putString(Constant.KEY_ID,carId);
         bundle.putString(Constant.KEY_TYPE,Constant.STOCK_TYPE_OLD_CARS);
         bundle.putBoolean(Constant.KEY_IS_VIEW,true);
-        ((HomeScreen)getActivity()).addFragment(new UsedCarDetailFragment(),"UsedCarDetailFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).addFragment(new UsedCarDetailFragment(),"UsedCarDetailFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override
@@ -919,14 +919,14 @@ public class PurchaseCarFragment extends Fragment implements  View.OnClickListen
              /*  if(postedBy.equalsIgnoreCase("user")) {
             Bundle bundle = new Bundle();
             bundle.putString(Constant.KEY_ID, carId);
-            ((HomeScreen) getActivity()).makeDrawerVisible();
-           // ((HomeScreen) getActivity()).addFragment(new UserProfileFragment(), "UserProfileFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+           // ((AwsHomeActivity) getActivity()).addFragment(new UserProfileFragment(), "UserProfileFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
         else {
             Bundle bundle = new Bundle();
             bundle.putString(Constant.KEY_ID,carId);
-            ((HomeScreen) getActivity()).makeDrawerVisible();
-            ((HomeScreen) getActivity()).addFragment(new ShowroomFragment(), "ShowroomFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+            ((AwsHomeActivity) getActivity()).addFragment(new ShowroomFragment(), "ShowroomFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }*/
     }
 
@@ -975,10 +975,10 @@ public class PurchaseCarFragment extends Fragment implements  View.OnClickListen
 
         Bundle bundle = new Bundle();
             bundle.putString(Constant.KEY_ID,userId);
-            ((HomeScreen) getActivity()).makeDrawerVisible();
+            ((AwsHomeActivity) getActivity()).makeDrawerVisible();
             if(type.equalsIgnoreCase("Business"))
-                ((HomeScreen) getActivity()).addFragment(new ShowroomFragment(), "ShowroomFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new ShowroomFragment(), "ShowroomFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
             else
-               ((HomeScreen) getActivity()).addFragment(new UserProfileFragment(), "UserProfileFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+               ((AwsHomeActivity) getActivity()).addFragment(new UserProfileFragment(), "UserProfileFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 }

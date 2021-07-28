@@ -18,6 +18,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 
 import autroid.business.R;
 import autroid.business.adapter.cars.MyBookingsAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.interfaces.BookingsClickCallback;
 import autroid.business.model.bean.BookingAddressBE;
 import autroid.business.model.realm.BookingRealm;
@@ -29,7 +30,7 @@ import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.EndlessScrollListener;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.profile.ShowroomFragment;
 import autroid.business.view.fragment.booking.BookingRescheduleFragment;
 import io.realm.Realm;
@@ -163,9 +164,9 @@ public class MyBookingsFragment extends Fragment implements View.OnClickListener
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.fab_add:
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle=new Bundle();
-                ((HomeScreen) getActivity()).addFragment(new BookingCategoryFragment(), "BookingCategoryFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new BookingCategoryFragment(), "BookingCategoryFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
         }
     }
@@ -322,8 +323,8 @@ public class MyBookingsFragment extends Fragment implements View.OnClickListener
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,bookingID);
 
-        ((HomeScreen) getActivity()).makeDrawerVisible();
-        ((HomeScreen) getActivity()).addFragment(new MyBookingDetailFragment(), "MyBookingDetailFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).addFragment(new MyBookingDetailFragment(), "MyBookingDetailFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override
@@ -377,8 +378,8 @@ public class MyBookingsFragment extends Fragment implements View.OnClickListener
     public void onBusinessClick(String businessId) {
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,businessId);
-        ((HomeScreen) getActivity()).makeDrawerVisible();
-        ((HomeScreen) getActivity()).addFragment(new ShowroomFragment(), "ShowroomFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).addFragment(new ShowroomFragment(), "ShowroomFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override

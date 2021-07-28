@@ -36,6 +36,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
+import autroid.business.aws.AwsHomeActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import autroid.business.MyApplication;
@@ -56,7 +57,7 @@ import autroid.business.realm.RealmController;
 import autroid.business.storage.PreferenceManager;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.carsales.BookingCheckoutFragment;
 import io.realm.Realm;
 
@@ -391,7 +392,7 @@ public class BookingScheduleFragment extends Fragment implements View.OnClickLis
         switch (view.getId()){
             case R.id.booking_done:
 
-                ((HomeScreen)getActivity()).disableButton(btnDone);
+                ((AwsHomeActivity)getActivity()).disableButton(btnDone);
 
                 if(validate()){
                     objAddBookingRequest.setPayment_mode("Online");
@@ -580,11 +581,12 @@ public class BookingScheduleFragment extends Fragment implements View.OnClickLis
         if(isCheckout) {
             Bundle bundle = new Bundle();
             bundle.putString(Constant.KEY_ID, addBookingResponse.getmGetBookingData().getId());
-            ((HomeScreen) getActivity()).addFragment(new BookingCheckoutFragment(), "BookingCheckoutFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).addFragment(new BookingCheckoutFragment(), "BookingCheckoutFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
+
         }
         else {
             Toast.makeText(getActivity(), addBookingResponse.getResponseMessage(), Toast.LENGTH_SHORT).show();
-            ((HomeScreen) getActivity()).clearStackLocal();
+            ((AwsHomeActivity) getActivity()).clearStackLocal();
 
 
         }

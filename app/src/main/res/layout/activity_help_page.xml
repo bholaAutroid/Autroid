@@ -50,6 +50,7 @@
             <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/youtube_sales"
                 app:autoPlay="false"
                 app:showYouTubeButton="false"
                 app:videoId="JWxZCZG0BMc" />
@@ -69,6 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:autoPlay="false"
+                android:id="@+id/youtube_leads"
                 app:showYouTubeButton="false"
                 app:videoId="JWxZCZG0BMc" />
 
@@ -224,7 +226,7 @@
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/autroid_logo"
                 android:layout_width="@dimen/dimen_150dp"
-                android:layout_height="@dimen/dimen_35dp"/>
+                android:layout_height="@dimen/dimen_50dp"/>
 
             <TextView
                 android:gravity="center_horizontal"

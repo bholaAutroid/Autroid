@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import autroid.business.aws.AwsHomeActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -28,7 +29,7 @@ import autroid.business.model.response.CarEagerCoinsResponse;
 import autroid.business.presenter.CarEagerCoinsPresenter;
 import autroid.business.realm.RealmController;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import io.realm.Realm;
 
 /**
@@ -165,7 +166,7 @@ public class MyWalletFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.ll_total_referrals:
-                ((HomeScreen) getActivity()).addFragment(new MyReferralsFragment(), "MyReferralsFragment", true, false, null, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new MyReferralsFragment(), "MyReferralsFragment", true, false, null, ((AwsHomeActivity) getActivity()).currentFrameId);
                 /*CoinPopupFragment coinPopupFragment=new CoinPopupFragment();
                 coinPopupFragment.show(getChildFragmentManager(),"GoogleSearchFragment");*/
                 break;

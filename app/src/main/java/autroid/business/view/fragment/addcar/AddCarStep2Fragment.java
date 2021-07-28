@@ -32,7 +32,7 @@ import autroid.business.storage.PreferenceManager;
 import autroid.business.utils.Constant;
 import autroid.business.utils.FragmentTags;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.MonthYearPickerDialog;
 
 /**
@@ -212,7 +212,7 @@ public class AddCarStep2Fragment extends Fragment implements View.OnClickListene
         addCarRequest.setAccidental(strAccidential);
         Bundle bundle=new Bundle();
         bundle.putSerializable("AddCarRequest",addCarRequest);
-        ((HomeScreen)getActivity()).addFragment(new AddCarStep3Fragment(), FragmentTags.FRAGMENT_ADD_CAR,true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).addFragment(new AddCarStep3Fragment(), FragmentTags.FRAGMENT_ADD_CAR,true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override

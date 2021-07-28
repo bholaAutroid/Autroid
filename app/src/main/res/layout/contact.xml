@@ -25,6 +25,6 @@
     android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
     android:paddingStart="?android:attr/listPreferredItemPaddingStart"
     android:paddingTop="4dp"
-    android:textAppearance="@android:style/TextAppearance.Material.Body1"
+    android:textColor="@color/gray_color"
     tools:drawableStart="@mipmap/ic_launcher"
     tools:text="Taro" />

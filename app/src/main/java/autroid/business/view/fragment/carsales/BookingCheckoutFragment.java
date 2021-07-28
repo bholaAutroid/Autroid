@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import autroid.business.aws.AwsHomeActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -34,7 +35,7 @@ import autroid.business.model.response.PaymentDetailResponse;
 import autroid.business.presenter.BookingCheckoutPresenter;
 import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
@@ -192,7 +193,7 @@ public class BookingCheckoutFragment extends Fragment implements View.OnClickLis
 
             case R.id.pay_later: {
 
-                ((HomeScreen)getActivity()).disableButton(mPayLater);
+                ((AwsHomeActivity)getActivity()).disableButton(mPayLater);
 
                 PaymentDetailRequest paymentDetailRequest = new PaymentDetailRequest();
                 paymentDetailRequest.setId(id);
@@ -234,8 +235,8 @@ public class BookingCheckoutFragment extends Fragment implements View.OnClickLis
 
     public void onBookingSuccess(AddBookingResponse addBookingResponse) {
         Toast.makeText(getActivity(), addBookingResponse.getResponseMessage(), Toast.LENGTH_SHORT).show();
-        ((HomeScreen) getActivity()).clearStackLocal();
-        ((HomeScreen) getActivity()).addFragment(new MyBookingsFragment(), "MyBookingsFragment", true, false, null, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).clearStackLocal();
+        ((AwsHomeActivity) getActivity()).addFragment(new MyBookingsFragment(), "MyBookingsFragment", true, false, null, ((AwsHomeActivity) getActivity()).currentFrameId);
 
     }
 }

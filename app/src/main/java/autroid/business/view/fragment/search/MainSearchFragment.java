@@ -44,7 +44,7 @@ import autroid.business.model.response.MultipleDataResponse;
 import autroid.business.presenter.MainSearchPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.profile.ShowroomFragment;
 import autroid.business.view.fragment.leads.LeadDetailFragment;
 import autroid.business.view.fragment.orders.OrderDetailsFragment;
@@ -233,8 +233,8 @@ public class MainSearchFragment extends Fragment implements OnClickBusinessCallb
 
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,id);
-        ((HomeScreen)getActivity()).makeDrawerVisible();
-        ((HomeScreen) getActivity()).addFragment(new ShowroomFragment(), "MainSearchFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).addFragment(new ShowroomFragment(), "MainSearchFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override
@@ -248,7 +248,7 @@ public class MainSearchFragment extends Fragment implements OnClickBusinessCallb
     public void onStatusClick(String id) {
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,id);
-        ((HomeScreen) getActivity()).addFragment(new SearchDetailFragment(), "SearchDetailFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new SearchDetailFragment(), "SearchDetailFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override
@@ -301,7 +301,7 @@ public class MainSearchFragment extends Fragment implements OnClickBusinessCallb
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,orderId);
         bundle.putBoolean(Constant.IS_BOOKING_DETAILS,false);
-        ((HomeScreen)getActivity()).addFragment(new OrderDetailsFragment(),"DetailsFragment",true,false,bundle,(((HomeScreen) getActivity()).currentFrameId));
+        ((AwsHomeActivity)getActivity()).addFragment(new OrderDetailsFragment(),"DetailsFragment",true,false,bundle,(((AwsHomeActivity) getActivity()).currentFrameId));
 
     }
 
@@ -317,15 +317,15 @@ public class MainSearchFragment extends Fragment implements OnClickBusinessCallb
         bundle.putString(Constant.KEY_ID,id);
 
         if(currentSelection==USER){
-            ((HomeScreen) getActivity()).addFragment(new SearchDetailFragment(), "SearchDetailFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).addFragment(new SearchDetailFragment(), "SearchDetailFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
         }else if(currentSelection==BOOKING){
             bundle.putString(Constant.KEY_TYPE,status);
             bundle.putBoolean(Constant.IS_MAIN_SEARCH,true);
-            ((HomeScreen) getActivity()).addFragment(new MainSearchBookingDetailsFragment(), "BookingDetailsFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).addFragment(new MainSearchBookingDetailsFragment(), "BookingDetailsFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
         } else if(currentSelection==LEAD){
             bundle.putString(Constant.VALUE,"MainSearch");
             bundle.putBundle(Constant.BUNDLE_DATA,data);
-            ((HomeScreen)getActivity()).addFragment(new LeadDetailFragment(),"LeadDetailFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity)getActivity()).addFragment(new LeadDetailFragment(),"LeadDetailFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
         }
     }
 

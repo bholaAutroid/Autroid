@@ -28,14 +28,14 @@ public class GalleryActivity extends AppCompatActivity implements OnRealmImageCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
 
-//        mGallery = (RecyclerView) findViewById(R.id.post_images);
-//        final LinearLayoutManager llmGallery;
-//        llmGallery = new LinearLayoutManager(getApplicationContext());
-//        llmGallery.setOrientation(LinearLayoutManager.VERTICAL);
-//
-//        mGallery.setLayoutManager(llmGallery);
-//
-////        mImages= (ArrayList<ThumbnailBE>) getIntent().getSerializableExtra(Constant.KEY_IMAGES);
+        mGallery = (RecyclerView) findViewById(R.id.post_images);
+        final LinearLayoutManager llmGallery;
+        llmGallery = new LinearLayoutManager(getApplicationContext());
+        llmGallery.setOrientation(LinearLayoutManager.VERTICAL);
+
+        mGallery.setLayoutManager(llmGallery);
+
+////    mImages= (ArrayList<ThumbnailBE>) getIntent().getSerializableExtra(Constant.KEY_IMAGES);
 
 
 

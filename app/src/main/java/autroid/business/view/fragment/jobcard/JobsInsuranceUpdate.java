@@ -27,6 +27,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.bean.CompanyDataBE;
@@ -37,7 +38,7 @@ import autroid.business.model.response.GetCompanyResponse;
 import autroid.business.presenter.jobcard.JobInsuranceUpdatePresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 public class JobsInsuranceUpdate extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
@@ -95,14 +96,14 @@ public class JobsInsuranceUpdate extends DialogFragment implements DatePickerDia
         presenter.getCompanyName();
 
         expire.setOnClickListener(v->{
-            ((HomeScreen) getActivity()).disableTextview(expire);
+            ((AwsHomeActivity) getActivity()).disableTextview(expire);
             datePickerDialog.show();
         });
 
         update.setOnClickListener(v->{
-            ((HomeScreen)getActivity()).disableButton(update);
+            ((AwsHomeActivity)getActivity()).disableButton(update);
             if(validate()){
-                ((HomeScreen) getActivity()).disableButton(update);
+                ((AwsHomeActivity) getActivity()).disableButton(update);
                 presenter.updateInsuranceData(createUpdateRequest());
             }
         });

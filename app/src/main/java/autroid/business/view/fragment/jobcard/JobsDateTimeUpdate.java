@@ -24,13 +24,14 @@ import java.util.Calendar;
 import java.util.Date;
 
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.request.UpdateDeliveryDetailsRequest;
 import autroid.business.model.response.BaseResponse;
 import autroid.business.presenter.jobcard.JobsDateTimeUpdatePresenter;
 import autroid.business.utils.Constant;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 public class JobsDateTimeUpdate extends DialogFragment implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener  {
 
@@ -90,7 +91,7 @@ public class JobsDateTimeUpdate extends DialogFragment implements DatePickerDial
         commitmentTime.setText(getArguments().getString(Constant.TIME));
 
         commitmentDate.setOnClickListener(v -> {
-            ((HomeScreen) getActivity()).disableTextview(commitmentDate);
+            ((AwsHomeActivity) getActivity()).disableTextview(commitmentDate);
             calendar = Calendar.getInstance();
             currentDay = calendar.get(Calendar.DAY_OF_MONTH);
             currentMonth = calendar.get(Calendar.MONTH);
@@ -101,7 +102,7 @@ public class JobsDateTimeUpdate extends DialogFragment implements DatePickerDial
         });
 
         commitmentTime.setOnClickListener(v -> {
-            ((HomeScreen) getActivity()).disableTextview(commitmentTime);
+            ((AwsHomeActivity) getActivity()).disableTextview(commitmentTime);
             calendar = Calendar.getInstance();
             currentHour = calendar.get(Calendar.HOUR_OF_DAY);
             currentMin = calendar.get(Calendar.MINUTE);

@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import autroid.business.R;
 import autroid.business.utils.Constant;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.payment.PaytmPaymentFragment;
 import autroid.business.view.fragment.profile.ShowroomReviewsFragment;
 
@@ -51,10 +51,10 @@ public class ProFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.btnUpgradeProSubs:
 
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString( Constant.KEY_ID, "87387");
-                ((HomeScreen) getActivity()).addFragment( new PaytmPaymentFragment(), "ShowroomReviewsFragment", true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId );
+                ((AwsHomeActivity) getActivity()).addFragment( new PaytmPaymentFragment(), "ShowroomReviewsFragment", true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId );
                 break;
 
         }

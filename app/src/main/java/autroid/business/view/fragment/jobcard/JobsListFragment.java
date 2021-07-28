@@ -21,6 +21,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import java.util.ArrayList;
 
+import autroid.business.aws.AwsHomeActivity;
+
 import autroid.business.storage.PreferenceManager;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,7 +36,7 @@ import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.EndlessScrollListener;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import io.realm.Realm;
 
 import static autroid.business.utils.Utility.REQUEST_CAMERA_IMAGE;
@@ -158,11 +160,11 @@ public class JobsListFragment extends Fragment implements JobCardCallback {
 
     @Override
     public void onJobClick(String id) {
-        ((HomeScreen) getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
         Bundle bundle = new Bundle();
         bundle.putString(Constant.KEY_ID, id);
         bundle.putBoolean(Constant.KEY_MY_BOOKING, false);
-        ((HomeScreen) getActivity()).addFragment(new JobCardDetailFragment(), "JobCardDetailFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new JobCardDetailFragment(), "JobCardDetailFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override
@@ -181,7 +183,7 @@ public class JobsListFragment extends Fragment implements JobCardCallback {
         bundle.putString(Constant.BOOKING_ID, id);
         bundle.putString(Constant.USER_ID, "");
         bundle.putBoolean(Constant.IS_ADDITIONAL_PHOTOS, true);
-        ((HomeScreen) getActivity()).addFragment(new CameraFragment(), "CameraFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new CameraFragment(), "CameraFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
 
@@ -211,7 +213,7 @@ public class JobsListFragment extends Fragment implements JobCardCallback {
     private void startProcess() {
         Bundle bundle = new Bundle();
         bundle.putBoolean(Constant.IS_MANUAL, false);
-        ((HomeScreen) getActivity()).addFragment(new JobCardUserFragment(), "JobCardUserFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new JobCardUserFragment(), "JobCardUserFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @TargetApi(Build.VERSION_CODES.M)

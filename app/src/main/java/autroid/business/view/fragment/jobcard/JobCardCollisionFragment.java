@@ -30,6 +30,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.request.RequirementRequest;
@@ -37,7 +38,7 @@ import autroid.business.model.response.BaseResponse;
 import autroid.business.presenter.jobcard.JobCardCollisionPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 public class JobCardCollisionFragment extends DialogFragment implements View.OnClickListener,DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
@@ -125,7 +126,7 @@ public class JobCardCollisionFragment extends DialogFragment implements View.OnC
         noCashless.setOnClickListener(this);
 
         date.setOnClickListener(v -> {
-            ((HomeScreen)getActivity()).disableTextview(date);
+            ((AwsHomeActivity)getActivity()).disableTextview(date);
             calendar = Calendar.getInstance();
             currentDay = calendar.get(Calendar.DAY_OF_MONTH);
             currentMonth = calendar.get(Calendar.MONTH);
@@ -136,7 +137,7 @@ public class JobCardCollisionFragment extends DialogFragment implements View.OnC
         });
 
         time.setOnClickListener(v -> {
-            ((HomeScreen)getActivity()).disableTextview(time);
+            ((AwsHomeActivity)getActivity()).disableTextview(time);
             calendar = Calendar.getInstance();
             currentHour = calendar.get(Calendar.HOUR_OF_DAY);
             currentMin = calendar.get(Calendar.MINUTE);

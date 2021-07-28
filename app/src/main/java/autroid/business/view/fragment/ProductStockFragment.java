@@ -33,7 +33,7 @@ import autroid.business.utils.Constant;
 import autroid.business.utils.EndlessScrollListener;
 import autroid.business.utils.Utility;
 import autroid.business.view.activity.EditProductActivity;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.activity.RealmGalleryActivity;
 import autroid.business.view.activity.addProduct.ProductCategoryActivity;
 import io.realm.Realm;
@@ -145,8 +145,8 @@ public class ProductStockFragment extends Fragment implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.fab_add:
-                ((HomeScreen) getActivity()).makeDrawerVisible();
-                ((HomeScreen) getActivity()).addFragment(new ProductCategoryActivity(), "ProductCategoryActivity", true, false, null, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).addFragment(new ProductCategoryActivity(), "ProductCategoryActivity", true, false, null, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
         }
     }

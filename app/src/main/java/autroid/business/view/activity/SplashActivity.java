@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.storage.PreferenceManager;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
@@ -31,7 +32,7 @@ public class SplashActivity extends AppCompatActivity {
 
                 if(token!=null && token.length()>0){
                     Utility.setAuthToken(token);
-                    startActivity(new Intent(getApplicationContext(), HomeScreen.class));
+                    startActivity(new Intent(getApplicationContext(), AwsHomeActivity.class));
                     finish();
                 }
                 else {

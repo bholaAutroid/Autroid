@@ -28,7 +28,7 @@
         android:layout_marginRight="8dp"
         android:layout_gravity="bottom"
         android:layout_marginLeft="8dp"
-        android:tint="@color/white_dark"
-        app:srcCompat="@drawable/ic_cross"/>
+        app:srcCompat="@drawable/ic_cross"
+        app:tint="@color/white_dark" />
 
 </LinearLayout>

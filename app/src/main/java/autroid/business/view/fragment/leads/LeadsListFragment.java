@@ -33,7 +33,7 @@ import autroid.business.presenter.LeadsPresenter;
 import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.EndlessScrollListener;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import io.realm.Realm;
 
 public class LeadsListFragment extends Fragment implements LeadsCallback,View.OnClickListener,SwipeRefreshLayout.OnRefreshListener,DatePickerDialog.OnDateSetListener {
@@ -247,8 +247,8 @@ public class LeadsListFragment extends Fragment implements LeadsCallback,View.On
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,id);
         bundle.putString(Constant.VALUE,"LeadList");
-        ((HomeScreen)getActivity()).makeDrawerVisible();
-        ((HomeScreen)getActivity()).addFragment(new LeadDetailFragment(),"LeadDetailFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity)getActivity()).addFragment(new LeadDetailFragment(),"LeadDetailFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override
@@ -272,7 +272,7 @@ public class LeadsListFragment extends Fragment implements LeadsCallback,View.On
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.fab_add:
-                ((HomeScreen)getActivity()).disableFabButton(addButton);
+                ((AwsHomeActivity)getActivity()).disableFabButton(addButton);
                 new LeadCreateFragment().show(getFragmentManager(),"LeadCreateFragment");
                 break;
         }

@@ -21,6 +21,7 @@ import java.util.ArrayList;
 
 import autroid.business.R;
 import autroid.business.adapter.jobcard.MultipleUserAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.interfaces.MultipleUserSelectCallback;
 import autroid.business.model.realm.BookingRealm;
 import autroid.business.model.realm.SelectedBookingDataRealm;
@@ -32,7 +33,7 @@ import autroid.business.presenter.jobcard.JobCardUserPresenter;
 import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.booking.ManualBookingFragment;
 import io.realm.Realm;
 import io.realm.RealmList;
@@ -97,7 +98,7 @@ public class JobCardUserFragment extends Fragment implements MultipleUserSelectC
         jobCardUserPresenter = new JobCardUserPresenter(this, main_layout);
 
         proceed_btn.setOnClickListener(v -> {
-            ((HomeScreen) getActivity()).disableButton(proceed_btn);
+            ((AwsHomeActivity) getActivity()).disableButton(proceed_btn);
             if (validateNumber(mobile_no.getText().toString().trim()) && details.getVisibility() == View.GONE) {
                 jobCardUserPresenter.getUser(mobile_no.getText().toString().trim());
             } else if (details.getVisibility() == View.VISIBLE && validateName(user_name.getText().toString().trim())) {
@@ -195,11 +196,11 @@ public class JobCardUserFragment extends Fragment implements MultipleUserSelectC
             }
 
             //bundle.putBoolean(Constant.IS_JOBCARD, true);
-            ((HomeScreen) getActivity()).addFragment(new JobCardBookingsFragment(), "JobCardBookingsFragment", true, false,bundle /*bundle*/, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).addFragment(new JobCardBookingsFragment(), "JobCardBookingsFragment", true, false,bundle /*bundle*/, ((AwsHomeActivity) getActivity()).currentFrameId);
 
         } else {
-            if (isManual) ((HomeScreen) getActivity()).addFragment(new ManualBookingFragment(), "ManualBookingFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
-            else ((HomeScreen) getActivity()).addFragment(new JobCardCarFragment(), "JobCardCarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            if (isManual) ((AwsHomeActivity) getActivity()).addFragment(new ManualBookingFragment(), "ManualBookingFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
+            else ((AwsHomeActivity) getActivity()).addFragment(new JobCardCarFragment(), "JobCardCarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
     }
 
@@ -247,8 +248,8 @@ public class JobCardUserFragment extends Fragment implements MultipleUserSelectC
         user_name.setText("");
         user_email.setText("");
 
-        if (isManual) ((HomeScreen) getActivity()).addFragment(new ManualBookingFragment(), "ManualBookingFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
-        else ((HomeScreen) getActivity()).addFragment(new JobCardCarFragment(), "JobCardCarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        if (isManual) ((AwsHomeActivity) getActivity()).addFragment(new ManualBookingFragment(), "ManualBookingFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
+        else ((AwsHomeActivity) getActivity()).addFragment(new JobCardCarFragment(), "JobCardCarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     public void showDialog(ArrayList<UserResponseData> bookedPackagesBES) {

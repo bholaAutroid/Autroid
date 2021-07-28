@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+import autroid.business.aws.AwsHomeActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import autroid.business.R;
@@ -208,7 +209,7 @@ public class OTPActivity extends AppCompatActivity implements View.OnClickListen
         preferenceManager.putStringPreference(getApplicationContext(),Constant.SP_BUSINESS,loginResponse.getGetLoginData().getManagement().get(0).getBusiness());
         preferenceManager.putStringPreference(getApplicationContext(),Constant.SP_ROLE,loginResponse.getGetLoginData().getManagement().get(0).getRole());
 
-        Intent intent=new Intent(this, HomeScreen.class);
+        Intent intent=new Intent(this, AwsHomeActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();

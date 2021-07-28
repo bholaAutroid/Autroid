@@ -20,6 +20,7 @@ import com.google.gson.Gson;
 
 import org.greenrobot.eventbus.Subscribe;
 
+import autroid.business.aws.AwsHomeActivity;
 import butterknife.ButterKnife;
 
 import autroid.business.R;
@@ -34,7 +35,7 @@ import autroid.business.realm.RealmController;
 import autroid.business.storage.PreferenceManager;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.leads.LeadInsuranceCarDetailsFragment;
 import autroid.business.view.fragment.search.SearchCarFragment;
 import io.realm.Realm;
@@ -167,8 +168,8 @@ public class AddCarFragment extends Fragment implements View.OnClickListener {
                 Bundle bundle = new Bundle();
                 bundle.putBoolean(Constant.IS_GARAGE_CAR, true);
                 // bundle.putSerializable(Constant.KEY_AUTOMAKER, carItemsResponse.getGetCarItems().getAutomaker());
-                ((HomeScreen) getActivity()).makeDrawerVisible();
-                ((HomeScreen) getActivity()).addFragment(new SearchCarFragment(), "SearchCarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).addFragment(new SearchCarFragment(), "SearchCarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                /* Intent bundle = new Intent(getActivity(), CarAutomakerFragment.class);
                 bundle.putExtra(Constant.KEY_AUTOMAKER, carItemsResponse.getGetCarItems().getAutomaker());
                 getActivity().startActivity(bundle);*/
@@ -297,8 +298,8 @@ public class AddCarFragment extends Fragment implements View.OnClickListener {
                 bundle.putBoolean(Constant.KEY_TYPE, true);
                 bundle.putDouble(Constant.Key_lat, 0.0);
                 bundle.putDouble(Constant.Key_lng, 0.0);
-                ((HomeScreen) getActivity()).clearStackLocal();
-                //((HomeScreen) getActivity()).addFragment(new BookingCategoryFragment(), "BookingCategoryFragment", true, false, bundle, ((HomeScreenActivity) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).clearStackLocal();
+                //((AwsHomeActivity) getActivity()).addFragment(new BookingCategoryFragment(), "BookingCategoryFragment", true, false, bundle, ((HomeScreenActivity) getActivity()).currentFrameId);
             } else {
                /* Intent intent = new Intent(getActivity(), AddMultipleImagesActivity.class);
                 intent.putExtra(Constant.KEY_ID, addCarResponse.getGetCarResponse().getItem().getId());
@@ -315,7 +316,7 @@ public class AddCarFragment extends Fragment implements View.OnClickListener {
 
         Bundle bundle = new Bundle();
         bundle.putString(Constant.KEY_CAR_ID,addCarResponse.getGetCarResponse().getItem().getId());
-        ((HomeScreen) getActivity()).makeDrawerVisible();
-        ((HomeScreen) getActivity()).addFragment(new LeadInsuranceCarDetailsFragment(), "LeadInsuranceCarDetailsFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).addFragment(new LeadInsuranceCarDetailsFragment(), "LeadInsuranceCarDetailsFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 }

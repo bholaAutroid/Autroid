@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import org.greenrobot.eventbus.Subscribe;
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.bean.CarDetailBE;
@@ -25,7 +26,7 @@ import autroid.business.model.response.BaseResponse;
 import autroid.business.presenter.jobcard.JobCardCarUpdatePresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.search.SearchCarFragment;
 
 public class JobCarUpdateFragment extends DialogFragment {
@@ -107,8 +108,8 @@ public class JobCarUpdateFragment extends DialogFragment {
         name.setOnClickListener(v->{
             Bundle bundle = new Bundle();
             bundle.putBoolean(Constant.IS_CAR_UPDATE, true);
-            ((HomeScreen) getActivity()).makeDrawerVisible();
-            ((HomeScreen) getActivity()).addFragment(new SearchCarFragment(), "SearchCarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+            ((AwsHomeActivity) getActivity()).addFragment(new SearchCarFragment(), "SearchCarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         });
 
 

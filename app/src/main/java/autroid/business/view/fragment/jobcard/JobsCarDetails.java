@@ -19,6 +19,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.camera.DisplayGridFragment;
 import autroid.business.model.bean.CarDetailBE;
 import autroid.business.model.bean.InspectionDataBE;
@@ -31,7 +32,7 @@ import autroid.business.model.response.BookingDetailsResponse;
 import autroid.business.model.response.CarInspectionResponse;
 import autroid.business.presenter.jobcard.JobCardImagesPresenter;
 import autroid.business.utils.Constant;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 public class JobsCarDetails extends DialogFragment implements View.OnClickListener {
 
@@ -197,7 +198,7 @@ public class JobsCarDetails extends DialogFragment implements View.OnClickListen
 
         Bundle bundle = new Bundle();
         bundle.putSerializable("inspection_list", arrayList);
-        ((HomeScreen) getActivity()).addFragment(new DisplayGridFragment(), "DisplayGrid", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new DisplayGridFragment(), "DisplayGrid", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
 
     }
 

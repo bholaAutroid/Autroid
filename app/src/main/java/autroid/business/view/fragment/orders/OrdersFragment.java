@@ -25,7 +25,7 @@ import autroid.business.presenter.orders.OrdersPresenter;
 import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.EndlessScrollListener;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import io.realm.Realm;
 
 public class OrdersFragment extends Fragment implements OrdersListener, SwipeRefreshLayout.OnRefreshListener {
@@ -127,7 +127,7 @@ public class OrdersFragment extends Fragment implements OrdersListener, SwipeRef
     public void onCardClick(String orderId) {
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,orderId);
-        ((HomeScreen)getActivity()).addFragment(new OrderDetailsFragment(),"DetailsFragment",true,false,bundle,(((HomeScreen) getActivity()).currentFrameId));
+        ((AwsHomeActivity)getActivity()).addFragment(new OrderDetailsFragment(),"DetailsFragment",true,false,bundle,(((AwsHomeActivity) getActivity()).currentFrameId));
     }
 
     @Override

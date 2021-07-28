@@ -36,6 +36,7 @@ import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 
+import autroid.business.aws.AwsHomeActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -66,7 +67,7 @@ import autroid.business.model.response.VendorServicesResponse;
 import autroid.business.presenter.bookings.BookingNewCategoryPresenter;
 import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.booking.BookingScheduleFragment;
 import io.realm.Realm;
 import io.realm.RealmResults;
@@ -300,9 +301,9 @@ public class BookingCategoryFragment extends Fragment implements View.OnClickLis
             Toast.makeText(getActivity(), "Add car to book service.", Toast.LENGTH_SHORT).show();
             Bundle bundle = new Bundle();
             bundle.putString(Constant.KEY_CAR_TYPE, Constant.CAR_TYPES[1]);
-            ((HomeScreen) getActivity()).makeDrawerVisible();
-            ((HomeScreen) getActivity()).clearStackLocal();
-            ((HomeScreen) getActivity()).addFragment(new AddCarFragment(), "EditCarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+            ((AwsHomeActivity) getActivity()).clearStackLocal();
+            ((AwsHomeActivity) getActivity()).addFragment(new AddCarFragment(), "EditCarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
     }
 
@@ -346,7 +347,7 @@ public class BookingCategoryFragment extends Fragment implements View.OnClickLis
 
         Bundle bundle = new Bundle();
         bundle.putString(Constant.KEY_ID, addBookingResponse.getmGetBookingData().getId());
-      //  ((HomeScreen) getActivity()).addFragment(new B(), "BookingCheckoutFragment", true, false, bundle, ((HomeScreenActivity) getActivity()).currentFrameId);
+      //  ((AwsHomeActivity) getActivity()).addFragment(new B(), "BookingCheckoutFragment", true, false, bundle, ((HomeScreenActivity) getActivity()).currentFrameId);
 
     }
 
@@ -391,7 +392,7 @@ public class BookingCategoryFragment extends Fragment implements View.OnClickLis
                                 bundle.putSerializable("AddBookingRequest", objAddBookingRequest);
                                 bundle.putBoolean(Constant.Is_Category, true);
                                 bundle.putString(Constant.KEY_VENDOR_ID, businessId);
-                                ((HomeScreen) getActivity()).addFragment(new BookingScheduleFragment(), "BookingScheduleFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                                ((AwsHomeActivity) getActivity()).addFragment(new BookingScheduleFragment(), "BookingScheduleFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
 
                         }
                     }
@@ -408,7 +409,7 @@ public class BookingCategoryFragment extends Fragment implements View.OnClickLis
                 BookingCarFragment bookingCartFragment=new BookingCarFragment();
                 bookingCartFragment.setArguments(bundle);
                 bookingCartFragment.show(getChildFragmentManager(),"BookingCarFragment");
-               // ((HomeScreen) getActivity()).addFragment(new BookingCarFragment(), "BookingCarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+               // ((AwsHomeActivity) getActivity()).addFragment(new BookingCarFragment(), "BookingCarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
             }
             case R.id.business_title:
@@ -563,7 +564,7 @@ public class BookingCategoryFragment extends Fragment implements View.OnClickLis
 
     @Override
     public void onGalleryClick(String id,String type) {
-        ((HomeScreen) getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
         ServiceGalleryFragment serviceGalleryFragment = new ServiceGalleryFragment();
         Bundle bundle = new Bundle();
         bundle.putString(Constant.KEY_ID, id);

@@ -27,9 +27,8 @@
                 android:background="@drawable/ic_arrow_back"
                 android:layout_alignParentLeft="true"
                 android:layout_centerInParent="true"
-                android:tint="@color/black_color"
                 android:backgroundTint="@color/black_color"
-                />
+                app:tint="@color/black_color" />
 
             <EditText
                 android:id="@+id/search_txt"

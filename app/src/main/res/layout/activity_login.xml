@@ -58,6 +58,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
+                        android:onClick="goToHelp1"
                         android:id="@+id/iv_autroid_workshop"
                         android:layout_margin="@dimen/dimen_2dp"
                         android:src="@drawable/play_icon"
@@ -80,6 +81,7 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
+                        android:onClick="goToHelp2"
                         android:src="@drawable/play_icon"
                         android:layout_margin="@dimen/dimen_2dp"
                         android:id="@+id/iv_autroid_parts"
@@ -193,7 +195,7 @@
 
                 <ImageView
                     android:id="@+id/btn_login"
-                    android:layout_marginTop="@dimen/dimen_2dp"
+                    android:layout_marginTop="@dimen/dimen_4dp"
                     android:layout_alignParentEnd="true"
                     android:src="@drawable/login_icon"
                     android:layout_width="19dp"

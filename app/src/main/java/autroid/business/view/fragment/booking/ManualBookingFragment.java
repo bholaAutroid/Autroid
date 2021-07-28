@@ -41,7 +41,7 @@ import autroid.business.presenter.ManualPresenter;
 import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.jobcard.JobCardCarSelectionFragment;
 import autroid.business.view.fragment.search.SearchCarFragment;
 import io.realm.Realm;
@@ -139,12 +139,12 @@ public class ManualBookingFragment extends Fragment {
             if (carDetails.size() == 0) {
                 Bundle bundle = new Bundle();
                 bundle.putBoolean(Constant.IS_MANUAL, true);
-                ((HomeScreen) getActivity()).addFragment(new SearchCarFragment(), "SearchCarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new SearchCarFragment(), "SearchCarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
             } else {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable(Constant.CAR_DETAILS, carDetails);
                 bundle.putBoolean(Constant.IS_MANUAL, true);
-                ((HomeScreen) getActivity()).addFragment(new JobCardCarSelectionFragment(), "SelectionFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new JobCardCarSelectionFragment(), "SelectionFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
             }
         });
 
@@ -209,7 +209,7 @@ public class ManualBookingFragment extends Fragment {
         });*/
 
         proceed_btn.setOnClickListener(v->{
-            ((HomeScreen) getActivity()).disableButton(proceed_btn);
+            ((AwsHomeActivity) getActivity()).disableButton(proceed_btn);
             if(!leadEstimate && validate(carMaker.getText().toString().trim(),requirement.getText().toString().trim()) && validateRegNo(carRegNo1.getText().toString().trim())){
                 manualPresenter.addManualBooking(createBookingRequest());
             }else if(validate(carMaker.getText().toString().trim(),requirement.getText().toString().trim()) && validateRegNo(carRegNo1.getText().toString().trim())){
@@ -226,13 +226,13 @@ public class ManualBookingFragment extends Fragment {
         Bundle bundle = new Bundle();
         bundle.putSerializable(Constant.CAR_DETAILS, carDetails);
         bundle.putBoolean(Constant.IS_MANUAL,true);
-        ((HomeScreen) getActivity()).addFragment(new JobCardCarSelectionFragment(), "SelectionFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new JobCardCarSelectionFragment(), "SelectionFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     public void onSuccessEmptyCarData() {
         Bundle bundle = new Bundle();
         bundle.putBoolean(Constant.IS_MANUAL, true);
-        ((HomeScreen) getActivity()).addFragment(new SearchCarFragment(), "SearchFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new SearchCarFragment(), "SearchFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     public void onSuccessLeadCarData(LeadCarsResponse response) {
@@ -240,13 +240,13 @@ public class ManualBookingFragment extends Fragment {
         Bundle bundle = new Bundle();
         bundle.putSerializable(Constant.CAR_DETAILS, carDetails);
         bundle.putBoolean(Constant.IS_MANUAL,true);
-        ((HomeScreen) getActivity()).addFragment(new JobCardCarSelectionFragment(), "SelectionFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new JobCardCarSelectionFragment(), "SelectionFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     public void onSuccessEmptyLeadCarData() {
         Bundle bundle = new Bundle();
         bundle.putBoolean(Constant.IS_MANUAL, true);
-        ((HomeScreen) getActivity()).addFragment(new SearchCarFragment(), "SearchFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new SearchCarFragment(), "SearchFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     public void onSuccessAddLeadBooking(BookingsResponse response) {

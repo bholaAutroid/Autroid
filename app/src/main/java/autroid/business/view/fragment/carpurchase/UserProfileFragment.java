@@ -29,7 +29,7 @@ import autroid.business.presenter.UserProfilePresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.FragmentTags;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.EditPicFragment;
 import autroid.business.view.fragment.WebViewFragment;
 import jp.wasabeef.picasso.transformations.BlurTransformation;
@@ -371,10 +371,10 @@ public class UserProfileFragment extends Fragment implements View.OnClickListene
                     break;
                 }
 
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString(Constant.KEY_TYPE,mUserProfileResponse.getResponseData().getSocialite().getYoutube());
-                ((HomeScreen) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
             }
             case R.id.img_twitter: {
@@ -384,10 +384,10 @@ public class UserProfileFragment extends Fragment implements View.OnClickListene
                     Utility.showResponseMessage(mMainLayout,getString(R.string.link_not_updated_business));
                     break;
                 }
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString(Constant.KEY_TYPE,mUserProfileResponse.getResponseData().getSocialite().getTwitter());
-                ((HomeScreen) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
             }
             case R.id.img_linkedin: {
@@ -397,10 +397,10 @@ public class UserProfileFragment extends Fragment implements View.OnClickListene
                     Utility.showResponseMessage(mMainLayout,getString(R.string.link_not_updated_business));
                     break;
                 }
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString(Constant.KEY_TYPE,mUserProfileResponse.getResponseData().getSocialite().getLinkedin());
-                ((HomeScreen) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
             }
             case R.id.img_instagram: {
@@ -410,10 +410,10 @@ public class UserProfileFragment extends Fragment implements View.OnClickListene
                     Utility.showResponseMessage(mMainLayout,getString(R.string.link_not_updated_business));
                     break;
                 }
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString(Constant.KEY_TYPE,mUserProfileResponse.getResponseData().getSocialite().getInstagram());
-                ((HomeScreen) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
             }
             case R.id.img_google_plus: {
@@ -423,10 +423,10 @@ public class UserProfileFragment extends Fragment implements View.OnClickListene
                     Utility.showResponseMessage(mMainLayout,getString(R.string.link_not_updated_business));
                     break;
                 }
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString(Constant.KEY_TYPE,mUserProfileResponse.getResponseData().getSocialite().getGoogleplus());
-                ((HomeScreen) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
             }
             case R.id.img_fb: {
@@ -436,10 +436,10 @@ public class UserProfileFragment extends Fragment implements View.OnClickListene
                     Utility.showResponseMessage(mMainLayout,getString(R.string.link_not_updated_business));
                     break;
                 }
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString(Constant.KEY_TYPE,mUserProfileResponse.getResponseData().getSocialite().getFacebook());
-                ((HomeScreen) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
             }
             case R.id.img_web: {
@@ -449,10 +449,10 @@ public class UserProfileFragment extends Fragment implements View.OnClickListene
                     Utility.showResponseMessage(mMainLayout,getString(R.string.link_not_updated_business));
                     break;
                 }
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString(Constant.KEY_TYPE,mUserProfileResponse.getResponseData().getSocialite().getWebsite());
-                ((HomeScreen) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new WebViewFragment(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
             }
 

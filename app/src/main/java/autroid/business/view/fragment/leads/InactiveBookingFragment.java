@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 
 import autroid.business.R;
 import autroid.business.adapter.BookingPendingAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.interfaces.BookingStatusCallback;
 import autroid.business.model.realm.BookingRealm;
 import autroid.business.model.realm.SelectedBookingDataRealm;
@@ -25,7 +26,7 @@ import autroid.business.presenter.InactiveBookingPresenter;
 import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.EndlessScrollListener;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.BookingDetailFragment;
 import autroid.business.view.fragment.jobcard.JobCardCarFragment;
 import io.realm.Realm;
@@ -228,16 +229,16 @@ public class InactiveBookingFragment extends Fragment implements BookingStatusCa
         bundle.putString(Constant.Key_Mobile,mobile);
         bundle.putString(Constant.Key_Email,email);
         bundle.putString(Constant.Key_Source,"Booking: "+bookingId);
-        ((HomeScreen)getActivity()).addFragment(new LeadCreateFragment(),"LeadCreateFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).addFragment(new LeadCreateFragment(),"LeadCreateFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override
     public void createJobCard(String userId,String bookingId) {
-        ((HomeScreen)getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity)getActivity()).makeDrawerVisible();
         Bundle bundle=new Bundle();
         bundle.putBoolean(Constant.IS_BOOKING,true);
         bundle.putString(Constant.USER_ID,userId);
         bundle.putString(Constant.BOOKING_ID,bookingId);
-        ((HomeScreen)getActivity()).addFragment(new JobCardCarFragment(),"CarFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).addFragment(new JobCardCarFragment(),"CarFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 }

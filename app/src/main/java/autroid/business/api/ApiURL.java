@@ -1,13 +1,4 @@
 package autroid.business.api;
-
-import autroid.business.adapter.leads.LeadsAdapter;
-
-/**
- * Created by careager on 04-10-2017.
- * <p>
- * Class for initialize all API end points at a common place, so that easily change or update at any
- * level  if required
- */
 public class ApiURL {
 
     public static final String CLOUD_BASE_URL = "http://cgdip3kc.cloudimg.io/width/";
@@ -129,7 +120,9 @@ public class ApiURL {
     public static final String SET_REVIEW_POINTS = "v2.0/business/job/review/add";
     public static final String ADD_BUSINESS_TYPE = "add-business-type";
     public static final String NOTIFICATIONS = "v2.0/notifications/get";
-//    public static final String NOTIFICATIONS = "v2.1/business/web/notifications/get";
+
+    public static final String NOTIFICATIONS_WEB = "v2.1/business/web/notifications/get";
+
     public static final String TYPE_SPECIFICATION = "v2.0/business/tyreSize/get";
 
     public static final String BOOKING_SEARCH = "v2.0/business/booking/search/get";
@@ -257,5 +250,7 @@ public class ApiURL {
     /* LEAD GENERATION*/
     public static final String INSURANCE_DUE = "v2.0/business/insurance/due/get";
     public static final String SERVICE_DUE = "v2.0/business/service-reminder/get";
+
+
 
 }

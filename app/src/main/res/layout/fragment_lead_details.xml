@@ -134,8 +134,8 @@
                         android:layout_height="20dp"
                         android:layout_gravity="center"
                         android:layout_marginRight="@dimen/dimen_4dp"
-                        android:tint="@color/white_dark"
-                        app:srcCompat="@drawable/ic_car_pencil" />
+                        app:srcCompat="@drawable/ic_car_pencil"
+                        app:tint="@color/white_dark" />
 
                 </LinearLayout>
 
@@ -315,7 +315,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginBottom="12dp"
                 android:src="@drawable/ic_mobile"
-                android:tint="@color/red_color"/>
+                app:tint="@color/red_color" />
 
             <androidx.appcompat.widget.AppCompatSeekBar
                 android:id="@+id/seekbar"

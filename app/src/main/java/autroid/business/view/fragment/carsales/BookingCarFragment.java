@@ -20,6 +20,7 @@ import android.widget.TextView;
 
 import org.greenrobot.eventbus.Subscribe;
 
+import autroid.business.aws.AwsHomeActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import autroid.business.R;
@@ -29,7 +30,7 @@ import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.response.CarListResponse;
 import autroid.business.presenter.carsales.SelectCarBookingPresenter;
 import autroid.business.utils.Constant;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 
 /**
@@ -157,8 +158,8 @@ public class BookingCarFragment extends DialogFragment implements View.OnClickLi
                             bundle.putString(Constant.KEY_MODEL_NAME, mSelectCarBookingAdapter.carName);
                             bundle.putString(Constant.KEY_VENDOR_ID, vendorId);
                             bundle.putString(Constant.Key_Name, vendorName);
-                            ((HomeScreen) getActivity()).clearStackLocal();
-                            ((HomeScreen) getActivity()).addFragment(new BookingCategoryFragment(), "BookingCategoryFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                            ((AwsHomeActivity) getActivity()).clearStackLocal();
+                            ((AwsHomeActivity) getActivity()).addFragment(new BookingCategoryFragment(), "BookingCategoryFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                         }
                     }
                 }catch (Exception e){
@@ -170,8 +171,8 @@ public class BookingCarFragment extends DialogFragment implements View.OnClickLi
                 getDialog().dismiss();
                 Bundle bundle=new Bundle();
                 bundle.putString(Constant.KEY_CAR_TYPE,Constant.CAR_TYPES[1]);
-                ((HomeScreen) getActivity()).makeDrawerVisible();
-                ((HomeScreen) getActivity()).addFragment(new AddCarFragment(), "EditCarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).addFragment(new AddCarFragment(), "EditCarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
         }
     }

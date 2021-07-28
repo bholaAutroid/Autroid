@@ -40,7 +40,7 @@ import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
 import autroid.business.view.activity.AddMultipleImagesActivity;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.activity.addCar.SelectAutomakerActivity;
 import io.realm.Realm;
 
@@ -231,7 +231,7 @@ public class EditCarFragment extends Fragment implements View.OnClickListener,Da
             case R.id.tv_automaker:
                 Intent bundle=new Intent(getActivity(),SelectAutomakerActivity.class);
                 bundle.putExtra(Constant.KEY_AUTOMAKER,carItemsResponse.getGetCarItems().getAutomaker());
-                ((HomeScreen) getActivity()).startActivity(bundle);
+                ((AwsHomeActivity) getActivity()).startActivity(bundle);
 
                 break;
             case R.id.car_next:

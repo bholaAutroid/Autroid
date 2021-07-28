@@ -31,6 +31,7 @@ import com.squareup.picasso.Picasso;
 import org.greenrobot.eventbus.Subscribe;
 
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.realm.ShowroomRealm;
@@ -40,14 +41,14 @@ import autroid.business.presenter.UpdateBusinessLocationPresenter;
 import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import io.realm.Realm;
 import jp.wasabeef.picasso.transformations.BlurTransformation;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UpdateBusinessLocationFragment extends Fragment implements OnMapReadyCallback,View.OnClickListener,HomeScreen.AddressCallback {
+public class UpdateBusinessLocationFragment extends Fragment implements OnMapReadyCallback,View.OnClickListener, AwsHomeActivity.AddressCallback {
 
     private GoogleMap mMap;
     TextView mSaveLocation,mUpdateLocaion;
@@ -154,7 +155,7 @@ public class UpdateBusinessLocationFragment extends Fragment implements OnMapRea
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.update_location:
-                ((HomeScreen)getActivity()).getCurrentLocation(this);
+                ((AwsHomeActivity)getActivity()).getCurrentLocation(this);
                 break;
             case R.id.save_location:
                 if(mLocation!=null)

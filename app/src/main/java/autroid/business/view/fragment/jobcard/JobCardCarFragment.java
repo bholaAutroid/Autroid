@@ -31,6 +31,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.camera.CameraFragment;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
@@ -44,7 +45,7 @@ import autroid.business.presenter.jobcard.JobCardCarPresenter;
 import autroid.business.storage.PreferenceManager;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.search.SearchCarFragment;
 
 
@@ -123,7 +124,7 @@ public class JobCardCarFragment extends Fragment implements DatePickerDialog.OnD
         carDetails = new ArrayList<>();
 
         expiry_date.setOnClickListener(v -> {
-            ((HomeScreen) getActivity()).disableTextview(expiry_date);
+            ((AwsHomeActivity) getActivity()).disableTextview(expiry_date);
             calendar = Calendar.getInstance();
             currentDay = calendar.get(Calendar.DAY_OF_MONTH);
             currentMonth = calendar.get(Calendar.MONTH);
@@ -144,18 +145,18 @@ public class JobCardCarFragment extends Fragment implements DatePickerDialog.OnD
             if (carDetails.size() == 0) {
                 Bundle bundle = new Bundle();
                 bundle.putBoolean("car_details", true);
-                ((HomeScreen) getActivity()).addFragment(new SearchCarFragment(), "SearchCarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new SearchCarFragment(), "SearchCarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
             } else {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("car_details", carDetails);
-                ((HomeScreen) getActivity()).addFragment(new JobCardCarSelectionFragment(), "SelectionFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new JobCardCarSelectionFragment(), "SelectionFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
             }
         });
 
         fuel.setOnSeekBarChangeListener(this);
         
         proceed_btn.setOnClickListener(v -> {
-            ((HomeScreen) getActivity()).disableButton(proceed_btn);
+            ((AwsHomeActivity) getActivity()).disableButton(proceed_btn);
             if (booking_exists && validateRegNo(carRegistration.getText().toString().trim()) && validateOthers(car_maker.getText().toString().trim(), car_vin_no.getText().toString().trim(), car_eng_no.getText().toString().trim(),odometer.getText().toString().trim()) && validateInsuranceInfo(comapany_name.getText().toString().trim(),expiry_date.getText().toString().trim())) {
                 jobCardCarPresenter.addBookingJob(createBookingRequest());
             } else if (validateRegNo(carRegistration.getText().toString().trim()) && validateOthers(car_maker.getText().toString().trim(), car_vin_no.getText().toString().trim(), car_eng_no.getText().toString().trim(),odometer.getText().toString().trim()) && validateInsuranceInfo(comapany_name.getText().toString().trim(),expiry_date.getText().toString().trim())) {
@@ -171,13 +172,13 @@ public class JobCardCarFragment extends Fragment implements DatePickerDialog.OnD
         for (CarDetailBE detailBE : getUserCarResponse.getGetCarDetails()) carDetails.add(detailBE);
         Bundle bundle = new Bundle();
         bundle.putSerializable("car_details", carDetails);
-        ((HomeScreen) getActivity()).addFragment(new JobCardCarSelectionFragment(), "SelectionFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).addFragment(new JobCardCarSelectionFragment(), "SelectionFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     public void onSuccessEmptyCarData() {
         Bundle bundle = new Bundle();
         bundle.putBoolean("car_details", true);
-        ((HomeScreen) getActivity()).addFragment(new SearchCarFragment(), "SearchFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).addFragment(new SearchCarFragment(), "SearchFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     public void onSuccessAddBooking(GetUserBookingResponse getUserBookingResponse) {
@@ -192,7 +193,7 @@ public class JobCardCarFragment extends Fragment implements DatePickerDialog.OnD
             JSONObject jsonObject = new JSONObject(jsonManifest);
             int picLimit=jsonObject.getInt("job_inspection_limit");
             if(picLimit>0){
-                ((HomeScreen) getActivity()).addFragment(new CameraFragment(), "CameraFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new CameraFragment(), "CameraFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
             }
             else {
                 JobCardAddressFragment jobCardAddressFragment = new JobCardAddressFragment();
@@ -216,7 +217,7 @@ public class JobCardCarFragment extends Fragment implements DatePickerDialog.OnD
             JSONObject jsonObject = new JSONObject(jsonManifest);
             int picLimit=jsonObject.getInt("job_inspection_limit");
             if(picLimit>0){
-                ((HomeScreen) getActivity()).addFragment(new CameraFragment(), "CameraFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity)getActivity()).addFragment(new CameraFragment(), "CameraFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
             }
             else {
 

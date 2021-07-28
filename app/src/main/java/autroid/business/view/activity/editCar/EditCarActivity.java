@@ -37,6 +37,7 @@ import autroid.business.MyApplication;
 import autroid.business.R;
 import autroid.business.adapter.AddCarSpinnerAdapter;
 import autroid.business.adapter.EditGalleryAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.interfaces.OnImageDeleteCallback;
@@ -52,7 +53,7 @@ import autroid.business.storage.PreferenceManager;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
 import autroid.business.view.activity.AddMultipleImagesActivity;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.activity.addCar.SelectAutomakerActivity;
 import autroid.business.view.fragment.MonthYearPickerDialog;
 import io.realm.Realm;
@@ -385,8 +386,8 @@ public class EditCarActivity extends Fragment implements View.OnClickListener,On
                 case R.id.tv_automaker:
                     Bundle bundle = new Bundle();
                     bundle.putSerializable(Constant.KEY_AUTOMAKER, carItemsResponse.getGetCarItems().getAutomaker());
-                    ((HomeScreen) getActivity()).makeDrawerVisible();
-                    ((HomeScreen) getActivity()).addFragment(new SelectAutomakerActivity(), "SelectAutomakerActivity", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                    ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+                    ((AwsHomeActivity) getActivity()).addFragment(new SelectAutomakerActivity(), "SelectAutomakerActivity", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                     break;
             }
     }

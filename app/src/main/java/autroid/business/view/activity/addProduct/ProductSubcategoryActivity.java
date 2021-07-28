@@ -24,7 +24,7 @@ import autroid.business.model.response.ProductCategoryResponse;
 import autroid.business.presenter.ProductCategoryPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.RecyclerItemClickListener;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 public class ProductSubcategoryActivity extends Fragment {
 
@@ -75,7 +75,7 @@ public class ProductSubcategoryActivity extends Fragment {
                         intent1.putBoolean(Constant.KEY_SUB_CATEGORY_NAME,productCategoryResponse.getResponseData().get(position).isIs_show());
                         //startActivity(intent1);
 
-                        ((HomeScreen) getActivity()).addFragment(new AddProductActivity(), "AddProductActivity", true, false, intent1, ((HomeScreen) getActivity()).currentFrameId);
+                        ((AwsHomeActivity) getActivity()).addFragment(new AddProductActivity(), "AddProductActivity", true, false, intent1, ((AwsHomeActivity) getActivity()).currentFrameId);
 
 
                     }

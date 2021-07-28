@@ -5,6 +5,7 @@ import android.view.ViewGroup;
 import autroid.business.api.ApiCallback;
 import autroid.business.api.ApiFactory;
 import autroid.business.api.ApiRequest;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.model.bean.BusinessPlanResponse;
 import autroid.business.model.request.FcmTokenRequest;
 import autroid.business.model.request.RefreshTokenRequest;
@@ -12,7 +13,7 @@ import autroid.business.model.response.BaseResponse;
 import autroid.business.model.response.CarItemsResponse;
 import autroid.business.model.response.LoginResponse;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import retrofit2.Response;
 
 /**
@@ -21,12 +22,12 @@ import retrofit2.Response;
 
 public class HomeScreenPresenter {
 
-    private HomeScreen mActivity;
+    private AwsHomeActivity mActivity;
     private ViewGroup mMainLayout;
 
-    public HomeScreenPresenter(HomeScreen frag, ViewGroup mainLayout) {
-        mActivity = frag;
-        mMainLayout = mainLayout;
+    public HomeScreenPresenter(AwsHomeActivity mActivity, ViewGroup mMainLayout) {
+        this.mActivity = mActivity;
+        this.mMainLayout = mMainLayout;
     }
 
     public void validateUser(RefreshTokenRequest loginPostRequest) {

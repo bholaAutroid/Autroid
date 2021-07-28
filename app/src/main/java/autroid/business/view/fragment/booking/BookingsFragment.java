@@ -24,6 +24,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 
 import autroid.business.R;
 import autroid.business.adapter.BookingPendingAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.interfaces.BookingStatusCallback;
 import autroid.business.model.realm.BookingRealm;
 import autroid.business.model.realm.SelectedBookingDataRealm;
@@ -36,7 +37,7 @@ import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.EndlessScrollListener;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.jobcard.JobCardDetailFragment;
 import autroid.business.view.fragment.jobcard.JobCardUserFragment;
 import autroid.business.view.fragment.jobcard.JobCardCarFragment;
@@ -166,7 +167,7 @@ public class BookingsFragment extends Fragment implements View.OnClickListener,B
         fab.setOnClickListener(v->{
             Bundle bundle=new Bundle();
             bundle.putBoolean(Constant.IS_MANUAL,true);
-            ((HomeScreen)getActivity()).addFragment(new JobCardUserFragment(),"JobCardUserFragment",true,false,bundle,((HomeScreen)getActivity()).currentFrameId);
+            ((AwsHomeActivity)getActivity()).addFragment(new JobCardUserFragment(),"JobCardUserFragment",true,false,bundle,((AwsHomeActivity)getActivity()).currentFrameId);
         });
 
     }
@@ -317,7 +318,7 @@ public class BookingsFragment extends Fragment implements View.OnClickListener,B
     public void onDetailClick(String bookingId, String statusFromRealm) {
         Bundle bundle = new Bundle();
         bundle.putString(Constant.KEY_ID, bookingId);
-        ((HomeScreen) getActivity()).addFragment(new JobCardDetailFragment(), "JobCardDetailFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new JobCardDetailFragment(), "JobCardDetailFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
 //    @Override
@@ -368,17 +369,17 @@ public class BookingsFragment extends Fragment implements View.OnClickListener,B
         bundle.putString(Constant.Key_Mobile, mobile);
         bundle.putString(Constant.Key_Email, email);
         bundle.putString(Constant.Key_Source, "Booking: " + bookingId);
-        ((HomeScreen) getActivity()).addFragment(new LeadCreateFragment(), "LeadCreateFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new LeadCreateFragment(), "LeadCreateFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override
     public void createJobCard(String userId, String bookingId) {
-        ((HomeScreen) getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
         Bundle bundle = new Bundle();
         bundle.putBoolean(Constant.IS_BOOKING, true);
         bundle.putString(Constant.USER_ID, userId);
         bundle.putString(Constant.BOOKING_ID, bookingId);
-        ((HomeScreen) getActivity()).addFragment(new JobCardCarFragment(), "CarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new JobCardCarFragment(), "CarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
 

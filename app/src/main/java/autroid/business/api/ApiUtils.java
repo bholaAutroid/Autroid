@@ -17,12 +17,6 @@ import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 
-/**
- * Created by Icreon on 02-08-2016.
- * <p/>
- * Class is used to define common structure if we require to add in our all requests call like
- * adding some common keys in header like device id, session token etc...
- */
 public class ApiUtils {
 
     public static OkHttpClient addHeader(final Context context) {

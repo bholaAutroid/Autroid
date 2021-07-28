@@ -25,7 +25,7 @@ import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.EndlessScrollListener;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.search.MainSearchBookingDetailsFragment;
 import io.realm.Realm;
 
@@ -161,7 +161,7 @@ public class LeadBookingFragment extends Fragment implements SwipeRefreshLayout.
         bundle.putString(Constant.KEY_ID,bookingId);
         bundle.putString(Constant.KEY_TYPE,status);
         bundle.putBoolean(Constant.IS_CRE,true);
-        ((HomeScreen)getActivity()).addFragment(new MainSearchBookingDetailsFragment(),"BookingDetailsFragment",true,false,bundle,((HomeScreen)getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).addFragment(new MainSearchBookingDetailsFragment(),"BookingDetailsFragment",true,false,bundle,((AwsHomeActivity)getActivity()).currentFrameId);
     }
 
     @Override

@@ -60,6 +60,7 @@ public class ShowroomGalleryAdapter extends RealmRecyclerViewAdapter<MediaRealm,
     @Override
     public void onBindViewHolder(FeedsImagesHolder holder, int position) {
         MediaRealm mediaRealm=getItem(position);
+
         Picasso.with(context).load(mediaRealm.getPath()).placeholder(R.drawable.placeholder_thumbnail).into(holder.ivImage);
 
         if(getData().size()>4){

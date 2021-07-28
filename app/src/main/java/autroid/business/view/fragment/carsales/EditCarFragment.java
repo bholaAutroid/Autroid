@@ -31,6 +31,7 @@ import java.util.Date;
 
 
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.bean.GarageCarBE;
@@ -44,7 +45,7 @@ import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
 import autroid.business.view.activity.AddMultipleImagesActivity;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.MonthYearPickerDialog;
 import io.realm.Realm;
 
@@ -320,8 +321,8 @@ public class EditCarFragment extends Fragment implements View.OnClickListener, D
             case R.id.gallery:
                 Bundle galleryBundle = new Bundle();
                 galleryBundle.putString(Constant.KEY_CAR_ID, carId);
-                ((HomeScreen) getActivity()).makeDrawerVisible();
-                ((HomeScreen) getActivity()).addFragment(new CarImagesFragment(), "CarImagesFragment", true, false, galleryBundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).addFragment(new CarImagesFragment(), "CarImagesFragment", true, false, galleryBundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
 
             case R.id.documents:
@@ -329,8 +330,8 @@ public class EditCarFragment extends Fragment implements View.OnClickListener, D
                 bundle.putString(Constant.RC_URL, strRcUrl);
                 bundle.putString(Constant.IC_URL, strIcUrl);
                 bundle.putString(Constant.KEY_CAR_ID, carId);
-                ((HomeScreen) getActivity()).makeDrawerVisible();
-                ((HomeScreen) getActivity()).addFragment(new CarDocumentFragment(), "CarDocumentFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).addFragment(new CarDocumentFragment(), "CarDocumentFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
 
             case R.id.back_navigation:

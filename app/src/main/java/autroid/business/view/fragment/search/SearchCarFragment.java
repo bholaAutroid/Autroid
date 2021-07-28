@@ -29,7 +29,7 @@ import autroid.business.model.response.SearchCarResponse;
 import autroid.business.presenter.SearchCarPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -165,7 +165,7 @@ public class SearchCarFragment extends Fragment implements SearchCarClickCallbac
             Bundle broadcastIntent = new Bundle();
             broadcastIntent.putString(Constant.KEY_VARIANT_ID, id);
             broadcastIntent.putString(Constant.KEY_VARIANT_NAME,car);
-            ((HomeScreen) getActivity()).addFragment(new EstimateFragment(), "EstimateFragment", true, false, broadcastIntent, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).addFragment(new EstimateFragment(), "EstimateFragment", true, false, broadcastIntent, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
     }
 

@@ -237,6 +237,8 @@
     <string name="plan_details"><u>Plan Details </u>.</string>
     <string name="open">open</string>
     <string name="close">close</string>
+    <string name="drawer_open">open</string>
+    <string name="drawer_close">close</string>
 
     <string-array name="status_filter_follow_up">
         <item>Status</item>
@@ -264,6 +266,72 @@
     </string-array>
 
     <!--{"Pending","Confirmed","Completed","Reject","Cancelled"}-->
+
+
+    <string-array name="enginee">
+        <item>Management</item>
+        <item>CRM</item>
+        <item>WMS</item>
+        <item>Purchase</item>
+        <item>Master</item>
+        <item>Sales</item>
+        <item>Accounts</item>
+    </string-array>
+
+    <string-array name="Management">
+        <item>Business Overview</item>
+        <item>Customer Overview</item>
+        <item>Team Performance</item>
+        <!--        <item>Geotechnics </item>-->
+        <!--        <item>Material</item>-->
+    </string-array>
+
+    <string-array name="CRM">
+        <item>Leads</item>
+        <item>Leads Generation</item>
+        <item>Offer &amp; Coupons</item>
+        <item>Service</item>
+
+    </string-array>
+
+    <string-array name="WMS">
+        <item>Booking</item>
+        <item>Jobs</item>
+        <!--        <item>Digital Circuit</item>-->
+        <!--        <item>Networking</item>-->
+        <!--        <item>Analog Circuit</item>-->
+        <!--        <item>Signal</item>-->
+        <!--        <item>Microprocessor</item>-->
+
+    </string-array>
+
+
+    <string-array name="Purchase">
+        <item>Purchase Orders</item>
+        <item>Bills</item>
+
+
+    </string-array>
+
+    <string-array name="Master">
+        <item>Stock</item>
+        <item>Business</item>
+        <item>Integration</item>
+
+
+    </string-array>
+
+
+    <string-array name="Sale">
+        <item>Sales Orders</item>
+        <item>Invoices</item>
+    </string-array>
+
+    <string-array name="Accounts">
+        <item>Parties</item>
+        <item>Payment In</item>
+        <item>Payment Out</item>
+    </string-array>
 
 
 </resources>

@@ -66,7 +66,7 @@ import autroid.business.presenter.LeadDetailPresenter;
 import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.customviews.CustomSpinner;
 import autroid.business.view.fragment.booking.ManualBookingFragment;
 import autroid.business.view.fragment.carsales.AddCarFragment;
@@ -703,8 +703,8 @@ public class LeadDetailFragment extends Fragment implements View.OnClickListener
 
             Bundle bundle = new Bundle();
             bundle.putString(Constant.KEY_CAR_ID, intent.getStringExtra("car_id"));
-            ((HomeScreen) getActivity()).makeDrawerVisible();
-            ((HomeScreen) getActivity()).addFragment(new LeadInsuranceCarDetailsFragment(), "LeadInsuranceCarDetailsFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+            ((AwsHomeActivity) getActivity()).addFragment(new LeadInsuranceCarDetailsFragment(), "LeadInsuranceCarDetailsFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
 
         }else if(intent.getIntExtra(Constant.KEY_EVENT_ID, -1) == Constant.EVENT_SEND_INSURANCE_CAR){
 
@@ -716,8 +716,8 @@ public class LeadDetailFragment extends Fragment implements View.OnClickListener
             bundle.putString(Constant.KEY_VARIANT_NAME,intent.getStringExtra("variant_name"));
             bundle.putString(Constant.USER_ID,userId);
             bundle.putBoolean(Constant.VALUE,true);
-            ((HomeScreen) getActivity()).makeDrawerVisible();
-            ((HomeScreen) getActivity()).addFragment(new AddCarFragment(), "AddCarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+            ((AwsHomeActivity) getActivity()).addFragment(new AddCarFragment(), "AddCarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
     }
 
@@ -744,7 +744,7 @@ public class LeadDetailFragment extends Fragment implements View.OnClickListener
                         bundle.putBoolean(Constant.IS_LEAD, true);
                         if (fromLeadsList) bundle.putString(Constant.VALUE, "LeadList");
                         else if (fromAssignedLead) bundle.putString(Constant.VALUE, "LeadAssigned");
-                        ((HomeScreen) getActivity()).addFragment(new ManualBookingFragment(), "ManualBookingFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                        ((AwsHomeActivity) getActivity()).addFragment(new ManualBookingFragment(), "ManualBookingFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                     } else Utility.showResponseMessage(mMainLayout, "Update user details");
 
                     break;
@@ -753,7 +753,7 @@ public class LeadDetailFragment extends Fragment implements View.OnClickListener
                     Bundle bundle = new Bundle();
                     bundle.putString(Constant.KEY_ID, bookingId);
                     bundle.putString(Constant.KEY_TYPE, Constant.PSF);
-                    ((HomeScreen) getActivity()).addFragment(new MainSearchBookingDetailsFragment(), "BookingDetailsFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                    ((AwsHomeActivity) getActivity()).addFragment(new MainSearchBookingDetailsFragment(), "BookingDetailsFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                     break;
 
                 case 1:
@@ -761,8 +761,8 @@ public class LeadDetailFragment extends Fragment implements View.OnClickListener
                         Bundle bundleInsurance = new Bundle();
                         bundleInsurance.putBoolean(Constant.VALUE, true);
                         bundleInsurance.putString(Constant.KEY_ID, userId);
-                        ((HomeScreen) getActivity()).makeDrawerVisible();
-                        ((HomeScreen) getActivity()).addFragment(new JobCardCarSelectionFragment(), "SelectionFragment", true, false, bundleInsurance, ((HomeScreen) getActivity()).currentFrameId);
+                        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+                        ((AwsHomeActivity) getActivity()).addFragment(new JobCardCarSelectionFragment(), "SelectionFragment", true, false, bundleInsurance, ((AwsHomeActivity) getActivity()).currentFrameId);
                     } else Utility.showResponseMessage(mMainLayout, "Update user details");
 
                     break;

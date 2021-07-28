@@ -39,7 +39,7 @@ import autroid.business.utils.Constant;
 import autroid.business.utils.EndlessScrollListener;
 import autroid.business.utils.FragmentTags;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import io.realm.Realm;
 
 /**
@@ -193,8 +193,8 @@ public class OffersFragment extends Fragment implements View.OnClickListener,OnC
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.fab_add:
-                ((HomeScreen)getActivity()).makeDrawerVisible();
-                ((HomeScreen)getActivity()).addFragment(AddOfferFragment.newInstance(), FragmentTags.FRAGMENT_ADD_OFFERS,true,false,null,((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity)getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity)getActivity()).addFragment(AddOfferFragment.newInstance(), FragmentTags.FRAGMENT_ADD_OFFERS,true,false,null,((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
         }
     }
@@ -218,8 +218,8 @@ public class OffersFragment extends Fragment implements View.OnClickListener,OnC
       //  OfferBE offerBE=mOffersResponse.getResponseData().getOffers().get(position);
         bundle.putSerializable(Constant.KEY_ID,id);
         bundle.putBoolean(Constant.KEY_IS_OFFER_EDITABLE,true);
-        ((HomeScreen)getActivity()).makeDrawerVisible();
-        ((HomeScreen)getActivity()).addFragment(AddOfferFragment.newInstance(), FragmentTags.FRAGMENT_ADD_OFFERS,true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity)getActivity()).addFragment(AddOfferFragment.newInstance(), FragmentTags.FRAGMENT_ADD_OFFERS,true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override

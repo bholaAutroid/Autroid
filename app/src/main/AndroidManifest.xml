@@ -30,7 +30,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="android:name,android:allowBackup">
-        <activity android:name=".aws.AwsHomeActivity"></activity>
+        <activity android:name=".aws.leads.LeadGenerateActivity"></activity>
+        <activity android:name=".aws.navigation.adapter.SettingsActivity" />
+        <activity android:name=".aws.Notification_Web" />
+        <activity android:name=".aws.LeadFunnelActivity" />
+        <activity android:name=".aws.AwsHomeActivity" />
         <activity android:name=".view.fragment.profile.profile_tab.ShowImageActivity" />
         <activity android:name=".view.activity.HelpPageActivity" />
         <activity android:name=".view.activity.map_activity.MapsActivity" />

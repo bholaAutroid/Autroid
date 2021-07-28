@@ -27,6 +27,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import autroid.business.aws.AwsHomeActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import autroid.business.R;
@@ -37,7 +38,7 @@ import autroid.business.model.response.BaseResponse;
 import autroid.business.model.response.PaymentModeResponse;
 import autroid.business.presenter.jobcard.JobCardPaymentReceivePresenter;
 import autroid.business.utils.Constant;
-import autroid.business.view.activity.HomeScreen;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -115,7 +116,7 @@ public class JobCardPaymentReceiveFragment extends DialogFragment implements Vie
         mDone.setOnClickListener(this);
 
         mDate.setOnClickListener(v->{
-            ((HomeScreen) getActivity()).disableTextview(mDate);
+            ((AwsHomeActivity) getActivity()).disableTextview(mDate);
             datePickerDialog.show();
         });
 

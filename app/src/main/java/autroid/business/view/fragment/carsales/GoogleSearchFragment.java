@@ -37,17 +37,18 @@ import java.util.ArrayList;
 
 import autroid.business.R;
 import autroid.business.adapter.PlaceAutocompleteAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.utils.Constant;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class GoogleSearchFragment extends DialogFragment implements  GoogleApiClient.OnConnectionFailedListener,
-        GoogleApiClient.ConnectionCallbacks,View.OnClickListener, PlaceAutocompleteAdapter.PlaceAutoCompleteInterface, HomeScreen.AddressCallback {
+        GoogleApiClient.ConnectionCallbacks,View.OnClickListener, PlaceAutocompleteAdapter.PlaceAutoCompleteInterface, AwsHomeActivity.AddressCallback {
 
     Context mContext;
     GoogleApiClient mGoogleApiClient;
@@ -203,7 +204,7 @@ public class GoogleSearchFragment extends DialogFragment implements  GoogleApiCl
             try {
 
                 if(position==0){
-                    ((HomeScreen)getActivity()).getCurrentLocation(this);
+                    ((AwsHomeActivity)getActivity()).getCurrentLocation(this);
 
                 }
                 else {

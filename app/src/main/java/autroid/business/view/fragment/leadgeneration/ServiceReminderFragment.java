@@ -25,7 +25,7 @@ import autroid.business.presenter.ServiceReminderPresenter;
 import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.EndlessScrollListener;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import io.realm.Realm;
 
 
@@ -155,8 +155,8 @@ public class ServiceReminderFragment extends Fragment implements SwipeRefreshLay
         Bundle bundle = new Bundle();
         bundle.putString(Constant.KEY_ID, id);
         bundle.putBoolean(Constant.KEY_TYPE, false);
-        ((HomeScreen) getActivity()).makeDrawerVisible();
-        ((HomeScreen) getActivity()).addFragment(new LeadGenerateDetailFragment(), "InsuranceDueDetail", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).addFragment(new LeadGenerateDetailFragment(), "InsuranceDueDetail", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
 }

@@ -37,6 +37,7 @@ import java.util.Date;
 
 import autroid.business.R;
 import autroid.business.adapter.cars.CarDocumentAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.camera.DrawingFragment;
 import autroid.business.camera.RecyclerViewListener;
 import autroid.business.compression.FileCompression;
@@ -51,7 +52,7 @@ import autroid.business.model.response.DocumentResponse;
 import autroid.business.presenter.carsales.CarDocumentPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.EditPicFragment;
 import okhttp3.MediaType;
 import okhttp3.MultipartBody;
@@ -259,8 +260,8 @@ public class CarDocumentFragment extends Fragment implements RecyclerViewListene
             Bundle bundle = new Bundle();
             bundle.putBoolean(Constant.IS_IMAGE_CAPTURED_CAR_SALES, true);
             bundle.putString(Constant.VALUE, file.getAbsolutePath());
-            ((HomeScreen) getActivity()).makeDrawerVisible();
-            ((HomeScreen) getActivity()).addFragment(new DrawingFragment(), "DrawingFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+            ((AwsHomeActivity) getActivity()).addFragment(new DrawingFragment(), "DrawingFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
 
         } else if (requestCode == REQUEST_PICK_FILE && resultCode == RESULT_OK && data != null) {
 
@@ -269,8 +270,8 @@ public class CarDocumentFragment extends Fragment implements RecyclerViewListene
             bundle.putString(Constant.IMAGE_URI, data.getData().toString());
             bundle.putBoolean(Constant.IS_IMAGE_SELECTED_CAR_SALES, true);
 
-            ((HomeScreen) getActivity()).makeDrawerVisible();
-            ((HomeScreen) getActivity()).addFragment(new DrawingFragment(), "DrawingFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+            ((AwsHomeActivity) getActivity()).addFragment(new DrawingFragment(), "DrawingFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
 
 //            if (isRcSelected) mPresenter.postRc(imageFileBody, carID);
 //            else if (isInsuranceSelected) mPresenter.postInsurance(imageFileBody, carID);

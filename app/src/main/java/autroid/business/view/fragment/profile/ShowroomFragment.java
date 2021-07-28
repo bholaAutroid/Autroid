@@ -67,7 +67,7 @@ import autroid.business.utils.FragmentTags;
 import autroid.business.utils.GridSpacingItemDecoration;
 import autroid.business.utils.Utility;
 import autroid.business.view.activity.GalleryActivity;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.activity.RealmGalleryActivity;
 import autroid.business.view.fragment.AddShowroomReviewFragment;
 import autroid.business.view.fragment.EditPicFragment;
@@ -521,8 +521,8 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ll_edit:
-                ((HomeScreen) getActivity()).makeDrawerVisible();
-                ((HomeScreen) getActivity()).addFragment( new SettingsFragment(), "SettingsFragment", true, false, null, ((HomeScreen) getActivity()).currentFrameId );
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).addFragment( new SettingsFragment(), "SettingsFragment", true, false, null, ((AwsHomeActivity) getActivity()).currentFrameId );
                 break;
             case R.id.showroom_chat:
                 try {
@@ -568,8 +568,8 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
                 Bundle bundle = new Bundle();
                 bundle.putString( Constant.KEY_ID, showroomId );
                 bundle.putString( Constant.Key_Business_Name, showroomName );
-                ((HomeScreen) getActivity()).makeDrawerVisible();
-                ((HomeScreen) getActivity()).addFragment( new AddShowroomReviewFragment(), "AddShowroomReviewFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId );
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).addFragment( new AddShowroomReviewFragment(), "AddShowroomReviewFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId );
                 break;
             case R.id.img_youtube: {
 
@@ -577,10 +577,10 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
                     Utility.showResponseMessage( mMainLayout, getString( R.string.link_not_updated_business ) );
                     break;
                 }
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString( Constant.KEY_TYPE, showroomProfileResponse.getResponseData().getSocialite().getYoutube() );
-                ((HomeScreen) getActivity()).addFragment( WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId );
+                ((AwsHomeActivity) getActivity()).addFragment( WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId );
                 break;
             }
             case R.id.img_twitter: {
@@ -588,10 +588,10 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
                     Utility.showResponseMessage( mMainLayout, getString( R.string.link_not_updated_business ) );
                     break;
                 }
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString( Constant.KEY_TYPE, showroomProfileResponse.getResponseData().getSocialite().getTwitter() );
-                ((HomeScreen) getActivity()).addFragment( WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId );
+                ((AwsHomeActivity) getActivity()).addFragment( WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId );
                 break;
             }
             case R.id.img_linkedin: {
@@ -599,10 +599,10 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
                     Utility.showResponseMessage( mMainLayout, getString( R.string.link_not_updated_business ) );
                     break;
                 }
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString( Constant.KEY_TYPE, showroomProfileResponse.getResponseData().getSocialite().getLinkedin() );
-                ((HomeScreen) getActivity()).addFragment( WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId );
+                ((AwsHomeActivity) getActivity()).addFragment( WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId );
                 break;
             }
 
@@ -611,10 +611,10 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
                     Utility.showResponseMessage( mMainLayout, getString( R.string.link_not_updated_business ) );
                     break;
                 }
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString( Constant.KEY_TYPE, showroomProfileResponse.getResponseData().getSocialite().getInstagram() );
-                ((HomeScreen) getActivity()).addFragment( WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId );
+                ((AwsHomeActivity) getActivity()).addFragment( WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId );
                 break;
             }
             case R.id.img_google_plus: {
@@ -622,10 +622,10 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
                     Utility.showResponseMessage( mMainLayout, getString( R.string.link_not_updated_business ) );
                     break;
                 }
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString( Constant.KEY_TYPE, showroomProfileResponse.getResponseData().getSocialite().getGoogleplus() );
-                ((HomeScreen) getActivity()).addFragment( WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId );
+                ((AwsHomeActivity) getActivity()).addFragment( WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId );
                 break;
             }
             case R.id.img_fb: {
@@ -633,10 +633,10 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
                     Utility.showResponseMessage( mMainLayout, getString( R.string.link_not_updated_business ) );
                     break;
                 }
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString( Constant.KEY_TYPE, showroomProfileResponse.getResponseData().getSocialite().getFacebook() );
-                ((HomeScreen) getActivity()).addFragment( WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId );
+                ((AwsHomeActivity) getActivity()).addFragment( WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId );
                 break;
             }
             case R.id.img_web: {
@@ -644,48 +644,48 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
                     Utility.showResponseMessage( mMainLayout, getString( R.string.link_not_updated_business ) );
                     break;
                 }
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString( Constant.KEY_TYPE, showroomProfileResponse.getResponseData().getSocialite().getWebsite() );
-                ((HomeScreen) getActivity()).addFragment( WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId );
+                ((AwsHomeActivity) getActivity()).addFragment( WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId );
                 break;
             }
             case R.id.all_cars: {
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString( Constant.KEY_ID, showroomProfileResponse.getResponseData().getId() );
                 bundle1.putString( Constant.Key_Business_Name, showroomProfileResponse.getResponseData().getName() );
-                ((HomeScreen) getActivity()).addFragment( new ShowroomCarsFragment(), "ShowroomCarsFragment", true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId );
+                ((AwsHomeActivity) getActivity()).addFragment( new ShowroomCarsFragment(), "ShowroomCarsFragment", true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId );
                 break;
             }
             case R.id.all_products: {
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString( Constant.KEY_ID, showroomProfileResponse.getResponseData().getId() );
                 bundle1.putString( Constant.Key_Business_Name, showroomProfileResponse.getResponseData().getName() );
-                ((HomeScreen) getActivity()).addFragment( new ShowroomProductsFragment(), "ShowroomProductsFragment", true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId );
+                ((AwsHomeActivity) getActivity()).addFragment( new ShowroomProductsFragment(), "ShowroomProductsFragment", true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId );
                 break;
             }
             case R.id.all_offers: {
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString( Constant.KEY_ID, showroomProfileResponse.getResponseData().getId() );
                 bundle1.putString( Constant.Key_Business_Name, showroomProfileResponse.getResponseData().getName() );
-                ((HomeScreen) getActivity()).addFragment( new ShowroomOffersFragment(), "ShowroomOffersFragment", true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId );
+                ((AwsHomeActivity) getActivity()).addFragment( new ShowroomOffersFragment(), "ShowroomOffersFragment", true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId );
                 break;
 
             }
             case R.id.all_reviews: {
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString( Constant.KEY_ID, showroomProfileResponse.getResponseData().getId() );
                 bundle1.putString( Constant.Key_Business_Name, showroomProfileResponse.getResponseData().getName() );
-                ((HomeScreen) getActivity()).addFragment( new ShowroomReviewsFragment(), "ShowroomReviewsFragment", true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId );
+                ((AwsHomeActivity) getActivity()).addFragment( new ShowroomReviewsFragment(), "ShowroomReviewsFragment", true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId );
                 break;
             }
             case R.id.showroom_cover: {
                 EditPicFragment editPicFragment = new EditPicFragment();
-                ((HomeScreen) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString( Constant.KEY_IMAGES, showroomProfileResponse.getResponseData().getAvatar_address() );
                 bundle1.putString( Constant.KEY_TYPE, "cover" );
@@ -803,9 +803,9 @@ public class ShowroomFragment extends Fragment implements View.OnClickListener, 
     public void onImageClick(String id) {
         Bundle bundle = new Bundle();
         bundle.putString( Constant.KEY_ID, id );
-        ((HomeScreen) getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
         bundle.putBoolean( Constant.KEY_IS_VIEW, true );
-        ((HomeScreen) getActivity()).addFragment( new UsedCarDetailFragment(), FragmentTags.FRAGMENT_CAR_STOCK_Detail, true, false, bundle, ((HomeScreen) getActivity()).currentFrameId );
+        ((AwsHomeActivity) getActivity()).addFragment( new UsedCarDetailFragment(), FragmentTags.FRAGMENT_CAR_STOCK_Detail, true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId );
     }
 
     @Override

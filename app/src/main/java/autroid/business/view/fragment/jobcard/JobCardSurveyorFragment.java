@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.bean.UserBE;
@@ -26,7 +27,7 @@ import autroid.business.model.response.GetDriverResponse;
 import autroid.business.presenter.jobcard.JobCardSurveyorPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 public class JobCardSurveyorFragment extends Fragment {
 
@@ -105,7 +106,7 @@ public class JobCardSurveyorFragment extends Fragment {
 
 
         save.setOnClickListener(v->{
-            ((HomeScreen) getActivity()).disableButton(save);
+            ((AwsHomeActivity) getActivity()).disableButton(save);
             if(validate())presenter.setSurveyorDetails(createSurveyorRequest());
         });
 

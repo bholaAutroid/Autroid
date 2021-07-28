@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 import autroid.business.R;
 import autroid.business.adapter.jobcard.SelectCarAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.bean.CarDetailBE;
@@ -25,7 +26,7 @@ import autroid.business.model.response.GetUserCarResponse;
 import autroid.business.presenter.CarSelectionPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.search.SearchCarFragment;
 
 public class JobCardCarSelectionFragment extends Fragment {
@@ -119,7 +120,7 @@ public class JobCardCarSelectionFragment extends Fragment {
                 else bundle.putBoolean(Constant.CAR_DETAILS, true);
             }
 
-            ((HomeScreen)getActivity()).addFragment(new SearchCarFragment(),"SearchFragment",true,false,bundle,((HomeScreen)getActivity()).currentFrameId);
+            ((AwsHomeActivity)getActivity()).addFragment(new SearchCarFragment(),"SearchFragment",true,false,bundle,((AwsHomeActivity)getActivity()).currentFrameId);
         });
 
     }

@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import autroid.business.aws.AwsHomeActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import autroid.business.R;
@@ -31,7 +32,7 @@ import autroid.business.model.response.GetParticularsResponse;
 import autroid.business.presenter.jobcard.JobCardParticularsPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 public class JobCardParticularsFragment extends Fragment implements JobParticularsCallback {
 
@@ -108,7 +109,7 @@ public class JobCardParticularsFragment extends Fragment implements JobParticula
         });*/
 
         proceed_btn.setOnClickListener(v -> {
-            ((HomeScreen)getActivity()).disableButton(proceed_btn);
+            ((AwsHomeActivity)getActivity()).disableButton(proceed_btn);
             if(other_comments.getVisibility()==View.VISIBLE && other_comments.getText().toString().equals("")){
                 Utility.showResponseMessage(mainLayout,"Particulars are empty...");
             }else {
@@ -147,7 +148,7 @@ public class JobCardParticularsFragment extends Fragment implements JobParticula
     public void onSuccessUpdate(GetParticularsResponse particularsResponse){
         Bundle bundle=new Bundle();
         bundle.putString(Constant.BOOKING_ID,bookingId);
-        ((HomeScreen) getActivity()).addFragment(new JobCardRequirementFragment(), "RequirementFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new JobCardRequirementFragment(), "RequirementFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     public UpdateRequest createRequest(){

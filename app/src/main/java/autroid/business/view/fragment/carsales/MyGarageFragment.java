@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import autroid.business.adapter.cars.MyGarageAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.interfaces.BookServiceClickCallback;
 import autroid.business.interfaces.OnCarClickCallBack;
 import autroid.business.model.bean.CarDetailBE;
@@ -35,7 +36,7 @@ import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.EndlessScrollListener;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import io.realm.Realm;
 import io.realm.RealmList;
 
@@ -119,8 +120,8 @@ public class MyGarageFragment extends Fragment implements BookServiceClickCallba
         mAddButton.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
             bundle.putString(Constant.KEY_CAR_TYPE, Constant.CAR_TYPES[0]);
-            ((HomeScreen) getActivity()).makeDrawerVisible();
-            ((HomeScreen) getActivity()).addFragment(new AddCarFragment(), "EditCarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+            ((AwsHomeActivity) getActivity()).addFragment(new AddCarFragment(), "EditCarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         });
 
         backNavigation.setOnClickListener(v -> {
@@ -143,8 +144,8 @@ public class MyGarageFragment extends Fragment implements BookServiceClickCallba
         if (carStockResponse.getGetCarStock().getStocks().size() == 0 && page == 0) {
             Bundle bundle = new Bundle();
             bundle.putString(Constant.KEY_CAR_TYPE, Constant.CAR_TYPES[0]);
-            ((HomeScreen) getActivity()).makeDrawerVisible();
-            ((HomeScreen) getActivity()).addFragment(new AddCarFragment(), "EditCarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+            ((AwsHomeActivity) getActivity()).addFragment(new AddCarFragment(), "EditCarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
 
             Toast.makeText(getActivity(), "Let's add your first car...", Toast.LENGTH_LONG).show();
 
@@ -227,8 +228,8 @@ public class MyGarageFragment extends Fragment implements BookServiceClickCallba
         Bundle bundle = new Bundle();
         bundle.putString(Constant.KEY_CAR_ID, carId);
         bundle.putString(Constant.KEY_MODEL_NAME, modelName);
-        ((HomeScreen) getActivity()).makeDrawerVisible();
-        ((HomeScreen) getActivity()).addFragment(new BookingCategoryFragment(), "BookingCategoryFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).addFragment(new BookingCategoryFragment(), "BookingCategoryFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
 
@@ -237,8 +238,8 @@ public class MyGarageFragment extends Fragment implements BookServiceClickCallba
         Bundle bundle = new Bundle();
         bundle.putString(Constant.KEY_ID, id);
         bundle.putString(Constant.KEY_TYPE, Constant.STOCK_TYPE_GARAGE);
-        ((HomeScreen) getActivity()).makeDrawerVisible();
-        ((HomeScreen) getActivity()).addFragment(new UsedCarDetailFragment(), "UsedCarDetailFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).addFragment(new UsedCarDetailFragment(), "UsedCarDetailFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override
@@ -247,8 +248,8 @@ public class MyGarageFragment extends Fragment implements BookServiceClickCallba
             Bundle bundle = new Bundle();
             bundle.putString(Constant.KEY_CAR_ID, id);
             bundle.putString(Constant.KEY_TYPE, Constant.PUBLISH_CAR);
-            ((HomeScreen) getActivity()).makeDrawerVisible();
-            ((HomeScreen) getActivity()).addFragment(new EditCarFragment(), "EditCarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+            ((AwsHomeActivity) getActivity()).addFragment(new EditCarFragment(), "EditCarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
             Toast.makeText(getActivity(), "Verify details and list the car", Toast.LENGTH_LONG).show();
         } else {
             unPublishAlert(id);
@@ -261,8 +262,8 @@ public class MyGarageFragment extends Fragment implements BookServiceClickCallba
         bundle.putString(Constant.KEY_CAR_ID, carId);
         bundle.putString(Constant.KEY_TYPE, Constant.EDIT_CAR);
         bundle.putBoolean(Constant.IS_GARAGE_CAR, true);
-        ((HomeScreen) getActivity()).makeDrawerVisible();
-        ((HomeScreen) getActivity()).addFragment(new EditCarFragment(), "EditCarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).addFragment(new EditCarFragment(), "EditCarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override
@@ -281,8 +282,8 @@ public class MyGarageFragment extends Fragment implements BookServiceClickCallba
         Bundle bundle = new Bundle();
         bundle.putString(Constant.KEY_ID, carId);
         bundle.putString(Constant.KEY_TYPE, Constant.STOCK_TYPE_GARAGE);
-        ((HomeScreen) getActivity()).makeDrawerVisible();
-        ((HomeScreen) getActivity()).addFragment(new UsedCarDetailFragment(), "UsedCarDetailFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).addFragment(new UsedCarDetailFragment(), "UsedCarDetailFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override

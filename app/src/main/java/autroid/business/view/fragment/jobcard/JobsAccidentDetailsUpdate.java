@@ -26,6 +26,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.bean.InsuranceDataBE;
@@ -33,7 +34,7 @@ import autroid.business.model.request.InsuranceAccidentUpdateRequest;
 import autroid.business.model.response.BaseResponse;
 import autroid.business.presenter.jobcard.JobAccidentUpdateDetailsPresenter;
 import autroid.business.utils.Constant;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 public class JobsAccidentDetailsUpdate extends DialogFragment implements DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener{
 
@@ -152,7 +153,7 @@ public class JobsAccidentDetailsUpdate extends DialogFragment implements DatePic
 
 
         accidentDate.setOnClickListener(v->{
-            ((HomeScreen) getActivity()).disableTextview(accidentDate);
+            ((AwsHomeActivity) getActivity()).disableTextview(accidentDate);
             calendar = Calendar.getInstance();
             currentDay = calendar.get(Calendar.DAY_OF_MONTH);
             currentMonth = calendar.get(Calendar.MONTH);
@@ -163,7 +164,7 @@ public class JobsAccidentDetailsUpdate extends DialogFragment implements DatePic
         });
 
         accidentTime.setOnClickListener(v->{
-            ((HomeScreen) getActivity()).disableTextview(accidentTime);
+            ((AwsHomeActivity) getActivity()).disableTextview(accidentTime);
             calendar = Calendar.getInstance();
             currentHour = calendar.get(Calendar.HOUR_OF_DAY);
             currentMin = calendar.get(Calendar.MINUTE);

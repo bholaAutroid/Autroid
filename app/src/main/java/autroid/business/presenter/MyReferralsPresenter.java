@@ -50,11 +50,14 @@ public class MyReferralsPresenter {
         myCall.enqueue(new ApiCallback.MyCallback<UserSearchResponse>() {
             @Override
             public void success(Response<UserSearchResponse> response) {
-                mFragment.getActivity().runOnUiThread(()->{
-                    if(response.body().getResponseCode()==200){
-                        mFragment.onSuccessAnyData(response.body());
+                mFragment.getActivity().runOnUiThread( new Runnable() {
+                    @Override
+                    public void run() {
+                        if (response.body().getResponseCode() == 200) {
+                            mFragment.onSuccessAnyData( response.body() );
+                        }
                     }
-                });
+                } );
             }
             @Override
             public void error(String errorMessage) {

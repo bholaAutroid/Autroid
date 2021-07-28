@@ -26,6 +26,7 @@ import org.greenrobot.eventbus.Subscribe;
 import autroid.business.MyApplication;
 import autroid.business.R;
 import autroid.business.adapter.estimate.EstimateCategoryAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.interfaces.BookingCategoryCallback;
@@ -36,7 +37,7 @@ import autroid.business.presenter.EstimatePresenter;
 import autroid.business.realm.RealmController;
 import autroid.business.storage.PreferenceManager;
 import autroid.business.utils.Constant;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.activity.addCar.SelectAutomakerActivity;
 import autroid.business.view.fragment.BookingPackagesFragment;
 import autroid.business.view.fragment.BookingServicePackagesFragment;
@@ -113,8 +114,8 @@ public class EstimateFragment extends Fragment  implements BookingCategoryCallba
 
         Bundle bundle = new Bundle();
         bundle.putSerializable(Constant.KEY_AUTOMAKER, carItemsResponse.getGetCarItems().getAutomaker());
-        ((HomeScreen) getActivity()).makeDrawerVisible();
-        ((HomeScreen) getActivity()).addFragment(new SelectAutomakerActivity(), "SelectAutomakerActivity", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).addFragment(new SelectAutomakerActivity(), "SelectAutomakerActivity", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
 
     }
 
@@ -171,14 +172,14 @@ public class EstimateFragment extends Fragment  implements BookingCategoryCallba
             bundle.putString(Constant.KEY_TYPE,name);
 
 
-            ((HomeScreen) getActivity()).addFragment(new BookingPackagesFragment(), "BookingPackagesFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).addFragment(new BookingPackagesFragment(), "BookingPackagesFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
         else {
             Bundle bundle=new Bundle();
             bundle.putString(Constant.KEY_ID,variantID);
             bundle.putString(Constant.KEY_CATEGORY_NAME,tag);
             bundle.putString(Constant.KEY_TYPE,name);
-            ((HomeScreen) getActivity()).addFragment(new BookingServicePackagesFragment(), "BookingServicePackagesFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).addFragment(new BookingServicePackagesFragment(), "BookingServicePackagesFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
        /* if(tag.equalsIgnoreCase(Constant.bookingCategory[0])){
             Bundle bundle=new Bundle();
@@ -186,14 +187,14 @@ public class EstimateFragment extends Fragment  implements BookingCategoryCallba
             bundle.putString(Constant.KEY_CATEGORY_NAME,tag);
             bundle.putString(Constant.KEY_TYPE,"");
 
-            ((HomeScreen) getActivity()).addFragment(new BookingPackagesFragment(), "BookingPackagesFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).addFragment(new BookingPackagesFragment(), "BookingPackagesFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
         else if(tag.equalsIgnoreCase(Constant.bookingCategory[1])){
             Bundle bundle=new Bundle();
             bundle.putString(Constant.KEY_ID,variantID);
             bundle.putString(Constant.KEY_CATEGORY_NAME,tag);
             bundle.putString(Constant.KEY_TYPE,"");
-            ((HomeScreen) getActivity()).addFragment(new BookingPackagesFragment(), "BookingPackagesFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).addFragment(new BookingPackagesFragment(), "BookingPackagesFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
         else if(tag.equalsIgnoreCase(Constant.bookingCategory[2])){
             showDialog(name,tag);
@@ -204,35 +205,35 @@ public class EstimateFragment extends Fragment  implements BookingCategoryCallba
             bundle.putString(Constant.KEY_ID,variantID);
             bundle.putString(Constant.KEY_CATEGORY_NAME,tag);
             bundle.putString(Constant.KEY_TYPE,"");
-            ((HomeScreen) getActivity()).addFragment(new BookingPackagesFragment(), "BookingPackagesFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).addFragment(new BookingPackagesFragment(), "BookingPackagesFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
         else if(tag.equalsIgnoreCase(Constant.bookingCategory[3])){
             Bundle bundle=new Bundle();
             bundle.putString(Constant.KEY_ID,variantID);
             bundle.putString(Constant.KEY_CATEGORY_NAME,tag);
             bundle.putString(Constant.KEY_TYPE,"");
-            ((HomeScreen) getActivity()).addFragment(new BookingServicePackagesFragment(), "BookingServicePackagesFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).addFragment(new BookingServicePackagesFragment(), "BookingServicePackagesFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
         else if(tag.equalsIgnoreCase(Constant.bookingCategory[7])){
             Bundle bundle=new Bundle();
             bundle.putString(Constant.KEY_ID,variantID);
             bundle.putString(Constant.KEY_CATEGORY_NAME,tag);
             bundle.putString(Constant.KEY_TYPE,"");
-            ((HomeScreen) getActivity()).addFragment(new BookingServicePackagesFragment(), "BookingServicePackagesFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).addFragment(new BookingServicePackagesFragment(), "BookingServicePackagesFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
         else if(tag.equalsIgnoreCase(Constant.bookingCategory[6])){
             Bundle bundle=new Bundle();
             bundle.putString(Constant.KEY_ID,variantID);
             bundle.putString(Constant.KEY_CATEGORY_NAME,tag);
             bundle.putString(Constant.KEY_TYPE,"");
-            ((HomeScreen) getActivity()).addFragment(new BookingServicePackagesFragment(), "BookingServicePackagesFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).addFragment(new BookingServicePackagesFragment(), "BookingServicePackagesFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
         else if(tag.equalsIgnoreCase(Constant.bookingCategory[5])){
             Bundle bundle=new Bundle();
             bundle.putString(Constant.KEY_ID,variantID);
             bundle.putString(Constant.KEY_CATEGORY_NAME,tag);
             bundle.putString(Constant.KEY_TYPE,"");
-            ((HomeScreen) getActivity()).addFragment(new BookingPackagesFragment(), "BookingPackagesFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity) getActivity()).addFragment(new BookingPackagesFragment(), "BookingPackagesFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
         }
         else {
 
@@ -288,7 +289,7 @@ public class EstimateFragment extends Fragment  implements BookingCategoryCallba
                 bundle.putString(Constant.KEY_ID,variantID);
                 bundle.putString(Constant.KEY_CATEGORY_NAME,tag);
                 bundle.putString(Constant.KEY_TYPE,"general");
-                ((HomeScreen) getActivity()).addFragment(new BookingPackagesFragment(), "BookingPackagesFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new BookingPackagesFragment(), "BookingPackagesFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                 dialog.dismiss();
             }
         });
@@ -299,7 +300,7 @@ public class EstimateFragment extends Fragment  implements BookingCategoryCallba
                 bundle.putString(Constant.KEY_ID,variantID);
                 bundle.putString(Constant.KEY_CATEGORY_NAME,tag);
                 bundle.putString(Constant.KEY_TYPE,"aluminium");
-                ((HomeScreen) getActivity()).addFragment(new BookingPackagesFragment(), "BookingPackagesFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new BookingPackagesFragment(), "BookingPackagesFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                 dialog.dismiss();
             }
         });

@@ -1,6 +1,7 @@
 package autroid.business.api;
 
 
+import autroid.business.aws.navigation.adapter.WebNotificationResponse;
 import autroid.business.model.bean.BusinessPlanResponse;
 import autroid.business.model.request.AddBookingRequest;
 import autroid.business.model.request.AddOwnerRequest;
@@ -204,7 +205,7 @@ public interface ApiRequest {
 
     /* ADD CAR*/
     @POST(ApiURL.ADD_CAR)
-        ApiCallback.MyCall<AddCarResponse> postCar(@Body AddCarRequest addCarRequest);
+    ApiCallback.MyCall<AddCarResponse> postCar(@Body AddCarRequest addCarRequest);
 
     /* ADD CAR*/
     @POST(ApiURL.USER_CAR_ADD)
@@ -255,7 +256,7 @@ public interface ApiRequest {
 
     /* ANALYTICS*/
     @GET(ApiURL.ANALYTICS)
-    ApiCallback.MyCall<AnalyticsResponse> getAnalyticsData(@Query("department") String department,@Query("type") String type, @Query("query") String query);
+    ApiCallback.MyCall<AnalyticsResponse> getAnalyticsData(@Query("department") String department, @Query("type") String type, @Query("query") String query);
 
     /* UnPublish CAR */
     @HTTP(method = "DELETE", path = ApiURL.REMOVE_MEMBER, hasBody = true)
@@ -358,20 +359,20 @@ public interface ApiRequest {
 
     /* GET DIAGNOSIS SERVICES */
     @POST(ApiURL.ESTIMATE_SERVICES)
-    ApiCallback.MyCall<BookingServicesResponse> getEstimate(@Query("car") String car,@Query("type") String type);
+    ApiCallback.MyCall<BookingServicesResponse> getEstimate(@Query("car") String car, @Query("type") String type);
 
 
     @POST(ApiURL.ESTIMATE_SERVICES)
-    ApiCallback.MyCall<VendorServicesResponse> getEstimateNested(@Query("car") String car,@Query("type") String type);
+    ApiCallback.MyCall<VendorServicesResponse> getEstimateNested(@Query("car") String car, @Query("type") String type);
 
 
     /* BOOKINGS*/
     @GET(ApiURL.BOOKINGS)
-    ApiCallback.MyCall<BookingsResponse> getBookings(@Query("status") String status, @Query("page") int page,@Query("sortBy") String soryBy);
+    ApiCallback.MyCall<BookingsResponse> getBookings(@Query("status") String status, @Query("page") int page, @Query("sortBy") String soryBy);
 
     /* BUSINESS OVERVIEW*/
     @GET(ApiURL.BUSINESS_OVERVIEW)
-    ApiCallback.MyCall<BusinessOverviewResponse> getOverview(@Query("type") String type,@Query("query") String query);
+    ApiCallback.MyCall<BusinessOverviewResponse> getOverview(@Query("type") String type, @Query("query") String query);
 
     /* BOOKINGS*/
     @GET(ApiURL.STATUS_COUNT)
@@ -441,7 +442,7 @@ public interface ApiRequest {
 
     /* NOTIFICATIONS LIST */
     @GET(ApiURL.LEADS)
-    ApiCallback.MyCall<LeadsResponse> getAllLeads(@Query("by") String filter,@Query("page") int page, @Query("status") String status,@Query("priority") int priority,@Query("date") String date);
+    ApiCallback.MyCall<LeadsResponse> getAllLeads(@Query("by") String filter, @Query("page") int page, @Query("status") String status, @Query("priority") int priority, @Query("date") String date);
 
     /* NOTIFICATIONS LIST */
     @GET(ApiURL.LEAD_STATUS)
@@ -485,11 +486,11 @@ public interface ApiRequest {
 
     /* GET SLOTS */
     @GET(ApiURL.BOOKING_TIMESLOT)
-    ApiCallback.MyCall<BookingSlotResponse> getSlots(@Query("booking") String id,@Query("date") String date);
+    ApiCallback.MyCall<BookingSlotResponse> getSlots(@Query("booking") String id, @Query("date") String date);
 
     /* GET SLOTS */
     @GET(ApiURL.BOOKING_CONVENIENCE)
-    ApiCallback.MyCall<BookingConvenienceResponse> getConvenience(@Query("booking") String id,@Query("business") String business);
+    ApiCallback.MyCall<BookingConvenienceResponse> getConvenience(@Query("booking") String id, @Query("business") String business);
 
     /* BOOKINGS*/
     @PUT(ApiURL.BOOKINGS_RESCHEDULE)
@@ -535,17 +536,17 @@ public interface ApiRequest {
     /*ADD INSPECTION IMAGES*/
     @Multipart
     @PUT(ApiURL.ADD_INSPECTION_IMAGES)
-    ApiCallback.MyCall<InspectionImageResponse> addInspectionImages(@Part("index") RequestBody index, @Part("booking") RequestBody bookingId,@Part MultipartBody.Part imageFile);
+    ApiCallback.MyCall<InspectionImageResponse> addInspectionImages(@Part("index") RequestBody index, @Part("booking") RequestBody bookingId, @Part MultipartBody.Part imageFile);
 
     /*ADD APPROVAL IMAGES*/
     @Multipart
     @PUT(ApiURL.ADD_APPROVAL_IMAGES)
-    ApiCallback.MyCall<InspectionImageResponse> addApprovalImages(@Part("index") RequestBody index, @Part("booking") RequestBody bookingId,@Part MultipartBody.Part imageFile);
+    ApiCallback.MyCall<InspectionImageResponse> addApprovalImages(@Part("index") RequestBody index, @Part("booking") RequestBody bookingId, @Part MultipartBody.Part imageFile);
 
     /*ADD ADDITIONAL IMAGES*/
     @Multipart
     @PUT(ApiURL.ADD_ADDITIONAL_IMAGES)
-    ApiCallback.MyCall<InspectionImageResponse> addAdditionalImages(@Part("index") RequestBody index, @Part("booking") RequestBody bookingId,@Part MultipartBody.Part imageFile);
+    ApiCallback.MyCall<InspectionImageResponse> addAdditionalImages(@Part("index") RequestBody index, @Part("booking") RequestBody bookingId, @Part MultipartBody.Part imageFile);
 
     /*CAR PARTICULARS*/
     @GET(ApiURL.GET_PARTICULARS)
@@ -609,7 +610,7 @@ public interface ApiRequest {
 
     /*GET ANY DATA*/
     @GET(ApiURL.ANY_DETAILS)
-    ApiCallback.MyCall<MultipleDataResponse> getSearchData(@Query("query") String detail,@Query("type") String type);
+    ApiCallback.MyCall<MultipleDataResponse> getSearchData(@Query("query") String detail, @Query("type") String type);
 
     /*GET ADDRESS DETAILS*/
     @GET(ApiURL.ADDRESS_DETAILS)
@@ -617,7 +618,7 @@ public interface ApiRequest {
 
     /*UPDATE ACCIDENT DETAILS*/
     @PUT(ApiURL.ACCIDENT_UPDATE)
-    ApiCallback.MyCall<BaseResponse>updateAccidentDetails(@Body InsuranceAccidentUpdateRequest request);
+    ApiCallback.MyCall<BaseResponse> updateAccidentDetails(@Body InsuranceAccidentUpdateRequest request);
 
     /* GET BOOKING ADDRESS */
     @GET(ApiURL.GET_BOOKING_ADDRESS)
@@ -739,19 +740,19 @@ public interface ApiRequest {
     ApiCallback.MyCall<CarDocumentResponse> getCarDocuments(@Query("car") String carId);
 
     /*REMOVE DOCUMENT*/
-    @HTTP(method = "DELETE", path =ApiURL.DELETE_CAR_DOCUMENT, hasBody = true)
+    @HTTP(method = "DELETE", path = ApiURL.DELETE_CAR_DOCUMENT, hasBody = true)
     ApiCallback.MyCall<BaseResponse> removeDocument(@Body PublishUnpublishRequest publishUnpublishRequest);
 
     /*REMOVE IC IMAGES*/
-    @HTTP(method = "DELETE", path =ApiURL.DELETE_RC_IMG, hasBody = true)
+    @HTTP(method = "DELETE", path = ApiURL.DELETE_RC_IMG, hasBody = true)
     ApiCallback.MyCall<BaseResponse> removeRcPic(@Body PublishUnpublishRequest publishUnpublishRequest);
 
     /*Remove INSURANCE IMAGES*/
-    @HTTP(method = "DELETE", path =ApiURL.DELETE_INSURANCE_IMG, hasBody = true)
+    @HTTP(method = "DELETE", path = ApiURL.DELETE_INSURANCE_IMG, hasBody = true)
     ApiCallback.MyCall<BaseResponse> removeInsurancePic(@Body PublishUnpublishRequest publishUnpublishRequest);
 
     /*Remove Car*/
-    @HTTP(method = "DELETE", path =ApiURL.REMOVE_CAR, hasBody = true)
+    @HTTP(method = "DELETE", path = ApiURL.REMOVE_CAR, hasBody = true)
     ApiCallback.MyCall<BaseResponse> removeCar(@Body AddCarRequest addCarRequest);
 
     /* OutLets */
@@ -767,7 +768,7 @@ public interface ApiRequest {
 
     /* VENDOR SERVICES DESCRIPTION */
     @GET(ApiURL.BOOKING_SERVICES_DESCRIPTION)
-    ApiCallback.MyCall<BaseResponse> getVendorServicesDetails(@Query("id") String id,@Query("type") String type);
+    ApiCallback.MyCall<BaseResponse> getVendorServicesDetails(@Query("id") String id, @Query("type") String type);
 
     /* ADD BOOKINGS */
     @POST(ApiURL.ADD_BOOKING)
@@ -840,4 +841,9 @@ public interface ApiRequest {
     /* SERVICE DUE */
     @GET(ApiURL.SERVICE_DUE)
     ApiCallback.MyCall<ServiceDueResponse> getService(@Query("page") int page);
+
+    /*  Web Notification Done by BK  */
+    @GET(ApiURL.NOTIFICATIONS_WEB)
+    ApiCallback.MyCall<WebNotificationResponse> getWebNotificationData();
+
 }

@@ -25,7 +25,7 @@ import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.bean.CarItemsBE;
 import autroid.business.utils.Constant;
 import autroid.business.utils.RecyclerItemClickListener;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -74,7 +74,7 @@ public class SelectAutomakerActivity extends Fragment {
                         bundle.putString(Constant.KEY_MAKER_ID,mList.get(position).getId());
                         bundle.putString(Constant.KEY_MAKER_NAME,mList.get(position).getValue());
 
-                        ((HomeScreen) getActivity()).addFragment(new SelectModelActivity(), "SelectModelActivity", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                        ((AwsHomeActivity) getActivity()).addFragment(new SelectModelActivity(), "SelectModelActivity", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                        // finish();
 
 

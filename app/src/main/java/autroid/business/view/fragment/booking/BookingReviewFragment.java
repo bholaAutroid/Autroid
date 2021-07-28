@@ -22,6 +22,7 @@ import java.util.ArrayList;
 
 import autroid.business.R;
 import autroid.business.adapter.booking.ReviewPointsAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.model.bean.RatingDataBE;
 import autroid.business.model.request.ReviewRequest;
 import autroid.business.model.response.BaseResponse;
@@ -29,7 +30,7 @@ import autroid.business.model.response.ReviewResponse;
 import autroid.business.presenter.BookingReviewPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 public class BookingReviewFragment extends Fragment {
 
@@ -217,6 +218,6 @@ public class BookingReviewFragment extends Fragment {
 
     public void onSuccessReviewAdded(BaseResponse response) {
         Toast.makeText(getActivity(),response.getResponseMessage(),Toast.LENGTH_LONG).show();
-        ((HomeScreen)getActivity()).clearStackLocalAndShowLeads();
+        ((AwsHomeActivity)getActivity()).clearStackLocalAndShowLeads();
     }
 }

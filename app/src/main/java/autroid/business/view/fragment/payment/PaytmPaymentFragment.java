@@ -30,7 +30,7 @@ import autroid.business.model.response.ChecksumResponse;
 import autroid.business.model.response.PaymentRecheckResponse;
 import autroid.business.presenter.PaytmPaymentPresenter;
 import autroid.business.utils.Constant;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.carsales.MyGarageFragment;
 
 
@@ -233,8 +233,8 @@ public class PaytmPaymentFragment extends Fragment {
                 if(status.equalsIgnoreCase("TXN_SUCCESS")) {
                     dialog.dismiss();
 
-                    ((HomeScreen) getActivity()).clearStackLocal();
-                    ((HomeScreen) getActivity()).addFragment(new MyGarageFragment(), "MyGarageFragment", true, false, null, ((HomeScreen) getActivity()).currentFrameId);
+                    ((AwsHomeActivity) getActivity()).clearStackLocal();
+                    ((AwsHomeActivity) getActivity()).addFragment(new MyGarageFragment(), "MyGarageFragment", true, false, null, ((AwsHomeActivity) getActivity()).currentFrameId);
                 }
                 else if(status.equalsIgnoreCase("TXN_FAILURE")) {
                    // mTransparentView.setVisibility(View.GONE);

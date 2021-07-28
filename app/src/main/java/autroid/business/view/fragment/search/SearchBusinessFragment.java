@@ -27,7 +27,7 @@ import autroid.business.interfaces.OnClickBusinessCallback;
 import autroid.business.model.response.SearchBusinessResponse;
 import autroid.business.model.response.UserSearchResponse;
 import autroid.business.utils.Constant;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.profile.ShowroomFragment;
 
 /**
@@ -138,8 +138,8 @@ public class SearchBusinessFragment extends Fragment implements OnClickBusinessC
 
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,id);
-        ((HomeScreen) getActivity()).makeDrawerVisible();
-        ((HomeScreen) getActivity()).addFragment(new ShowroomFragment(), "SearchBusinessFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).addFragment(new ShowroomFragment(), "SearchBusinessFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override
@@ -158,7 +158,7 @@ public class SearchBusinessFragment extends Fragment implements OnClickBusinessC
     public void onStatusClick(String id) {
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,id);
-        ((HomeScreen) getActivity()).addFragment(new SearchDetailFragment(), "SearchDetailFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new SearchDetailFragment(), "SearchDetailFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override

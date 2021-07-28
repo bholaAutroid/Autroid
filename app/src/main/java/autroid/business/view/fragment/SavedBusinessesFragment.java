@@ -21,7 +21,7 @@ import autroid.business.interfaces.OnClickBusinessCallback;
 import autroid.business.model.response.SavedBusinessResponse;
 import autroid.business.presenter.SavedBusinessesPresenter;
 import autroid.business.utils.Constant;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.profile.ShowroomFragment;
 
 /**
@@ -86,7 +86,7 @@ public class SavedBusinessesFragment extends Fragment implements OnClickBusiness
     public void onBusinessClick(String id) {
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,id);
-        ((HomeScreen)getActivity()).makeDrawerVisible();
-        ((HomeScreen) getActivity()).addFragment(new ShowroomFragment(), "MainSearchFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity) getActivity()).addFragment(new ShowroomFragment(), "MainSearchFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 }

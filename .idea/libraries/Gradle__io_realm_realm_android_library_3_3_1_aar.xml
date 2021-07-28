@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: io.realm:realm-android-library:3.3.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0d7064bacb5676fce99a9a32be549ca9/jetified-realm-android-library-3.3.1/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0d7064bacb5676fce99a9a32be549ca9/jetified-realm-android-library-3.3.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0d7064bacb5676fce99a9a32be549ca9/jetified-realm-android-library-3.3.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0d7064bacb5676fce99a9a32be549ca9/jetified-realm-android-library-3.3.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.realm/realm-android-library/3.3.1/a23786bb83a09d5a97bcf9b0df68a3a58f7b3957/realm-android-library-3.3.1-javadoc.jar!/" />

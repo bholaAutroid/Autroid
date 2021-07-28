@@ -26,7 +26,7 @@ import autroid.business.model.response.BookingDetailsResponse;
 import autroid.business.model.response.CarInspectionResponse;
 import autroid.business.presenter.MyBookingDetailsPresenter;
 import autroid.business.utils.Constant;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.jobcard.JobsCarDetails;
 import autroid.business.view.fragment.jobcard.JobsClaimDetails;
 
@@ -221,6 +221,6 @@ public class MyBookingDetailFragment extends Fragment implements View.OnClickLis
 
         Bundle bundle = new Bundle();
         bundle.putSerializable("inspection_list", arrayList);
-        ((HomeScreen) getActivity()).addFragment(new DisplayGridFragment(), "DisplayGrid", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new DisplayGridFragment(), "DisplayGrid", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 }

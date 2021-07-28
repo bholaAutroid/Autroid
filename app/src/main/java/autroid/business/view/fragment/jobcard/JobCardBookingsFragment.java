@@ -18,7 +18,7 @@ import autroid.business.interfaces.BookingStatusCallback;
 import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.BookingDetailFragment;
 import io.realm.Realm;
 
@@ -122,7 +122,7 @@ public class JobCardBookingsFragment extends Fragment implements BookingStatusCa
         bun.putBoolean(Constant.IS_BOOKING, true);
         bun.putString(Constant.USER_ID, userId);
         bun.putString(Constant.BOOKING_ID, bookingId);
-        ((HomeScreen) getActivity()).addFragment(new JobCardCarFragment(), "CarFragment", true, false, bun, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new JobCardCarFragment(), "CarFragment", true, false, bun, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override
@@ -132,7 +132,7 @@ public class JobCardBookingsFragment extends Fragment implements BookingStatusCa
 
             case R.id.skip:
                 Bundle bundle=getArguments();
-                ((HomeScreen) getActivity()).addFragment(new JobCardCarFragment(), "JobCardCarFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new JobCardCarFragment(), "JobCardCarFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
         }
     }

@@ -29,7 +29,7 @@ import autroid.business.presenter.LeadAssignedPresenter;
 import autroid.business.realm.RealmController;
 import autroid.business.utils.Constant;
 import autroid.business.utils.EndlessScrollListener;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import io.realm.Realm;
 
 public class LeadAssignedFragment extends Fragment implements LeadsCallback, SwipeRefreshLayout.OnRefreshListener{
@@ -164,12 +164,12 @@ public class LeadAssignedFragment extends Fragment implements LeadsCallback, Swi
 
     @Override
     public void onStatusClick(String id) {
-        ((HomeScreen)getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity)getActivity()).makeDrawerVisible();
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,id);
         bundle.putString(Constant.KEY_TYPE,status);
         bundle.putString(Constant.VALUE,"LeadAssigned");
-        ((HomeScreen)getActivity()).addFragment(new LeadDetailFragment(),"LeadDetailFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).addFragment(new LeadDetailFragment(),"LeadDetailFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override

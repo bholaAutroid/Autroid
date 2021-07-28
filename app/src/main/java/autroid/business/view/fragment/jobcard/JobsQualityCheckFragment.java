@@ -36,7 +36,7 @@ import autroid.business.realm.RealmController;
 import autroid.business.storage.PreferenceManager;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import io.realm.Realm;
 
 /**
@@ -113,7 +113,7 @@ public class JobsQualityCheckFragment extends Fragment {
                     JSONObject jsonObject = new JSONObject(jsonManifest);
                     int picLimit=jsonObject.getInt("qc_inspection_limit");
                     if(picLimit>0){
-                        ((HomeScreen) getActivity()).addFragment(new CameraFragment(), "CameraFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                        ((AwsHomeActivity) getActivity()).addFragment(new CameraFragment(), "CameraFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
 
                     }
                     else {

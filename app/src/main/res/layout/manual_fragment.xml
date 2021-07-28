@@ -73,8 +73,8 @@
                         android:layout_gravity="center"
                         android:layout_marginRight="8dp"
                         android:padding="6dp"
-                        android:tint="@color/white_dark"
-                        app:srcCompat="@drawable/ic_car_pencil" />
+                        app:srcCompat="@drawable/ic_car_pencil"
+                        app:tint="@color/white_dark" />
 
                 </LinearLayout>
 

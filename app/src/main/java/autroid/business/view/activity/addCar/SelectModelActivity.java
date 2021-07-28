@@ -19,13 +19,14 @@ import org.greenrobot.eventbus.Subscribe;
 
 import autroid.business.R;
 import autroid.business.adapter.AutomakerAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.response.CarModelsResponse;
 import autroid.business.presenter.CarModelPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.RecyclerItemClickListener;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -110,7 +111,7 @@ public class SelectModelActivity extends Fragment
                         bundle.putString(Constant.KEY_MODEL_ID,carModelsResponse.getModels().get(position).getId());
                         bundle.putString(Constant.KEY_MODEL_NAME,carModelsResponse.getModels().get(position).getValue());
 
-                        ((HomeScreen) getActivity()).addFragment(new SelectVariantActivity(), "SelectVariantActivity", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                        ((AwsHomeActivity) getActivity()).addFragment(new SelectVariantActivity(), "SelectVariantActivity", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                       //  finish();
                     }
 

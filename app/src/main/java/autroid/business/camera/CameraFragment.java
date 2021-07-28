@@ -34,6 +34,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import autroid.business.R;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.eventbus.Events;
 import autroid.business.eventbus.GlobalBus;
 import autroid.business.model.bean.InspectionImageBE;
@@ -41,7 +42,7 @@ import autroid.business.model.response.InspectionImageResponse;
 import autroid.business.presenter.CameraPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.jobcard.JobCardAddressFragment;
 import id.zelory.compressor.Compressor;
 import okhttp3.MediaType;
@@ -166,7 +167,7 @@ public class CameraFragment extends Fragment{
         clicked_holder.setOnClickListener(v->{
             Bundle bundle=new Bundle();
             bundle.putSerializable("inspection_list",arrayList);
-            ((HomeScreen)getActivity()).addFragment(new DisplayGridFragment(),"DisplayGrid",true,false,bundle,((HomeScreen)getActivity()).currentFrameId);
+            ((AwsHomeActivity)getActivity()).addFragment(new DisplayGridFragment(),"DisplayGrid",true,false,bundle,((AwsHomeActivity)getActivity()).currentFrameId);
         });
 
         proceed.setOnClickListener(v->{
@@ -189,7 +190,7 @@ public class CameraFragment extends Fragment{
             public void onImage(CameraKitView cameraKitView, byte[] bytes) {
                 Bundle bundle = new Bundle();
                 bundle.putByteArray("byte_array",bytes);
-                ((HomeScreen) getActivity()).addFragment(new DrawingFragment(),"DrawingFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).addFragment(new DrawingFragment(),"DrawingFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
             }
         });
 

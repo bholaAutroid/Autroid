@@ -42,6 +42,7 @@ import autroid.business.adapter.booking.BookingRemarksAdapter;
 import autroid.business.adapter.booking.BookingRequirementAdapter;
 import autroid.business.adapter.jobcard.PaymentLogAdapter;
 import autroid.business.adapter.qiscus.PhrasesAdapter;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.camera.CameraFragment;
 import autroid.business.interfaces.BookingDetailCallback;
 import autroid.business.eventbus.Events;
@@ -63,7 +64,7 @@ import autroid.business.storage.PreferenceManager;
 import autroid.business.utils.Constant;
 import autroid.business.utils.FragmentTags;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.WebViewFragment;
 import autroid.business.view.fragment.booking.BookingRescheduleFragment;
 import autroid.business.view.fragment.booking.BookingServiceDetailFragment;
@@ -358,7 +359,7 @@ public class JobCardDetailFragment extends Fragment implements View.OnClickListe
                 Bundle bundle = new Bundle();
                 bundle.putBoolean(Constant.IS_JOBCARD_DETAILS, true);
                 bundle.putSerializable(Constant.QC_LIST, detailsResponse.getBookingData().get(0).getJobsQCBEArrayList());
-                ((HomeScreen) getActivity()).addFragment(new JobsQualityCheckFragment(), "QualityCheckFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity)getActivity()).addFragment(new JobsQualityCheckFragment(), "QualityCheckFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                 break;
 
             case R.id.playback:
@@ -445,7 +446,7 @@ public class JobCardDetailFragment extends Fragment implements View.OnClickListe
                                 JSONObject jsonObject = new JSONObject(jsonManifest);
                                 int picLimit=jsonObject.getInt("job_inspection_limit");
                                 if(picLimit>0){
-                                    ((HomeScreen) getActivity()).addFragment(new CameraFragment(), "CameraFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                                    ((AwsHomeActivity) getActivity()).addFragment(new CameraFragment(), "CameraFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                                 }
                                 else {
                                     JobCardAddressFragment jobCardAddressFragment = new JobCardAddressFragment();
@@ -462,7 +463,7 @@ public class JobCardDetailFragment extends Fragment implements View.OnClickListe
                             addressFragment.setArguments(bundle);
                             addressFragment.show(getFragmentManager(), "AddressFragment");
                         } else if (subStatus.equals(Constant.JOB_ASSETS))
-                            ((HomeScreen) getActivity()).addFragment(new JobCardRequirementFragment(), "RequirementFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                            ((AwsHomeActivity) getActivity()).addFragment(new JobCardRequirementFragment(), "RequirementFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
 
                         Fragment fragment = getFragmentManager().findFragmentByTag("JobCardDetailFragment");
                         if (fragment != null)
@@ -764,7 +765,7 @@ public class JobCardDetailFragment extends Fragment implements View.OnClickListe
                 case R.id.gate_pass:
                     Bundle bundle1 = new Bundle();
                     bundle1.putString(Constant.KEY_TYPE,"http://www.autroid.com/gatepass/"+bookingId);
-                    ((HomeScreen) getActivity()).addFragment(WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((HomeScreen) getActivity()).currentFrameId);
+                    ((AwsHomeActivity) getActivity()).addFragment(WebViewFragment.newInstance(), FragmentTags.FRAGMENT_WEB_VIEW, true, false, bundle1, ((AwsHomeActivity) getActivity()).currentFrameId);
                     break;
 
                 case R.id.ready:
@@ -827,7 +828,7 @@ public class JobCardDetailFragment extends Fragment implements View.OnClickListe
                     Bundle qualityBundle = new Bundle();
                     qualityBundle.putString(Constant.BOOKING_ID, bookingId);
                     qualityBundle.putBoolean(Constant.IS_JOBCARD_DETAILS, false);
-                    ((HomeScreen) getActivity()).addFragment(new JobsQualityCheckFragment(), "QualityCheckFragment", true, false, qualityBundle, ((HomeScreen) getActivity()).currentFrameId);
+                    ((AwsHomeActivity)getActivity()).addFragment(new JobsQualityCheckFragment(), "QualityCheckFragment", true, false, qualityBundle, ((AwsHomeActivity) getActivity()).currentFrameId);
                     break;
 
                 case R.id.job_update: {
@@ -1065,7 +1066,7 @@ public class JobCardDetailFragment extends Fragment implements View.OnClickListe
     public void onServiceClick(ServiceBE serviceBE) {
         Bundle bundle = new Bundle();
         bundle.putSerializable(Constant.KEY_TYPE, serviceBE);
-        ((HomeScreen) getActivity()).addFragment(new BookingServiceDetailFragment(), "BookingServiceDetailFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new BookingServiceDetailFragment(), "BookingServiceDetailFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     /*----------------------------------------------------- EVENT RECEIVING ---------------------------------------------------*/
@@ -1189,7 +1190,7 @@ public class JobCardDetailFragment extends Fragment implements View.OnClickListe
                     bundle.putSerializable(Constant.DETAILS_TYPE, detailsResponse.getBookingData().get(0).getSurveyor());
                 } else bundle.putBoolean(Constant.VALUE, false);
 
-                ((HomeScreen) getActivity()).addFragment(new JobCardSurveyorFragment(), "SurveyorFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity)getActivity()).addFragment(new JobCardSurveyorFragment(), "SurveyorFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
             }
             break;
 

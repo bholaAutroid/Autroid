@@ -32,7 +32,7 @@ import autroid.business.model.response.SearchDetailResponse;
 import autroid.business.presenter.SearchDetailPresenter;
 import autroid.business.utils.Constant;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.fragment.carsales.UsedCarDetailFragment;
 import autroid.business.view.fragment.jobcard.JobCardDetailFragment;
 import autroid.business.view.fragment.leads.LeadDetailFragment;
@@ -184,7 +184,7 @@ public class SearchDetailFragment extends Fragment implements View.OnClickListen
     public void onBookingClick(String id) {
         Bundle bundle = new Bundle();
         bundle.putString(Constant.KEY_ID, id);
-        ((HomeScreen) getActivity()).addFragment(new JobCardDetailFragment(), "JobCardDetailFragment", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity) getActivity()).addFragment(new JobCardDetailFragment(), "JobCardDetailFragment", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
     @Override
@@ -192,7 +192,7 @@ public class SearchDetailFragment extends Fragment implements View.OnClickListen
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,id);
         bundle.putBoolean(Constant.KEY_IS_VIEW,true);
-        ((HomeScreen)getActivity()).addFragment(new UsedCarDetailFragment(),"UsedCarDetailFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).addFragment(new UsedCarDetailFragment(),"UsedCarDetailFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
     }
 
 
@@ -201,8 +201,8 @@ public class SearchDetailFragment extends Fragment implements View.OnClickListen
         Bundle bundle=new Bundle();
         bundle.putString(Constant.KEY_ID,id);
         bundle.putString(Constant.VALUE,"MainSearch");
-        ((HomeScreen)getActivity()).makeDrawerVisible();
-        ((HomeScreen)getActivity()).addFragment(new LeadDetailFragment(),"LeadDetailFragment",true,false,bundle,((HomeScreen) getActivity()).currentFrameId);
+        ((AwsHomeActivity)getActivity()).makeDrawerVisible();
+        ((AwsHomeActivity)getActivity()).addFragment(new LeadDetailFragment(),"LeadDetailFragment",true,false,bundle,((AwsHomeActivity) getActivity()).currentFrameId);
 
     }
 }

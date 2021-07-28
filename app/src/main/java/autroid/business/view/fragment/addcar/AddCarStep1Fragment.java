@@ -30,7 +30,7 @@ import autroid.business.storage.PreferenceManager;
 import autroid.business.utils.Constant;
 import autroid.business.utils.FragmentTags;
 import autroid.business.utils.Utility;
-import autroid.business.view.activity.HomeScreen;
+import autroid.business.aws.AwsHomeActivity;
 import autroid.business.view.activity.addCar.SelectAutomakerActivity;
 
 /**
@@ -103,8 +103,8 @@ public class AddCarStep1Fragment extends Fragment implements View.OnClickListene
             case R.id.tv_automaker:
                 Bundle bundle = new Bundle();
                 bundle.putSerializable(Constant.KEY_AUTOMAKER, carItemsResponse.getGetCarItems().getAutomaker());
-                ((HomeScreen) getActivity()).makeDrawerVisible();
-                ((HomeScreen) getActivity()).addFragment(new SelectAutomakerActivity(), "SelectAutomakerActivity", true, false, bundle, ((HomeScreen) getActivity()).currentFrameId);
+                ((AwsHomeActivity) getActivity()).makeDrawerVisible();
+                ((AwsHomeActivity) getActivity()).addFragment(new SelectAutomakerActivity(), "SelectAutomakerActivity", true, false, bundle, ((AwsHomeActivity) getActivity()).currentFrameId);
 
                 break;
             case R.id.car_next:
@@ -223,9 +223,9 @@ public class AddCarStep1Fragment extends Fragment implements View.OnClickListene
         Bundle intent=new Bundle();
         intent.putSerializable("AddCarRequest",addCarRequest);
         if(strStatus.equalsIgnoreCase("Used"))
-           ((HomeScreen)getActivity()).addFragment(new AddCarStep2Fragment(), FragmentTags.FRAGMENT_ADD_CAR,true,false,intent,((HomeScreen) getActivity()).currentFrameId);
+           ((AwsHomeActivity)getActivity()).addFragment(new AddCarStep2Fragment(), FragmentTags.FRAGMENT_ADD_CAR,true,false,intent,((AwsHomeActivity) getActivity()).currentFrameId);
         else
-            ((HomeScreen)getActivity()).addFragment(new AddCarStep3Fragment(), FragmentTags.FRAGMENT_ADD_CAR,true,false,intent,((HomeScreen) getActivity()).currentFrameId);
+            ((AwsHomeActivity)getActivity()).addFragment(new AddCarStep3Fragment(), FragmentTags.FRAGMENT_ADD_CAR,true,false,intent,((AwsHomeActivity) getActivity()).currentFrameId);
 
     }
 
