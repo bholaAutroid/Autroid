@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        app:theme="@style/Toolbar_Theme"
+        android:id="@+id/toolbar1"
+        android:background="@color/matt_black"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50dp"
+        android:layout_alignParentTop="true"
+        android:minHeight="?attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <autroid.business.view.customviews.CustomTextView
+                android:text="Notifications"
+                android:id="@+id/toolbar_title"
+                style="@style/style_rotobo_normal_white_bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/white_color"
+                android:textSize="@dimen/size_18sp" />
+
+            <autroid.business.view.customviews.CustomTextView
+                android:id="@+id/optional_text"
+                style="@style/style_rotobo_normal_white_bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:gravity="end"
+                android:layout_marginRight="8dp"
+                android:textColor="@color/white_color"
+                android:textSize="@dimen/size_16sp" />
+
+        </LinearLayout>
+
+
+    </androidx.appcompat.widget.Toolbar>
+</LinearLayout>

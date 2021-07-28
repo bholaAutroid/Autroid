@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@color/matt_black"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".aws.AwsHomeActivity">
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:orientation="vertical"
+        android:fitsSystemWindows="false"
+        tools:openDrawer="start"
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@id/common_toolbar"
+            layout="@layout/toolbar_aws"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+        <RelativeLayout
+            android:id="@+id/current_layout"
+            android:layout_marginTop="@dimen/dimen_50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_alignParentTop="true"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1dp"/>
+
+            <RelativeLayout
+                android:background="@drawable/bg_aws2"
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:id="@+id/ll_rev"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/tv1_"
+                        android:textSize="21sp"
+                        android:layout_gravity="center"
+                        style="@style/style_rotobo_medium"
+                        android:textColor="@color/white_color"
+                        android:text="Revenue this month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:layout_toLeftOf="@id/tv_revenue_aws"
+                        android:layout_marginTop="15dp"
+                        android:layout_below="@+id/tv1_"
+                        android:background="@drawable/ic_rupee_indian"
+                        android:id="@+id/rupe"
+                        android:layout_width="30dp"
+                        android:layout_height="@dimen/dimen_30dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_revenue_aws"
+                        android:layout_marginTop="@dimen/dimen_5dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/tv1_"
+                        style="@style/style_rotobo_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="25,53,000"
+                        android:textColor="@color/white_color"
+                        android:textSize="35sp" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/l2_"
+                android:layout_marginTop="125dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:weightSum="1"
+                    android:background="@drawable/bg_aws_items"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_margin="@dimen/dimen_10dp"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="@dimen/dimen_2dp"
+                            android:backgroundTint="@color/yellow"
+                            android:id="@+id/iv3_"
+                            android:background="@drawable/ic_leads"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"/>
+
+                        <TextView
+                            android:layout_margin="@dimen/dimen_2dp"
+                            android:layout_toRightOf="@id/iv3_"
+                            android:id="@+id/tv2_"
+                            android:textSize="11sp"
+                            android:layout_gravity="center"
+                            style="@style/style_rotobo_medium"
+                            android:textColor="@color/white_color"
+                            android:text=" Reciviable "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:layout_marginTop="@dimen/dimen_4dp"
+                            android:layout_below="@id/tv2_"
+                            android:id="@+id/iv2_"
+                            android:background="@drawable/ic_rupee_indian"
+                            android:layout_width="@dimen/dimen_15dp"
+                            android:layout_height="@dimen/dimen_15dp"/>
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:layout_toRightOf="@+id/iv2_"
+                            android:layout_below="@id/tv2_"
+                            android:id="@+id/tv_recivable"
+                            style="@style/style_rotobo_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="2,22,400"
+                            android:textColor="@color/white_color"
+                            android:textSize="15sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:weightSum="1"
+                    android:background="@drawable/bg_aws_items"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_margin="@dimen/dimen_10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="@dimen/dimen_2dp"
+                            android:backgroundTint="@color/red_color"
+                            android:id="@+id/iv4_"
+                            android:background="@drawable/ic_leads"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"/>
+
+                        <TextView
+                            android:layout_margin="@dimen/dimen_2dp"
+                            android:layout_toRightOf="@id/iv4_"
+                            android:id="@+id/tv3_"
+                            android:textSize="11sp"
+                            android:layout_gravity="center"
+                            style="@style/style_rotobo_medium"
+                            android:textColor="@color/white_color"
+                            android:text=" Reciviable "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:layout_marginTop="@dimen/dimen_4dp"
+                            android:layout_below="@id/tv3_"
+                            android:id="@+id/iv5_"
+                            android:background="@drawable/ic_rupee_indian"
+                            android:layout_width="@dimen/dimen_15dp"
+                            android:layout_height="@dimen/dimen_15dp"/>
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:layout_toRightOf="@+id/iv4_"
+                            android:layout_below="@id/tv3_"
+                            android:id="@+id/tv_payable"
+                            style="@style/style_rotobo_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="2,22,400"
+                            android:textColor="@color/white_color"
+                            android:textSize="15sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:background="@drawable/bg_aws_items"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_margin="@dimen/dimen_10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_margin="@dimen/dimen_2dp"
+                            android:backgroundTint="#1535E4"
+                            android:id="@+id/iv7_"
+                            android:background="@drawable/ic_leads"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"/>
+
+                        <TextView
+                            android:layout_margin="@dimen/dimen_2dp"
+                            android:layout_toRightOf="@id/iv6_"
+                            android:id="@+id/tv6_"
+                            android:textSize="11sp"
+                            android:layout_gravity="center"
+                            style="@style/style_rotobo_medium"
+                            android:textColor="@color/white_color"
+                            android:text=" Reciviable "
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <ImageView
+                            android:layout_marginTop="@dimen/dimen_4dp"
+                            android:layout_below="@id/tv6_"
+                            android:id="@+id/iv6_"
+                            android:background="@drawable/ic_rupee_indian"
+                            android:layout_width="@dimen/dimen_15dp"
+                            android:layout_height="@dimen/dimen_15dp"/>
+
+                        <TextView
+                            android:textStyle="bold"
+                            android:layout_toRightOf="@+id/iv6_"
+                            android:layout_below="@id/tv6_"
+                            android:id="@+id/tv_purchase"
+                            style="@style/style_rotobo_medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="2,22,400"
+                            android:textColor="@color/white_color"
+                            android:textSize="15sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_below="@id/l2_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <RelativeLayout
+                        android:id="@+id/l1_openLeads"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:layout_marginHorizontal="@dimen/dimen_10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_marginTop="@dimen/dimen_5dp"
+                            android:id="@+id/tv_leadBooking"
+                            android:textSize="21sp"
+                            android:layout_marginLeft="@dimen/dimen_10dp"
+                            style="@style/style_rotobo_normal"
+                            android:textColor="@color/gray_color"
+                            android:text="Leads &amp; Booking"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <RelativeLayout
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:background="@drawable/bg_aws_items"
+                            android:layout_below="@id/tv_leadBooking"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_70dp">
+
+
+                            <ImageView
+                                android:layout_marginLeft="@dimen/dimen_10dp"
+                                android:id="@+id/iv_lead_ic"
+                                android:backgroundTint="@color/yellow"
+                                android:background="@drawable/ic_leads"
+                                android:layout_centerVertical="true"
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"/>
+
+
+                            <LinearLayout
+                                android:layout_marginLeft="@dimen/dimen_10dp"
+                                android:layout_toRightOf="@id/iv_lead_ic"
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+
+                                <TextView
+                                    android:layout_marginTop="@dimen/dimen_10dp"
+                                    style="@style/style_rotobo_normal"
+                                    android:text="Open Leads"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:textSize="25sp"
+                                    android:textColor="@color/white_color"
+                                    android:textStyle="bold"
+                                    style="@style/style_rotobo_normal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="14" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/iv_aerroOpenLead1"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/dimen_5dp"
+                                android:backgroundTint="@color/white_color"
+                                android:background="@drawable/ic_baseline_chevron_right_24"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"/>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_2"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_marginHorizontal="@dimen/dimen_10dp"
+                        android:layout_below="@id/l1_openLeads"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <RelativeLayout
+                            android:background="@drawable/bg_aws_items"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_70dp">
+
+
+                            <ImageView
+                                android:layout_marginLeft="@dimen/dimen_10dp"
+                                android:id="@+id/iv_estimate"
+                                android:backgroundTint="@color/yellow"
+                                android:background="@drawable/ic_leads"
+                                android:layout_centerVertical="true"
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"/>
+
+
+                            <LinearLayout
+                                android:layout_marginLeft="@dimen/dimen_10dp"
+                                android:layout_toRightOf="@id/iv_estimate"
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+
+                                <TextView
+                                    android:layout_marginTop="@dimen/dimen_10dp"
+                                    style="@style/style_rotobo_normal"
+                                    android:text="Estimate Requested"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:textSize="25sp"
+                                    android:textColor="@color/white_color"
+                                    android:textStyle="bold"
+                                    style="@style/style_rotobo_normal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="14" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/iv_aerro_eastimateRequest"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/dimen_5dp"
+                                android:backgroundTint="@color/white_color"
+                                android:background="@drawable/ic_baseline_chevron_right_24"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"/>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_3"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_marginHorizontal="@dimen/dimen_10dp"
+                        android:layout_below="@id/rl_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <RelativeLayout
+                            android:background="@drawable/bg_aws_items"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_70dp">
+
+
+                            <ImageView
+                                android:layout_marginLeft="@dimen/dimen_10dp"
+                                android:id="@+id/iv_approval"
+                                android:backgroundTint="@color/yellow"
+                                android:background="@drawable/ic_leads"
+                                android:layout_centerVertical="true"
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"/>
+
+
+                            <LinearLayout
+                                android:layout_marginLeft="@dimen/dimen_10dp"
+                                android:layout_toRightOf="@id/iv_approval"
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+
+                                <TextView
+                                    android:layout_marginTop="@dimen/dimen_10dp"
+                                    style="@style/style_rotobo_normal"
+                                    android:text="Approval Awaited"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:textSize="25sp"
+                                    android:textColor="@color/white_color"
+                                    android:textStyle="bold"
+                                    style="@style/style_rotobo_normal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="14" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/iv_aerro_awaited"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/dimen_5dp"
+                                android:backgroundTint="@color/white_color"
+                                android:background="@drawable/ic_baseline_chevron_right_24"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"/>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/rl_4"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_marginHorizontal="@dimen/dimen_10dp"
+                        android:layout_below="@id/rl_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <RelativeLayout
+                            android:background="@drawable/bg_aws_items"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_70dp">
+
+
+                            <ImageView
+                                android:layout_marginLeft="@dimen/dimen_10dp"
+                                android:id="@+id/iv_confirmBooking"
+                                android:backgroundTint="@color/yellow"
+                                android:background="@drawable/ic_leads"
+                                android:layout_centerVertical="true"
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"/>
+
+
+                            <LinearLayout
+                                android:layout_marginLeft="@dimen/dimen_10dp"
+                                android:layout_toRightOf="@id/iv_confirmBooking"
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+
+                                <TextView
+                                    android:layout_marginTop="@dimen/dimen_10dp"
+                                    style="@style/style_rotobo_normal"
+                                    android:text="Confirm Bookings"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:textSize="25sp"
+                                    android:textColor="@color/white_color"
+                                    android:textStyle="bold"
+                                    style="@style/style_rotobo_normal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="14" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/iv_aerro_confirmBooking"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/dimen_5dp"
+                                android:backgroundTint="@color/white_color"
+                                android:background="@drawable/ic_baseline_chevron_right_24"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"/>
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+
+                    <RelativeLayout
+                        android:id="@+id/l1_woekShop"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:layout_marginHorizontal="@dimen/dimen_10dp"
+                        android:layout_below="@id/rl_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_marginTop="@dimen/dimen_5dp"
+                            android:id="@+id/tv_worksShop"
+                            android:textSize="21sp"
+                            android:layout_marginLeft="@dimen/dimen_10dp"
+                            style="@style/style_rotobo_normal"
+                            android:textColor="@color/gray_color"
+                            android:text="Workshop Activity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <RelativeLayout
+                            android:id="@+id/w_openLeads"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:background="@drawable/bg_aws_items"
+                            android:layout_below="@id/tv_worksShop"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_70dp">
+
+
+                            <ImageView
+                                android:layout_marginLeft="@dimen/dimen_10dp"
+                                android:id="@+id/iv_works_ic"
+                                android:backgroundTint="@color/yellow"
+                                android:background="@drawable/ic_leads"
+                                android:layout_centerVertical="true"
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"/>
+
+
+                            <LinearLayout
+                                android:layout_marginLeft="@dimen/dimen_10dp"
+                                android:layout_toRightOf="@id/iv_works_ic"
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+
+                                <TextView
+                                    android:layout_marginTop="@dimen/dimen_10dp"
+                                    style="@style/style_rotobo_normal"
+                                    android:text="Open Leads"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:textSize="25sp"
+                                    android:textColor="@color/white_color"
+                                    android:textStyle="bold"
+                                    style="@style/style_rotobo_normal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="14" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/iv_aerroOpenLeads"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/dimen_5dp"
+                                android:backgroundTint="@color/white_color"
+                                android:background="@drawable/ic_baseline_chevron_right_24"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"/>
+
+                        </RelativeLayout>
+
+
+
+                        <RelativeLayout
+                            android:layout_marginBottom="@dimen/dimen_20dp"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:background="@drawable/bg_aws_items"
+                            android:layout_below="@id/w_openLeads"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_70dp">
+
+
+                            <ImageView
+                                android:layout_marginLeft="@dimen/dimen_10dp"
+                                android:id="@+id/iv_jobInProgress"
+                                android:backgroundTint="@color/yellow"
+                                android:background="@drawable/ic_leads"
+                                android:layout_centerVertical="true"
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"/>
+
+
+                            <LinearLayout
+                                android:layout_marginLeft="@dimen/dimen_10dp"
+                                android:layout_toRightOf="@id/iv_jobInProgress"
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent">
+
+
+                                <TextView
+                                    android:layout_marginTop="@dimen/dimen_10dp"
+                                    style="@style/style_rotobo_normal"
+                                    android:text="Jobs in Progress"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+
+                                <TextView
+                                    android:textSize="25sp"
+                                    android:textColor="@color/white_color"
+                                    android:textStyle="bold"
+                                    style="@style/style_rotobo_normal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="14" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/iv_jobInProgressAerro"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/dimen_5dp"
+                                android:backgroundTint="@color/white_color"
+                                android:background="@drawable/ic_baseline_chevron_right_24"
+                                android:layout_alignParentEnd="true"
+                                android:layout_width="@dimen/dimen_40dp"
+                                android:layout_height="@dimen/dimen_40dp"/>
+
+
+
+                        </RelativeLayout>
+
+<!--                        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:background="@drawable/btn_back_orange"-->
+<!--                            android:text="New"-->
+<!--                            android:layout_height="wrap_content"/>-->
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </ScrollView>
+
+
+            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                android:id="@+id/extendedNewFab"
+                android:layout_marginTop="600dp"
+                android:elevation="@dimen/dimen_10dp"
+                android:textAllCaps="false"
+                style="@style/style_rotobo_normal"
+                android:textStyle="bold"
+                android:gravity="center"
+                app:iconGravity="start"
+                android:textAlignment="center"
+                android:layout_centerHorizontal="true"
+                android:paddingHorizontal="@dimen/dimen_15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_back_orange"
+                android:backgroundTint="#FF5722"
+                android:drawableTint="@color/white_color"
+                app:icon="@drawable/ic_baseline_add_24"
+                app:rippleColor="@android:color/holo_red_light"
+                android:textColor="@color/white_color"
+                android:text="New" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/layout_drawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+
+        <FrameLayout
+            android:id="@+id/layout_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tabbar_bottom"
+            android:layout_below="@id/common_toolbar" />
+
+
+        <ExpandableListView
+            android:groupIndicator="@drawable/coustom_expendable_aerrow"
+            android:id="@+id/navList"
+            android:indicatorLeft="240dp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="left|start"
+            android:visibility="visible"/>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+</RelativeLayout>

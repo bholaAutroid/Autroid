@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/dimen_10dp"
+    android:layout_marginTop="100dp"
+    android:layout_marginBottom="@dimen/dimen_80dp"
+    android:background="@drawable/layout_new_back"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/dimen_50dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="15dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            style="@style/style_rotobo_medium_gray"
+            android:text="Lead and booking"
+            android:id="@+id/tv_leadBooking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:id="@+id/l_leadBook"
+            android:layout_marginHorizontal="@dimen/dimen_5dp"
+            android:layout_below="@id/tv_leadBooking"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+           <LinearLayout
+               android:layout_marginHorizontal="@dimen/dimen_5dp"
+               android:orientation="vertical"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content">
+
+               <ImageView
+                   android:layout_margin="@dimen/dimen_2dp"
+                   android:backgroundTint="@color/gray_color"
+                   android:background="@drawable/ic_leads"
+                   android:layout_width="20dp"
+                   android:layout_height="@dimen/dimen_20dp"/>
+
+               <TextView
+                   android:textSize="11sp"
+                   style="@style/style_rotobo_medium"
+                   android:text="Lead"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"/>
+
+           </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginHorizontal="@dimen/dimen_5dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:backgroundTint="@color/gray_color"
+                    android:background="@drawable/ic_booking"
+                    android:layout_width="@dimen/dimen_20dp"
+                    android:layout_height="@dimen/dimen_20dp"/>
+
+                <TextView
+                    android:textSize="11sp"
+                    style="@style/style_rotobo_medium"
+                    android:text="Booking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginHorizontal="@dimen/dimen_5dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:backgroundTint="@color/gray_color"
+                    android:background="@drawable/ic_jobs"
+                    android:layout_width="@dimen/dimen_20dp"
+                    android:layout_height="@dimen/dimen_20dp"/>
+
+                <TextView
+                    android:textSize="@dimen/size_11sp"
+                    style="@style/style_rotobo_medium"
+                    android:text="Job Card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:textSize="18dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            style="@style/style_rotobo_medium_gray"
+            android:text="Sales and Purchase"
+            android:id="@+id/tv_sales"
+            android:layout_below="@id/l_leadBook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:id="@+id/l_sales"
+            android:layout_marginHorizontal="@dimen/dimen_5dp"
+            android:layout_below="@id/tv_sales"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginHorizontal="@dimen/dimen_5dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:backgroundTint="@color/gray_color"
+                    android:background="@drawable/ic_leads"
+                    android:layout_width="@dimen/dimen_20dp"
+                    android:layout_height="@dimen/dimen_20dp"/>
+
+                <TextView
+                    android:textSize="@dimen/size_11sp"
+                    style="@style/style_rotobo_medium"
+                    android:text="Sales"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginHorizontal="@dimen/dimen_5dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:backgroundTint="@color/gray_color"
+                    android:background="@drawable/ic_leads"
+                    android:layout_width="@dimen/dimen_20dp"
+                    android:layout_height="@dimen/dimen_20dp"/>
+
+                <TextView
+                    android:textSize="@dimen/size_11sp"
+                    style="@style/style_rotobo_medium"
+                    android:text="Sales \nOrder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginHorizontal="@dimen/dimen_5dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:backgroundTint="@color/gray_color"
+                    android:background="@drawable/ic_jobs"
+                    android:layout_width="@dimen/dimen_20dp"
+                    android:layout_height="@dimen/dimen_20dp"/>
+
+                <TextView
+                    android:textSize="@dimen/size_11sp"
+                    style="@style/style_rotobo_medium"
+                    android:text="Bill"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginHorizontal="@dimen/dimen_5dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:backgroundTint="@color/gray_color"
+                    android:background="@drawable/ic_leads"
+                    android:layout_width="@dimen/dimen_20dp"
+                    android:layout_height="@dimen/dimen_20dp"/>
+
+                <TextView
+                    android:textSize="@dimen/size_11sp"
+                    style="@style/style_rotobo_medium"
+                    android:text="Purchase\nOrder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+
+        <TextView
+            android:textSize="18dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            style="@style/style_rotobo_medium_gray"
+            android:text="Accounts"
+            android:id="@+id/tv_accounts"
+            android:layout_below="@id/l_sales"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:id="@+id/l_master"
+            android:layout_marginHorizontal="@dimen/dimen_5dp"
+            android:layout_below="@id/tv_accounts"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginHorizontal="@dimen/dimen_5dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:backgroundTint="@color/gray_color"
+                    android:background="@drawable/ic_new_item"
+                    android:layout_width="@dimen/dimen_20dp"
+                    android:layout_height="@dimen/dimen_20dp"/>
+
+                <TextView
+                    android:textSize="@dimen/size_11sp"
+                    style="@style/style_rotobo_medium"
+                    android:text="Items"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginHorizontal="@dimen/dimen_5dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:backgroundTint="@color/gray_color"
+                    android:background="@drawable/ic_round_business_24"
+                    android:layout_width="@dimen/dimen_20dp"
+                    android:layout_height="@dimen/dimen_20dp"/>
+
+                <TextView
+                    android:textSize="@dimen/size_11sp"
+                    style="@style/style_rotobo_medium"
+                    android:text="Business"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginHorizontal="@dimen/dimen_5dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:backgroundTint="@color/gray_color"
+                    android:background="@drawable/ic_leads"
+                    android:layout_width="@dimen/dimen_20dp"
+                    android:layout_height="@dimen/dimen_20dp"/>
+
+                <TextView
+                    android:textSize="@dimen/size_11sp"
+                    style="@style/style_rotobo_medium"
+                    android:text="Customer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="18dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            style="@style/style_rotobo_medium_gray"
+            android:text="Master"
+            android:id="@+id/tv_master"
+            android:layout_below="@id/l_master"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_marginHorizontal="@dimen/dimen_5dp"
+            android:layout_below="@id/tv_master"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_marginHorizontal="@dimen/dimen_5dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:backgroundTint="@color/gray_color"
+                    android:background="@drawable/ic_leads"
+                    android:layout_width="@dimen/dimen_20dp"
+                    android:layout_height="@dimen/dimen_20dp"/>
+
+                <TextView
+                    android:textSize="@dimen/size_11sp"
+                    style="@style/style_rotobo_medium"
+                    android:text="Pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginHorizontal="@dimen/dimen_5dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:backgroundTint="@color/gray_color"
+                    android:background="@drawable/ic_leads"
+                    android:layout_width="@dimen/dimen_20dp"
+                    android:layout_height="@dimen/dimen_20dp"/>
+
+                <TextView
+                    android:textSize="@dimen/size_11sp"
+                    style="@style/style_rotobo_medium"
+                    android:text="Receive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginHorizontal="@dimen/dimen_5dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:backgroundTint="@color/gray_color"
+                    android:background="@drawable/ic_leads"
+                    android:layout_width="@dimen/dimen_20dp"
+                    android:layout_height="@dimen/dimen_20dp"/>
+
+                <TextView
+                    android:textSize="@dimen/size_11sp"
+                    style="@style/style_rotobo_medium"
+                    android:text="Debit\nNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginHorizontal="@dimen/dimen_5dp"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_margin="@dimen/dimen_2dp"
+                    android:backgroundTint="@color/gray_color"
+                    android:background="@drawable/ic_leads"
+                    android:layout_width="@dimen/dimen_20dp"
+                    android:layout_height="@dimen/dimen_20dp"/>
+
+                <TextView
+                    android:textSize="@dimen/size_11sp"
+                    style="@style/style_rotobo_medium"
+                    android:text="Credit\nNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+</LinearLayout>
+

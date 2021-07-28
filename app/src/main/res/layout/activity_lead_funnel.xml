@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black"
+    tools:context=".aws.LeadFunnelActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimen_10dp"
+            android:layout_marginTop="@dimen/dimen_20dp">
+
+            <LinearLayout
+                android:id="@+id/l_funnel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimen_10dp"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    style="@style/style_rotobo_normal_white_bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lead Funnel"
+                    android:textColor="@color/gray_color"
+                    android:textSize="25sp" />
+
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/leadFunnelSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/white_color" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/l2_graph"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:layout_below="@+id/l_funnel"
+                android:layout_marginHorizontal="@dimen/dimen_10dp"
+                android:background="@color/card_color"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lLeadStat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/l2_graph"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dimen_20dp"
+                        android:background="@drawable/bg_aws_items"
+                        android:padding="@dimen/dimen_10dp">
+
+                        <ImageView
+                            android:id="@+id/iv_leadLost"
+                            android:layout_width="@dimen/dimen_30dp"
+                            android:layout_height="@dimen/dimen_30dp"
+                            android:background="@drawable/ic_leads"
+                            android:backgroundTint="#0B6AB5" />
+
+                        <TextView
+                            android:id="@+id/tvLostLead"
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/iv_leadLost"
+                            android:text="Lost Leads"
+                            android:textSize="@dimen/size_11sp" />
+
+                        <TextView
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvLostLead"
+                            android:layout_toRightOf="@+id/iv_leadLost"
+                            android:text="3234"
+                            android:textColor="@color/white_color"
+                            android:textSize="@dimen/size_11sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_aws_items"
+                        android:padding="@dimen/dimen_10dp">
+
+                        <ImageView
+                            android:id="@+id/iv_leadConfirm"
+                            android:layout_width="@dimen/dimen_30dp"
+                            android:layout_height="@dimen/dimen_30dp"
+                            android:background="@drawable/ic_leads"
+                            android:backgroundTint="#0B6AB5" />
+
+                        <TextView
+                            android:id="@+id/tvConfirmLead"
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/iv_leadConfirm"
+                            android:text="Confirmed"
+                            android:textSize="@dimen/size_11sp" />
+
+                        <TextView
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvConfirmLead"
+                            android:layout_toRightOf="@+id/iv_leadConfirm"
+                            android:text="324"
+                            android:textColor="@color/white_color"
+                            android:textSize="@dimen/size_11sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dimen_20dp"
+                        android:background="@drawable/bg_aws_items"
+                        android:padding="@dimen/dimen_10dp">
+
+                        <ImageView
+                            android:id="@+id/iv_leadClosed"
+                            android:layout_width="@dimen/dimen_30dp"
+                            android:layout_height="@dimen/dimen_30dp"
+                            android:background="@drawable/ic_leads"
+                            android:backgroundTint="#0B6AB5" />
+
+                        <TextView
+                            android:id="@+id/tvClosedLead"
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/iv_leadClosed"
+                            android:text="Closed Lead"
+                            android:textSize="@dimen/size_11sp" />
+
+                        <TextView
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvClosedLead"
+                            android:layout_toRightOf="@+id/iv_leadClosed"
+                            android:text="3234"
+                            android:textColor="@color/white_color"
+                            android:textSize="@dimen/size_11sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_aws_items"
+                        android:padding="@dimen/dimen_10dp">
+
+                        <ImageView
+                            android:id="@+id/iv_leadMissed"
+                            android:layout_width="@dimen/dimen_30dp"
+                            android:layout_height="@dimen/dimen_30dp"
+                            android:background="@drawable/ic_leads"
+                            android:backgroundTint="#0B6AB5" />
+
+                        <TextView
+                            android:id="@+id/tvMissedLead"
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/iv_leadMissed"
+                            android:text="Missed"
+                            android:textSize="@dimen/size_11sp" />
+
+                        <TextView
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvMissedLead"
+                            android:layout_toRightOf="@+id/iv_leadMissed"
+                            android:text="5521"
+                            android:textColor="@color/white_color"
+                            android:textSize="@dimen/size_11sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dimen_20dp"
+                        android:background="@drawable/bg_aws_items"
+                        android:padding="@dimen/dimen_10dp">
+
+                        <ImageView
+                            android:id="@+id/iv_FallowUp"
+                            android:layout_width="@dimen/dimen_30dp"
+                            android:layout_height="@dimen/dimen_30dp"
+                            android:background="@drawable/ic_leads"
+                            android:backgroundTint="#0B6AB5" />
+
+                        <TextView
+                            android:id="@+id/tvFallowUpLead"
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/iv_FallowUp"
+                            android:text="Fallow Up"
+                            android:textSize="@dimen/size_11sp" />
+
+                        <TextView
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvFallowUpLead"
+                            android:layout_toRightOf="@+id/iv_FallowUp"
+                            android:text="3012"
+                            android:textColor="@color/white_color"
+                            android:textSize="@dimen/size_11sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="140dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_aws_items"
+                        android:padding="@dimen/dimen_10dp">
+
+                        <ImageView
+                            android:id="@+id/iv_leadCancelled"
+                            android:layout_width="@dimen/dimen_30dp"
+                            android:layout_height="@dimen/dimen_30dp"
+                            android:background="@drawable/ic_leads"
+                            android:backgroundTint="#0B6AB5" />
+
+                        <TextView
+                            android:id="@+id/tvCancelledLead"
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/iv_leadCancelled"
+                            android:text="Cancelled"
+                            android:textSize="@dimen/size_11sp" />
+
+                        <TextView
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvCancelledLead"
+                            android:layout_toRightOf="@+id/iv_leadCancelled"
+                            android:text="3234"
+                            android:textColor="@color/white_color"
+                            android:textSize="@dimen/size_11sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvLeadSource"
+                style="@style/style_rotobo_medium_gray"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lLeadStat"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:gravity="center"
+                android:text="Lead Sources"
+                android:textAlignment="center"
+                android:textColor="@color/gray_color"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/l_chart"
+                android:layout_width="match_parent"
+                android:layout_height="750dp"
+                android:layout_below="@id/tvLeadSource"
+                android:layout_marginHorizontal="@dimen/dimen_10dp"
+                android:layout_marginTop="@dimen/dimen_10dp"
+                android:background="@color/card_color"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <com.anychart.AnyChartView
+                        android:id="@+id/any_chart_view"
+                        android:layout_width="300dp"
+                        android:layout_height="300dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_32dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="270dp"
+                        android:background="@color/card_color">
+
+                        <TextView
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="By Number of Jobs"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/dimen_21dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/l_pieChart"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:orientation="vertical">
+
+                    <com.anychart.AnyChartView
+                        android:id="@+id/any_chart_view1"
+                        android:layout_width="300dp"
+                        android:layout_height="300dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="25dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_32dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="295dp"
+                        android:background="@color/card_color">
+
+                        <TextView
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:text="By Revenue"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/dimen_21dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/dimen_30dp"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_15dp"
+                        android:layout_height="@dimen/dimen_15dp"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_2dp"
+                        android:background="@drawable/mobile_app_aws_bg"
+                        android:padding="@dimen/dimen_2dp" />
+
+                    <TextView
+                        style="@style/style_rotobo_medium_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dimen_5dp"
+                        android:text="Mobile App" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_15dp"
+                        android:layout_height="@dimen/dimen_15dp"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_2dp"
+                        android:background="@drawable/justdial_aws_bg"
+                        android:padding="@dimen/dimen_2dp" />
+
+                    <TextView
+                        style="@style/style_rotobo_medium_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dimen_5dp"
+                        android:text="Justdial" />
+
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_15dp"
+                        android:layout_height="@dimen/dimen_15dp"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_2dp"
+                        android:background="@drawable/walkin_aws_bg"
+                        android:padding="@dimen/dimen_2dp" />
+
+                    <TextView
+                        style="@style/style_rotobo_medium_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/dimen_5dp"
+                        android:text="Walk-In" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="750dp"
+                android:layout_below="@id/l_chart"
+                android:layout_marginVertical="@dimen/dimen_50dp"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:background="@color/card_color"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_marginHorizontal="@dimen/dimen_10dp"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        style="@style/style_rotobo_medium_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Representative"
+                        android:textSize="@dimen/dimen_21dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_marginHorizontal="@dimen/dimen_10dp"
+                        android:layout_marginTop="@dimen/dimen_15dp"
+                        android:id="@+id/tv_viewMore"
+                        style="@style/style_rotobo_medium_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="View More" />
+
+                    <View
+                        android:id="@+id/viewName1"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_1dp"
+                        android:layout_below="@id/tv_viewMore"
+                        android:layout_marginTop="@dimen/dimen_15dp"
+                        android:background="@color/gray_color" />
+
+                    <RelativeLayout
+                        android:layout_below="@id/viewName1"
+                        android:id="@+id/name_lay1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dimen_21dp"
+                        android:layout_marginTop="@dimen/dimen_5dp">
+                        <TextView
+                            android:id="@+id/tv_representative1"
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:text="Varshita" />
+
+                        <ProgressBar
+                            android:id="@+id/prgressBarRepersentative1"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_representative1"
+                            android:progress="60"
+                            android:progressBackgroundTint="#858484"
+                            android:secondaryProgressTint="@color/blue_color" />
+
+                        <TextView
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:text="464 Conversions" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_below="@id/name_lay1"
+                        android:id="@+id/name_lay2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dimen_21dp"
+                        android:layout_marginTop="@dimen/dimen_5dp">
+                        <TextView
+                            android:id="@+id/tv_representative2"
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:text="Avinash" />
+
+                        <ProgressBar
+                            android:id="@+id/prgressBarRepersentative2"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_representative2"
+                            android:progress="60"
+                            android:progressBackgroundTint="#858484"
+                            android:secondaryProgressTint="@color/blue_color" />
+
+                        <TextView
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:text="464 Conversions" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_below="@id/name_lay2"
+                        android:id="@+id/name_lay3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dimen_21dp"
+                        android:layout_marginTop="@dimen/dimen_5dp">
+                        <TextView
+                            android:id="@+id/tv_representative3"
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:text="Varha" />
+
+                        <ProgressBar
+                            android:id="@+id/prgressBarRepersentative3"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_representative3"
+                            android:progress="60"
+                            android:progressBackgroundTint="#858484"
+                            android:secondaryProgressTint="@color/blue_color" />
+
+                        <TextView
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:text="464 Conversions" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_below="@id/name_lay3"
+                        android:id="@+id/name_lay4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dimen_21dp"
+                        android:layout_marginTop="@dimen/dimen_5dp">
+                        <TextView
+                            android:id="@+id/tv_representative4"
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:text="Manish" />
+
+                        <ProgressBar
+                            android:id="@+id/prgressBarRepersentative4"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_representative4"
+                            android:progress="60"
+                            android:progressBackgroundTint="#858484"
+                            android:secondaryProgressTint="@color/blue_color" />
+
+                        <TextView
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:text="464 Conversions" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_below="@id/name_lay4"
+                        android:id="@+id/name_lay5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/dimen_21dp"
+                        android:layout_marginTop="@dimen/dimen_5dp">
+                        <TextView
+                            android:id="@+id/tv_representative5"
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:text="Manjeet" />
+
+                        <ProgressBar
+                            android:id="@+id/prgressBarRepersentative5"
+                            style="?android:attr/progressBarStyleHorizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_representative5"
+                            android:progress="60"
+                            android:progressBackgroundTint="#858484"
+                            android:secondaryProgressTint="@color/blue_color" />
+
+                        <TextView
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            android:text="464 Conversions" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    android:background="@color/card_color"
+                    android:orientation="vertical">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="350dp"
+                        android:background="@color/card_color"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_marginHorizontal="@dimen/dimen_10dp"
+                            android:layout_marginTop="@dimen/dimen_10dp"
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="Lost Reason"
+                            android:textSize="@dimen/dimen_21dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_marginHorizontal="@dimen/dimen_10dp"
+                            android:layout_marginTop="@dimen/dimen_15dp"
+                            android:id="@+id/tv_lostViewMore"
+                            style="@style/style_rotobo_medium_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:text="View More" />
+
+                        <View
+                            android:id="@+id/locationIssue"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dimen_1dp"
+                            android:layout_below="@id/tv_lostViewMore"
+                            android:layout_marginTop="@dimen/dimen_15dp"
+                            android:background="@color/gray_color" />
+
+                        <RelativeLayout
+                            android:layout_below="@id/locationIssue"
+                            android:id="@+id/location_lay1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/dimen_21dp"
+                            android:layout_marginTop="@dimen/dimen_5dp">
+                            <TextView
+                                android:id="@+id/tv_location"
+                                style="@style/style_rotobo_medium_gray"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:text="Location Issue" />
+
+                            <ProgressBar
+                                android:id="@+id/prgressBarLocation"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_location"
+                                android:progress="90"
+                                android:progressBackgroundTint="#858484"
+                                android:secondaryProgressTint="@color/blue_color" />
+
+                            <TextView
+                                style="@style/style_rotobo_medium_gray"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:text="4654 Leads" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_below="@id/location_lay1"
+                            android:id="@+id/l_highPrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/dimen_21dp"
+                            android:layout_marginTop="@dimen/dimen_5dp">
+                            <TextView
+                                android:id="@+id/tv_hightPrice"
+                                style="@style/style_rotobo_medium_gray"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:text="High Price" />
+
+                            <ProgressBar
+                                android:id="@+id/prgressBarHighPrice"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_hightPrice"
+                                android:progress="20"
+                                android:progressBackgroundTint="#858484"
+                                android:secondaryProgressTint="@color/blue_color" />
+
+                            <TextView
+                                style="@style/style_rotobo_medium_gray"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:text="46 Leads" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_below="@id/l_highPrice"
+                            android:id="@+id/l_notRequired"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/dimen_21dp"
+                            android:layout_marginTop="@dimen/dimen_5dp">
+                            <TextView
+                                android:id="@+id/tv_notRequired"
+                                style="@style/style_rotobo_medium_gray"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:text="Not Required" />
+
+                            <ProgressBar
+                                android:id="@+id/prgressNotRequired"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_notRequired"
+                                android:progress="60"
+                                android:progressBackgroundTint="#858484"
+                                android:secondaryProgressTint="@color/blue_color" />
+
+                            <TextView
+                                style="@style/style_rotobo_medium_gray"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:text="464 Leads" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_below="@id/l_notRequired"
+                            android:id="@+id/failedToContact"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/dimen_21dp"
+                            android:layout_marginTop="@dimen/dimen_5dp">
+                            <TextView
+                                android:id="@+id/tv_failedToContact"
+                                style="@style/style_rotobo_medium_gray"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:text="Failed to contact" />
+
+                            <ProgressBar
+                                android:id="@+id/prgressBarFailedToContact"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_failedToContact"
+                                android:progress="60"
+                                android:progressBackgroundTint="#858484"
+                                android:secondaryProgressTint="@color/blue_color" />
+
+                            <TextView
+                                style="@style/style_rotobo_medium_gray"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:text="44 Leads" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_below="@id/failedToContact"
+                            android:id="@+id/l_wrongNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="@dimen/dimen_21dp"
+                            android:layout_marginTop="@dimen/dimen_5dp">
+                            <TextView
+                                android:id="@+id/tv_wrongNumber"
+                                style="@style/style_rotobo_medium_gray"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:text="Wrong number" />
+
+                            <ProgressBar
+                                android:id="@+id/prgressBarWrongNumber"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_wrongNumber"
+                                android:progress="60"
+                                android:progressBackgroundTint="#858484"
+                                android:secondaryProgressTint="@color/blue_color" />
+
+                            <TextView
+                                style="@style/style_rotobo_medium_gray"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="@dimen/dimen_10dp"
+                                android:text="464 Leads" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

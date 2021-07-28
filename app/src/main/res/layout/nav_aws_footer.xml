@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@color/card_color"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_marginTop="@dimen/dimen_30dp"
+            android:background="@color/gray_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/dimen_50dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+          <TextView
+              android:id="@+id/footer_tv_subscription"
+              android:layout_marginLeft="20dp"
+              android:textColor="@color/white_color"
+              style="@style/style_rotobo_normal"
+              android:textSize="18sp"
+              android:padding="@dimen/dimen_5dp"
+              android:text="Subscription"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"/>
+          <TextView
+              android:id="@+id/footer_tv_settings"
+              android:layout_marginLeft="20dp"
+              android:textColor="@color/white_color"
+              style="@style/style_rotobo_normal"
+              android:textSize="18sp"
+              android:padding="@dimen/dimen_5dp"
+              android:text="Settings"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"/>
+          <TextView
+              android:id="@+id/footer_tv_referEarn"
+              android:layout_marginLeft="20dp"
+              android:textColor="@color/white_color"
+              style="@style/style_rotobo_normal"
+              android:textSize="18sp"
+              android:padding="@dimen/dimen_5dp"
+              android:text="Refer &amp; Earn"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/footer_tv_help"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/white_color"
+                style="@style/style_rotobo_normal"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Help &amp; Support" />
+
+            <TextView
+                android:id="@+id/tv_nav_app_version"
+                style="@style/style_rotobo_normal"
+                android:layout_marginBottom="80dp"
+                android:layout_marginTop="80dp"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="Version:3.14"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

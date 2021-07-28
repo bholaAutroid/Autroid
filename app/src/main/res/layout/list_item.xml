@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/matt_black"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_marginBottom="@dimen/dimen_5dp"
+        android:layout_marginTop="@dimen/dimen_5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginLeft="@dimen/dimen_20dp"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_marginBottom="@dimen/dimen_5dp"
+            android:layout_centerVertical="true"
+            android:backgroundTint="@color/gray_color"
+            android:id="@+id/list_iv_item"
+            android:layout_width="@dimen/dimen_20dp"
+            android:layout_height="@dimen/dimen_20dp"
+            app:tint="@color/gray_color" />
+
+        <TextView
+            style="@style/style_rotobo_normal"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:layout_marginBottom="@dimen/dimen_5dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/list_iv_item"
+            android:textColor="@color/gray_color"
+            android:id="@+id/expandedListItem"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_5dp"
+            android:layout_height="wrap_content"
+            android:textSize="15dp" />
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

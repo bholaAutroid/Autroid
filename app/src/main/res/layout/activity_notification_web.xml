@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main_layout_wenNoti"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".aws.Notification_Web">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:layout_alignParentTop="true"
+            android:id="@id/common_toolbar"
+            layout="@layout/web_noti_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@id/common_toolbar"
+            android:layout_width="match_parent"
+            android:id="@+id/recycler_view_notification_aws"
+            android:layout_height="match_parent"/>
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

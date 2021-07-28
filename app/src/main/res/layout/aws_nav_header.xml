@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/card_color">
+    <autroid.business.view.customviews.CircleImageView
+        android:id="@+id/nav_heder_iv"
+        android:layout_width="@dimen/dimen_80dp"
+        android:layout_height="@dimen/dimen_80dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:src="@drawable/user_img"/>
+
+    <LinearLayout
+        android:id="@+id/l_hedder"
+        android:layout_marginBottom="@dimen/dimen_10dp"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/nav_heder_iv"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/userName"
+            android:padding="@dimen/dimen_2dp"
+            android:layout_marginTop="@dimen/dimen_20dp"
+            style="@style/style_rotobo_normal_white_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mr. xyz"
+            android:textColor="@color/white_color"
+            android:textSize="@dimen/dimen_21dp" />
+
+        <TextView
+            android:padding="@dimen/dimen_2dp"
+            style="@style/style_rotobo_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Service Adviser"
+            android:textColor="@color/gray_color"
+            android:textSize="@dimen/dimen_15dp" />
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_header"
+        android:layout_marginTop="@dimen/dimen_15dp"
+        android:background="@color/gray_color"
+        android:layout_below="@id/l_hedder"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+
+    <TextView
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:layout_below="@id/view_header"
+        android:text="Home"
+        android:layout_marginLeft="20dp"
+        android:textColor="@color/white_color"
+        style="@style/style_rotobo_normal"
+        android:textSize="18sp"
+        android:id="@+id/home_nav_tv"
+        android:textStyle="normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp" />
+
+
+</RelativeLayout>
