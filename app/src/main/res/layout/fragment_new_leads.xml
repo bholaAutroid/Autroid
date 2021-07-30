@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/matt_black"
+    tools:context=".aws.crm.aws_leads.LeadsFragment">
+
+
+    <include
+        android:id="@id/common_toolbar"
+        layout="@layout/layout_toolbar_activity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/common_toolbar">
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/dimen_11dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/lead_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_marginHorizontal="@dimen/dimen_10dp"
+                        android:layout_weight="1"
+                        android:layout_width="110dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_leader_header"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:elevation="@dimen/dimen_11dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dimen_5dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dimen_24dp"
+                                    android:layout_height="@dimen/dimen_24dp"
+                                    android:layout_margin="@dimen/dimen_2dp"
+                                    app:srcCompat="@drawable/ic_leads" />
+
+                                <TextView
+                                    style="@style/style_rotobo_normal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/dimen_2dp"
+                                    android:text="Open"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+
+                            <TextView
+                                style="@style/style_rotobo_normal_white_bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="18"
+                                android:textSize="@dimen/size_17sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:layout_weight="1"
+                        android:layout_width="110dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_leader_header"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:elevation="@dimen/dimen_11dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dimen_5dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dimen_24dp"
+                                    android:layout_height="@dimen/dimen_24dp"
+                                    android:layout_margin="@dimen/dimen_2dp"
+                                    app:srcCompat="@drawable/ic_leads" />
+
+                                <TextView
+                                    style="@style/style_rotobo_normal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/dimen_2dp"
+                                    android:text="Fallow Up"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+
+                            <TextView
+                                style="@style/style_rotobo_normal_white_bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center_horizontal"
+                                android:text="18"
+                                android:textSize="@dimen/size_17sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:layout_weight="1"
+                        android:layout_width="110dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_leader_header"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:elevation="@dimen/dimen_11dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dimen_5dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dimen_24dp"
+                                    android:layout_height="@dimen/dimen_24dp"
+                                    android:layout_margin="@dimen/dimen_2dp"
+                                    app:srcCompat="@drawable/ic_leads" />
+
+                                <TextView
+                                    style="@style/style_rotobo_normal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/dimen_2dp"
+                                    android:text="PSF"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+
+                            <TextView
+                                style="@style/style_rotobo_normal_white_bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center_horizontal"
+                                android:text="18"
+                                android:textSize="@dimen/size_17sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dimen_10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal">
+
+
+                    <LinearLayout
+                        android:layout_marginHorizontal="@dimen/dimen_10dp"
+                        android:layout_weight="1"
+                        android:layout_width="110dp"
+                        android:layout_height="@dimen/dimen_80dp"
+                        android:background="@drawable/bg_leader_header"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:elevation="@dimen/dimen_11dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dimen_5dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dimen_24dp"
+                                    android:layout_height="@dimen/dimen_24dp"
+                                    android:layout_margin="@dimen/dimen_2dp"
+                                    app:srcCompat="@drawable/ic_leads" />
+
+                                <TextView
+                                    style="@style/style_rotobo_normal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/dimen_2dp"
+                                    android:text="Estimate"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+
+                            <TextView
+                                style="@style/style_rotobo_normal_white_bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center_horizontal"
+                                android:text="18"
+                                android:textSize="@dimen/size_17sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:layout_weight="1"
+                        android:layout_width="110dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_leader_header"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:elevation="@dimen/dimen_11dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dimen_5dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dimen_24dp"
+                                    android:layout_height="@dimen/dimen_24dp"
+                                    android:layout_margin="@dimen/dimen_2dp"
+                                    app:srcCompat="@drawable/ic_leads" />
+
+                                <TextView
+                                    style="@style/style_rotobo_normal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/dimen_2dp"
+                                    android:text="Approval"
+                                    android:textSize="14sp"/>
+                            </LinearLayout>
+
+
+                            <TextView
+                                style="@style/style_rotobo_normal_white_bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center_horizontal"
+                                android:text="18"
+                                android:textSize="@dimen/size_17sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:layout_weight="1"
+                        android:layout_width="110dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_leader_header"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:elevation="@dimen/dimen_11dp"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/dimen_5dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/dimen_24dp"
+                                    android:layout_height="@dimen/dimen_24dp"
+                                    android:layout_margin="@dimen/dimen_2dp"
+                                    app:srcCompat="@drawable/ic_leads" />
+
+                                <TextView
+                                    style="@style/style_rotobo_normal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="@dimen/dimen_2dp"
+                                    android:text="Converted"
+                                    android:textSize="14sp" />
+                            </LinearLayout>
+
+
+                            <TextView
+                                style="@style/style_rotobo_normal_white_bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center_horizontal"
+                                android:text="18"
+                                android:textSize="@dimen/size_17sp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lead_header"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.tabs.TabLayout
+                    android:backgroundTint="@color/matt_black"
+                    app:tabMode="scrollable"
+                    app:tabIndicator="@color/black"
+                    app:tabBackground="@drawable/tab_not_select_bg"
+                    android:id="@+id/tab_buttom"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_35dp"
+                    android:layout_marginHorizontal="@dimen/dimen_5dp"
+                    android:scrollbarAlwaysDrawHorizontalTrack="true"
+                    app:tabSelectedTextColor="@color/white_color"
+                    app:tabTextAppearance="@style/TextAppearance.AppCompat"
+                    app:tabTextColor="@color/gray_color">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tab1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Open" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tab2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fallow Up" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tab3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PSF" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tab4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Estimate" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tab5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Approval" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:id="@+id/tab6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Converted" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/buttomTabViewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="600dp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
