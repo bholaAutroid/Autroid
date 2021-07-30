@@ -415,12 +415,12 @@
             <Button
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/btn_register"
+                android:background="@drawable/btn_back_orange"
                 android:layout_width="170dp"
-                android:layout_height="@dimen/dimen_35dp"
+                android:layout_height="@dimen/dimen_40dp"
                 android:text="Create Account"
                 android:layout_marginTop="@dimen/dimen_10dp"
-                android:textColor="#FFF"
-                android:background="@drawable/btn_back_orange" />
+                android:textColor="#FFF" />
 
             <LinearLayout
                 android:layout_width="match_parent"

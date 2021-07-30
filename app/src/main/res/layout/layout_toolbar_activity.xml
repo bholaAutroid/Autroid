@@ -14,34 +14,27 @@
         android:minHeight="?attr/actionBarSize"
         app:theme="@style/Toolbar_Theme">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/tool_back"
+                android:layout_width="wrap_content"
+                android:background="@drawable/ef_ic_arrow_back"
+                android:layout_height="wrap_content"/>
 
             <autroid.business.view.customviews.CustomTextView
+                android:layout_toRightOf="@id/tool_back"
                 android:id="@+id/toolbar_title"
+                android:layout_marginLeft="@dimen/dimen_10dp"
                 style="@style/style_rotobo_normal_white_bold"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:textColor="@color/white_color"
                 android:textSize="@dimen/size_18sp" />
+        </RelativeLayout>
 
-            <autroid.business.view.customviews.CustomTextView
-                android:id="@+id/optional_text"
-                style="@style/style_rotobo_normal_white_bold"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:visibility="gone"
-                android:gravity="end"
-                android:layout_marginRight="8dp"
-                android:textColor="@color/white_color"
-                android:textSize="@dimen/size_16sp" />
-
-        </LinearLayout>
 
 
     </androidx.appcompat.widget.Toolbar>

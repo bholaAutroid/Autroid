@@ -8,6 +8,12 @@
     android:orientation="vertical"
     tools:context=".view.fragment.profile.subscription.SubscriptionFragment">
 
+    <include
+        android:id="@id/common_toolbar"
+        layout="@layout/layout_toolbar_activity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -21,7 +27,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dimen_20dp"
-                android:layout_marginTop="@dimen/dimen_50dp"
                 android:layout_marginRight="@dimen/dimen_20dp"
                 android:background="@color/card_color"
                 android:orientation="vertical">

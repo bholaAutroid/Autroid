@@ -1,4 +1,4 @@
-package autroid.business.aws.leads;
+package autroid.business.aws.crm.lead_generates;
 
 import androidx.appcompat.app.AppCompatActivity;
 

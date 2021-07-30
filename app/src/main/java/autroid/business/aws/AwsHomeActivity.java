@@ -89,6 +89,7 @@ import java.util.TimerTask;
 
 import autroid.business.BuildConfig;
 import autroid.business.R;
+import autroid.business.aws.crm.aws_leads.LeadsFragment;
 import autroid.business.aws.navigation.adapter.CustomExpandableListAdapter;
 import autroid.business.aws.navigation.adapter.ExpandableListDataSource;
 import autroid.business.aws.navigation.adapter.SettingsActivity;
@@ -481,8 +482,14 @@ public class AwsHomeActivity extends AppCompatActivity implements View.OnClickLi
             //----------------CRM------------------------------------
 
             if (groupPosition == 1 && childPosition == 0) {
-
+                mDrawerLayout.closeDrawers();
+                makeDrawerVisible();
+                Bundle bundle = new Bundle();
+                String businessData = PreferenceManager.getInstance().getStringPreference( getApplicationContext(), Constant.SP_BUSINESS );
+                bundle.putString( Constant.KEY_ID, businessData );
+                addFragment( new LeadsFragment(), "LeadsFragment", true, false, bundle, currentFrameId );
             }
+
             if (groupPosition == 1 && childPosition == 1) {
 
             }
